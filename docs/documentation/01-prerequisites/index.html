@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
+Contents  Requirements Clone the repository Install build tools  Linux Windows   Install Python Dependencies  Linux Windows   Install Docker  Linux Windows     Note: Most Windows shell commands here expect powershell (or pwsh).
+ Requirements MLOS currently only supports 64-bit Intel/AMD platforms, though ARM64 support is under development.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
+Contents  Requirements Clone the repository Install build tools  Linux Windows   Install Python Dependencies  Linux Windows   Install Docker  Linux Windows     Note: Most Windows shell commands here expect powershell (or pwsh).
+ Requirements MLOS currently only supports 64-bit Intel/AMD platforms, though ARM64 support is under development." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/documentation/01-prerequisites/" />
+
+<title>01 Prerequisites | MLOS</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
+<script defer src="/en.search.min.529b19f4dbb27e03c66d58a6d7a7c1588b510f10b4467aa70e8ffc53761fc876.js" integrity="sha256-UpsZ9NuyfgPGbVim16fBWItRDxC0RnqnDo/8U3YfyHY="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>MLOS</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/" class="">Documentation</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/01-prerequisites/" class="active">01 Prerequisites</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/02-build/" class="">02 Build</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/03-exampleusage/" class="">03 Example Usage</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/04-contributing/" class="">04 Contributing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/05-test/" class="">05 Test</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/06-debug/" class="">06 Debug</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/codingstandard/" class="">Coding Standard</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/glossary/" class="">Glossary</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/mlosarchitecture/" class="">Mlos Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/documentation/repoorganization/" class="">Repo Organization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <span>Notebooks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/notebooks/optimizermonitor/" class="">Optimizer Monitor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/notebooks/smartcache/" class="">Smart Cache</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/notebooks/starthere/" class="">Start Here</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>01 Prerequisites</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#contents">Contents</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#clone-the-repository">Clone the repository</a></li>
+    <li><a href="#install-build-tools">Install build tools</a>
+      <ul>
+        <li><a href="#linux-build-tools">Linux build tools</a></li>
+        <li><a href="#windows-build-tools">Windows build tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#install-python-dependencies">Install Python Dependencies</a>
+      <ul>
+        <li><a href="#linux-python-install">Linux Python Install</a></li>
+        <li><a href="#windows-python-install">Windows Python Install</a></li>
+      </ul>
+    </li>
+    <li><a href="#install-docker">Install Docker</a>
+      <ul>
+        <li><a href="#linux-docker-install">Linux Docker Install</a></li>
+        <li><a href="#windows-docker-install">Windows Docker Install</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="prerequisites-for-building-and-using-mlos">Prerequisites for building and using MLOS</h1>
+<p>These are one-time setup instructions that should be executed prior to following the build instructions in <a href="./02-Build.md">02-Build.md</a></p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#clone-the-repository">Clone the repository</a></li>
+<li><a href="#install-build-tools">Install build tools</a>
+<ul>
+<li><a href="#linux-build-tools">Linux</a></li>
+<li><a href="#windows-build-tools">Windows</a></li>
+</ul>
+</li>
+<li><a href="#install-python-dependencies">Install Python Dependencies</a>
+<ul>
+<li><a href="#linux-python-install">Linux</a></li>
+<li><a href="#windows-python-install">Windows</a></li>
+</ul>
+</li>
+<li><a href="#install-docker">Install Docker</a>
+<ul>
+<li><a href="#linux-docker-install">Linux</a></li>
+<li><a href="#windows-docker-install">Windows</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Note: Most Windows shell commands here expect <code>powershell</code> (or <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows"><code>pwsh</code></a>).</p>
+</blockquote>
+<h2 id="requirements">Requirements</h2>
+<p>MLOS currently only supports 64-bit Intel/AMD platforms, though ARM64 support is under development.</p>
+<p>It supports Windows and Linux environments.</p>
+<ul>
+<li>
+<p>Windows</p>
+<blockquote>
+<p>Portions of MLOS require Docker, which requires a Linux VM.  So support for <em>one</em> of the following is required:</p>
+</blockquote>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2">WSL2</a> (e.g. Windows 10 build &gt;= 2004, including Pro, Enterprise, <em>and</em> Home), <em>or</em></li>
+<li><a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/">Hyper-V support</a> (only Windows 10 Pro/Enterprise, <em>not</em> <del>Home</del>)</li>
+</ul>
+<blockquote>
+<p>Note: WSL2 is advised for ease of setup, integrations with Docker, and more flexible resource utilizations benefits.</p>
+</blockquote>
+</li>
+<li>
+<p>Linux</p>
+<ul>
+<li>Ubuntu 18.04 (bionic), 20.04 (focal)</li>
+<li>Debian 9 (stretch), 10 (buster)</li>
+</ul>
+</li>
+</ul>
+<h2 id="clone-the-repository">Clone the repository</h2>
+<p>Cross platform</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/microsoft/MLOS.git
+</code></pre></div><blockquote>
+<p>See <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing">https://git-scm.com/book/en/v2/Getting-Started-Installing</a> for help installing <code>git</code>.</p>
+</blockquote>
+<h2 id="install-build-tools">Install build tools</h2>
+<h3 id="linux-build-tools">Linux build tools</h3>
+<p>TODO</p>
+<h3 id="windows-build-tools">Windows build tools</h3>
+<p>There are several build tools install paths to choose from on Windows.</p>
+<blockquote>
+<p>Note: For most of these commands we first need a <code>powershell</code> with Administrator privileges:</p>
+</blockquote>
+<ol>
+<li>
+<p>Start a powershell environment with Administrator privileges:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">powershell -NoProfile -Command <span style="color:#e6db74">&#34;Start-Process powershell -Verb RunAs&#34;</span>
+</code></pre></div><blockquote>
+<p>If you find that when you start a new shell environment it can&rsquo;t find some of the tools installed later on, the new <code>PATH</code> environment variable might not be updated.  Try to restart your machine.</p>
+</blockquote>
+</li>
+<li>
+<p>Allow local powershell scripts to be executed:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+</code></pre></div><blockquote>
+<p>This is necessary for our build environment initialization script <code>scripts/init.windows.ps1</code> as well.</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="using-a-local-script">Using a local script</h4>
+<ol>
+<li>
+<p>Launch the script we provide in the MLOS repo to install/update Visual Studio 2019 Community Edition with the necessary components:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">.\scripts\install-vs2019.ps1
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Waiting for installer process vs_community to end ...
+Waiting for installer process vs_community to end ...
+...
+Done
+</code></pre></div><blockquote>
+<p>Note: This will install the free Community edition by default. Use the <code>-Sku</code> option if you prefer to install the <code>Enterprise</code> version instead.</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="using-chocolatey">Using Chocolatey</h4>
+<p><a href="https://chocolatey.org">Chocolatey</a> is a package manager for Windows to help support scripted and reproducable installation of tools.</p>
+<ol start="0">
+<li>
+<p>Install chocolatey:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Set-ExecutionPolicy Bypass -Scope <span style="color:#66d9ef">Process</span> -Force; <span style="color:#66d9ef">[System.Net.ServicePointManager]</span>::SecurityProtocol = <span style="color:#66d9ef">[System.Net.ServicePointManager]</span>::SecurityProtocol <span style="color:#f92672">-bor</span> 3072; iex ((New-Object System.Net.WebClient).DownloadString(<span style="color:#e6db74">&#39;https://chocolatey.org/install.ps1&#39;</span>))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Getting latest version of the Chocolatey package for download.
+...
+Chocolatey (choco.exe) is now ready.
+You can call choco from anywhere, command line or powershell by typing choco.
+Run choco /? for a list of functions.
+You may need to shut down and restart powershell and/or consoles
+first prior to using choco.
+...
+</code></pre></div><p>See Also: <a href="https://chocolatey.org/install">https://chocolatey.org/install</a></p>
+</li>
+<li>
+<p>Install build tools:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">choco install -y git
+choco install -y dotnetcore-runtime.install --params<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Skip32Bit&#34;</span>
+choco install -y dotnetcore dotnetcore-sdk
+choco install -y visualstudio2019buildtools visualstudio2019-workload-netcorebuildtools visualstudio2019-workload-vctools
+</code></pre></div></li>
+<li>
+<p>Install an editor
+(<em>optional</em>)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">choco install -y vscode
+choco install -y vscode-cpptools vscode-csharp vscode-cake
+</code></pre></div><p>or</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">choco install -y visualstudio2019community
+</code></pre></div></li>
+</ol>
+<h4 id="manually">Manually</h4>
+<p>Download and install Visual Studio 2019 (free) Community Edition:</p>
+<p><a href="https://visualstudio.microsoft.com/vs/community/">https://visualstudio.microsoft.com/vs/community/</a></p>
+<p>Be sure to include support for .Net Core, C++, CMake</p>
+<h2 id="install-python-dependencies">Install Python Dependencies</h2>
+<h3 id="linux-python-install">Linux Python Install</h3>
+<ol>
+<li>
+<p>Install Python 3.x</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt -y install python3 python3-pip
+</code></pre></div></li>
+<li>
+<p>Install MLOS Python dependencies:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Also add some dependencies needed by some of the pip modules</span>
+sudo apt -y install build-essential libfreetype-dev unixodbc-dev
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pip3 install -r source/Mlos.Python/requirements.txt
+</code></pre></div></li>
+</ol>
+<h3 id="windows-python-install">Windows Python Install</h3>
+<h4 id="using-chocolatey-1">Using Chocolatey</h4>
+<ol start="0">
+<li>
+<p>See above for instructions on installing Chocolatey.</p>
+</li>
+<li>
+<p>Install Python</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">choco install -y python --version<span style="color:#f92672">=</span>3.7.8
+</code></pre></div></li>
+<li>
+<p>Install MLOS Python dependencies:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip install -r source<span style="color:#ae81ff">\M</span>los.Python<span style="color:#ae81ff">\r</span>equirements.txt
+</code></pre></div></li>
+</ol>
+<h2 id="install-docker">Install Docker</h2>
+<h3 id="linux-docker-install">Linux Docker Install</h3>
+<p>TODO</p>
+<h3 id="windows-docker-install">Windows Docker Install</h3>
+<p>As mentioned above, Docker on Windows first requires a Linux VM.</p>
+<blockquote>
+<p>As such, if your Windows development environment is itself a VM, you&rsquo;ll need one that supports <em>nested virtualization</em>.<br>
+<a href="https://docs.microsoft.com/en-us/azure/virtual-machines/acu">https://docs.microsoft.com/en-us/azure/virtual-machines/acu</a></p>
+</blockquote>
+<ul>
+<li>
+<p>The easiest route is through <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL2</a>:</p>
+<ol>
+<li>
+<p>Enable WSL2 on Windows 10 build 2004 or later:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Invoke-WebRequest -Uri https<span style="color:#960050;background-color:#1e0010">:</span>//wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi -OutFile wsl_update_x64.msi -UseBasicParsing
+Invoke-Item wsl_update_x64.msi
+</code></pre></div><blockquote>
+<p>Note: You may need to restart at this point.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wsl --set-default-version 2
+</code></pre></div></li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/windows/wsl/install-manual">Install a Linux distro for WSL2</a> (e.g. <a href="https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&amp;activetab=pivot:overviewtab">Ubuntu 20.04</a>):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Invoke-WebRequest -Uri https<span style="color:#960050;background-color:#1e0010">:</span>//aka.ms/wslubuntu2004 -OutFile Ubuntu-20.04.appx -UseBasicParsing
+
+Add-AppxPackage ./Ubuntu-20.04.appx
+</code></pre></div><blockquote>
+<p>Finish the installation by launching the &ldquo;<em>Ubuntu 20.04</em>&rdquo; distribution from the Start menu to setup your Linux account in the WSL distribution.</p>
+</blockquote>
+</li>
+<li>
+<p>Install Docker</p>
+<ul>
+<li>
+<p>Chocolatey</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">choco install docker-desktop docker-cli
+</code></pre></div></li>
+<li>
+<p>Manually</p>
+<p><a href="https://docs.docker.com/docker-for-windows/install/">https://docs.docker.com/docker-for-windows/install/</a></p>
+</li>
+</ul>
+<p>Configure Docker Desktop to use WSL2</p>
+</li>
+</ol>
+<p>At this point <code>docker</code> commands should work naturally from any shell environment and proxied through to the WSL2 Linux distribution configured in Docker Desktop.</p>
+</li>
+<li>
+<p>Alternatively, you can enable Hyper-V and use <a href="https://docs.docker.com/machine/reference/create/"><code>docker-machine</code></a> to create a VM suitable for running Docker containers:</p>
+<blockquote>
+<p>Note: This isn&rsquo;t supported on Windows Home edition.</p>
+</blockquote>
+<ol>
+<li>
+<p>Enable Hyper-V</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+</code></pre></div></li>
+<li>
+<p>Install <code>docker-machine</code>:</p>
+<ul>
+<li>
+<p>Manually:</p>
+<p><a href="https://docs.docker.com/machine/install-machine/">https://docs.docker.com/machine/install-machine/</a></p>
+</li>
+<li>
+<p>Or, via Chocolatey:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">choco install docker-machine
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Build a VM for running Docker containers:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker-machine create --driver hyperv --hyperv-virtual-switch <span style="color:#e6db74">&#34;NameOfYourDockerVSwitch&#34;</span> docker-dev-vm
+</code></pre></div></li>
+<li>
+<p>Invoke a shell environment to use it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker-machine env --shell powershell docker-dev-vm | Invoke-Expression
+</code></pre></div><p>From within this shell environment, <code>docker</code> cli commands should be proxied through to your <code>docker-dev-vm</code> prepared by <code>docker-machine</code>.</p>
+</li>
+</ol>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#contents">Contents</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#clone-the-repository">Clone the repository</a></li>
+    <li><a href="#install-build-tools">Install build tools</a>
+      <ul>
+        <li><a href="#linux-build-tools">Linux build tools</a></li>
+        <li><a href="#windows-build-tools">Windows build tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#install-python-dependencies">Install Python Dependencies</a>
+      <ul>
+        <li><a href="#linux-python-install">Linux Python Install</a></li>
+        <li><a href="#windows-python-install">Windows Python Install</a></li>
+      </ul>
+    </li>
+    <li><a href="#install-docker">Install Docker</a>
+      <ul>
+        <li><a href="#linux-docker-install">Linux Docker Install</a></li>
+        <li><a href="#windows-docker-install">Windows Docker Install</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
