@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MLOS</title>
+    <link>https://microsoft.github.io/MLOS/notebooks/</link>
+    <description>Recent content on MLOS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://microsoft.github.io/MLOS/notebooks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://microsoft.github.io/MLOS/notebooks/optimizermonitor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://microsoft.github.io/MLOS/notebooks/optimizermonitor/</guid>
+      <description>Goal The goal of this notebook is to provide a UI to a data scientist or dev 2.0 to interact with the optimizers residing in the optimizer microservice.
+TODO   Integrate Model Tomograph:
+ Change Predict() to return a pandas df: change change/eliminate the prediction class.   Fix the individual models input spaces so that they reject invalid points. Add color scale Add cross-hairs    Display current optimum:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://microsoft.github.io/MLOS/notebooks/smartcache/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://microsoft.github.io/MLOS/notebooks/smartcache/</guid>
+      <description>Goal The goal of this notebook is to optimize SmartCache.
+from IPython.core.display import display, HTML display(HTML(&amp;#34;&amp;lt;style&amp;gt;.container { width:100% !important; }&amp;lt;/style&amp;gt;&amp;#34;)) TODO Lots to do here.
+For once - this is probably not the workflow we want. We likely want to:
+ Start the Optimizer in a separate process so that we can monitor its progress. Maybe we should have a separate notebook just for Optimizer Monitoring. Start the Mlos.Agent + Workload in a separate process.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://microsoft.github.io/MLOS/notebooks/starthere/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://microsoft.github.io/MLOS/notebooks/starthere/</guid>
+      <description>Objective The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.
+Steps  Select build configuration. Generate the secrets file. Build the docker image. Launch the docker container. Launch Mlos.Agent. Launch SmartCache.exe benchmark.  Prerequisites  Build the Mlos project. The build configuration (Debug vs. Retail) must match your choice below. Have Docker installed and available. This notebook is run with {MLOS_ROOT}\source\Mlos.</description>
+    </item>
+    
+  </channel>
+</rss>

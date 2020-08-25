@@ -3,80 +3,96 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
+    <loc>https://microsoft.github.io/MLOS/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/01-prerequisites/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/01-prerequisites/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/02-build/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/02-build/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/03-exampleusage/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/03-exampleusage/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/04-contributing/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/04-contributing/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/05-test/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/05-test/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/06-debug/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/06-debug/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/codingstandard/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/codingstandard/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/glossary/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/glossary/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/mlosarchitecture/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/mlosarchitecture/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/documentation/repoorganization/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/readme/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/notebooks/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/repoorganization/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/notebooks/optimizermonitor/</loc>
+    <loc>https://microsoft.github.io/MLOS/notebooks/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/notebooks/smartcache/</loc>
+    <loc>https://microsoft.github.io/MLOS/notebooks/optimizermonitor/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/notebooks/starthere/</loc>
+    <loc>https://microsoft.github.io/MLOS/notebooks/smartcache/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://microsoft.github.io/MLOS/notebooks/starthere/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docs/</loc>
+    <loc>https://microsoft.github.io/MLOS/categories/</loc>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://microsoft.github.io/MLOS/tags/</loc>
   </url>
   
 </urlset>
