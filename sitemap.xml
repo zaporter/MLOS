@@ -58,11 +58,6 @@
   </url>
   
   <url>
-    <loc>https://microsoft.github.io/MLOS/documentation/readme/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://microsoft.github.io/MLOS/documentation/repoorganization/</loc>
     <priority>0</priority>
   </url>
