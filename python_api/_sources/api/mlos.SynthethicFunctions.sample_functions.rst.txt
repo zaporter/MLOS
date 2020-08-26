@@ -1,0 +1,7 @@
+mlos.SynthethicFunctions.sample\_functions
+==========================================
+
+.. automodule:: mlos.SynthethicFunctions.sample_functions
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,19 @@
+mlos.Optimizers.ExperimentDesigner.UtilityFunctions
+===================================================
+
+
+.. automodule:: mlos.Optimizers.ExperimentDesigner.UtilityFunctions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: 1
+
+   mlos.Optimizers.ExperimentDesigner.UtilityFunctions.ConfidenceBoundUtilityFunction
+
+.. toctree::
+   :maxdepth: 1
+
+   mlos.Optimizers.ExperimentDesigner.UtilityFunctions.unit_tests

@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mlos.Optimizers.OptimizationProblem &mdash; mlos  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mlos.Optimizers.OptimizerInterface" href="mlos.Optimizers.OptimizerInterface.html" />
+    <link rel="prev" title="mlos.Optimizers.DistributableSimpleBayesianOptimizer" href="mlos.Optimizers.DistributableSimpleBayesianOptimizer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mlos
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.global_values.html">mlos.global_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.start_mlos_optimization_runtime.html">mlos.start_mlos_optimization_runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.start_optimizer_microservice.html">mlos.start_optimizer_microservice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Examples.html">mlos.Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Grpc.html">mlos.Grpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Mlos.html">mlos.Mlos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.MlosOptimizationServices.html">mlos.MlosOptimizationServices</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.DistributableSimpleBayesianOptimizer.html">mlos.Optimizers.DistributableSimpleBayesianOptimizer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mlos.Optimizers.OptimizationProblem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.OptimizerInterface.html">mlos.Optimizers.OptimizerInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html">mlos.Optimizers.SimpleBayesianOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.RegressionModels.html">mlos.Optimizers.RegressionModels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.long_haul_tests.html">mlos.Optimizers.long_haul_tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.unit_tests.html">mlos.Optimizers.unit_tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.SynthethicFunctions.html">mlos.SynthethicFunctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Tomograph.html">mlos.Tomograph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.unit_tests.html">mlos.unit_tests</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mlos</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="mlos.Optimizers.html">mlos.Optimizers</a> &raquo;</li>
+        
+      <li>mlos.Optimizers.OptimizationProblem</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/mlos.Optimizers.OptimizationProblem.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mlos.Optimizers.OptimizationProblem">
+<span id="mlos-optimizers-optimizationproblem"></span><h1>mlos.Optimizers.OptimizationProblem<a class="headerlink" href="#module-mlos.Optimizers.OptimizationProblem" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="mlos.Optimizers.OptimizationProblem.Objective">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.OptimizationProblem.</code><code class="sig-name descname">Objective</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">minimize</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/OptimizationProblem.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.Objective" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+<dl class="py attribute">
+<dt id="mlos.Optimizers.OptimizationProblem.Objective.minimize">
+<code class="sig-name descname">minimize</code><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.Objective.minimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Optimizers.OptimizationProblem.Objective.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.Objective.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Optimizers.OptimizationProblem.OptimizationProblem">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.OptimizationProblem.</code><code class="sig-name descname">OptimizationProblem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">objective_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">objectives</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="#mlos.Optimizers.OptimizationProblem.Objective" title="mlos.Optimizers.OptimizationProblem.Objective">mlos.Optimizers.OptimizationProblem.Objective</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">context_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/OptimizationProblem.py#L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Models an instance of an optimization problem.</p>
+<p>An instance of OptimizationProblem can be used to create a variety of optimizers and instantly enlighten them to
+what they are working with.</p>
+<p>Many optimization problems contain the same set of elements:
+1. Decision Variables / Search Space - decision variables characterized by their allowed ranges and constraints form a Search Space.
+2. Objectives - one or more values to optimize. Each objective is meant to be either maximized or minimized.
+3. Context - this represents either: 1. controlled variables in an active learning scenarios, or 2. context information in an online learning scenario.</p>
+<p>For example if we are attempting to optimize a smart cache:</p>
+<dl class="simple">
+<dt>Decision variables:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>cache implementation (array, hashmap), each implementation’s parameters:</dt><dd><ul>
+<li><p>array: size, associativity, eviction policy</p></li>
+<li><p>hashmap: size, hash function, bucket data structure, bucket size, bucket eviction policy</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Objectives:</dt><dd><ul class="simple">
+<li><p>latency</p></li>
+<li><p>cache memory footprint</p></li>
+<li><p>recomputation cost (averge, median, total)</p></li>
+<li><p>hit ratio</p></li>
+<li><p>cache utilization</p></li>
+</ul>
+</dd>
+<dt>Context:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>workload characteristics:</dt><dd><ul>
+<li><p>true working set size (only known in active learning scenario)</p></li>
+<li><p>estimated working set size (possibly many estimators, many Confidence Interval sizes)</p></li>
+<li><p>recomputation cost distribution (true or estimated)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>deployment context:</dt><dd><ul>
+<li><dl class="simple">
+<dt>machine characteristics:</dt><dd><ul>
+<li><p>num cores</p></li>
+<li><p>amount of ram</p></li>
+<li><p>disk type</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>runtime state:</dt><dd><ul>
+<li><p>cpu utilization</p></li>
+<li><p>ram utilization</p></li>
+<li><p>etc</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="mlos.Optimizers.OptimizationProblem.OptimizationProblem.META_DIMENSION_NAMES">
+<code class="sig-name descname">META_DIMENSION_NAMES</code><em class="property"> = {'contains_context', 'contains_objectives', 'contains_parameters'}</em><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.OptimizationProblem.META_DIMENSION_NAMES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.OptimizationProblem.OptimizationProblem.from_protobuf">
+<em class="property">classmethod </em><code class="sig-name descname">from_protobuf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem_pb2</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.OptimizationProblem" title="mlos.Grpc.OptimizerService_pb2.OptimizationProblem">mlos.Grpc.OptimizerService_pb2.OptimizationProblem</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/OptimizationProblem.py#L126"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.OptimizationProblem.from_protobuf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds an optimization problem from protobufs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>optimization_problem_pb2</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.OptimizationProblem.OptimizationProblem.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/OptimizationProblem.py#L105"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.OptimizationProblem.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.OptimizationProblem.OptimizationProblem.to_protobuf">
+<code class="sig-name descname">to_protobuf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/OptimizationProblem.py#L113"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.OptimizationProblem.to_protobuf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serializes self to a protobuf.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="mlos.Optimizers.OptimizationProblem.objective_from_dict">
+<code class="sig-prename descclassname">mlos.Optimizers.OptimizationProblem.</code><code class="sig-name descname">objective_from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">objective_dict</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/OptimizationProblem.py#L21"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.objective_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="mlos.Optimizers.OptimizationProblem.objective_to_dict">
+<code class="sig-prename descclassname">mlos.Optimizers.OptimizationProblem.</code><code class="sig-name descname">objective_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">objective</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/OptimizationProblem.py#L15"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizationProblem.objective_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mlos.Optimizers.OptimizerInterface.html" class="btn btn-neutral float-right" title="mlos.Optimizers.OptimizerInterface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mlos.Optimizers.DistributableSimpleBayesianOptimizer.html" class="btn btn-neutral float-left" title="mlos.Optimizers.DistributableSimpleBayesianOptimizer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Microsoft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

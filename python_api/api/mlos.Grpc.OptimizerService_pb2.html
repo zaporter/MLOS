@@ -1,0 +1,668 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mlos.Grpc.OptimizerService_pb2 &mdash; mlos  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mlos.Grpc.OptimizerService_pb2_grpc" href="mlos.Grpc.OptimizerService_pb2_grpc.html" />
+    <link rel="prev" title="mlos.Grpc.OptimizerMonitor" href="mlos.Grpc.OptimizerMonitor.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mlos
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.global_values.html">mlos.global_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.start_mlos_optimization_runtime.html">mlos.start_mlos_optimization_runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.start_optimizer_microservice.html">mlos.start_optimizer_microservice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Examples.html">mlos.Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mlos.Grpc.html">mlos.Grpc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlos.Grpc.BayesianOptimizerFactory.html">mlos.Grpc.BayesianOptimizerFactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Grpc.BayesianOptimizerProxy.html">mlos.Grpc.BayesianOptimizerProxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Grpc.OptimizerMicroservice.html">mlos.Grpc.OptimizerMicroservice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Grpc.OptimizerMicroserviceServer.html">mlos.Grpc.OptimizerMicroserviceServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Grpc.OptimizerMonitor.html">mlos.Grpc.OptimizerMonitor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mlos.Grpc.OptimizerService_pb2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Grpc.OptimizerService_pb2_grpc.html">mlos.Grpc.OptimizerService_pb2_grpc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Mlos.html">mlos.Mlos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.MlosOptimizationServices.html">mlos.MlosOptimizationServices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.SynthethicFunctions.html">mlos.SynthethicFunctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Tomograph.html">mlos.Tomograph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.unit_tests.html">mlos.unit_tests</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mlos</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="mlos.Grpc.html">mlos.Grpc</a> &raquo;</li>
+        
+      <li>mlos.Grpc.OptimizerService_pb2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/mlos.Grpc.OptimizerService_pb2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mlos.Grpc.OptimizerService_pb2">
+<span id="mlos-grpc-optimizerservice-pb2"></span><h1>mlos.Grpc.OptimizerService_pb2<a class="headerlink" href="#module-mlos.Grpc.OptimizerService_pb2" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.ConfigurationParameters">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">ConfigurationParameters</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ConfigurationParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ConfigurationParameters.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ConfigurationParameters.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ConfigurationParameters.ParametersJsonString">
+<code class="sig-name descname">ParametersJsonString</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ConfigurationParameters.ParametersJsonString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ConfigurationParameters.ParametersJsonString</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.Context">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Context</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Context.ContextJsonString">
+<code class="sig-name descname">ContextJsonString</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Context.ContextJsonString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field Context.ContextJsonString</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Context.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Context.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">CreateOptimizerRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.OptimizationProblem">
+<code class="sig-name descname">OptimizationProblem</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field CreateOptimizerRequest.OptimizationProblem</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.OptimizerConfig">
+<code class="sig-name descname">OptimizerConfig</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.OptimizerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field CreateOptimizerRequest.OptimizerConfig</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.OptimizerConfigName">
+<code class="sig-name descname">OptimizerConfigName</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.OptimizerConfigName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field CreateOptimizerRequest.OptimizerConfigName</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.Empty">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Empty</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Empty.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Empty.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.Features">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Features</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Features.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Features.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Features.FeaturesJsonString">
+<code class="sig-name descname">FeaturesJsonString</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Features.FeaturesJsonString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field Features.FeaturesJsonString</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.Hypergrid">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Hypergrid</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Hypergrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Hypergrid.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Hypergrid.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Hypergrid.HypergridJsonString">
+<code class="sig-name descname">HypergridJsonString</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Hypergrid.HypergridJsonString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field Hypergrid.HypergridJsonString</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.Objective">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Objective</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Objective" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Objective.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Objective.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Objective.Minimize">
+<code class="sig-name descname">Minimize</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Objective.Minimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field Objective.Minimize</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Objective.Name">
+<code class="sig-name descname">Name</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Objective.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field Objective.Name</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectivePredictions">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">ObjectivePredictions</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectivePredictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectivePredictions.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectivePredictions.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectivePredictions.Features">
+<code class="sig-name descname">Features</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectivePredictions.Features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ObjectivePredictions.Features</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectivePredictions.Predictions">
+<code class="sig-name descname">Predictions</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectivePredictions.Predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ObjectivePredictions.Predictions</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">ObjectiveValuePrediction</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.Mean">
+<code class="sig-name descname">Mean</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.Mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ObjectiveValuePrediction.Mean</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.ObjectiveName">
+<code class="sig-name descname">ObjectiveName</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.ObjectiveName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ObjectiveValuePrediction.ObjectiveName</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.ObservationCount">
+<code class="sig-name descname">ObservationCount</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.ObservationCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ObjectiveValuePrediction.ObservationCount</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.StandardDeviation">
+<code class="sig-name descname">StandardDeviation</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.StandardDeviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ObjectiveValuePrediction.StandardDeviation</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.Variance">
+<code class="sig-name descname">Variance</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValuePrediction.Variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ObjectiveValuePrediction.Variance</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValues">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">ObjectiveValues</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValues.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValues.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValues.ObjectiveValuesJsonString">
+<code class="sig-name descname">ObjectiveValuesJsonString</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValues.ObjectiveValuesJsonString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field ObjectiveValues.ObjectiveValuesJsonString</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.Observation">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Observation</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Observation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Observation.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Observation.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Observation.Features">
+<code class="sig-name descname">Features</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Observation.Features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field Observation.Features</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.Observation.ObjectiveValues">
+<code class="sig-name descname">ObjectiveValues</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Observation.ObjectiveValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field Observation.ObjectiveValues</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizationProblem">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizationProblem</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizationProblem.ContextSpace">
+<code class="sig-name descname">ContextSpace</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizationProblem.ContextSpace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizationProblem.ContextSpace</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizationProblem.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizationProblem.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizationProblem.ObjectiveSpace">
+<code class="sig-name descname">ObjectiveSpace</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizationProblem.ObjectiveSpace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizationProblem.ObjectiveSpace</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizationProblem.Objectives">
+<code class="sig-name descname">Objectives</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizationProblem.Objectives" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizationProblem.Objectives</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizationProblem.ParameterSpace">
+<code class="sig-name descname">ParameterSpace</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizationProblem.ParameterSpace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizationProblem.ParameterSpace</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerHandle">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerHandle</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerHandle.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerHandle.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerHandle.Id">
+<code class="sig-name descname">Id</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerHandle.Id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizerHandle.Id</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerInfo">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerInfo</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerInfo.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerInfo.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerInfo.OptimizationProblem">
+<code class="sig-name descname">OptimizationProblem</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerInfo.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizerInfo.OptimizationProblem</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerInfo.OptimizerConfigJsonString">
+<code class="sig-name descname">OptimizerConfigJsonString</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerInfo.OptimizerConfigJsonString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizerInfo.OptimizerConfigJsonString</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerInfo.OptimizerHandle">
+<code class="sig-name descname">OptimizerHandle</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerInfo.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizerInfo.OptimizerHandle</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerList">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerList</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerList.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerList.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.OptimizerList.Optimizers">
+<code class="sig-name descname">Optimizers</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerList.Optimizers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field OptimizerList.Optimizers</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.PredictRequest">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">PredictRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.PredictRequest.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictRequest.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.PredictRequest.Features">
+<code class="sig-name descname">Features</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictRequest.Features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field PredictRequest.Features</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.PredictRequest.OptimizerHandle">
+<code class="sig-name descname">OptimizerHandle</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictRequest.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field PredictRequest.OptimizerHandle</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.PredictResponse">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">PredictResponse</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.PredictResponse.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictResponse.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.PredictResponse.ObjectivePredictions">
+<code class="sig-name descname">ObjectivePredictions</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictResponse.ObjectivePredictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field PredictResponse.ObjectivePredictions</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">RegisterObservationRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest.Observation">
+<code class="sig-name descname">Observation</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest.Observation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field RegisterObservationRequest.Observation</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest.OptimizerHandle">
+<code class="sig-name descname">OptimizerHandle</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field RegisterObservationRequest.OptimizerHandle</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="mlos.Grpc.OptimizerService_pb2.SuggestRequest">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">SuggestRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SuggestRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.SuggestRequest.Context">
+<code class="sig-name descname">Context</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SuggestRequest.Context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field SuggestRequest.Context</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.SuggestRequest.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SuggestRequest.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.SuggestRequest.OptimizerHandle">
+<code class="sig-name descname">OptimizerHandle</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SuggestRequest.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field SuggestRequest.OptimizerHandle</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Grpc.OptimizerService_pb2.SuggestRequest.Random">
+<code class="sig-name descname">Random</code><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SuggestRequest.Random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field SuggestRequest.Random</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mlos.Grpc.OptimizerService_pb2_grpc.html" class="btn btn-neutral float-right" title="mlos.Grpc.OptimizerService_pb2_grpc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mlos.Grpc.OptimizerMonitor.html" class="btn btn-neutral float-left" title="mlos.Grpc.OptimizerMonitor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Microsoft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

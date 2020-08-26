@@ -1,0 +1,21 @@
+mlos.Spaces.HypergridAdapters
+=============================
+
+
+.. automodule:: mlos.Spaces.HypergridAdapters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: 1
+
+   mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter
+   mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter
+   mlos.Spaces.HypergridAdapters.HypergridAdapter
+
+.. toctree::
+   :maxdepth: 1
+
+   mlos.Spaces.HypergridAdapters.unit_tests

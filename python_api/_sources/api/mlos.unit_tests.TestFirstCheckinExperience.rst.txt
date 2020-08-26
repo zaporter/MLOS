@@ -1,0 +1,7 @@
+mlos.unit\_tests.TestFirstCheckinExperience
+===========================================
+
+.. automodule:: mlos.unit_tests.TestFirstCheckinExperience
+   :members:
+   :undoc-members:
+   :show-inheritance:

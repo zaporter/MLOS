@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mlos.Spaces.HypergridAdapters.HypergridAdapter &mdash; mlos  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mlos.Spaces.HypergridAdapters.unit_tests" href="mlos.Spaces.HypergridAdapters.unit_tests.html" />
+    <link rel="prev" title="mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter" href="mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mlos
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.global_values.html">mlos.global_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.start_mlos_optimization_runtime.html">mlos.start_mlos_optimization_runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.start_optimizer_microservice.html">mlos.start_optimizer_microservice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Examples.html">mlos.Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Grpc.html">mlos.Grpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Mlos.html">mlos.Mlos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.MlosOptimizationServices.html">mlos.MlosOptimizationServices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.Hypergrids.html">mlos.Spaces.Hypergrids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.Dimensions.html">mlos.Spaces.Dimensions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html">mlos.Spaces.HypergridAdapters</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mlos.Spaces.HypergridAdapters.HypergridAdapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.unit_tests.html">mlos.Spaces.HypergridAdapters.unit_tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.stress_tests.html">mlos.Spaces.stress_tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.unit_tests.html">mlos.Spaces.unit_tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.SynthethicFunctions.html">mlos.SynthethicFunctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Tomograph.html">mlos.Tomograph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.unit_tests.html">mlos.unit_tests</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mlos</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="mlos.Spaces.html">mlos.Spaces</a> &raquo;</li>
+        
+          <li><a href="mlos.Spaces.HypergridAdapters.html">mlos.Spaces.HypergridAdapters</a> &raquo;</li>
+        
+      <li>mlos.Spaces.HypergridAdapters.HypergridAdapter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/mlos.Spaces.HypergridAdapters.HypergridAdapter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mlos.Spaces.HypergridAdapters.HypergridAdapter">
+<span id="mlos-spaces-hypergridadapters-hypergridadapter"></span><h1>mlos.Spaces.HypergridAdapters.HypergridAdapter<a class="headerlink" href="#module-mlos.Spaces.HypergridAdapters.HypergridAdapter" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.HypergridAdapter.</code><code class="sig-name descname">HypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Spaces.Hypergrids.Hypergrid</span></code></a></p>
+<p>A base class for all HypergridAdapters</p>
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.adaptee">
+<em class="property">abstract property </em><code class="sig-name descname">adaptee</code><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.adaptee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the adaptee hypergrid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.dimensions">
+<em class="property">property </em><code class="sig-name descname">dimensions</code><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.dimensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.is_like_composite_hypergrid">
+<em class="property">static </em><code class="sig-name descname">is_like_composite_hypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hypergrid</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L19"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.is_like_composite_hypergrid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.is_like_simple_hypergrid">
+<em class="property">static </em><code class="sig-name descname">is_like_simple_hypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hypergrid</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L15"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.is_like_simple_hypergrid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.join">
+<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span></em>, <em class="sig-param"><span class="n">on_external_dimension</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L63"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L60"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.random_state">
+<em class="property">property </em><code class="sig-name descname">random_state</code><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.random_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.target">
+<em class="property">abstract property </em><code class="sig-name descname">target</code><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the target hypergrid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.translate_dataframe">
+<code class="sig-name descname">translate_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L77"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.translate_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.translate_point">
+<code class="sig-name descname">translate_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L66"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.translate_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.untranslate_dataframe">
+<code class="sig-name descname">untranslate_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L85"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.untranslate_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.untranslate_point">
+<code class="sig-name descname">untranslate_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L71"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter.untranslate_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mlos.Spaces.HypergridAdapters.unit_tests.html" class="btn btn-neutral float-right" title="mlos.Spaces.HypergridAdapters.unit_tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter.html" class="btn btn-neutral float-left" title="mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Microsoft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

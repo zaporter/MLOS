@@ -1,0 +1,23 @@
+mlos.Spaces.unit\_tests
+=======================
+
+
+.. automodule:: mlos.Spaces.unit_tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: 1
+
+   mlos.Spaces.unit_tests.TestCategoricalDimension
+   mlos.Spaces.unit_tests.TestCompositeHypergrid
+   mlos.Spaces.unit_tests.TestCompositeHypergrid2
+   mlos.Spaces.unit_tests.TestCompositeHypergrid3
+   mlos.Spaces.unit_tests.TestCompositeHypergridJSONEncoderDecoder
+   mlos.Spaces.unit_tests.TestDimensions
+   mlos.Spaces.unit_tests.TestHypergridJsonEncoderDecoderForDimensions
+   mlos.Spaces.unit_tests.TestIntervalTree
+   mlos.Spaces.unit_tests.TestSimpleHypergrid
+   mlos.Spaces.unit_tests.TestSortedBinaryTree

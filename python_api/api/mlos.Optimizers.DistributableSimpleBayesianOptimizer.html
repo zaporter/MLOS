@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mlos.Optimizers.DistributableSimpleBayesianOptimizer &mdash; mlos  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mlos.Optimizers.OptimizationProblem" href="mlos.Optimizers.OptimizationProblem.html" />
+    <link rel="prev" title="mlos.Optimizers.BayesianOptimizer" href="mlos.Optimizers.BayesianOptimizer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mlos
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.global_values.html">mlos.global_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.start_mlos_optimization_runtime.html">mlos.start_mlos_optimization_runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.start_optimizer_microservice.html">mlos.start_optimizer_microservice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Examples.html">mlos.Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Grpc.html">mlos.Grpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Mlos.html">mlos.Mlos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.MlosOptimizationServices.html">mlos.MlosOptimizationServices</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mlos.Optimizers.DistributableSimpleBayesianOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.OptimizerInterface.html">mlos.Optimizers.OptimizerInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html">mlos.Optimizers.SimpleBayesianOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.RegressionModels.html">mlos.Optimizers.RegressionModels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.long_haul_tests.html">mlos.Optimizers.long_haul_tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.unit_tests.html">mlos.Optimizers.unit_tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.SynthethicFunctions.html">mlos.SynthethicFunctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.Tomograph.html">mlos.Tomograph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlos.unit_tests.html">mlos.unit_tests</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mlos</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="mlos.Optimizers.html">mlos.Optimizers</a> &raquo;</li>
+        
+      <li>mlos.Optimizers.DistributableSimpleBayesianOptimizer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/mlos.Optimizers.DistributableSimpleBayesianOptimizer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mlos.Optimizers.DistributableSimpleBayesianOptimizer">
+<span id="mlos-optimizers-distributablesimplebayesianoptimizer"></span><h1>mlos.Optimizers.DistributableSimpleBayesianOptimizer<a class="headerlink" href="#module-mlos.Optimizers.DistributableSimpleBayesianOptimizer" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.DistributableSimpleBayesianOptimizer.</code><code class="sig-name descname">DistributableSimpleBayesianOptimizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">models_database</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">optimizer_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_version</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">execute_remotely</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">optimization_problem</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.OptimizationProblem" title="mlos.Optimizers.OptimizationProblem.OptimizationProblem">mlos.Optimizers.OptimizationProblem.OptimizationProblem</a></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">optimizer_config</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig" title="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig">mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig</a></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/DistributableSimpleBayesianOptimizer.py#L18"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer" title="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer</span></code></a>, <a class="reference internal" href="mlos.MlosOptimizationServices.Distributable.html#mlos.MlosOptimizationServices.Distributable.Distributable" title="mlos.MlosOptimizationServices.Distributable.Distributable"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.MlosOptimizationServices.Distributable.Distributable</span></code></a></p>
+<p>A distributatble simple bayesian optimizer.</p>
+<p>The key idea here is that if the self.execute_remotely flag is set to True, methods decorated with &#64;remotely_executable() will be invoked differently.</p>
+<p>Specifically: the &#64;remotely_executable() wrapper serializes the execution context and the arguments of the function call and submits it over RPC to
+be executed elsewhere (perhaps on a machine that has more suitable hardware). The wrapper then monitors the state of
+the rpc and returns when it is complete.</p>
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.create_remote_model">
+<em class="property">classmethod </em><code class="sig-name descname">create_remote_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">models_database</span></em>, <em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">optimizer_config</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/DistributableSimpleBayesianOptimizer.py#L29"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.create_remote_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factory method to create a remote model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_space</strong> – </p></li>
+<li><p><strong>utility_function_name</strong> – </p></li>
+<li><p><strong>kappa</strong> – </p></li>
+<li><p><strong>xi</strong> – </p></li>
+<li><p><strong>minimize</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.db_optimimizer_object">
+<em class="property">property </em><code class="sig-name descname">db_optimimizer_object</code><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.db_optimimizer_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.focus">
+<code class="sig-name descname">focus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subspace</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/MlosOptimizationServices/Distributable.py#L177"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.focus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force the optimizer to focus on a specific subspace.</p>
+<p>This could be a great way to pass priors to the optimizer, as well as play with the component for the developers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>subspace</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.get_execution_context">
+<code class="sig-name descname">get_execution_context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/DistributableSimpleBayesianOptimizer.py#L104"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.get_execution_context" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.optimum">
+<code class="sig-name descname">optimum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stay_focused</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/MlosOptimizationServices/Distributable.py#L173"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.optimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the optimal value found so far along with the related parameter values.</p>
+<p>This could be either min or max, depending on the settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/MlosOptimizationServices/Distributable.py#L169"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict target value based on the parameters supplied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>params</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.register">
+<code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">target_value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/MlosOptimizationServices/Distributable.py#L165"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a new result with the optimizer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> – </p></li>
+<li><p><strong>target_value</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.reset_focus">
+<code class="sig-name descname">reset_focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/MlosOptimizationServices/Distributable.py#L181"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.reset_focus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes focus back to the full search space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.restore_from_execution_context">
+<em class="property">classmethod </em><code class="sig-name descname">restore_from_execution_context</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">execution_context</span></em>, <em class="sig-param"><span class="n">models_database</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/Optimizers/DistributableSimpleBayesianOptimizer.py#L110"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.restore_from_execution_context" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.suggest">
+<code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">random</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/42cdaf2/mlos/MlosOptimizationServices/Distributable.py#L160"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.DistributableSimpleBayesianOptimizer.DistributableSimpleBayesianOptimizer.suggest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suggest the next set of parameters to try.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mlos.Optimizers.OptimizationProblem.html" class="btn btn-neutral float-right" title="mlos.Optimizers.OptimizationProblem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mlos.Optimizers.BayesianOptimizer.html" class="btn btn-neutral float-left" title="mlos.Optimizers.BayesianOptimizer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Microsoft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

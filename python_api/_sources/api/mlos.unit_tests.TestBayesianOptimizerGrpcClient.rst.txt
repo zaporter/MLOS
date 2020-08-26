@@ -1,0 +1,7 @@
+mlos.unit\_tests.TestBayesianOptimizerGrpcClient
+================================================
+
+.. automodule:: mlos.unit_tests.TestBayesianOptimizerGrpcClient
+   :members:
+   :undoc-members:
+   :show-inheritance:
