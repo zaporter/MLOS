@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content="MLOS Documentation This directory contains project wide documentation for things like coding standards, overall architecture descriptions, build instructions, etc.
+Individual components may also include their own more detailed documentation within their subdirectories.
+ Note: Some documentation uses Mermaid for diagrams in addition to Markdown.
+You can install Markdown Preview Enhanced for Atom or Visual Code to help render it more easily.
+ Getting Started Here&rsquo;s a brief summary of some documentation suggestions to help get started:">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -14,7 +18,7 @@
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.de51e4cabf6b6dac41e4740b8397d27955e3824966d94308b657d77a3a831e89.js" integrity="sha256-3lHkyr9rbaxB5HQLg5fSeVXjgklm2UMItlfXejqDHok="></script>
+<script defer src="/MLOS/en.search.min.dc2a335a50f44bf24b7d289088029e530d86127be655ad88ffc8f666551cb620.js" integrity="sha256-3CozWlD0S/JLfSiQiAKeUw2GEnvmVa2I/8j2ZlUctiA="></script>
 <link rel="alternate" type="application/rss+xml" href="https://microsoft.github.io/MLOS/documentation/index.xml" title="MLOS" />
 <!--
 Made with Book Theme
@@ -71,7 +75,27 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
-    <span>Documentation</span>
+    <a href="/MLOS/code_of_conduct/" class="">Code of Conduct</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/MLOS/contributing/" class="">Contributing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/MLOS/documentation/" class="active">Documentation</a>
   
 
           
@@ -106,37 +130,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
-    <a href="/MLOS/documentation/03-exampleusage/" class="">03 Example Usage</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-    <a href="/MLOS/documentation/04-contributing/" class="">04 Contributing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-    <a href="/MLOS/documentation/05-test/" class="">05 Test</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-    <a href="/MLOS/documentation/06-debug/" class="">06 Debug</a>
+    <a href="/MLOS/documentation/03-test/" class="">03 Test</a>
   
 
         </li>
@@ -147,16 +141,6 @@ https://github.com/alex-shpak/hugo-book
           
   
     <a href="/MLOS/documentation/codingstandard/" class="">Coding Standard</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-    <a href="/MLOS/documentation/glossary/" class="">Glossary</a>
   
 
         </li>
@@ -294,7 +278,12 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#overview">Overview</a></li>
+  </ul>
+</nav>
 
 
   </aside>
@@ -304,7 +293,35 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"></article>
+  <article class="markdown"><h1 id="mlos-documentation">MLOS Documentation</h1>
+<p>This directory contains project wide documentation for things like coding standards, overall architecture descriptions, build instructions, etc.</p>
+<p>Individual components may also include their own more detailed documentation within their subdirectories.</p>
+<blockquote>
+<p>Note: Some documentation uses <a href="https://mermaidjs.github.io/#/">Mermaid</a> for diagrams in addition to <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a>.<br>
+You can install <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/">Markdown Preview Enhanced</a> for <a href="https://atom.io/">Atom</a> or <a href="https://code.visualstudio.com/">Visual Code</a> to help render it more easily.</p>
+</blockquote>
+<h2 id="getting-started">Getting Started</h2>
+<p>Here&rsquo;s a brief summary of some documentation suggestions to help get started:</p>
+<ol>
+<li>See <a href="01-Prerequisites.md">01-Prerequisites.md</a> for initial environment setup instructions.</li>
+<li>See <a href="02-Build.md">02-Build.md</a> for basic build instructions.</li>
+<li>See <a href="03-ExampleUsage.md">03-ExampleUsage.md</a> for some usage examples for applying MLOS to some code/system.</li>
+<li>See <a href="04-Contributing.md">04-Contributing.md</a> for notes on making changes to MLOS itself.</li>
+<li>See <a href="05-Test.md">05-Test.md</a> for notes on testing those changes.</li>
+<li>See <a href="06-Debug.md">06-Debug.md</a> for notes on debugging those changes.</li>
+</ol>
+<h2 id="overview">Overview</h2>
+<p>Here&rsquo;s some documentation references describing the MLOS architecture:</p>
+<ol>
+<li><a href="MlosArchitecture.md">MlosArchitecture.md</a></li>
+<li><a href="Glossary.md">Glossary.md</a></li>
+<li><a href="https://arxiv.org/abs/2006.02155">DEEM 2020 Paper</a></li>
+</ol>
+<p>Here&rsquo;s a document describing the layout of the repository:</p>
+<ul>
+<li><a href="RepoOrganization.md">RepoOrganization.md</a></li>
+</ul>
+</article>
  
       
 
@@ -324,6 +341,10 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -332,7 +353,12 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#overview">Overview</a></li>
+  </ul>
+</nav>
 
  
     </aside>
