@@ -308,7 +308,8 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#architecture">Architecture</a></li>
       </ul>
     </li>
-    <li><a href="#build">Build</a></li>
+    <li><a href="#python-only-installation">Python only installation</a></li>
+    <li><a href="#full-build-c-and-c-components">Full Build (C# and C++ components)</a></li>
     <li><a href="#examples">Examples</a></li>
     <li><a href="#documentation">Documentation</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -382,7 +383,22 @@ Note that <em>performance</em> can be interpreted in different ways (e.g. reduci
 <p>Once hooks are created in the target system, iteration on the external agent can be more rapidly developed and deployed.</p>
 </li>
 </ol>
-<h2 id="build">Build</h2>
+<h2 id="python-only-installation">Python only installation</h2>
+<p>Some of the examples require only the installation of the mlos Python library. These examples do not use the shared memory infrastructure.
+To use this simplified installation, it&rsquo;s recommended to use the Anaconda python distribution and create a new conda environment:</p>
+<pre><code>    conda create -n mlos_environment
+    conda activate mlos_environment
+</code></pre><p>You can download the mlos code using git:</p>
+<pre><code>    git clone git@github.com:microsoft/MLOS.git
+</code></pre><p>To install the Python library, change to the Python directory and install with <code>pip</code>:</p>
+<pre><code>    cd MLOS/source/Mlos.Python
+    pip install -e .
+</code></pre><p>You can also install the package directly without checking out the code:</p>
+<pre><code>    pip install &quot;git+https://github.com/microsoft/MLOS.git#egg=mlos&amp;subdirectory=source/Mlos.Python&quot;
+</code></pre><p>However, this does not include the examples.</p>
+<p>After this installation, you can run any of the Python-only example notebooks.
+A good place to start is the <a href="#">introduction to Bayesian Optimization</a>.</p>
+<h2 id="full-build-c-and-c-components">Full Build (C# and C++ components)</h2>
 <p>MLOS supports Windows and Linux build environments.</p>
 <p>For detailed instructions, please refer to:</p>
 <ol>
@@ -451,7 +467,8 @@ Note that <em>performance</em> can be interpreted in different ways (e.g. reduci
         <li><a href="#architecture">Architecture</a></li>
       </ul>
     </li>
-    <li><a href="#build">Build</a></li>
+    <li><a href="#python-only-installation">Python only installation</a></li>
+    <li><a href="#full-build-c-and-c-components">Full Build (C# and C++ components)</a></li>
     <li><a href="#examples">Examples</a></li>
     <li><a href="#documentation">Documentation</a></li>
     <li><a href="#contributing">Contributing</a></li>
