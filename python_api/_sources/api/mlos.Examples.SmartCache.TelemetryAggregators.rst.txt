@@ -11,6 +11,7 @@ mlos.Examples.SmartCache.TelemetryAggregators
 .. toctree::
    :maxdepth: 1
 
+   mlos.Examples.SmartCache.TelemetryAggregators.HitRateMonitor
    mlos.Examples.SmartCache.TelemetryAggregators.RandomStreamSample
    mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimate
    mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimator

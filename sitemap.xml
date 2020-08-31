@@ -73,11 +73,19 @@
   </url>
   
   <url>
+    <loc>https://microsoft.github.io/MLOS/notebooks/BayesianOptimization/</loc>
+  </url>
+  
+  <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/OptimizerMonitor/</loc>
   </url>
   
   <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/SmartCache/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/notebooks/SmartCacheActiveLearning/</loc>
   </url>
   
   <url>

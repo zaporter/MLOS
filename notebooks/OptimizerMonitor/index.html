@@ -18,7 +18,7 @@ TODO   Integrate Model Tomograph:
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.7c6dc4eaf82d278034653775afa7b781b96ee6a602bfc61d4278cc01d4557c33.js" integrity="sha256-fG3E6vgtJ4A0ZTd1r6e3gblu5qYCv8YdQnjMAdRVfDM="></script>
+<script defer src="/MLOS/en.search.min.3a35a1b2be706d655924c771dd01edbf1952a2dd77db8e464953103ebeffaa35.js" integrity="sha256-OjWhsr5wbWVZJMdx3QHtvxlSot13245GSVMQPr7/qjU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -204,14 +204,10 @@ optimizer_monitor <span style="color:#f92672">=</span> OptimizerMonitor(grpc_cha
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> optimizer <span style="color:#f92672">in</span> optimizer_monitor<span style="color:#f92672">.</span>get_existing_optimizers():
     <span style="color:#66d9ef">print</span>(optimizer<span style="color:#f92672">.</span>id)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">optimizer <span style="color:#f92672">=</span> optimizer_monitor<span style="color:#f92672">.</span>get_optimizer_by_id(<span style="color:#e6db74">&#34;0&#34;</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(optimizer<span style="color:#f92672">.</span>suggest())
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
-os<span style="color:#f92672">.</span>getpid()
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mlos.Tomograph.ModelTomograph <span style="color:#f92672">import</span> ModelTomograph
 
 tomograph <span style="color:#f92672">=</span> ModelTomograph(optimizer<span style="color:#f92672">=</span>optimizer)
 tomograph<span style="color:#f92672">.</span>plot()
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 </code></pre></div></article>
  
       

@@ -1,5 +1,5 @@
-Python modules
-==============
+Python API
+==========
 
 
 .. automodule:: mlos

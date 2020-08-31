@@ -89,8 +89,8 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main Documentation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="mlos.html">Python modules</a><ul class="current">
+<li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main website</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mlos.html">mlos</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.Examples.SmartCache.html">mlos.Examples.SmartCache</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCache.html">mlos.Examples.SmartCache.SmartCache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCacheWorkloadGenerator.html">mlos.Examples.SmartCache.SmartCacheWorkloadGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCacheWorkloadLauncher.html">mlos.Examples.SmartCache.SmartCacheWorkloadLauncher</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.CacheImplementations.html">mlos.Examples.SmartCache.CacheImplementations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.MlosInterface.html">mlos.Examples.SmartCache.MlosInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.TelemetryAggregators.html">mlos.Examples.SmartCache.TelemetryAggregators</a></li>
@@ -200,6 +201,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.DefaultConfigMeta.html">mlos.Spaces.DefaultConfigMeta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrids.html">mlos.Spaces.Hypergrids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
@@ -306,7 +308,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="mlos.html">Python modules</a> &raquo;</li>
+          <li><a href="mlos.html">mlos</a> &raquo;</li>
         
           <li><a href="mlos.Spaces.html">mlos.Spaces</a> &raquo;</li>
         
@@ -333,7 +335,7 @@
 <span id="mlos-spaces-hypergridadapters"></span><h1>mlos.Spaces.HypergridAdapters<a class="headerlink" href="#module-mlos.Spaces.HypergridAdapters" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.</code><code class="sig-name descname">CategoricalToDiscreteHypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adaptee</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/CategoricalToDiscreteHypergridAdapter.py#L9"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.</code><code class="sig-name descname">CategoricalToDiscreteHypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adaptee</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/CategoricalToDiscreteHypergridAdapter.py#L9"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter" title="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter</span></code></a></p>
 <p>Maps values in categorical dimensions into values in discrete dimensions.</p>
 <dl class="py method">
@@ -352,7 +354,7 @@
 
 <dl class="py class">
 <dt id="mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.</code><code class="sig-name descname">CompositeToSimpleHypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adaptee</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/CompositeToSimpleHypergridAdapter.py#L11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.</code><code class="sig-name descname">CompositeToSimpleHypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adaptee</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/CompositeToSimpleHypergridAdapter.py#L11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter" title="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter</span></code></a></p>
 <p>Flattens a CompositeHypergrid object to a SimpleHypergrid object.</p>
 <dl class="py method">
@@ -371,7 +373,7 @@
 
 <dl class="py class">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.</code><code class="sig-name descname">HypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.</code><code class="sig-name descname">HypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Spaces.Hypergrids.Hypergrid</span></code></a></p>
 <p>A base class for all HypergridAdapters</p>
 <dl class="py method">
@@ -386,23 +388,28 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.get_dimensions_for_point">
+<code class="sig-name descname">get_dimensions_for_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L60"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.get_dimensions_for_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.is_like_composite_hypergrid">
-<em class="property">static </em><code class="sig-name descname">is_like_composite_hypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hypergrid</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L19"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.is_like_composite_hypergrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">is_like_composite_hypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hypergrid</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L19"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.is_like_composite_hypergrid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.is_like_simple_hypergrid">
-<em class="property">static </em><code class="sig-name descname">is_like_simple_hypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hypergrid</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L15"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.is_like_simple_hypergrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">is_like_simple_hypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hypergrid</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L15"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.is_like_simple_hypergrid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.join">
-<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span></em>, <em class="sig-param"><span class="n">on_external_dimension</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L63"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.join" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span></em>, <em class="sig-param"><span class="n">on_external_dimension</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L66"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.join" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.random">
-<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L60"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.random" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L63"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.random" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -418,22 +425,22 @@
 
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.translate_dataframe">
-<code class="sig-name descname">translate_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L77"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.translate_dataframe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">translate_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L80"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.translate_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.translate_point">
-<code class="sig-name descname">translate_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L66"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.translate_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">translate_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L69"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.translate_point" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.untranslate_dataframe">
-<code class="sig-name descname">untranslate_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L85"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.untranslate_dataframe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">untranslate_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em>, <em class="sig-param"><span class="n">in_place</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; pandas.core.frame.DataFrame<a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L88"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.untranslate_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridAdapters.HypergridAdapter.untranslate_point">
-<code class="sig-name descname">untranslate_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L71"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.untranslate_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">untranslate_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HypergridAdapter.py#L74"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HypergridAdapter.untranslate_point" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

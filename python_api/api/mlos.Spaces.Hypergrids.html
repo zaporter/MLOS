@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mlos.Spaces.HypergridsJsonEncoderDecoder" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html" />
-    <link rel="prev" title="mlos.Spaces" href="mlos.Spaces.html" /> 
+    <link rel="prev" title="mlos.Spaces.DefaultConfigMeta" href="mlos.Spaces.DefaultConfigMeta.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,8 +89,8 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main Documentation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="mlos.html">Python modules</a><ul class="current">
+<li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main website</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mlos.html">mlos</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.Examples.SmartCache.html">mlos.Examples.SmartCache</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCache.html">mlos.Examples.SmartCache.SmartCache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCacheWorkloadGenerator.html">mlos.Examples.SmartCache.SmartCacheWorkloadGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCacheWorkloadLauncher.html">mlos.Examples.SmartCache.SmartCacheWorkloadLauncher</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.CacheImplementations.html">mlos.Examples.SmartCache.CacheImplementations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.MlosInterface.html">mlos.Examples.SmartCache.MlosInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.TelemetryAggregators.html">mlos.Examples.SmartCache.TelemetryAggregators</a></li>
@@ -200,6 +201,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.DefaultConfigMeta.html">mlos.Spaces.DefaultConfigMeta</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">mlos.Spaces.Hypergrids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
@@ -306,7 +308,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="mlos.html">Python modules</a> &raquo;</li>
+          <li><a href="mlos.html">mlos</a> &raquo;</li>
         
           <li><a href="mlos.Spaces.html">mlos.Spaces</a> &raquo;</li>
         
@@ -333,12 +335,12 @@
 <span id="mlos-spaces-hypergrids"></span><h1>mlos.Spaces.Hypergrids<a class="headerlink" href="#module-mlos.Spaces.Hypergrids" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Spaces.Hypergrids.CompositeHypergrid">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.Hypergrids.</code><code class="sig-name descname">CompositeHypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">root_hypergrid</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L187"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.Hypergrids.</code><code class="sig-name descname">CompositeHypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">root_hypergrid</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L206"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Spaces.Hypergrids.Hypergrid</span></code></a></p>
 <p>Models a hypergrid that results from joins of SimpleHypergrids and other CompositeHypergrids.</p>
 <dl class="py class">
 <dt id="mlos.Spaces.Hypergrids.CompositeHypergrid.GuestSubgrid">
-<em class="property">class </em><code class="sig-name descname">GuestSubgrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span></em>, <em class="sig-param"><span class="n">external_pivot_dimension</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L191"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.GuestSubgrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GuestSubgrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span></em>, <em class="sig-param"><span class="n">external_pivot_dimension</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L210"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.GuestSubgrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Allows a subgrid to be joined on a dimension that’s not in that subgrid.</p>
 <dl class="simple">
@@ -352,12 +354,12 @@ all employers.</p>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.CompositeHypergrid.add_subgrid_on_external_dimension">
-<code class="sig-name descname">add_subgrid_on_external_dimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other_hypergrid</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">external_dimension</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Dimensions.Dimension.html#mlos.Spaces.Dimensions.Dimension.Dimension" title="mlos.Spaces.Dimensions.Dimension.Dimension">mlos.Spaces.Dimensions.Dimension.Dimension</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L241"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.add_subgrid_on_external_dimension" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_subgrid_on_external_dimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other_hypergrid</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">external_dimension</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Dimensions.Dimension.html#mlos.Spaces.Dimensions.Dimension.Dimension" title="mlos.Spaces.Dimensions.Dimension.Dimension">mlos.Spaces.Dimensions.Dimension.Dimension</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L260"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.add_subgrid_on_external_dimension" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.CompositeHypergrid.contains_point">
-<code class="sig-name descname">contains_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L286"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.contains_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">contains_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L305"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.contains_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if point belongs to the composite hypergrid.</p>
 <p>We must first see if for every dimension of the root hypergrid, the Point:
 a) specifies the dimension
@@ -386,8 +388,26 @@ c) if b) is true, then for every dimension in the subgrid, check if the points d
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="mlos.Spaces.Hypergrids.CompositeHypergrid.get_dimensions_for_point">
+<code class="sig-name descname">get_dimensions_for_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L360"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.get_dimensions_for_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns dimensions that the given point and belongs to. For pivot dimensions, it returns the guest_subgrid.external_pivot_dimension</p>
+<p>In a hierarchical hypergrid, coordiantes of a point in the root hypergrid determine which of the subgrids will be ‘activated’ (meaningful). For example
+if point.base_boosting_regression_model_name == “LassoRegression” then the subgrid describing the configuration for Lasso Regression becomes ‘activated’
+that is to say, specifying parameters for Lasso Regression becomes meaningful. If point.base_boosting_regression_model_name == “RidgeRegression”, we can
+still specify the Lasso Regression parameters, but they would never be consumed (by the smart component) so are meaningless and effectively noise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.CompositeHypergrid.join">
-<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">on_external_dimension</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Dimensions.Dimension.html#mlos.Spaces.Dimensions.Dimension.Dimension" title="mlos.Spaces.Dimensions.Dimension.Dimension">mlos.Spaces.Dimensions.Dimension.Dimension</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L261"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.join" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">on_external_dimension</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Dimensions.Dimension.html#mlos.Spaces.Dimensions.Dimension.Dimension" title="mlos.Spaces.Dimensions.Dimension.Dimension">mlos.Spaces.Dimensions.Dimension.Dimension</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L280"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.join" title="Permalink to this definition">¶</a></dt>
 <dd><p>Joins the subgrid on the specified dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -404,7 +424,7 @@ c) if b) is true, then for every dimension in the subgrid, check if the points d
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.CompositeHypergrid.random">
-<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L318"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.random" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L337"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.CompositeHypergrid.random" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -416,7 +436,7 @@ c) if b) is true, then for every dimension in the subgrid, check if the points d
 
 <dl class="py class">
 <dt id="mlos.Spaces.Hypergrids.Hypergrid">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.Hypergrids.</code><code class="sig-name descname">Hypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L13"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.Hypergrids.</code><code class="sig-name descname">Hypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L14"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></a></p>
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.Hypergrid.dimensions">
@@ -424,18 +444,23 @@ c) if b) is true, then for every dimension in the subgrid, check if the points d
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="mlos.Spaces.Hypergrids.Hypergrid.get_dimensions_for_point">
+<em class="property">abstract </em><code class="sig-name descname">get_dimensions_for_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L45"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid.get_dimensions_for_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.Hypergrid.join">
-<em class="property">abstract </em><code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span></em>, <em class="sig-param"><span class="n">on_external_dimension</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Dimensions.Dimension.html#mlos.Spaces.Dimensions.Dimension.Dimension" title="mlos.Spaces.Dimensions.Dimension.Dimension">mlos.Spaces.Dimensions.Dimension.Dimension</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L55"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid.join" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span></em>, <em class="sig-param"><span class="n">on_external_dimension</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Dimensions.Dimension.html#mlos.Spaces.Dimensions.Dimension.Dimension" title="mlos.Spaces.Dimensions.Dimension.Dimension">mlos.Spaces.Dimensions.Dimension.Dimension</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L60"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid.join" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.Hypergrid.random">
-<em class="property">abstract </em><code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L44"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid.random" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L49"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid.random" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.Hypergrid.random_dataframe">
-<code class="sig-name descname">random_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_samples</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L48"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid.random_dataframe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">random_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_samples</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L53"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.Hypergrid.random_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -447,17 +472,17 @@ c) if b) is true, then for every dimension in the subgrid, check if the points d
 
 <dl class="py class">
 <dt id="mlos.Spaces.Hypergrids.SimpleHypergrid">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.Hypergrids.</code><code class="sig-name descname">SimpleHypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">dimensions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L60"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.Hypergrids.</code><code class="sig-name descname">SimpleHypergrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">dimensions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L65"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Spaces.Hypergrids.Hypergrid</span></code></a></p>
 <p>Models a space comprized of Continuous, Discrete, Ordinal and Categorical Dimensions</p>
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.SimpleHypergrid.add_dimension">
-<code class="sig-name descname">add_dimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dimension</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L97"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.add_dimension" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_dimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dimension</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L116"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.add_dimension" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.SimpleHypergrid.contains_point">
-<code class="sig-name descname">contains_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L166"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.contains_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">contains_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L185"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.contains_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if point belongs to this space.</p>
 <dl class="simple">
 <dt>For a point to belong to a space:</dt><dd><ol class="arabic simple">
@@ -478,7 +503,7 @@ c) if b) is true, then for every dimension in the subgrid, check if the points d
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.SimpleHypergrid.contains_space">
-<code class="sig-name descname">contains_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other_space</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L147"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.contains_space" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">contains_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other_space</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L166"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.contains_space" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if other_space is a subspace of this one.</p>
 <dl class="simple">
 <dt>For another space to be a subspace of this one:</dt><dd><ol class="arabic simple">
@@ -503,8 +528,23 @@ c) if b) is true, then for every dimension in the subgrid, check if the points d
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="mlos.Spaces.Hypergrids.SimpleHypergrid.get_dimensions_for_point">
+<code class="sig-name descname">get_dimensions_for_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L102"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.get_dimensions_for_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of dimensions for a given point.</p>
+<p>It’s trivial for SimpleHypergrid, but more interesting for the</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.SimpleHypergrid.intersects">
-<code class="sig-name descname">intersects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other_space</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L112"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.intersects" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">intersects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other_space</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L131"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.intersects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines if self intersects with the other_space.</p>
 <p>The only way they don’t intersect is if there is at least one dimension common to both spaces that
 such that self[dimension.name].intersects(other[dimension.name) == False.</p>
@@ -520,7 +560,7 @@ such that self[dimension.name].intersects(other[dimension.name) == False.</p>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.SimpleHypergrid.join">
-<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">on_external_dimension</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Dimensions.Dimension.html#mlos.Spaces.Dimensions.Dimension.Dimension" title="mlos.Spaces.Dimensions.Dimension.Dimension">mlos.Spaces.Dimensions.Dimension.Dimension</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L130"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.join" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subgrid</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">on_external_dimension</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Dimensions.Dimension.html#mlos.Spaces.Dimensions.Dimension.Dimension" title="mlos.Spaces.Dimensions.Dimension.Dimension">mlos.Spaces.Dimensions.Dimension.Dimension</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L149"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.join" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a CompositeHypergrid with itself as a root.</p>
 </dd></dl>
 
@@ -531,7 +571,7 @@ such that self[dimension.name].intersects(other[dimension.name) == False.</p>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Hypergrids.SimpleHypergrid.random">
-<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L178"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.random" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L197"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Hypergrids.SimpleHypergrid.random" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -554,7 +594,7 @@ such that self[dimension.name].intersects(other[dimension.name) == False.</p>
         <a href="mlos.Spaces.HypergridsJsonEncoderDecoder.html" class="btn btn-neutral float-right" title="mlos.Spaces.HypergridsJsonEncoderDecoder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mlos.Spaces.html" class="btn btn-neutral float-left" title="mlos.Spaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mlos.Spaces.DefaultConfigMeta.html" class="btn btn-neutral float-left" title="mlos.Spaces.DefaultConfigMeta" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

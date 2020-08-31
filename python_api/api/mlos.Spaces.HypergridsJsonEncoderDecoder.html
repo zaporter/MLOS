@@ -89,8 +89,8 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main Documentation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="mlos.html">Python modules</a><ul class="current">
+<li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main website</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mlos.html">mlos</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.Examples.SmartCache.html">mlos.Examples.SmartCache</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCache.html">mlos.Examples.SmartCache.SmartCache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCacheWorkloadGenerator.html">mlos.Examples.SmartCache.SmartCacheWorkloadGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCacheWorkloadLauncher.html">mlos.Examples.SmartCache.SmartCacheWorkloadLauncher</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.CacheImplementations.html">mlos.Examples.SmartCache.CacheImplementations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.MlosInterface.html">mlos.Examples.SmartCache.MlosInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.TelemetryAggregators.html">mlos.Examples.SmartCache.TelemetryAggregators</a></li>
@@ -200,6 +201,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.DefaultConfigMeta.html">mlos.Spaces.DefaultConfigMeta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrids.html">mlos.Spaces.Hypergrids</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
@@ -306,7 +308,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="mlos.html">Python modules</a> &raquo;</li>
+          <li><a href="mlos.html">mlos</a> &raquo;</li>
         
           <li><a href="mlos.Spaces.html">mlos.Spaces</a> &raquo;</li>
         
@@ -333,22 +335,22 @@
 <span id="mlos-spaces-hypergridsjsonencoderdecoder"></span><h1>mlos.Spaces.HypergridsJsonEncoderDecoder<a class="headerlink" href="#module-mlos.Spaces.HypergridsJsonEncoderDecoder" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonDecoder">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridsJsonEncoderDecoder.</code><code class="sig-name descname">HypergridJsonDecoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridsJsonEncoderDecoder.py#L88"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonDecoder" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridsJsonEncoderDecoder.</code><code class="sig-name descname">HypergridJsonDecoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridsJsonEncoderDecoder.py#L88"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonDecoder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">json.decoder.JSONDecoder</span></code></p>
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonDecoder.object_hook">
-<code class="sig-name descname">object_hook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridsJsonEncoderDecoder.py#L94"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonDecoder.object_hook" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">object_hook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridsJsonEncoderDecoder.py#L94"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonDecoder.object_hook" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonEncoder">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridsJsonEncoderDecoder.</code><code class="sig-name descname">HypergridJsonEncoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">skipkeys</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ensure_ascii</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">check_circular</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">allow_nan</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">sort_keys</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">separators</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridsJsonEncoderDecoder.py#L11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonEncoder" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridsJsonEncoderDecoder.</code><code class="sig-name descname">HypergridJsonEncoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">skipkeys</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ensure_ascii</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">check_circular</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">allow_nan</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">sort_keys</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">separators</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridsJsonEncoderDecoder.py#L11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonEncoder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">json.encoder.JSONEncoder</span></code></p>
 <dl class="py method">
 <dt id="mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonEncoder.default">
-<code class="sig-name descname">default</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bd0d1fe/source/Mlos.Python/mlos/Spaces/HypergridsJsonEncoderDecoder.py#L14"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonEncoder.default" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">default</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">o</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/HypergridsJsonEncoderDecoder.py#L14"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonEncoder.default" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implement this method in a subclass such that it returns
 a serializable object for <code class="docutils literal notranslate"><span class="pre">o</span></code>, or calls the base implementation
 (to raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>).</p>

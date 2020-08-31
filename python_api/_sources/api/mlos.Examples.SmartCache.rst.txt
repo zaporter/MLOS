@@ -13,6 +13,7 @@ mlos.Examples.SmartCache
 
    mlos.Examples.SmartCache.SmartCache
    mlos.Examples.SmartCache.SmartCacheWorkloadGenerator
+   mlos.Examples.SmartCache.SmartCacheWorkloadLauncher
 
 .. toctree::
    :maxdepth: 1
