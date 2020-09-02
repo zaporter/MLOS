@@ -167,17 +167,6 @@ For once - this is probably not the workflow we want. We likely want to:
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheActiveLearning/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheActiveLearning/</guid>
-      <description>Download SmartCacheActiveLearning.ipynb notebook Goal The goal of this notebook is to optimize SmartCache using the Active Learning approach.
-We define active learning as an approach when we execute the following loop:
- Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from smart cache, Register an observation with the optimizer.  This is different from online learning in that the workload is fixed.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
