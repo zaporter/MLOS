@@ -5,20 +5,12 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Build Instructions for MLOS Prerequisites See 01-Prerequisites/ for initial build tools setup instructions.
-Linux TODO
-Windows CLI Visual Studio build tools need to be added to the shell environment.
- Note: Visual Studio build tools are available free.
-Please see the initial setup instructions linked above for details.
-   Setup the powershell environment to find the Visual Studio build tools.
-.\scripts\init.windows.ps1 Note: you can also execute .\scripts\init.windows.cmd if you prefer a cmd environment.">
+Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI VSCode   Windows  CLI Visual Studio      Docker Assuming you&rsquo;ve built a container image using the instructions in 01-Prerequisites/ you can start an interactive session using the container image as follows:
+# Using the UbuntuVersion local shell variable set earlier to &#34;docker build&#34; the image:UbuntuVersion=20.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Build Instructions for MLOS Prerequisites See 01-Prerequisites/ for initial build tools setup instructions.
-Linux TODO
-Windows CLI Visual Studio build tools need to be added to the shell environment.
- Note: Visual Studio build tools are available free.
-Please see the initial setup instructions linked above for details.
-   Setup the powershell environment to find the Visual Studio build tools.
-.\scripts\init.windows.ps1 Note: you can also execute .\scripts\init.windows.cmd if you prefer a cmd environment." />
+Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI VSCode   Windows  CLI Visual Studio      Docker Assuming you&rsquo;ve built a container image using the instructions in 01-Prerequisites/ you can start an interactive session using the container image as follows:
+# Using the UbuntuVersion local shell variable set earlier to &#34;docker build&#34; the image:UbuntuVersion=20." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/documentation/02-Build/" />
 
@@ -26,7 +18,7 @@ Please see the initial setup instructions linked above for details.
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.cc96a7413791751526756cae4211f52e5ac1ca9a4e40b13267c3b93354caf41e.js" integrity="sha256-zJanQTeRdRUmdWyuQhH1LlrByppOQLEyZ8O5M1TK9B4="></script>
+<script defer src="/MLOS/en.search.min.4c3ed02f7fb664c1d64b043ad528adbdfc5dd53a89d6f0682b0ef9be255369c5.js" integrity="sha256-TD7QL3&#43;2ZMHWSwQ61Sitvfxd1TqJ1vBoKw75viVTacU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -80,8 +72,7 @@ https://github.com/alex-shpak/hugo-book
 <p>Notebooks</p>
 <ul>
 <li><a href="/MLOS/notebooks/StartHere/">Start Here</a></li>
-<li><a href="/MLOS/notebooks/SmartCache/">Smart Cache</a></li>
-<li><a href="/MLOS/notebooks/SmartCacheActiveLearning/">Smart Cache Active Learning</a></li>
+<li><a href="/MLOS/notebooks/SmartCacheOptimization/">Smart Cache Optimization</a></li>
 <li><a href="/MLOS/notebooks/OptimizerMonitor/">Optimizer Monitor</a></li>
 <li><a href="/MLOS/notebooks/BayesianOptimization/">Bayesian Optimization</a></li>
 </ul>
@@ -144,10 +135,17 @@ https://github.com/alex-shpak/hugo-book
   <nav id="TableOfContents">
   <ul>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#linux">Linux</a></li>
-    <li><a href="#windows">Windows</a>
+    <li><a href="#contents">Contents</a></li>
+    <li><a href="#docker">Docker</a></li>
+    <li><a href="#linux">Linux</a>
       <ul>
         <li><a href="#cli">CLI</a></li>
+        <li><a href="#vscode">VSCode</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows">Windows</a>
+      <ul>
+        <li><a href="#cli-1">CLI</a></li>
         <li><a href="#visual-studio">Visual Studio</a></li>
       </ul>
     </li>
@@ -165,15 +163,90 @@ https://github.com/alex-shpak/hugo-book
   <article class="markdown"><h1 id="build-instructions-for-mlos">Build Instructions for MLOS</h1>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>See <a href="./01-Prerequisites/">01-Prerequisites/</a> for initial build tools setup instructions.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#build-instructions-for-mlos">Build Instructions for MLOS</a>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#docker">Docker</a></li>
+<li><a href="#linux">Linux</a>
+<ul>
+<li><a href="#cli">CLI</a></li>
+<li><a href="#vscode">VSCode</a></li>
+</ul>
+</li>
+<li><a href="#windows">Windows</a>
+<ul>
+<li><a href="#cli-1">CLI</a></li>
+<li><a href="#visual-studio">Visual Studio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="docker">Docker</h2>
+<p>Assuming you&rsquo;ve built a container image using the instructions in <a href="./01-Prerequisites/#docker">01-Prerequisites/</a> you can start an interactive session using the container image as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Using the UbuntuVersion local shell variable set earlier to &#34;docker build&#34; the image:</span>
+UbuntuVersion<span style="color:#f92672">=</span>20.04
+<span style="color:#75715e"># Run the image:</span>
+docker run -it -v $PWD:/src/MLOS <span style="color:#ae81ff">\</span>
+  --name mlos-build-$UbuntuVersion <span style="color:#ae81ff">\</span>
+  mlos/build:ubuntu-$UbuntuVersion
+</code></pre></div><blockquote>
+<p>The <code>-v $PWD:/src/MLOS</code> option makes the current directory (assumed to be the root of the MLOS repository) available inside the container so that you can edit the code from your host machine, but build it inside the container.</p>
+</blockquote>
+<blockquote>
+<p>Note that the build artifacts located at <code>out/</code> in the container are kept separate by default, so you can test with multiple containers at a time.
+You can use additional <code>-v /path/to/out-$UbuntuVersion:/src/MLOS/out</code> style arguments to direct that output to a host accessible locations if desired.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Start the image if it already exists and was stopped:</span>
+docker start -i mlos-build-$UbuntuVersion
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Start a new shell session inside the image:</span>
+docker exec -it mlos-build-$UbuntuVersion /bin/bash
+</code></pre></div><p>Once you have an interactive session in the container, the MLOS source code is available at <code>/src/MLOS</code> and can be built using the same instructions in the <a href="#cli">Linux CLI</a> section below.</p>
 <h2 id="linux">Linux</h2>
-<p>TODO</p>
-<h2 id="windows">Windows</h2>
 <h3 id="cli">CLI</h3>
-<p>Visual Studio build tools need to be added to the shell environment.</p>
+<p>We provide <code>Makefile</code> wrappers to invoke the language specific build systems.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make
+</code></pre></div><blockquote>
+<p>This is equivalent to <code>make dotnet-build cmake-build</code></p>
+</blockquote>
+<p>If you want to switch to a debug build run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export CONFIGURATION<span style="color:#f92672">=</span>Debug
+make
+</code></pre></div><blockquote>
+<p>Note: <code>export CONFIGURATION=Release</code> to switch back to <code>Release</code> builds.</p>
+</blockquote>
+<p>The <code>Makefile</code>s in most source folders are simply wrappers around the <code>cmake</code> build system and allow easier interactive building during development without having to maintain shell environment variables or additional paths.</p>
+<p>In general <code>cmake</code> is used for C++ projects, with simple <code>CMakeLists.txt</code> wrappers around <code>dotnet build</code> for their C# dependencies to do code generation.</p>
+<p>In top-level directories you can restrict the build to just <code>dotnet</code> wrappers or just <code>cmake</code> wrappers like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make dotnet-build
+make dotnet-test
+make dotnet-clean
+
+make cmake-build
+make cmake-test
+make cmake-clean
+</code></pre></div><blockquote>
+<p>Note: A similar shell environment setup can optionally be obtained with the following</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source ./scripts/init.linux.sh
+</code></pre></div></blockquote>
+<p>To build <em>and</em> run the tests below the current directory run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make check
+</code></pre></div><blockquote>
+<p>This is equivalent to <code>make all test</code></p>
+</blockquote>
+<h3 id="vscode">VSCode</h3>
+<p>TODO: Provide some notes about how cmake integration works with vscode.</p>
+<h2 id="windows">Windows</h2>
+<p>For the C++ and C# project components, Visual Studio <code>msbuild</code> can be used on Windows systems.</p>
 <blockquote>
 <p>Note: Visual Studio build tools are available free.<br>
 Please see the initial setup instructions linked <a href="#prerequisites">above</a> for details.</p>
 </blockquote>
+<h3 id="cli-1">CLI</h3>
+<p>Visual Studio build tools need to be added to the shell environment.</p>
 <ol>
 <li>
 <p>Setup the <code>powershell</code> environment to find the Visual Studio build tools.</p>
@@ -187,12 +260,17 @@ Please see the initial setup instructions linked <a href="#prerequisites">above<
 <blockquote>
 <p>e.g. when run from the root of the MLOS repo this will recursively build all the projects and run the tests.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">msbuild /m /r
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">msbuild /m /r /p:Configuration<span style="color:#f92672">=</span>Release
 </code></pre></div><p>Some additional build flags to help provide additional control over the process:</p>
 <ul>
 <li><code>/m</code> runs a multi-process parallel build process</li>
 <li><code>/r</code> is required on first build and git pull to <em>restore</em> any nuget packages required \</li>
 <li><code>/fl</code> will optionally produce a msbuild.log file</li>
+<li><code>/p:Configuration=Release</code> will perform a non-debug build.
+<blockquote>
+<p>Note: If omitted, <code>msbuild</code> will produce a Debug build by default.  Debug builds perform no compiler optimizations, so are useful for troubleshooting, but will be more difficult for MLOS to help optimize.</p>
+</blockquote>
+</li>
 <li><code>/p:RunUnitTest=false</code> will temporarily skip running unit tests</li>
 <li><code>/p:StyleCopEnabled=false</code> will temporarily skip C# style checks</li>
 <li><code>/p:UncrustifyEnabled=false</code> will temporarily skip C++ style checks</li>
@@ -258,10 +336,17 @@ For instance:</p>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#linux">Linux</a></li>
-    <li><a href="#windows">Windows</a>
+    <li><a href="#contents">Contents</a></li>
+    <li><a href="#docker">Docker</a></li>
+    <li><a href="#linux">Linux</a>
       <ul>
         <li><a href="#cli">CLI</a></li>
+        <li><a href="#vscode">VSCode</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows">Windows</a>
+      <ul>
+        <li><a href="#cli-1">CLI</a></li>
         <li><a href="#visual-studio">Visual Studio</a></li>
       </ul>
     </li>

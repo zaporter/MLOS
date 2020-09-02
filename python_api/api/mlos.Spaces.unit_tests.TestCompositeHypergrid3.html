@@ -90,7 +90,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main website</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="mlos.html">mlos</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="mlos.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
@@ -308,7 +308,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="mlos.html">mlos</a> &raquo;</li>
+          <li><a href="mlos.html">Python API</a> &raquo;</li>
         
           <li><a href="mlos.Spaces.html">mlos.Spaces</a> &raquo;</li>
         
@@ -333,52 +333,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mlos.Spaces.unit_tests.TestCompositeHypergrid3">
-<span id="mlos-spaces-unit-tests-testcompositehypergrid3"></span><h1>mlos.Spaces.unit_tests.TestCompositeHypergrid3<a class="headerlink" href="#module-mlos.Spaces.unit_tests.TestCompositeHypergrid3" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="mlos.Spaces.unit_tests.TestCompositeHypergrid3.TestCompositeHypergrid2">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.unit_tests.TestCompositeHypergrid3.</code><code class="sig-name descname">TestCompositeHypergrid2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/unit_tests/TestCompositeHypergrid3.py#L10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestCompositeHypergrid3.TestCompositeHypergrid2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
-<p>Tests the join on external dimension in hypergrids.</p>
-<p>In particular:
-* Hypergrid.join(subgrid, on_external_dimension=SomeDimension(…)) should:</p>
-<blockquote>
-<div><ul class="simple">
-<li><dl class="simple">
-<dt>Check if the dimension.name contains a subgrid name:</dt><dd><ul>
-<li><p>if yes - drop the prefix and call dimension_subgrid.join(subgrid, on_external_dimension)</p></li>
-<li><dl class="simple">
-<dt>otherwise we are joining here so:</dt><dd><ul>
-<li><p>if not dimension.intersects(self[dimension.name]): return self</p></li>
-<li><p>self.guest_subgrids_by_pivot_dimension[dimension.name] = GuestHypergrid(dimension, subgrid)</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-<ul class="simple">
-<li><p>Randomly generating points from the supergrid should generate points from the newly joined subgrid</p></li>
-<li><p>Point containment should work</p></li>
-<li><p>Hypergrid containment should work (eventually)</p></li>
-</ul>
-<dl class="py method">
-<dt id="mlos.Spaces.unit_tests.TestCompositeHypergrid3.TestCompositeHypergrid2.setUp">
-<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/unit_tests/TestCompositeHypergrid3.py#L27"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestCompositeHypergrid3.TestCompositeHypergrid2.setUp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hook method for setting up the test fixture before exercising it.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Spaces.unit_tests.TestCompositeHypergrid3.TestCompositeHypergrid2.test_external_dimension_join">
-<code class="sig-name descname">test_external_dimension_join</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/44f3667/source/Mlos.Python/mlos/Spaces/unit_tests/TestCompositeHypergrid3.py#L106"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestCompositeHypergrid3.TestCompositeHypergrid2.test_external_dimension_join" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="mlos-spaces-unit-tests-testcompositehypergrid3">
+<h1>mlos.Spaces.unit_tests.TestCompositeHypergrid3<a class="headerlink" href="#mlos-spaces-unit-tests-testcompositehypergrid3" title="Permalink to this headline">¶</a></h1>
 </div>
 
 

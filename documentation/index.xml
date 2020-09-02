@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MLOS</title>
+    <title>Documentations on MLOS</title>
     <link>https://microsoft.github.io/MLOS/documentation/</link>
-    <description>Recent content on MLOS</description>
+    <description>Recent content in Documentations on MLOS</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://microsoft.github.io/MLOS/documentation/index.xml" rel="self" type="application/rss+xml" />
@@ -16,8 +16,7 @@
       
       <guid>https://microsoft.github.io/MLOS/documentation/01-Prerequisites/</guid>
       <description>Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build/
-Contents  Requirements Clone the repository Install build tools  Linux Windows   Install Python Dependencies  Linux Windows   Install Docker  Linux Windows     Note: Most Windows shell commands here expect powershell (or pwsh).
- Requirements MLOS currently only supports 64-bit Intel/AMD platforms, though ARM64 support is under development.</description>
+Contents  Prerequisites for building and using MLOS  Contents Requirements Clone the repository Install build tools  Docker Linux build tools Windows build tools  Using a local script Using Chocolatey Manually     Install Python Dependencies  Linux Windows   Install Docker  Linux Docker Install Windows Docker Install       Note: Most Windows shell commands here expect powershell (or pwsh).</description>
     </item>
     
     <item>
@@ -27,12 +26,8 @@ Contents  Requirements Clone the repository Install build tools  Linux Windows  
       
       <guid>https://microsoft.github.io/MLOS/documentation/02-Build/</guid>
       <description>Build Instructions for MLOS Prerequisites See 01-Prerequisites/ for initial build tools setup instructions.
-Linux TODO
-Windows CLI Visual Studio build tools need to be added to the shell environment.
- Note: Visual Studio build tools are available free.
-Please see the initial setup instructions linked above for details.
-   Setup the powershell environment to find the Visual Studio build tools.
-.\scripts\init.windows.ps1 Note: you can also execute .\scripts\init.windows.cmd if you prefer a cmd environment.</description>
+Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI VSCode   Windows  CLI Visual Studio      Docker Assuming you&amp;rsquo;ve built a container image using the instructions in 01-Prerequisites/ you can start an interactive session using the container image as follows:
+# Using the UbuntuVersion local shell variable set earlier to &amp;#34;docker build&amp;#34; the image:UbuntuVersion=20.</description>
     </item>
     
     <item>

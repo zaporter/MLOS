@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Download SmartCacheOptimization.ipynb notebook Optimizing Smart Cache with Bayesian Optimization The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.
+We&rsquo;re using a sequential model-based optimization approach, that consists of the following loop:
+ Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from SmartCache, Register an observation with the optimizer.  # import the required classes and tools import grpc import pandas as pd from mlos.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Download SmartCacheOptimization.ipynb notebook Optimizing Smart Cache with Bayesian Optimization The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.
+We&rsquo;re using a sequential model-based optimization approach, that consists of the following loop:
+ Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from SmartCache, Register an observation with the optimizer.  # import the required classes and tools import grpc import pandas as pd from mlos." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/" />
+
+<title>Smart Cache Optimization | MLOS</title>
+<link rel="manifest" href="/MLOS/manifest.json">
+<link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
+<script defer src="/MLOS/en.search.min.4c3ed02f7fb664c1d64b043ad528adbdfc5dd53a89d6f0682b0ef9be255369c5.js" integrity="sha256-TD7QL3&#43;2ZMHWSwQ61Sitvfxd1TqJ1vBoKw75viVTacU="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/MLOS"><span>MLOS</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+<p><a href="/MLOS/documentation/">Documentation</a></p>
+<ul>
+<li><a href="/MLOS/documentation/01-Prerequisites/">Prerequisits</a></li>
+<li><a href="/MLOS/documentation/02-Build/">Build</a></li>
+<li><a href="/MLOS/documentation/05-Test/">Test</a></li>
+<li><a href="/MLOS/documentation/CodingStandard/">Coding Standard</a></li>
+<li><a href="/MLOS/documentation/MlosArchitecture/">Architecture</a></li>
+<li><a href="/MLOS/documentation/RepoOrganization/">Repo Organization</a></li>
+</ul>
+</li>
+<li>
+<p>Notebooks</p>
+<ul>
+<li><a href="/MLOS/notebooks/StartHere/">Start Here</a></li>
+<li><a href="/MLOS/notebooks/SmartCacheOptimization/"class=active>Smart Cache Optimization</a></li>
+<li><a href="/MLOS/notebooks/OptimizerMonitor/">Optimizer Monitor</a></li>
+<li><a href="/MLOS/notebooks/BayesianOptimization/">Bayesian Optimization</a></li>
+</ul>
+</li>
+<li>
+<p>API Documentation</p>
+<ul>
+<li><a href="/MLOS/python_api/">Python</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/MLOS/CODE_OF_CONDUCT/">Code of Conduct</a></p>
+</li>
+<li>
+<p><a href="/MLOS/CONTRIBUTING/">Contributing</a></p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/MLOS/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Smart Cache Optimization</strong>
+
+  <label for="toc-control">
+    
+    <img src="/MLOS/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents"></nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="download-smartcacheoptimizationipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcacheoptimizationipynb"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheOptimization.ipynb">Download SmartCacheOptimization.ipynb notebook</a></h1>
+<h1 id="optimizing-smart-cache-with-bayesian-optimization">Optimizing Smart Cache with Bayesian Optimization</h1>
+<p>The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.</p>
+<p>We&rsquo;re using a sequential model-based optimization approach, that consists of the following loop:</p>
+<ol>
+<li>Get suggested config from optimizer,</li>
+<li>Apply suggested config to <code>SmartCache</code>,</li>
+<li>Execute a fixed workload,</li>
+<li>Collect the metrics from <code>SmartCache</code>,</li>
+<li>Register an observation with the optimizer.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import the required classes and tools</span>
+<span style="color:#f92672">import</span> grpc
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+
+<span style="color:#f92672">from</span> mlos.Grpc.BayesianOptimizerFactory <span style="color:#f92672">import</span> BayesianOptimizerFactory
+<span style="color:#f92672">from</span> mlos.Logger <span style="color:#f92672">import</span> create_logger
+
+<span style="color:#f92672">from</span> mlos.Examples.SmartCache <span style="color:#f92672">import</span> HitRateMonitor, SmartCache, SmartCacheWorkloadGenerator, SmartCacheWorkloadLauncher
+<span style="color:#f92672">from</span> mlos.Mlos.SDK <span style="color:#f92672">import</span> MlosExperiment
+<span style="color:#f92672">from</span> mlos.Optimizers.OptimizationProblem <span style="color:#f92672">import</span> OptimizationProblem, Objective
+<span style="color:#f92672">from</span> mlos.Spaces <span style="color:#f92672">import</span> Point, SimpleHypergrid, ContinuousDimension
+
+<span style="color:#75715e"># The optimizer will be in a remote process via grpc, we pick the port here:</span>
+grpc_port <span style="color:#f92672">=</span> <span style="color:#ae81ff">50051</span>
+</code></pre></div><p>Launch the optimizer service in a different process:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> subprocess
+optimizer_microservice <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen(f<span style="color:#e6db74">&#34;start_optimizer_microservice launch --port {grpc_port}&#34;</span>)
+</code></pre></div><p>Now the optimizer service that runs the surrogate model and suggests new points is started in the background.
+Next, we instantiate an object that connects to it over grpc using the <code>BayesianOptimizerFactory</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">logger <span style="color:#f92672">=</span> create_logger(<span style="color:#e6db74">&#39;Optimizing Smart Cache&#39;</span>)
+optimizer_service_grpc_channel <span style="color:#f92672">=</span> grpc<span style="color:#f92672">.</span>insecure_channel(f<span style="color:#e6db74">&#39;localhost:{grpc_port}&#39;</span>)
+bayesian_optimizer_factory <span style="color:#f92672">=</span> BayesianOptimizerFactory(grpc_channel<span style="color:#f92672">=</span>optimizer_service_grpc_channel, logger<span style="color:#f92672">=</span>logger)
+</code></pre></div><h1 id="the-optimization-problem">The optimization problem</h1>
+<p>Then we can instantiate our optimization problem. We want to optimize the configuration of the <code>SmartCache</code> component that contains two implementations: an LRU (least recently used) cache and an MRU cache (most recently used).
+The <code>SmartCache</code> component has two parameters that we can adjust, the type of cache and the cache size. We are using some synthetic workloads for the cache and try to find what the optimum configuration for each workload is.</p>
+<p>Here, we measure &lsquo;optimum&rsquo; by the number of cache hits. Another option would be to measure runtime; however, this is a toy example with a trivial workload and there is likely substantial runtime difference.
+The parameter search space is declared in <code>SmartCache.parameter_search_space</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">SmartCache<span style="color:#f92672">.</span>parameter_search_space
+</code></pre></div><pre><code>smart_cache_config
+implementation: [LRU, MRU]
+lru_cache_config.cache_size: {1, 1 + 1, ... , 4096}
+mru_cache_config.cache_size: {1, 1 + 1, ... , 4096}
+</code></pre>
+<p>The optimization problem is constructed using this parameter space as the input to optimize, and defines a single continuous objective, &lsquo;hit_rate&rsquo; between 0 and 1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Optimization Problem</span>
+<span style="color:#75715e">#</span>
+optimization_problem <span style="color:#f92672">=</span> OptimizationProblem(
+    parameter_space<span style="color:#f92672">=</span>SmartCache<span style="color:#f92672">.</span>parameter_search_space,
+    objective_space<span style="color:#f92672">=</span>SimpleHypergrid(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;objectives&#34;</span>, dimensions<span style="color:#f92672">=</span>[ContinuousDimension(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hit_rate&#34;</span>, min<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, max<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)]),
+    objectives<span style="color:#f92672">=</span>[Objective(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hit_rate&#34;</span>, minimize<span style="color:#f92672">=</span>False)]
+)
+<span style="color:#75715e"># create an optimizer proxy that connects to the remote optimizer via grpc:</span>
+optimizer <span style="color:#f92672">=</span> bayesian_optimizer_factory<span style="color:#f92672">.</span>create_remote_optimizer(optimization_problem<span style="color:#f92672">=</span>optimization_problem)
+</code></pre></div><h1 id="defining-workloads">Defining workloads</h1>
+<p>Now we can instantiate our workloads and stand up the MLOS infrastructure, both of which are orchestrated by<code>SmartCacheWorkloadLauncher</code>. The MLOS infrastructure consists of the MlosAgent and a communication channel, which are available to both the <code>SmartCacheWorkloadGenerator</code> and the <code>SmartCache</code>.
+The <code>SmartCacheWorkloadLauncher</code> launches workloads in <code>SmartCacheWorkloadGenerator</code> in a separate thread, which will actually generate and run the workloads for the smart cache.
+The SmartCacheWorkloadLauncher also connects the <code>SmartCacheWorkLloadGenerator</code> to the optimization problem via a <code>MlosAgent</code> that will consume the configurations.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">workload_launcher <span style="color:#f92672">=</span> SmartCacheWorkloadLauncher(logger<span style="color:#f92672">=</span>logger)
+mlos_agent <span style="color:#f92672">=</span> workload_launcher<span style="color:#f92672">.</span>mlos_agent
+</code></pre></div><pre><code>09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [        MlosAgent.py: 174 -        _process_callbacks() ] Starting processing telemetry messages.
+</code></pre>
+<p>We set up the agent to consume configurations for the <code>SmartCacheWorkloadGenerator</code>, and we configure the workload to be sequential keys from a range from 0 to 2048.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mlos_agent<span style="color:#f92672">.</span>set_configuration(
+    component_type<span style="color:#f92672">=</span>SmartCacheWorkloadGenerator,
+    new_config_values<span style="color:#f92672">=</span>Point(
+        workload_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sequential_key_from_range&#39;</span>,
+        sequential_key_from_range_config<span style="color:#f92672">=</span>Point(
+            min<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,
+            range_width<span style="color:#f92672">=</span><span style="color:#ae81ff">2048</span>
+        )
+    )
+)
+</code></pre></div><h1 id="launching-the-experiment-measurement">Launching the experiment (measurement)</h1>
+<p>Now we build the experiment, which collects hit-rate statistics from the <code>SmartCacheWorkloadGenerator</code> via the <code>HitRateMonitor</code>. This architecture reflects the native architecture for the C++ interface in which communication is done via shared memory between MLOS and the worker.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hit_rate_monitor <span style="color:#f92672">=</span> HitRateMonitor()
+smart_cache_experiment <span style="color:#f92672">=</span> MlosExperiment(
+    smart_component_types<span style="color:#f92672">=</span>[SmartCache],
+    telemetry_aggregators<span style="color:#f92672">=</span>[hit_rate_monitor]
+)
+mlos_agent<span style="color:#f92672">.</span>start_experiment(smart_cache_experiment)
+</code></pre></div><pre><code>09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [ExperimentManager.py:  41 -          start_experiment() ] Starting experiment 1
+</code></pre>
+<h1 id="performing-the-optimization">Performing the optimization</h1>
+<p>Now that we have all the pieces in place, we can iterate our main optimization loop.
+Our workload will run in the same process as this notebook, but in a separate thread, which we block on.
+In a real example, the workload might run completely independent of our optimization procedure.</p>
+<p>We run the optimization for 20 iterations, in each of which we obtain a new configuration from the optimizer (that interfaces the remote optimizer service).
+The configuration is passed to <code>SmartCacheWorkloadGenerator</code> via the <code>MlosAgent</code>, after which we start a blocking workload for 0.2 seconds.
+Then, the hit-rate (our objective) is read from the <code>HitRateMonitor</code> and the suggested configuration together with the resulting hit-rate are passed to the optimizer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">num_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+data <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(num_iterations):
+    new_config_values <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>suggest()
+    <span style="color:#66d9ef">print</span>(new_config_values)
+    mlos_agent<span style="color:#f92672">.</span>set_configuration(component_type<span style="color:#f92672">=</span>SmartCache, new_config_values<span style="color:#f92672">=</span>new_config_values)
+    hit_rate_monitor<span style="color:#f92672">.</span>reset()
+    workload_launcher<span style="color:#f92672">.</span>start_workload(duration_s<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, block<span style="color:#f92672">=</span>True)
+    current_cache_config <span style="color:#f92672">=</span> mlos_agent<span style="color:#f92672">.</span>get_configuration(component_type<span style="color:#f92672">=</span>SmartCache)
+    features_df <span style="color:#f92672">=</span> current_cache_config<span style="color:#f92672">.</span>to_dataframe()
+    hit_rate <span style="color:#f92672">=</span> hit_rate_monitor<span style="color:#f92672">.</span>get_hit_rate()
+    objectives_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;hit_rate&#39;</span>: [hit_rate]})
+    optimizer<span style="color:#f92672">.</span>register(features_df, objectives_df)
+    data<span style="color:#f92672">.</span>append((features_df, objectives_df))
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;[{i+1}/{num_iterations}]current_config: {current_cache_config}, hit_rate: {hit_rate}, num_requests: {hit_rate_monitor.num_requests}&#34;</span>)
+</code></pre></div><pre><code>09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 746}
+
+
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 746}
+
+
+09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 657}
+
+
+[1/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 746}, hit_rate: 5.271481283462582e-10, num_requests: 1934
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 657}
+
+
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3441}
+
+
+
+[99/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 932}, hit_rate: 0.41828075082776156, num_requests: 20126
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3181.0}
+
+
+09/01/2020 19:47:45 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+
+
+[100/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3181.0}, hit_rate: 0.9479436734292119, num_requests: 40485
+</code></pre>
+<h1 id="analyzing-results">Analyzing results</h1>
+<p>For a cyclical workload with 2048 keys, we assume that a MRU cache with a size of at least 2048 will perform best, and get 100% hits once the cache is filled.
+Now lets see the suggestions and results from the current experiment.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># some pandas wrangling</span>
+
+features, targets <span style="color:#f92672">=</span> zip(<span style="color:#f92672">*</span>data)
+data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat(features, ignore_index<span style="color:#f92672">=</span>True)
+data[<span style="color:#e6db74">&#39;hit_rate&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat(targets, ignore_index<span style="color:#f92672">=</span>True)
+data
+</code></pre></div><!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># group by implementation, then plot</span>
+lru_data, mru_data <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;implementation&#39;</span>)
+
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+line_lru <span style="color:#f92672">=</span> lru_data[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>plot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lru_cache_config.cache_size&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hit_rate&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;LRU&#39;</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;o&#39;</span>, linestyle<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;none&#39;</span>, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">6</span>)
+mru_data[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>plot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mru_cache_config.cache_size&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hit_rate&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;MRU&#39;</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;o&#39;</span>, linestyle<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;none&#39;</span>, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">6</span>, ax<span style="color:#f92672">=</span>plt<span style="color:#f92672">.</span>gca())
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Cache hitrate&#34;</span>)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Cache Size&#34;</span>)
+plt<span style="color:#f92672">.</span>legend()
+</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x20c92c3e490&gt;
+</code></pre>
+<p><img src="../SmartCacheOptimization_files/SmartCacheOptimization_21_1.png" alt="png" /></p>
+<p>We can see that if the cache size is over 2048 keys, it means everything can fit into the cache and the strategy does not matter.
+However, for smaller cache sizes, the MRU strategy has an obvious advantage over the LRU strategy.</p>
+<h1 id="going-further">Going Further</h1>
+<ol>
+<li>
+<p>Log how the optimum evolves over time. How many iterations are needed?</p>
+</li>
+<li>
+<p>Can you adjust options in the Optimizer to improve convergence (see the BayesianOptimization notebook for suggestions).</p>
+</li>
+<li>
+<p>Choose a different workload in the <code>SmartCacheWorkloadGenerator</code>. How do the workloads change the optimum strategy?</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Clean up</span>
+<span style="color:#75715e">#</span>
+mlos_agent<span style="color:#f92672">.</span>stop_experiment(smart_cache_experiment)
+mlos_agent<span style="color:#f92672">.</span>stop_all()
+
+<span style="color:#75715e"># Stop the optimizer service</span>
+<span style="color:#f92672">import</span> signal
+optimizer_microservice<span style="color:#f92672">.</span>send_signal(signal<span style="color:#f92672">.</span>SIGTERM)
+</code></pre></div><pre><code>09/01/2020 19:47:46 -     Optimizing Smart Cache -    INFO - [ExperimentManager.py:  56 -           stop_experiment() ] Stopped experiment 1
+09/01/2020 19:47:46 -     Optimizing Smart Cache -    INFO - [        MlosAgent.py: 183 -        _process_callbacks() ] Finished processing telemetry messages
+</code></pre>
+<h1 id="download-smartcacheoptimizationipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcacheoptimizationipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheOptimization.ipynb">Download SmartCacheOptimization.ipynb notebook</a></h1>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

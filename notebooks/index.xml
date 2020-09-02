@@ -15,7 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://microsoft.github.io/MLOS/notebooks/BayesianOptimization/</guid>
-      <description>Download BayesianOptimization.ipynb notebook import matplotlib.pyplot as plt import numpy as np import pandas as pd C:\Users\User\anaconda3\envs\mlos\lib\site-packages\ipykernel\parentpoller.py:113: UserWarning: Parent poll failed. If the frontend dies, the kernel may be left running. Please let us know about your system (bitness, Python, etc.) at ipython-dev@scipy.org warnings.warn(&amp;quot;&amp;quot;&amp;quot;Parent poll failed. If the frontend dies,  Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.</description>
+      <description>Download BayesianOptimization.ipynb notebook import matplotlib.pyplot as plt import numpy as np import pandas as pd Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.
+Motivation In software performance engineering, the impact different (input) parameters (e.g. buffer size, worker thread count, etc.) can have on the (output) performance of a system for a given workload (input) can be modeled as a multidimensional function - one which we don&amp;rsquo;t know the equation for apriori, but are instead trying to learn through careful sampling of the input space and experimentation (test/benchmark runs) to gather output points.</description>
     </item>
     
     <item>
@@ -50,6 +51,17 @@ For once - this is probably not the workflow we want. We likely want to:
       <description>Download SmartCacheActiveLearning.ipynb notebook Goal The goal of this notebook is to optimize SmartCache using the Active Learning approach.
 We define active learning as an approach when we execute the following loop:
  Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from smart cache, Register an observation with the optimizer.  This is different from online learning in that the workload is fixed.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</guid>
+      <description>Download SmartCacheOptimization.ipynb notebook Optimizing Smart Cache with Bayesian Optimization The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.
+We&amp;rsquo;re using a sequential model-based optimization approach, that consists of the following loop:
+ Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from SmartCache, Register an observation with the optimizer.  # import the required classes and tools import grpc import pandas as pd from mlos.</description>
     </item>
     
     <item>

@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Download BayesianOptimization.ipynb notebook import matplotlib.pyplot as plt import numpy as np import pandas as pd C:\Users\User\anaconda3\envs\mlos\lib\site-packages\ipykernel\parentpoller.py:113: UserWarning: Parent poll failed. If the frontend dies, the kernel may be left running. Please let us know about your system (bitness, Python, etc.) at ipython-dev@scipy.org warnings.warn(&quot;&quot;&quot;Parent poll failed. If the frontend dies,  Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.">
+<meta name="description" content="Download BayesianOptimization.ipynb notebook import matplotlib.pyplot as plt import numpy as np import pandas as pd Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.
+Motivation In software performance engineering, the impact different (input) parameters (e.g. buffer size, worker thread count, etc.) can have on the (output) performance of a system for a given workload (input) can be modeled as a multidimensional function - one which we don&rsquo;t know the equation for apriori, but are instead trying to learn through careful sampling of the input space and experimentation (test/benchmark runs) to gather output points.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Download BayesianOptimization.ipynb notebook import matplotlib.pyplot as plt import numpy as np import pandas as pd C:\Users\User\anaconda3\envs\mlos\lib\site-packages\ipykernel\parentpoller.py:113: UserWarning: Parent poll failed. If the frontend dies, the kernel may be left running. Please let us know about your system (bitness, Python, etc.) at ipython-dev@scipy.org warnings.warn(&quot;&quot;&quot;Parent poll failed. If the frontend dies,  Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO." />
+<meta property="og:description" content="Download BayesianOptimization.ipynb notebook import matplotlib.pyplot as plt import numpy as np import pandas as pd Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.
+Motivation In software performance engineering, the impact different (input) parameters (e.g. buffer size, worker thread count, etc.) can have on the (output) performance of a system for a given workload (input) can be modeled as a multidimensional function - one which we don&rsquo;t know the equation for apriori, but are instead trying to learn through careful sampling of the input space and experimentation (test/benchmark runs) to gather output points." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/notebooks/BayesianOptimization/" />
 
@@ -14,7 +16,7 @@
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.cc96a7413791751526756cae4211f52e5ac1ca9a4e40b13267c3b93354caf41e.js" integrity="sha256-zJanQTeRdRUmdWyuQhH1LlrByppOQLEyZ8O5M1TK9B4="></script>
+<script defer src="/MLOS/en.search.min.4c3ed02f7fb664c1d64b043ad528adbdfc5dd53a89d6f0682b0ef9be255369c5.js" integrity="sha256-TD7QL3&#43;2ZMHWSwQ61Sitvfxd1TqJ1vBoKw75viVTacU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -68,8 +70,7 @@ https://github.com/alex-shpak/hugo-book
 <p>Notebooks</p>
 <ul>
 <li><a href="/MLOS/notebooks/StartHere/">Start Here</a></li>
-<li><a href="/MLOS/notebooks/SmartCache/">Smart Cache</a></li>
-<li><a href="/MLOS/notebooks/SmartCacheActiveLearning/">Smart Cache Active Learning</a></li>
+<li><a href="/MLOS/notebooks/SmartCacheOptimization/">Smart Cache Optimization</a></li>
 <li><a href="/MLOS/notebooks/OptimizerMonitor/">Optimizer Monitor</a></li>
 <li><a href="/MLOS/notebooks/BayesianOptimization/"class=active>Bayesian Optimization</a></li>
 </ul>
@@ -148,13 +149,7 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 <span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
 <span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
-</code></pre></div><pre><code>C:\Users\User\anaconda3\envs\mlos\lib\site-packages\ipykernel\parentpoller.py:113: UserWarning: Parent poll failed.  If the frontend dies,
-                the kernel may be left running.  Please let us know
-                about your system (bitness, Python, etc.) at
-                ipython-dev@scipy.org
-  warnings.warn(&quot;&quot;&quot;Parent poll failed.  If the frontend dies,
-</code></pre>
-<h1 id="bayesian-optimization">Bayesian Optimization</h1>
+</code></pre></div><h1 id="bayesian-optimization">Bayesian Optimization</h1>
 <p>This notebook demonstrates the basic principles of <a href="https://en.wikipedia.org/wiki/Bayesian_optimization">Bayesian Optimization (BO)</a> and how to use MLOS to perform BO.</p>
 <h2 id="motivation">Motivation</h2>
 <p>In software performance engineering, the impact different (input) parameters (e.g. buffer size, worker thread count, etc.) can have on the (output) performance of a system for a given workload (input) can be modeled as a multidimensional function - one which we don&rsquo;t know the equation for apriori, but are instead trying to learn through careful sampling of the input space and experimentation (test/benchmark runs) to gather output points.
@@ -182,10 +177,7 @@ values <span style="color:#f92672">=</span> f(line)
 plt<span style="color:#f92672">.</span>plot(line, values)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Input (parameter)&#34;</span>)
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Objective (i.e. performance)&#34;</span>)
-</code></pre></div><pre><code>Text(0, 0.5, 'Objective (i.e. performance)')
-</code></pre>
-<p><img src="../BayesianOptimization_files/BayesianOptimization_7_1.png" alt="png" /></p>
-<p>Our goal here is to find the global minimum of this function, assuming that we don&rsquo;t have direct access to the formula (given the formula, we could instead calculate the optimum quite precicely using methods from calculus instead). Usually, the function is too expensive to evaluate in such a manner, in particular in higher-dimensional spaces.</p>
+</code></pre></div><p>Our goal here is to find the global minimum of this function, assuming that we don&rsquo;t have direct access to the formula (given the formula, we could instead calculate the optimum quite precicely using methods from calculus instead). Usually, the function is too expensive to evaluate in such a manner, in particular in higher-dimensional spaces.</p>
 <p>Now, we use MLOS to construct an OptimizationProblem object that will encapsulate the function and the input space.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mlos.Optimizers.OptimizationProblem <span style="color:#f92672">import</span> OptimizationProblem, Objective
 <span style="color:#f92672">from</span> mlos.Optimizers.BayesianOptimizer <span style="color:#f92672">import</span> BayesianOptimizer
@@ -234,7 +226,7 @@ optimizer <span style="color:#f92672">=</span> BayesianOptimizer(optimization_pr
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_optimization</span>(optimizer):
     <span style="color:#75715e"># suggest new value from optimizer</span>
     suggested_value <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>suggest()
-    input_values_df <span style="color:#f92672">=</span> suggested_value<span style="color:#f92672">.</span>to_pandas()
+    input_values_df <span style="color:#f92672">=</span> suggested_value<span style="color:#f92672">.</span>to_dataframe()
     <span style="color:#75715e"># suggested value are dictionary-like, keys are input space parameter names</span>
     <span style="color:#75715e"># evaluate target function</span>
     target_value <span style="color:#f92672">=</span> f(suggested_value[<span style="color:#e6db74">&#39;x&#39;</span>])
@@ -249,23 +241,7 @@ optimizer <span style="color:#f92672">=</span> BayesianOptimizer(optimization_pr
 n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n_iterations):
     run_optimization(optimizer)
-</code></pre></div><pre><code>{'x': 0.17541269264801218} -0.8510165603918378
-{'x': 0.480913709175287} 0.7684232406186272
-{'x': 0.9660637353049126} 13.923595514697766
-{'x': 0.599688110301572} -0.13954487638915977
-{'x': 0.657252197967745} -2.562068656075098
-{'x': 0.47930657081517725} 0.7545797874976039
-{'x': 0.5572369124188329} 0.7927275526767186
-{'x': 0.4169790550228403} 0.2124565622737972
-{'x': 0.9438161727442966} 11.588396700551597
-{'x': 0.24679271856398266} -0.23230954552916283
-{'x': 0.29127300320772354} -0.030796649398039954
-{'x': 0.7568094096313009} -6.020637107900314
-{'x': 0.6908058262545883} -4.195382551491563
-{'x': 0.6477011549497518} -2.0984055031109357
-{'x': 0.7433805673602539} -5.922305077352223
-</code></pre>
-<p>After 15 iterations, the model is likely to have captured the general shape, but probably not have found the actual optimum:</p>
+</code></pre></div><p>After 15 iterations, the model is likely to have captured the general shape, but probably not have found the actual optimum:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># evaluate the surrogate</span>
 surrogate_predictions <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>predict(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line}))<span style="color:#f92672">.</span>get_dataframe()
 <span style="color:#75715e"># plot observations</span>
@@ -275,94 +251,52 @@ plt<span style="color:#f92672">.</span>colorbar()
 <span style="color:#75715e"># plot true function (usually unknown)</span>
 plt<span style="color:#f92672">.</span>plot(line, values, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;true function&#39;</span>)
 <span style="color:#75715e"># plot the surrogate</span>
-plt<span style="color:#f92672">.</span>errorbar(x<span style="color:#f92672">=</span>line, y<span style="color:#f92672">=</span>surrogate_predictions[<span style="color:#e6db74">&#39;sample_mean&#39;</span>], yerr<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>sqrt(surrogate_predictions[<span style="color:#e6db74">&#39;predicted_value_variance&#39;</span>]), label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;surrogate predictions&#39;</span>)
-plt<span style="color:#f92672">.</span>plot(line, <span style="color:#f92672">-</span>optimizer<span style="color:#f92672">.</span>experiment_designer<span style="color:#f92672">.</span>utility_function(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line})), label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utility_function&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Objective function (performance)&#34;</span>)
+std <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(surrogate_predictions[<span style="color:#e6db74">&#39;predicted_value_variance&#39;</span>])
+value <span style="color:#f92672">=</span> surrogate_predictions[<span style="color:#e6db74">&#39;predicted_value&#39;</span>]
+plt<span style="color:#f92672">.</span>plot(line, value, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;surrogate predictions g&#39;</span>)
+plt<span style="color:#f92672">.</span>fill_between(line, value <span style="color:#f92672">-</span> std, value <span style="color:#f92672">+</span> std, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">1</span>)
+plt<span style="color:#f92672">.</span>plot(line, <span style="color:#f92672">-</span>optimizer<span style="color:#f92672">.</span>experiment_designer<span style="color:#f92672">.</span>utility_function(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line})), <span style="color:#e6db74">&#39;:&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utility_function&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Objective function f (performance)&#34;</span>)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Input variable&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x22d7ffbbaf0&gt;
-</code></pre>
-<p><img src="../BayesianOptimization_files/BayesianOptimization_16_1.png" alt="png" /></p>
-<p>We can run more iterations to improve the surrogate model and the optimum that is found:</p>
+</code></pre></div><p>We can run more iterations to improve the surrogate model and the optimum that is found:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># run for more iterations</span>
 n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n_iterations):
     run_optimization(optimizer)
-</code></pre></div><pre><code>{'x': 0.990244796357477} 15.528663885353051
-{'x': 0.8468123963783023} -1.149818963184237
-{'x': 0.32349771403934435} -0.00041009085764023455
-{'x': 0.8295080411981345} -2.864292692101212
-{'x': 0.47721820815824323} 0.7362729711107432
-{'x': 0.8501046147740627} -0.7867845959128675
-{'x': 0.8723116166543465} 1.9191130091826887
-{'x': 0.43309703228313956} 0.3335807052033726
-{'x': 0.8958663351666696} 5.130913179766662
-{'x': 0.8457450075246016} -1.2651269538818555
-{'x': 0.7981593061357506} -5.042205937853623
-{'x': 0.8388311491738134} -1.9824555853022836
-{'x': 0.9912250677338543} 15.568659488374738
-{'x': 0.3505657324285757} 0.0021949335020925286
-{'x': 0.8041568279966457} -4.722822309178047
-{'x': 0.6545934861891199} -2.431811590661345
-{'x': 0.9328090948141843} 10.21825424923689
-{'x': 0.8061682762253998} -4.605291088556691
-{'x': 0.9142560906765052} 7.713459555417368
-{'x': 0.5913370187988589} 0.10911326060041696
-{'x': 0.7070208052769921} -4.896865470186089
-{'x': 0.6842696181487558} -3.888418213952711
-{'x': 0.8225017041187471} -3.4587205769658684
-{'x': 0.04612391960853657} 0.8915287619731904
-{'x': 0.9661236005992506} 13.928901204200741
-{'x': 0.10307269884270698} -0.7052611402234336
-{'x': 0.8145104707258286} -4.062179414522818
-{'x': 0.8043274498148183} -4.7130557266697775
-{'x': 0.3340885356895975} 1.8606633835801886e-07
-{'x': 0.5032134694435382} 0.9273292093167991
-{'x': 0.9014159237325712} 5.9113127364336995
-{'x': 0.3072746097905651} -0.007520419902569228
-{'x': 0.8821022752192363} 3.224967037092594
-{'x': 0.740976477867284} -5.886292498998121
-{'x': 0.7405100739435745} -5.878697042775872
-{'x': 0.7342675602562555} -5.758703291071391
-{'x': 0.7326563483927372} -5.7223939614450225
-{'x': 0.7322822147039809} -5.713661171372781
-{'x': 0.5077896851863062} 0.9493729667468018
-{'x': 0.7319168524264884} -5.7050246854754185
-{'x': 0.7790922937790706} -5.751568787504405
-{'x': 0.7267098079819302} -5.570637781213259
-{'x': 0.996521594043228} 15.74746509506891
-{'x': 0.49407465497373393} 0.8711547672413932
-{'x': 0.05105680516863631} 0.6977875676911975
-{'x': 0.7249368717820412} -5.520242858923302
-{'x': 0.7810202546604342} -5.700636028649977
-{'x': 0.46972321629773994} 0.6682263695451737
-{'x': 0.917551154175079} 8.170373444344552
-{'x': 0.9845290338916438} 15.254021955941244
-</code></pre>
-<p>We can now visualize the surrogate model and optimization process again. The points are colored according to the iteration number, with dark blue points being early in the process and yellow points being later. You can see that at the end of the optimization, the points start to cluster around the optimum.</p>
+</code></pre></div><p>We can now visualize the surrogate model and optimization process again. The points are colored according to the iteration number, with dark blue points being early in the process and yellow points being later. You can see that at the end of the optimization, the points start to cluster around the optimum.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># evaluate the surrogate</span>
 surrogate_predictions <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>predict(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line}))<span style="color:#f92672">.</span>get_dataframe()
 <span style="color:#75715e"># plot observations</span>
 feature_values, target_values <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>get_experiment_data()
 plt<span style="color:#f92672">.</span>scatter(feature_values, target_values, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;observed points&#39;</span>)
-
+ 
 <span style="color:#75715e"># plot true function (usually unknown)</span>
 plt<span style="color:#f92672">.</span>plot(line, values, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;true function&#39;</span>)
 <span style="color:#75715e"># plot the surrogate</span>
-plt<span style="color:#f92672">.</span>errorbar(x<span style="color:#f92672">=</span>line, y<span style="color:#f92672">=</span>surrogate_predictions[<span style="color:#e6db74">&#39;sample_mean&#39;</span>], yerr<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>sqrt(surrogate_predictions[<span style="color:#e6db74">&#39;predicted_value_variance&#39;</span>]), label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;surrogate predictions&#39;</span>)
-plt<span style="color:#f92672">.</span>plot(line, <span style="color:#f92672">-</span>optimizer<span style="color:#f92672">.</span>experiment_designer<span style="color:#f92672">.</span>utility_function(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line})), label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utility_function&#39;</span>)
+std <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(surrogate_predictions[<span style="color:#e6db74">&#39;predicted_value_variance&#39;</span>])
+value <span style="color:#f92672">=</span> surrogate_predictions[<span style="color:#e6db74">&#39;predicted_value&#39;</span>]
+plt<span style="color:#f92672">.</span>plot(line, value, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;surrogate predictions g&#39;</span>)
+plt<span style="color:#f92672">.</span>fill_between(line, value <span style="color:#f92672">-</span> std, value <span style="color:#f92672">+</span> std, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">1</span>)
+
+plt<span style="color:#f92672">.</span>plot(line, <span style="color:#f92672">-</span>optimizer<span style="color:#f92672">.</span>experiment_designer<span style="color:#f92672">.</span>utility_function(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line})), <span style="color:#e6db74">&#39;:&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utility_function&#39;</span>)
 ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>gca()
-ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#34;Objective function&#34;</span>)
+ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#34;Objective function f&#34;</span>)
 ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#34;Input variable&#34;</span>)
 bins_axes <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>twinx()
 bins_axes<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#34;Points sampled&#34;</span>)
-optimizer<span style="color:#f92672">.</span>_feature_values_df<span style="color:#f92672">.</span>hist(bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, ax<span style="color:#f92672">=</span>bins_axes, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">3</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;count of querry points&#34;</span>)
+feature_values<span style="color:#f92672">.</span>hist(bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, ax<span style="color:#f92672">=</span>bins_axes, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">3</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;count of querry points&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x22d0d09fbb0&gt;
-</code></pre>
-<p><img src="../BayesianOptimization_files/BayesianOptimization_20_1.png" alt="png" /></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-</code></pre></div><h1 id="download-bayesianoptimizationipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebooksbayesianoptimizationipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/BayesianOptimization.ipynb">Download BayesianOptimization.ipynb notebook</a></h1>
+</code></pre></div><h1 id="going-further">Going further:</h1>
+<ol>
+<li>
+<p>Plot the optimum as a function of iterations. How long does it take for the optimization to converge? Is that stable over several random restarts?</p>
+</li>
+<li>
+<p>Does changing the search to a purely random search (setting <code>optimizer_config.experiment_designer_config_fraction_random_suggestions = 1</code>) change how long the optimization takes to find the optimum?</p>
+</li>
+</ol>
+<h1 id="download-bayesianoptimizationipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebooksbayesianoptimizationipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/BayesianOptimization.ipynb">Download BayesianOptimization.ipynb notebook</a></h1>
 </article>
  
       
