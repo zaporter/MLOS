@@ -18,7 +18,7 @@ We&rsquo;re using a sequential model-based optimization approach, that consists 
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.3fe965877c404526a06f4298af6fed19e546d3ab430333319d11dd8a723620b7.js" integrity="sha256-P&#43;llh3xARSagb0KYr2/tGeVG06tDAzMxnRHdinI2ILc="></script>
+<script defer src="/MLOS/en.search.min.307a4c05153b0ca9fe5c4645310f65b99a2daaa68550281056c2c69ef3068861.js" integrity="sha256-MHpMBRU7DKn&#43;XEZFMQ9luZotqqaFUCgQVsLGnvMGiGE="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -235,25 +235,27 @@ Then, the hit-rate (our objective) is read from the <code>HitRateMonitor</code> 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">num_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
 data <span style="color:#f92672">=</span> []
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(num_iterations):
+    <span style="color:#75715e"># suggest runs a &#39;cheap&#39; search on the surrogate model to find a good candidate configuration</span>
     new_config_values <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>suggest()
-    <span style="color:#66d9ef">print</span>(new_config_values)
+    <span style="color:#75715e"># set_configuration communicates the proposed configuration to the SmartCache</span>
     mlos_agent<span style="color:#f92672">.</span>set_configuration(component_type<span style="color:#f92672">=</span>SmartCache, new_config_values<span style="color:#f92672">=</span>new_config_values)
     hit_rate_monitor<span style="color:#f92672">.</span>reset()
+    <span style="color:#75715e"># start_workload will actually run the worker, here for 0.2 seconds</span>
     workload_launcher<span style="color:#f92672">.</span>start_workload(duration_s<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, block<span style="color:#f92672">=</span>True)
-    current_cache_config <span style="color:#f92672">=</span> mlos_agent<span style="color:#f92672">.</span>get_configuration(component_type<span style="color:#f92672">=</span>SmartCache)
-    features_df <span style="color:#f92672">=</span> current_cache_config<span style="color:#f92672">.</span>to_dataframe()
+    <span style="color:#75715e"># obtain hit-rate as quality measure for configuration</span>
     hit_rate <span style="color:#f92672">=</span> hit_rate_monitor<span style="color:#f92672">.</span>get_hit_rate()
     objectives_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;hit_rate&#39;</span>: [hit_rate]})
+    <span style="color:#75715e"># pass configuration and observed hit-rate to the optimizer to update the surrogate model</span>
+    features_df <span style="color:#f92672">=</span> new_config_values<span style="color:#f92672">.</span>to_dataframe()
     optimizer<span style="color:#f92672">.</span>register(features_df, objectives_df)
     data<span style="color:#f92672">.</span>append((features_df, objectives_df))
     <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;[{i+1}/{num_iterations}]current_config: {current_cache_config}, hit_rate: {hit_rate}, num_requests: {hit_rate_monitor.num_requests}&#34;</span>)
-</code></pre></div><pre><code>    09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
-    09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 746}
+</code></pre></div><pre><code>09/01/2020 19:47:45 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
 
 
-    {'implementation': 'LRU', 'lru_cache_config.cache_size': 746}
-
-</code></pre><h1 id="analyzing-results">Analyzing results</h1>
+[100/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3181.0}, hit_rate: 0.9479436734292119, num_requests: 40485
+</code></pre>
+<h1 id="analyzing-results">Analyzing results</h1>
 <p>For a cyclical workload with 2048 keys, we assume that a MRU cache with a size of at least 2048 will perform best, and get 100% hits once the cache is filled.
 Now lets see the suggestions and results from the current experiment.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># some pandas wrangling</span>
@@ -263,30 +265,30 @@ data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>
 data[<span style="color:#e6db74">&#39;hit_rate&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat(targets, ignore_index<span style="color:#f92672">=</span>True)
 data
 </code></pre></div><pre><code>   implementation  lru_cache_config.cache_size  mru_cache_config.cache_size  \
-0             LRU                        746.0                          NaN
-1             MRU                          NaN                        657.0
-2             MRU                          NaN                       3441.0
-3             LRU                       1789.0                          NaN
-4             LRU                       2220.0                          NaN
-..            ...                          ...                          ...
-95            LRU                       3203.0                          NaN
-96            MRU                          NaN                       2318.0
-97            MRU                          NaN                       1090.0
-98            MRU                          NaN                        932.0
-99            LRU                       3181.0                          NaN
+0             LRU                        746.0                          NaN   
+1             MRU                          NaN                        657.0   
+2             MRU                          NaN                       3441.0   
+3             LRU                       1789.0                          NaN   
+4             LRU                       2220.0                          NaN   
+..            ...                          ...                          ...   
+95            LRU                       3203.0                          NaN   
+96            MRU                          NaN                       2318.0   
+97            MRU                          NaN                       1090.0   
+98            MRU                          NaN                        932.0   
+99            LRU                       3181.0                          NaN   
 
-        hit_rate
-0   5.271481e-10
-1   2.822026e-01
-2   9.268571e-01
-3   5.756279e-01
-4   9.432121e-01
-..           ...
-95  9.497177e-01
-96  9.412423e-01
-97  4.881512e-01
-98  4.182808e-01
-99  9.479437e-01
+        hit_rate  
+0   5.271481e-10  
+1   2.822026e-01  
+2   9.268571e-01  
+3   5.756279e-01  
+4   9.432121e-01  
+..           ...  
+95  9.497177e-01  
+96  9.412423e-01  
+97  4.881512e-01  
+98  4.182808e-01  
+99  9.479437e-01  
 
 [100 rows x 4 columns]
 </code></pre>
@@ -316,6 +318,8 @@ However, for smaller cache sizes, the MRU strategy has an obvious advantage over
 <p>Choose a different workload in the <code>SmartCacheWorkloadGenerator</code>. How do the workloads change the optimum strategy?</p>
 </li>
 </ol>
+<h1 id="clean-up">Clean up</h1>
+<p>We need to stop all processes &amp; separate threads after running the experiments:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Clean up</span>
 <span style="color:#75715e">#</span>
 mlos_agent<span style="color:#f92672">.</span>stop_experiment(smart_cache_experiment)

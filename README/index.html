@@ -20,7 +20,7 @@ Sometimes these are encoded in the software as constants embedded in the code (e
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.3fe965877c404526a06f4298af6fed19e546d3ab430333319d11dd8a723620b7.js" integrity="sha256-P&#43;llh3xARSagb0KYr2/tGeVG06tDAzMxnRHdinI2ILc="></script>
+<script defer src="/MLOS/en.search.min.307a4c05153b0ca9fe5c4645310f65b99a2daaa68550281056c2c69ef3068861.js" integrity="sha256-MHpMBRU7DKn&#43;XEZFMQ9luZotqqaFUCgQVsLGnvMGiGE="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -220,20 +220,24 @@ Note that <em>performance</em> can be interpreted in different ways (e.g. reduci
 </li>
 </ol>
 <h2 id="python-only-installation">Python only installation</h2>
-<p>Some of the examples require only the installation of the mlos Python library. These examples do not use the shared memory infrastructure.
-To use this simplified installation, it&rsquo;s recommended to use the Anaconda python distribution and create a new conda environment:</p>
-<pre><code>$ conda create -n mlos_environment
-$ conda activate mlos_environment
-</code></pre><p>You can download the mlos code using git:</p>
-<pre><code>$ git clone git@github.com:microsoft/MLOS.git
-</code></pre><p>To install the Python library, change to the Python directory and install with <code>pip</code>:</p>
-<pre><code>$ cd MLOS/source/Mlos.Python
-$ pip install -e .
-</code></pre><p>You can also install the package directly without checking out the code:</p>
+<p>Some of the examples require only the installation of the mlos Python library. These examples do not use the shared memory infrastructure.</p>
+<p>First, download the <code>mlos</code> code using git:</p>
+<pre><code>$ git clone https://github.com/microsoft/MLOS.git
+</code></pre><p>For this simplified installation, it&rsquo;s recommended to use the <a href="https://www.anaconda.com/products/individual">Anaconda python distribution</a>.
+For a slimer installation experience, you can also use the <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda installer</a>.
+After installing either anaconda or miniconda, you can create a new environment with all requirements for the examples using</p>
+<pre><code>$ conda env create -f MLOS/source/Mlos.Notebooks/environment.yml
+</code></pre><p>The environment will be called <code>mlos_python_environment</code> and you can activate it as follows:</p>
+<pre><code>$ conda activate mlos_python_environment
+</code></pre><p>Use <code>pip</code> to install the Python library:</p>
+<pre><code>$ pip install MLOS/source/Mlos.Python/
+</code></pre><p>Alternatively, you can also install the package directly without checking out the code:</p>
 <pre><code>$ pip install &quot;git+https://github.com/microsoft/MLOS.git#egg=mlos&amp;subdirectory=source/Mlos.Python&quot;
-</code></pre><p>However, this does not include the examples.</p>
-<p>After this installation, you can run any of the Python-only example notebooks.
-A good place to start is the <a href="./notebooks/BayesianOptimization/">Introduction to Bayesian Optimization</a> notebook.</p>
+</code></pre><p>However, this does not include the examples and requires you to set up your environment manually.</p>
+<p>After this installation, you can run any of the Python-only example notebooks. To do so you can:</p>
+<pre><code>$ python -m ipykernel install --user --name=mlos_environment
+$ jupyter-notebook --notebook-dir=MLOS/source/Mlos.Notebooks
+</code></pre><p>Jupyter will list a few notebooks. A good place to start is the <em>BayesianOptimization.ipynb</em>, which provides an <a href="./notebooks/BayesianOptimization/">Introduction to Bayesian Optimization</a>.</p>
 <h2 id="full-build-c-and-c-components">Full Build (C# and C++ components)</h2>
 <p>MLOS supports Windows and Linux build environments.</p>
 <p>For detailed instructions, please refer to:</p>
