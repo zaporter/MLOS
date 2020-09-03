@@ -41,19 +41,10 @@ Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI 
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/04-Contributing/</link>
+      <link>https://microsoft.github.io/MLOS/documentation/04-Test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://microsoft.github.io/MLOS/documentation/04-Contributing/</guid>
-      <description>Contributing to MLOS TODO: Write up some instructions for contributing to MLOS codebase itself.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/05-Test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/documentation/05-Test/</guid>
+      <guid>https://microsoft.github.io/MLOS/documentation/04-Test/</guid>
       <description>Test Instructions for MLOS TODO: document how to run unit tests for
  C++ C#  Python First, ensure that the necessary Python modules are installed. See 01-Prerequisites/ for details.
 Linux scripts/run-python-tests.sh Windows scripts\run-python-tests.cmd </description>
@@ -61,10 +52,10 @@ Linux scripts/run-python-tests.sh Windows scripts\run-python-tests.cmd </descrip
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/06-Debug/</link>
+      <link>https://microsoft.github.io/MLOS/documentation/05-Debug/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://microsoft.github.io/MLOS/documentation/06-Debug/</guid>
+      <guid>https://microsoft.github.io/MLOS/documentation/05-Debug/</guid>
       <description>TODO</description>
     </item>
     
