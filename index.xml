@@ -151,7 +151,7 @@ Steps  Select build configuration. Generate the secrets file. Build the docker i
       <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</guid>
       <description>Download SmartCacheOptimization.ipynb notebook Optimizing Smart Cache with Bayesian Optimization The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.
 We&amp;rsquo;re using a sequential model-based optimization approach, that consists of the following loop:
- Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from SmartCache, Register an observation with the optimizer.  # import the required classes and tools import grpc import pandas as pd from mlos.</description>
+ Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from SmartCache, Register an observation with the optimizer.  # import the required classes and tools import grpc import pandas as pd import logging from mlos.</description>
     </item>
     
     <item>
