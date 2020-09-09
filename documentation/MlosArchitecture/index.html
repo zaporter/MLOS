@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="MLOS Architecture This document provides a brief overview of the MLOS architecture for supporting Machine Learning Optimized Systems.
- MLOS Architecture  High Level Description  Principles Workflows   Architecture Diagram  Main Components Shared Memory Regions Target process  Mlos.Core Shared Channel   Mlos.Agent  Mlos.NetCore Settings Registry Assemblies Grpc Server Experiment Management     Implementation Details    High Level Description At a high level, MLOS provides infrastructure to support instance-specific tuning systems software (e.">
+ MLOS Architecture  High Level Description  Principles Workflows   Architecture Diagram  Main components Shared Memory Regions Target Process  Mlos.Core Shared Channel   Mlos.Agent  Mlos.NetCore Settings registry assemblies Grpc Server Experiment management     Implementation details    High Level Description At a high level, MLOS provides infrastructure to support instance-specific tuning systems software (e.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="MLOS Architecture This document provides a brief overview of the MLOS architecture for supporting Machine Learning Optimized Systems.
- MLOS Architecture  High Level Description  Principles Workflows   Architecture Diagram  Main Components Shared Memory Regions Target process  Mlos.Core Shared Channel   Mlos.Agent  Mlos.NetCore Settings Registry Assemblies Grpc Server Experiment Management     Implementation Details    High Level Description At a high level, MLOS provides infrastructure to support instance-specific tuning systems software (e." />
+ MLOS Architecture  High Level Description  Principles Workflows   Architecture Diagram  Main components Shared Memory Regions Target Process  Mlos.Core Shared Channel   Mlos.Agent  Mlos.NetCore Settings registry assemblies Grpc Server Experiment management     Implementation details    High Level Description At a high level, MLOS provides infrastructure to support instance-specific tuning systems software (e." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/documentation/MlosArchitecture/" />
 
@@ -16,7 +16,7 @@
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.7b2935e5be7391264e90ea7f89ebf8fc15143f5e3dd9e92d10a7577dc2a68ffa.js" integrity="sha256-eyk15b5zkSZOkOp/iev4/BUUP1492ektEKdXfcKmj/o="></script>
+<script defer src="/MLOS/en.search.min.605c96d6165fd86bb684c82a4d5c9f88501fd7b1747648741c96363df69502a2.js" integrity="sha256-YFyW1hZf2Gu2hMgqTVyfiFAf17F0dkh0HJY2PfaVAqI="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -171,9 +171,9 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li><a href="#architecture-diagram">Architecture Diagram</a>
 <ul>
-<li><a href="#main-components">Main Components</a></li>
+<li><a href="#main-components">Main components</a></li>
 <li><a href="#shared-memory-regions">Shared Memory Regions</a></li>
-<li><a href="#target-process">Target process</a>
+<li><a href="#target-process">Target Process</a>
 <ul>
 <li><a href="#mloscore">Mlos.Core</a></li>
 <li><a href="#shared-channel">Shared Channel</a></li>
@@ -182,14 +182,14 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#mlosagent">Mlos.Agent</a>
 <ul>
 <li><a href="#mlosnetcore">Mlos.NetCore</a></li>
-<li><a href="#settings-registry-assemblies">Settings Registry Assemblies</a></li>
+<li><a href="#settings-registry-assemblies">Settings registry assemblies</a></li>
 <li><a href="#grpc-server">Grpc Server</a></li>
-<li><a href="#experiment-management">Experiment Management</a></li>
+<li><a href="#experiment-management">Experiment management</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#implementation-Details">Implementation Details</a></li>
+<li><a href="#implementation-details">Implementation details</a></li>
 </ul>
 </li>
 </ul>
