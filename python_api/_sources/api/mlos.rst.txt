@@ -1,5 +1,5 @@
-Python API
-==========
+mlos
+====
 
 
 .. automodule:: mlos
@@ -17,6 +17,10 @@ Python API
    mlos.global_values
    mlos.start_mlos_optimization_runtime
    mlos.start_optimizer_microservice
+
+.. toctree::
+   :maxdepth: 1
+
    mlos.Examples
    mlos.Grpc
    mlos.Mlos

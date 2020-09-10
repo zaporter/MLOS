@@ -12,7 +12,7 @@ mlos.Spaces.HypergridAdapters
    :maxdepth: 1
 
    mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter
-   mlos.Spaces.HypergridAdapters.CompositeToSimpleHypergridAdapter
+   mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter
    mlos.Spaces.HypergridAdapters.HypergridAdapter
 
 .. toctree::

@@ -8,6 +8,10 @@
   </url>
   
   <url>
+    <loc>https://microsoft.github.io/MLOS/build/uncrustify/</loc>
+  </url>
+  
+  <url>
     <loc>https://microsoft.github.io/MLOS/CODE_OF_CONDUCT/</loc>
     <priority>0</priority>
   </url>
@@ -72,16 +76,7 @@
   </url>
   
   <url>
-    <loc>https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/</loc>
-  </url>
-  
-  <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</loc>
-  </url>
-  
-  <url>
-    <loc>https://microsoft.github.io/MLOS/README/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -90,11 +85,75 @@
   </url>
   
   <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Core/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Core/doc/SharedChannel/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Core/doc/SharedMemoryManagement/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.NetCore/Doc/SharedChannelScaleout/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Python/Docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Python/Docs/BayesianOptimizerArchitecture/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Python/Docs/BayesianOptimizerV1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Python/Docs/OptimizerMonitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Python/Docs/SimpleImportGraph/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Python/mlos/Examples/SmartCache/OverviewOfCachingStrategies/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Python/mlos/Spaces/HypergridAdapters/AboutHypergridAdapters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.SettingsSystem.Attributes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.SettingsSystem.CodeGen/Doc/CodeGen/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.Streaming/Doc/AggregateStreaming/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/build/</loc>
+  </url>
+  
+  <url>
     <loc>https://microsoft.github.io/MLOS/categories/</loc>
   </url>
   
   <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/</loc>
   </url>
   
   <url>

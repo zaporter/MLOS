@@ -18,7 +18,7 @@
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.605c96d6165fd86bb684c82a4d5c9f88501fd7b1747648741c96363df69502a2.js" integrity="sha256-YFyW1hZf2Gu2hMgqTVyfiFAf17F0dkh0HJY2PfaVAqI="></script>
+<script defer src="/MLOS/en.search.min.e2a176fa161b54f5a3ececaa493a9654c6810d2b9cdabe431c7abd672186d1d6.js" integrity="sha256-4qF2&#43;hYbVPWj7OyqSTqWVMaBDSuc2r5DHHq9ZyGG0dY="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -148,26 +148,26 @@ https://github.com/alex-shpak/hugo-book
 <p>Note: we provide <code>Makefile</code> wrappers in most directories to simply help invoke <code>cmake</code> and the <code>Makefiles</code> it generates</p>
 </blockquote>
 </li>
-<li><a href="../build"><code>build/</code></a> contains configuration related to building MLOS components
+<li><a href="https://github.com/microsoft/MLOS/tree/main/documentation/../build/"><code>build/</code></a> contains configuration related to building MLOS components
 <ul>
-<li>For instance, <code>.props</code> and <code>.targets</code> files for definining and controlling common <code>msbuild</code> and <code>dotnet build</code> properites and targets are contained there, as are various style check configurations.</li>
+<li>For instance, <code>.props</code> and <code>.targets</code> files for definining and controlling common <code>msbuild</code> and <code>dotnet build</code> properties and targets are contained there, as are various style check configurations.</li>
 </ul>
 <blockquote>
 <p>Note: For this reason, <code>cmake</code> output is redirected to <code>out/cmake/{Release,Debug}/</code> instead.</p>
 </blockquote>
 </li>
-<li><a href="../source"><code>source/</code></a> contains a directory for each component of MLOS, including unit test source code.
+<li><a href="https://github.com/microsoft/MLOS/tree/main/documentation/../source/"><code>source/</code></a> contains a directory for each component of MLOS, including unit test source code.
 <ul>
 <li>i.e. running <code>msbuild</code> or <code>make</code> in the <code>source/</code> directory will build (and generally analyze) all of the projects, but not execute their tests.</li>
-<li><a href="../source/Examples"><code>source/Examples/</code></a> contains sample target codes to optimize with the other MLOS components and help describe the integration methods</li>
+<li><a href="https://github.com/microsoft/MLOS/tree/main/documentation/../source/Examples/"><code>source/Examples/</code></a> contains sample target codes to optimize with the other MLOS components and help describe the integration methods</li>
 </ul>
 </li>
-<li><a href="../test"><code>test/</code></a> contains a directory and project to invoke each of the unit tests.
+<li><a href="https://github.com/microsoft/MLOS/tree/main/documentation/../test/"><code>test/</code></a> contains a directory and project to invoke each of the unit tests.
 <ul>
 <li>i.e. running <code>msbuild</code> or <code>make</code> in the <code>test/</code> directory will also run all of the tests.</li>
 </ul>
 </li>
-<li><a href="../scripts"><code>scripts/</code></a> contains some helper scripts to initialize development environments, install tools, invoke build pipelines, etc.</li>
+<li><a href="https://github.com/microsoft/MLOS/tree/main/documentation/../scripts/"><code>scripts/</code></a> contains some helper scripts to initialize development environments, install tools, invoke build pipelines, run tests, etc.</li>
 </ul>
 <p>Auto generated content:</p>
 <ul>
@@ -179,12 +179,12 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><code>target/</code> contains final binaries and libraries produced by <code>msbuild</code> that are suitable for execution</li>
-<li><code>out/cmake/</code> contains most of the output from <code>cmake</code>
+<li><code>out/cmake/{Release,Debug}/</code> contains most of the output from <code>cmake</code>
 <blockquote>
-<p>Note: this is by convention.  Though we provide some configurations to help use this path, other tools or IDEs may override it.</p>
+<p>Note: this is by convention.  Though we provide some configurations to help use this path, other tools or IDEs may override it or may need to be configured to work with it.</p>
 </blockquote>
 </li>
-<li><code>tools/</code> is created for items the <code>cake</code> build scripts may fetch</li>
+<li><code>tools/</code> is where local versions of <code>dotnet</code>, <code>cmake</code>, and <code>cake</code> are fetched and installed.</li>
 </ul>
 </article>
  

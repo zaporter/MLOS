@@ -21,16 +21,6 @@ Motivation In software performance engineering, the impact different (input) par
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/</guid>
-      <description>Download SmartCacheCppDocker.ipynb notebook Objective The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.
-Steps  Select build configuration. Generate the secrets file. Build the docker image. Launch the docker container. Launch Mlos.Agent. Launch SmartCache.exe benchmark.  Prerequisites  Build the Mlos project. The build configuration (Debug vs. Retail) must match your choice below. Have Docker installed and available. This notebook is run with {MLOS_ROOT}\source\Mlos.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

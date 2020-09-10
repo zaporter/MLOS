@@ -18,7 +18,7 @@ Sometimes these are encoded in the software as constants embedded in the code (e
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.605c96d6165fd86bb684c82a4d5c9f88501fd7b1747648741c96363df69502a2.js" integrity="sha256-YFyW1hZf2Gu2hMgqTVyfiFAf17F0dkh0HJY2PfaVAqI="></script>
+<script defer src="/MLOS/en.search.min.e2a176fa161b54f5a3ececaa493a9654c6810d2b9cdabe431c7abd672186d1d6.js" integrity="sha256-4qF2&#43;hYbVPWj7OyqSTqWVMaBDSuc2r5DHHq9ZyGG0dY="></script>
 <link rel="alternate" type="application/rss+xml" href="https://microsoft.github.io/MLOS/index.xml" title="MLOS" />
 <!--
 Made with Book Theme
@@ -175,7 +175,7 @@ Note that <em>performance</em> can be interpreted in different ways (e.g. reduci
 <p>Generally speaking, this process is referred to as <em>Software Performance Engineering</em>, and typically involves a lot of manual effort that is brittle and not well tracked.</p>
 <h3 id="goals">Goals</h3>
 <p>MLOS is about using machine-learning and data-science to optimize systems for a given context through these tunable choices.</p>
-<p><img src="./documentation/images/MLOS-Experience.png" alt="MLOS data science experience for software performance engineering" /></p>
+<p><img src="/MLOS/././documentation/images/MLOS-Experience.png" alt="MLOS data science experience for software performance engineering" /></p>
 <p>Roughly, this can happen in two modes:</p>
 <ol>
 <li>
@@ -188,7 +188,7 @@ Note that <em>performance</em> can be interpreted in different ways (e.g. reduci
 </li>
 </ol>
 <h3 id="architecture">Architecture</h3>
-<p><img src="./documentation/images/MLOS-Architecture.png" alt="MLOS architecture overview" /></p>
+<p><img src="/MLOS/././documentation/images/MLOS-Architecture.png" alt="MLOS architecture overview" /></p>
 <p>To achieve this MLOS provides:</p>
 <ol>
 <li>
@@ -217,51 +217,59 @@ Note that <em>performance</em> can be interpreted in different ways (e.g. reduci
 </li>
 </ol>
 <h2 id="python-only-installation">Python only installation</h2>
-<p>Some of the examples require only the installation of the mlos Python library. These examples do not use the shared memory infrastructure.</p>
-<p>First, download the <code>mlos</code> code using git:</p>
-<pre><code>$ git clone https://github.com/microsoft/MLOS.git
-</code></pre><p>For this simplified installation, it&rsquo;s recommended to use the <a href="https://www.anaconda.com/products/individual">Anaconda python distribution</a>.
-For a slimer installation experience, you can also use the <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda installer</a>.
+<p>Some of the examples require only the installation of the <code>mlos</code> Python library.
+These are simplified examples for getting started and do not use the shared memory infrastructure for cross language/process interactions.</p>
+<p>First, download the MLOS code using git:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/microsoft/MLOS.git
+cd MLOS
+</code></pre></div><p>For this simplified installation, it&rsquo;s recommended to use the <a href="https://www.anaconda.com/products/individual">Anaconda python distribution</a>.
+For a slimmer installation experience, you can also use the <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda installer</a>.
 After installing either anaconda or miniconda, you can create a new environment with all requirements for the examples using</p>
-<pre><code>$ conda env create -f MLOS/source/Mlos.Notebooks/environment.yml
-</code></pre><p>The environment will be called <code>mlos_python_environment</code> and you can activate it as follows:</p>
-<pre><code>$ conda activate mlos_python_environment
-</code></pre><p>Use <code>pip</code> to install the Python library:</p>
-<pre><code>$ pip install MLOS/source/Mlos.Python/
-</code></pre><p>Alternatively, you can also install the package directly without checking out the code:</p>
-<pre><code>$ pip install &quot;git+https://github.com/microsoft/MLOS.git#egg=mlos&amp;subdirectory=source/Mlos.Python&quot;
-</code></pre><p>However, this does not include the examples and requires you to set up your environment manually.</p>
+<blockquote>
+<p>Note currently MLOS needs Python 3.7, but by default conda packages Python 3.8.
+For the moment, you may need to search the <a href="https://repo.anaconda.com/miniconda/">installer archives</a> for a python 3.7 version.
+e.g. <a href="https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Windows-x86_64.exe">Miniconda3-py37_4.8.3-Windows-x86_64.exe</a></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">conda env create -f MLOS/source/Mlos.Notebooks/environment.yml
+</code></pre></div><p>The environment will be called <code>mlos_python_environment</code> and you can activate it as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">conda activate mlos_python_environment
+</code></pre></div><p>Use <code>pip</code> to install the Python library:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip install MLOS/source/Mlos.Python/
+</code></pre></div><p>Alternatively, you can also install the package directly without checking out the code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip install <span style="color:#e6db74">&#34;git+https://github.com/microsoft/MLOS.git#egg=mlos&amp;subdirectory=source/Mlos.Python&#34;</span>
+</code></pre></div><p>However, this does not include the examples and requires you to set up your environment manually.</p>
 <p>After this installation, you can run any of the Python-only example notebooks. To do so you can:</p>
-<pre><code>$ python -m ipykernel install --user --name=mlos_environment
-$ jupyter-notebook --notebook-dir=MLOS/source/Mlos.Notebooks
-</code></pre><p>Jupyter will list a few notebooks. A good place to start is the <em>BayesianOptimization.ipynb</em>, which provides an <a href="./notebooks/BayesianOptimization/">Introduction to Bayesian Optimization</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">python -m ipykernel install --user --name<span style="color:#f92672">=</span>mlos_environment
+jupyter-notebook --notebook-dir<span style="color:#f92672">=</span>MLOS/source/Mlos.Notebooks
+</code></pre></div><p>Jupyter will list a few notebooks. A good place to start is the <em>BayesianOptimization.ipynb</em>, which provides an <a href="https://github.com/microsoft/MLOS/tree/main/././source/Mlos.Notebooks/BayesianOptimization.ipynb">Introduction to Bayesian Optimization</a>.</p>
 <h2 id="full-build-c-and-c-components">Full Build (C# and C++ components)</h2>
 <p>MLOS supports Windows and Linux build environments.</p>
 <p>For detailed instructions, please refer to:</p>
 <ol>
-<li><a href="./documentation/01-Prerequisites/">Prerequisites</a></li>
-<li><a href="./documentation/02-Build/">Build</a></li>
+<li><a href="/MLOS/././documentation/01-Prerequisites/">Prerequisites</a></li>
+<li><a href="/MLOS/././documentation/02-Build/">Build</a></li>
 </ol>
 <h2 id="examples">Examples</h2>
-<p>Code and documentation for examples of using MLOS to optimize a system are described in the <a href="./notebooks/">Notebooks</a> section. Additional code is in the  <a href="https://github.com/microsoft/MLOS/tree/main/source/Examples">source/Examples</a> source directory.
-You can find the source of the notebooks <a href="https://github.com/microsoft/MLOS/tree/main/source/Mlos.Notebooks">on github as well</a>.</p>
+<p>Code and documentation for examples of using MLOS to optimize a system are described in the <a href="https://microsoft.github.io/MLOS/notebooks/">Notebooks</a> section.
+Additional code is in the  <a href="https://github.com/microsoft/MLOS/tree/main/././source/Examples/">source/Examples</a> source directory.
+You can find the source of the notebooks <a href="https://github.com/microsoft/MLOS/tree/main/././source/Mlos.Notebooks/">on github as well</a>.</p>
 <h2 id="documentation">Documentation</h2>
 <ul>
 <li>
-<p>Additional overview documentation is available in the <a href="./documentation/">documentation</a> tree.</p>
+<p>Additional overview documentation is available in the <a href="/MLOS/././documentation/">documentation</a> tree.</p>
 </li>
 <li>
 <p>Individual components may also include more detailed documentation in their respective subdirectories.</p>
 </li>
 </ul>
 <h2 id="contributing">Contributing</h2>
-<p>We welcome contributions!  Please see <a href="./CONTRIBUTING/">Contributing</a> and <a href="./CODE_OF_CONDUCT/">Code of Conduct</a> for details.</p>
-<p>Also, please see the <a href="#">Roadmap</a> of planned features.</p>
+<p>We welcome contributions!  Please see <a href="/MLOS/././CONTRIBUTING/">Contributing</a> and <a href="/MLOS/././CODE_OF_CONDUCT/">Code of Conduct</a> for details.</p>
+<p>Also, please see the <a href="/MLOS/./#">Roadmap</a> of planned features.</p>
 <h2 id="contact">Contact</h2>
 <p>For more formal enquiries, you can <a href="mailto:mlos-maintainers@service.microsoft.com">contact us</a>.</p>
 <h2 id="license">License</h2>
 <ul>
-<li><a href="./LICENSE">MIT License</a></li>
+<li><a href="/MLOS/././LICENSE.txt">MIT License</a></li>
 </ul>
 </article>
  
