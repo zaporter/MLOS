@@ -25,7 +25,7 @@ mlos
    mlos.Grpc
    mlos.Mlos
    mlos.MlosOptimizationServices
+   mlos.OptimizerMonitoring
    mlos.Optimizers
    mlos.Spaces
    mlos.SynthethicFunctions
-   mlos.Tomograph

@@ -38,7 +38,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mlos.Optimizers" href="mlos.Optimizers.html" />
+    <link rel="next" title="mlos.OptimizerMonitoring" href="mlos.OptimizerMonitoring.html" />
     <link rel="prev" title="mlos.MlosOptimizationServices.ModelsDatabase.Relations.RemoteProcedureCall" href="mlos.MlosOptimizationServices.ModelsDatabase.Relations.RemoteProcedureCall.html" /> 
 </head>
 
@@ -166,6 +166,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.OptimizerMonitoring.html">mlos.OptimizerMonitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter.html">mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.html">mlos.OptimizerMonitoring.Tomograph</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.Heatmap.html">mlos.OptimizerMonitoring.Tomograph.Heatmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.ModelTomograph.html">mlos.OptimizerMonitoring.Tomograph.ModelTomograph</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a></li>
@@ -259,11 +268,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mlos.Tomograph.html">mlos.Tomograph</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Tomograph.Heatmap.html">mlos.Tomograph.Heatmap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Tomograph.ModelTomograph.html">mlos.Tomograph.ModelTomograph</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -343,7 +347,7 @@
 <span id="mlos-mlosoptimizationservices-modelsdatabase-relations-simplemodel"></span><h1>mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel<a class="headerlink" href="#module-mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel.SimpleModel">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel.</code><code class="sig-name descname">SimpleModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimizer_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_hypergrid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serialized_model</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3c5a78/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/Relations/SimpleModel.py#L5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel.SimpleModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel.</code><code class="sig-name descname">SimpleModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimizer_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_hypergrid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serialized_model</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/99b23d1/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/Relations/SimpleModel.py#L5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel.SimpleModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>An instance of simple model in ModelsDatabase</p>
 </dd></dl>
@@ -358,7 +362,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mlos.Optimizers.html" class="btn btn-neutral float-right" title="mlos.Optimizers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mlos.OptimizerMonitoring.html" class="btn btn-neutral float-right" title="mlos.OptimizerMonitoring" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="mlos.MlosOptimizationServices.ModelsDatabase.Relations.RemoteProcedureCall.html" class="btn btn-neutral float-left" title="mlos.MlosOptimizationServices.ModelsDatabase.Relations.RemoteProcedureCall" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
