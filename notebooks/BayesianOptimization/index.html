@@ -16,7 +16,7 @@ Motivation In software performance engineering, the impact different (input) par
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.f1a234a084cb8ac52fe552cd4b0b0083f68f5f41cda6d5aae3efe89672c7b114.js" integrity="sha256-8aI0oITLisUv5VLNSwsAg/aPX0HNptWq4&#43;/olnLHsRQ="></script>
+<script defer src="/MLOS/en.search.min.3f6eea471c4b7d2b10d965971ad944c200c8355a6f6b092b8cf9d2b2bb312e44.js" integrity="sha256-P27qRxxLfSsQ2WWXGtlEwgDINVpvawkrjPnSsrsxLkQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -178,7 +178,10 @@ values <span style="color:#f92672">=</span> f(line)
 plt<span style="color:#f92672">.</span>plot(line, values)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Input (parameter)&#34;</span>)
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Objective (i.e. performance)&#34;</span>)
-</code></pre></div><p>Our goal here is to find the global minimum of this function, assuming that we don&rsquo;t have direct access to the formula (given the formula, we could instead calculate the optimum quite precicely using methods from calculus instead). Usually, the function is too expensive to evaluate in such a manner, in particular in higher-dimensional spaces.</p>
+</code></pre></div><pre><code>Text(0, 0.5, 'Objective (i.e. performance)')
+</code></pre>
+<p><img src="/MLOS/notebooks/BayesianOptimization_files/BayesianOptimization_7_1.png" alt="png" /></p>
+<p>Our goal here is to find the global minimum of this function, assuming that we don&rsquo;t have direct access to the formula (given the formula, we could instead calculate the optimum quite precicely using methods from calculus instead). Usually, the function is too expensive to evaluate in such a manner, in particular in higher-dimensional spaces.</p>
 <p>Now, we use MLOS to construct an OptimizationProblem object that will encapsulate the function and the input space.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mlos.Optimizers.OptimizationProblem <span style="color:#f92672">import</span> OptimizationProblem, Objective
 <span style="color:#f92672">from</span> mlos.Optimizers.BayesianOptimizer <span style="color:#f92672">import</span> BayesianOptimizer
@@ -206,20 +209,26 @@ optimization_problem <span style="color:#f92672">=</span> OptimizationProblem(
 <p>The idea is that eventually the surrogate model will provide a good approximation of the objective function, but it will be much faster to evaluate (i.e. by predicting with a Random Forest or Gaussian process or another trained machine learning model, instead of running a complex deployment). The acquisition function serves as a means to trade off exploration vs exploitation in collecting new data for building the surrogate model: it picks points that have a low (close to optimum) value of the surrogate model (and so are expected to have a low value of the actual objective). This is the &ldquo;exploitation&rdquo; of existing knowledge in the model. On the other hand, it also encourages exploring new areas in which there is a lot of uncertainty in the surrogate model, i.e. where we expect the surrogate model not to be very acurate yet.</p>
 <p>This process is coordinated by the <code>BayesianOptimizer</code> object, which we will use to perform Bayesian Optimization with a random forest surrogate model. Details of this particular method can be found in <a href="https://www.cs.ubc.ca/~hutter/papers/11-LION5-SMAC.pdf">Hutter et. al. (2011)</a>. We&rsquo;re first configuring the model to refit after every iteration and use 10 trees for the random forest:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mlos.Optimizers.BayesianOptimizer <span style="color:#f92672">import</span> BayesianOptimizer, BayesianOptimizerConfig
-<span style="color:#f92672">from</span> mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel <span style="color:#f92672">import</span> HomogeneousRandomForestRegressionModelConfig
-
+<span style="color:#f92672">from</span> mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel <span style="color:#f92672">import</span> \
+    HomogeneousRandomForestRegressionModelConfig
 <span style="color:#f92672">from</span> mlos.Spaces <span style="color:#f92672">import</span> Point
 
-optimizer_config <span style="color:#f92672">=</span> BayesianOptimizerConfig<span style="color:#f92672">.</span>DEFAULT<span style="color:#f92672">.</span>copy()
+<span style="color:#75715e"># configure the optimizer, start from the default configuration</span>
+optimizer_config <span style="color:#f92672">=</span> BayesianOptimizerConfig<span style="color:#f92672">.</span>DEFAULT
+<span style="color:#75715e"># set the fraction of randomly sampled configuration to 10% of suggestions</span>
 optimizer_config<span style="color:#f92672">.</span>experiment_designer_config_fraction_random_suggestions <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>
+<span style="color:#75715e"># configure the random forest surrogate model</span>
 random_forest_config <span style="color:#f92672">=</span> optimizer_config<span style="color:#f92672">.</span>homogeneous_random_forest_regression_model_config
-
+<span style="color:#75715e"># refit the model after each observation</span>
 random_forest_config<span style="color:#f92672">.</span>decision_tree_regression_model_config<span style="color:#f92672">.</span>n_new_samples_before_refit <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#75715e"># Use the best split in trees (not random as in extremely randomized trees)</span>
 random_forest_config<span style="color:#f92672">.</span>decision_tree_regression_model_config<span style="color:#f92672">.</span>splitter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;best&#39;</span>
-<span style="color:#75715e"># right now we&#39;re sampling without replacement so we need to subsample to make the trees different when using the &#39;best&#39; splitter</span>
+<span style="color:#75715e"># right now we&#39;re sampling without replacement so we need to subsample</span>
+<span style="color:#75715e"># to make the trees different when using the &#39;best&#39; splitter</span>
 random_forest_config<span style="color:#f92672">.</span>samples_fraction_per_estimator <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">9</span>
+<span style="color:#75715e"># Use 10 trees in the random forest (usually more are better, 10 makes it run pretty quickly)</span>
 random_forest_config<span style="color:#f92672">.</span>n_estimators <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-
+<span style="color:#75715e"># Set multiplier for the confidence bound</span>
 optimizer_config<span style="color:#f92672">.</span>experiment_designer_config<span style="color:#f92672">.</span>confidence_bound_utility_function_config<span style="color:#f92672">.</span>alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>
 
 optimizer <span style="color:#f92672">=</span> BayesianOptimizer(optimization_problem, optimizer_config)
@@ -242,7 +251,24 @@ optimizer <span style="color:#f92672">=</span> BayesianOptimizer(optimization_pr
 n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n_iterations):
     run_optimization(optimizer)
-</code></pre></div><p>After 15 iterations, the model is likely to have captured the general shape, but probably not have found the actual optimum:</p>
+</code></pre></div><pre><code>{'x': 0.757907707201007} -6.020507749372048
+{'x': 0.3385659153030063} 6.185096042769949e-05
+{'x': 0.23197612303997228} -0.3468404890159905
+{'x': 0.7928801604625697} -5.284918010284952
+{'x': 0.8815780787349058} 3.1537613926625077
+{'x': 0.16402656440898666} -0.924259625864902
+{'x': 0.29561374586243794} -0.02240022273836237
+{'x': 0.32346742180857124} -0.00041388566038802395
+{'x': 0.1077838619432605} -0.7717745287819754
+{'x': 0.6614561561173113} -2.7692726602991087
+{'x': 0.6957719148825467} -4.420647513829836
+{'x': 0.6147423506002563} -0.6646816178719914
+{'x': 0.24251734318877827} -0.2632212197591439
+{'x': 0.2258004024128678} -0.4000219034983105
+{'x': 0.31012225327143494} -0.0053326088622407996
+</code></pre>
+<p>You can see that the hit rate is not always increasing, and that is for two reasons: first, the optimizer keeps exploring parts of the space in which there is uncertainty. Second, by default the BayesianOptimizer picks a fraction of points at random to increase exploration. This fraction is set as <code>optimizer_config.experiment_designer_config_fraction_random_suggestions = .1</code> above.</p>
+<p>After 15 iterations, the model is likely to have captured the general shape, but probably not have found the actual optimum:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># evaluate the surrogate</span>
 surrogate_predictions <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>predict(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line}))<span style="color:#f92672">.</span>get_dataframe()
 <span style="color:#75715e"># plot observations</span>
@@ -260,12 +286,74 @@ plt<span style="color:#f92672">.</span>plot(line, <span style="color:#f92672">-<
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Objective function f (performance)&#34;</span>)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Input variable&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
-</code></pre></div><p>We can run more iterations to improve the surrogate model and the optimum that is found:</p>
+</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7fbd394c4dd0&gt;
+</code></pre>
+<p><img src="/MLOS/notebooks/BayesianOptimization_files/BayesianOptimization_17_1.png" alt="png" /></p>
+<p>We can find the best value according to the current surrogate with the <code>optimum</code> method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">optimizer<span style="color:#f92672">.</span>optimum()
+</code></pre></div><pre><code>{'function_value': -6.020507749372048, 'x': 0.757907707201007}
+</code></pre>
+<p>We can run more iterations to improve the surrogate model and the optimum that is found:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># run for more iterations</span>
 n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n_iterations):
     run_optimization(optimizer)
-</code></pre></div><p>We can now visualize the surrogate model and optimization process again. The points are colored according to the iteration number, with dark blue points being early in the process and yellow points being later. You can see that at the end of the optimization, the points start to cluster around the optimum.</p>
+</code></pre></div><pre><code>{'x': 0.6763164661365652} -3.503383425890574
+{'x': 0.4206487623243379} 0.2377728978181129
+{'x': 0.7732333590823842} -5.878500018734809
+{'x': 0.8169053063757504} -3.889800146539258
+{'x': 0.42886614087483244} 0.29940685920118515
+{'x': 0.1281371937862088} -0.9522249579356233
+{'x': 0.7813697416313069} -5.690911584035882
+{'x': 0.4105479760816858} 0.1716158070877152
+{'x': 0.6664255870323191} -3.0152672229021533
+{'x': 0.7405563293082027} -5.879459055182834
+{'x': 0.7842813200372265} -5.603991491352556
+{'x': 0.9416787282472098} 11.331405514951602
+{'x': 0.8042163196737792} -4.719421214527875
+{'x': 0.8033351518263222} -4.769328700337875
+{'x': 0.23507036139674398} -0.3212830038089276
+{'x': 0.8093661771264108} -4.407676147206019
+{'x': 0.8116493759322326} -4.258524070616295
+{'x': 0.8216234971584616} -3.52896429389899
+{'x': 0.0675220744048679} 0.12240796899522906
+{'x': 0.8166673081058137} -3.907257376242078
+{'x': 0.3601469815300127} 0.008185242370319862
+{'x': 0.3790402828081292} 0.0392132412243941
+{'x': 0.9384480597648172} 10.934233915172051
+{'x': 0.8406176047024884} -1.8021155463259753
+{'x': 0.8435539057019121} -1.498064041355048
+{'x': 0.8602583410469368} 0.3988582645458866
+{'x': 0.26998188726808525} -0.09955992580670119
+{'x': 0.12080533005749283} -0.9063699411916888
+{'x': 0.6324527724715098} -1.394761153219483
+{'x': 0.6882362569769167} -4.075969333210547
+{'x': 0.7399750422453033} -5.869743671427
+{'x': 0.02015768196228329} 2.041517537189366
+{'x': 0.809402311787441} -4.405367849919686
+{'x': 0.7093415786110508} -4.988009410214217
+{'x': 0.7483793658101218} -5.979829502289491
+{'x': 0.741358191807174} -5.89236274250569
+{'x': 0.3999710302134307} 0.11463851881321668
+{'x': 0.7405313755062072} -5.879048203956236
+{'x': 0.7402591208928856} -5.874529401785605
+{'x': 0.8557052590261875} -0.1446169335409126
+{'x': 0.7937256568756812} -5.248456142128349
+{'x': 0.7403489403462896} -5.876027538007494
+{'x': 0.009917100663450973} 2.5373885143321955
+{'x': 0.3813003401263352} 0.04508782535976096
+{'x': 0.6738588025410915} -3.3826959532448173
+{'x': 0.7466658426143092} -5.9628082317988085
+{'x': 0.3005470648230876} -0.014835328576984825
+{'x': 0.0912621200004683} -0.4947578211060688
+{'x': 0.769689648260099} -5.935310182986149
+{'x': 0.7741541396213627} -5.861297268626153
+</code></pre>
+<p>There is some improvement in the optimum:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">optimizer<span style="color:#f92672">.</span>optimum()
+</code></pre></div><pre><code>{'function_value': -6.020507749372048, 'x': 0.757907707201007}
+</code></pre>
+<p>We can now visualize the surrogate model and optimization process again. The points are colored according to the iteration number, with dark blue points being early in the process and yellow points being later. You can see that at the end of the optimization, the points start to cluster around the optimum.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># evaluate the surrogate</span>
 surrogate_predictions <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>predict(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line}))<span style="color:#f92672">.</span>get_dataframe()
 <span style="color:#75715e"># plot observations</span>
@@ -288,7 +376,10 @@ bins_axes <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</
 bins_axes<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#34;Points sampled&#34;</span>)
 feature_values<span style="color:#f92672">.</span>hist(bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, ax<span style="color:#f92672">=</span>bins_axes, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">3</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;count of querry points&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
-</code></pre></div><h1 id="going-further">Going further:</h1>
+</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7fbd39f19910&gt;
+</code></pre>
+<p><img src="/MLOS/notebooks/BayesianOptimization_files/BayesianOptimization_25_1.png" alt="png" /></p>
+<h1 id="going-further">Going further:</h1>
 <ol>
 <li>
 <p>Plot the optimum as a function of iterations. How long does it take for the optimization to converge? Is that stable over several random restarts?</p>
