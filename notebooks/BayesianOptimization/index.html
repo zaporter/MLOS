@@ -16,7 +16,7 @@ Motivation In software performance engineering, the impact different (input) par
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.3f6eea471c4b7d2b10d965971ad944c200c8355a6f6b092b8cf9d2b2bb312e44.js" integrity="sha256-P27qRxxLfSsQ2WWXGtlEwgDINVpvawkrjPnSsrsxLkQ="></script>
+<script defer src="/MLOS/en.search.min.5c31a62faec73ff6d89a1f21c62a5875abcb344e93145d73aa1e501ca8eb5868.js" integrity="sha256-XDGmL67HP/bYmh8hxipYdavLNE6TFF1zqh5QHKjrWGg="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -251,28 +251,28 @@ optimizer <span style="color:#f92672">=</span> BayesianOptimizer(optimization_pr
 n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n_iterations):
     run_optimization(optimizer)
-</code></pre></div><pre><code>{'x': 0.757907707201007} -6.020507749372048
-{'x': 0.3385659153030063} 6.185096042769949e-05
-{'x': 0.23197612303997228} -0.3468404890159905
-{'x': 0.7928801604625697} -5.284918010284952
-{'x': 0.8815780787349058} 3.1537613926625077
-{'x': 0.16402656440898666} -0.924259625864902
-{'x': 0.29561374586243794} -0.02240022273836237
-{'x': 0.32346742180857124} -0.00041388566038802395
-{'x': 0.1077838619432605} -0.7717745287819754
-{'x': 0.6614561561173113} -2.7692726602991087
-{'x': 0.6957719148825467} -4.420647513829836
-{'x': 0.6147423506002563} -0.6646816178719914
-{'x': 0.24251734318877827} -0.2632212197591439
-{'x': 0.2258004024128678} -0.4000219034983105
-{'x': 0.31012225327143494} -0.0053326088622407996
+</code></pre></div><pre><code>{&quot;x&quot;: 0.6350194509373203} -1.5090781466343322
+{&quot;x&quot;: 0.4833314225678864} 0.7888007039876634
+{&quot;x&quot;: 0.3085652297590896} -0.006467686393448306
+{&quot;x&quot;: 0.7934881245747} -5.258792311690227
+{&quot;x&quot;: 0.5424135078669235} 0.9304923147369428
+{&quot;x&quot;: 0.7775373724572233} -5.789318939077864
+{&quot;x&quot;: 0.49936454028751} 0.9054996989024285
+{&quot;x&quot;: 0.06384891819327099} 0.24075799315918184
+{&quot;x&quot;: 0.8668798253736468} 1.2204493355601116
+{&quot;x&quot;: 0.8348012963408397} -2.376022242163278
+{&quot;x&quot;: 0.46557222174762747} 0.6294551610056368
+{&quot;x&quot;: 0.8540084233800393} -0.34234099656885403
+{&quot;x&quot;: 0.7535841364871388} -6.013644622699922
+{&quot;x&quot;: 0.6480597388086902} -2.1155668297862786
+{&quot;x&quot;: 0.7022704881552336} -4.702266238788845
 </code></pre>
 <p>You can see that the hit rate is not always increasing, and that is for two reasons: first, the optimizer keeps exploring parts of the space in which there is uncertainty. Second, by default the BayesianOptimizer picks a fraction of points at random to increase exploration. This fraction is set as <code>optimizer_config.experiment_designer_config_fraction_random_suggestions = .1</code> above.</p>
 <p>After 15 iterations, the model is likely to have captured the general shape, but probably not have found the actual optimum:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># evaluate the surrogate</span>
 surrogate_predictions <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>predict(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line}))<span style="color:#f92672">.</span>get_dataframe()
 <span style="color:#75715e"># plot observations</span>
-feature_values, target_values <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>get_experiment_data()
+feature_values, target_values <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>get_all_observations()
 plt<span style="color:#f92672">.</span>scatter(feature_values, target_values, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;observed points&#39;</span>)
 plt<span style="color:#f92672">.</span>colorbar()
 <span style="color:#75715e"># plot true function (usually unknown)</span>
@@ -286,78 +286,78 @@ plt<span style="color:#f92672">.</span>plot(line, <span style="color:#f92672">-<
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Objective function f (performance)&#34;</span>)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Input variable&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7fbd394c4dd0&gt;
+</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7f9bf5d3d290&gt;
 </code></pre>
 <p><img src="/MLOS/notebooks/BayesianOptimization_files/BayesianOptimization_17_1.png" alt="png" /></p>
 <p>We can find the best value according to the current surrogate with the <code>optimum</code> method:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">optimizer<span style="color:#f92672">.</span>optimum()
-</code></pre></div><pre><code>{'function_value': -6.020507749372048, 'x': 0.757907707201007}
+</code></pre></div><pre><code>{'function_value': -6.013644622699922, 'x': 0.7535841364871388}
 </code></pre>
 <p>We can run more iterations to improve the surrogate model and the optimum that is found:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># run for more iterations</span>
 n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n_iterations):
     run_optimization(optimizer)
-</code></pre></div><pre><code>{'x': 0.6763164661365652} -3.503383425890574
-{'x': 0.4206487623243379} 0.2377728978181129
-{'x': 0.7732333590823842} -5.878500018734809
-{'x': 0.8169053063757504} -3.889800146539258
-{'x': 0.42886614087483244} 0.29940685920118515
-{'x': 0.1281371937862088} -0.9522249579356233
-{'x': 0.7813697416313069} -5.690911584035882
-{'x': 0.4105479760816858} 0.1716158070877152
-{'x': 0.6664255870323191} -3.0152672229021533
-{'x': 0.7405563293082027} -5.879459055182834
-{'x': 0.7842813200372265} -5.603991491352556
-{'x': 0.9416787282472098} 11.331405514951602
-{'x': 0.8042163196737792} -4.719421214527875
-{'x': 0.8033351518263222} -4.769328700337875
-{'x': 0.23507036139674398} -0.3212830038089276
-{'x': 0.8093661771264108} -4.407676147206019
-{'x': 0.8116493759322326} -4.258524070616295
-{'x': 0.8216234971584616} -3.52896429389899
-{'x': 0.0675220744048679} 0.12240796899522906
-{'x': 0.8166673081058137} -3.907257376242078
-{'x': 0.3601469815300127} 0.008185242370319862
-{'x': 0.3790402828081292} 0.0392132412243941
-{'x': 0.9384480597648172} 10.934233915172051
-{'x': 0.8406176047024884} -1.8021155463259753
-{'x': 0.8435539057019121} -1.498064041355048
-{'x': 0.8602583410469368} 0.3988582645458866
-{'x': 0.26998188726808525} -0.09955992580670119
-{'x': 0.12080533005749283} -0.9063699411916888
-{'x': 0.6324527724715098} -1.394761153219483
-{'x': 0.6882362569769167} -4.075969333210547
-{'x': 0.7399750422453033} -5.869743671427
-{'x': 0.02015768196228329} 2.041517537189366
-{'x': 0.809402311787441} -4.405367849919686
-{'x': 0.7093415786110508} -4.988009410214217
-{'x': 0.7483793658101218} -5.979829502289491
-{'x': 0.741358191807174} -5.89236274250569
-{'x': 0.3999710302134307} 0.11463851881321668
-{'x': 0.7405313755062072} -5.879048203956236
-{'x': 0.7402591208928856} -5.874529401785605
-{'x': 0.8557052590261875} -0.1446169335409126
-{'x': 0.7937256568756812} -5.248456142128349
-{'x': 0.7403489403462896} -5.876027538007494
-{'x': 0.009917100663450973} 2.5373885143321955
-{'x': 0.3813003401263352} 0.04508782535976096
-{'x': 0.6738588025410915} -3.3826959532448173
-{'x': 0.7466658426143092} -5.9628082317988085
-{'x': 0.3005470648230876} -0.014835328576984825
-{'x': 0.0912621200004683} -0.4947578211060688
-{'x': 0.769689648260099} -5.935310182986149
-{'x': 0.7741541396213627} -5.861297268626153
+</code></pre></div><pre><code>{&quot;x&quot;: 0.9138097526221035} 7.6513054247779175
+{&quot;x&quot;: 0.8519933557076289} -0.5736042495274603
+{&quot;x&quot;: 0.8116302037144215} -4.259804404423071
+{&quot;x&quot;: 0.7061887624896456} -4.863538957628715
+{&quot;x&quot;: 0.8271713347768835} -3.0692033664681047
+{&quot;x&quot;: 0.5130063235043972} 0.9687322335026826
+{&quot;x&quot;: 0.7422479411334716} -5.905998171504055
+{&quot;x&quot;: 0.7389280386304299} -5.851486258926377
+{&quot;x&quot;: 0.21842022200345257} -0.4666600981927195
+{&quot;x&quot;: 0.8079011368475868} -4.4998463792707915
+{&quot;x&quot;: 0.3159406999497182} -0.0022564315697688768
+{&quot;x&quot;: 0.6855611168640666} -3.949874452601847
+{&quot;x&quot;: 0.3583178623844031} 0.006636991869173917
+{&quot;x&quot;: 0.8076700064305192} -4.514134726460727
+{&quot;x&quot;: 0.19431914963705388} -0.6924023729471288
+{&quot;x&quot;: 0.9155076528544737} 7.887429046687405
+{&quot;x&quot;: 0.72952210755324} -5.645805679770064
+{&quot;x&quot;: 0.08958308888619892} -0.45965246794584275
+{&quot;x&quot;: 0.4466815079148362} 0.4523002521853543
+{&quot;x&quot;: 0.7182947120221115} -5.312047811508222
+{&quot;x&quot;: 0.7816271142824207} -5.683653391485995
+{&quot;x&quot;: 0.7818802851374435} -5.676433479870665
+{&quot;x&quot;: 0.6756344614533965} -3.469953042279206
+{&quot;x&quot;: 0.029841496254371824} 1.5906094607096881
+{&quot;x&quot;: 0.5529266367728413} 0.8421092350708904
+{&quot;x&quot;: 0.3261167441893573} -0.0001621573836265733
+{&quot;x&quot;: 0.8196855960224781} -3.6805588666889237
+{&quot;x&quot;: 0.82204663789604} -3.4952391422571383
+{&quot;x&quot;: 0.7962201108318021} -5.135531111110637
+{&quot;x&quot;: 0.7775457234188564} -5.789124091237177
+{&quot;x&quot;: 0.7997805815708482} -4.960455255726088
+{&quot;x&quot;: 0.8175868919032088} -3.83940850669835
+{&quot;x&quot;: 0.7385626432251395} -5.844886968459959
+{&quot;x&quot;: 0.7134246154777857} -5.141487603328419
+{&quot;x&quot;: 0.7354222898719996} -5.783409442269132
+{&quot;x&quot;: 0.11165725283850925} -0.8192315048039062
+{&quot;x&quot;: 0.738257830598224} -5.839292407406767
+{&quot;x&quot;: 0.6417460294327604} -1.8170627277133362
+{&quot;x&quot;: 0.7311775104197727} -5.687222610974796
+{&quot;x&quot;: 0.8277343168280791} -3.020438401680559
+{&quot;x&quot;: 0.6243046863652015} -1.0453056950141755
+{&quot;x&quot;: 0.8499671465795944} -0.8021626301730993
+{&quot;x&quot;: 0.726926533831402} -5.576640860774351
+{&quot;x&quot;: 0.8108001426501227} -4.314783852157579
+{&quot;x&quot;: 0.3532457962676614} 0.0033784537892356716
+{&quot;x&quot;: 0.7621241543271401} -6.0078741852802064
+{&quot;x&quot;: 0.7036275807301013} -4.758906746925743
+{&quot;x&quot;: 0.7927878696570417} -5.288842537657544
+{&quot;x&quot;: 0.21472123895324058} -0.5009819262310933
+{&quot;x&quot;: 0.7613025419050883} -6.011864967305424
 </code></pre>
 <p>There is some improvement in the optimum:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">optimizer<span style="color:#f92672">.</span>optimum()
-</code></pre></div><pre><code>{'function_value': -6.020507749372048, 'x': 0.757907707201007}
+</code></pre></div><pre><code>{'function_value': -6.013644622699922, 'x': 0.7535841364871388}
 </code></pre>
 <p>We can now visualize the surrogate model and optimization process again. The points are colored according to the iteration number, with dark blue points being early in the process and yellow points being later. You can see that at the end of the optimization, the points start to cluster around the optimum.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># evaluate the surrogate</span>
 surrogate_predictions <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>predict(pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;x&#39;</span>: line}))<span style="color:#f92672">.</span>get_dataframe()
 <span style="color:#75715e"># plot observations</span>
-feature_values, target_values <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>get_experiment_data()
+feature_values, target_values <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>get_all_observations()
 plt<span style="color:#f92672">.</span>scatter(feature_values, target_values, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;observed points&#39;</span>)
  
 <span style="color:#75715e"># plot true function (usually unknown)</span>
@@ -376,7 +376,7 @@ bins_axes <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</
 bins_axes<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#34;Points sampled&#34;</span>)
 feature_values<span style="color:#f92672">.</span>hist(bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, ax<span style="color:#f92672">=</span>bins_axes, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">3</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;count of querry points&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7fbd39f19910&gt;
+</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7f9bf5d46250&gt;
 </code></pre>
 <p><img src="/MLOS/notebooks/BayesianOptimization_files/BayesianOptimization_25_1.png" alt="png" /></p>
 <h1 id="going-further">Going further:</h1>
