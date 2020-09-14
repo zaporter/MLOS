@@ -343,7 +343,7 @@
 <span id="mlos-optimizers-simplebayesianoptimizer"></span><h1>mlos.Optimizers.SimpleBayesianOptimizer<a class="headerlink" href="#module-mlos.Optimizers.SimpleBayesianOptimizer" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.SimpleBayesianOptimizer.</code><code class="sig-name descname">SimpleBayesianOptimizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.OptimizationProblem" title="mlos.Optimizers.OptimizationProblem.OptimizationProblem">mlos.Optimizers.OptimizationProblem.OptimizationProblem</a></span></em>, <em class="sig-param"><span class="n">optimizer_config</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig" title="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig">mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L79"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.SimpleBayesianOptimizer.</code><code class="sig-name descname">SimpleBayesianOptimizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.OptimizationProblem" title="mlos.Optimizers.OptimizationProblem.OptimizationProblem">mlos.Optimizers.OptimizationProblem.OptimizationProblem</a></span></em>, <em class="sig-param"><span class="n">optimizer_config</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig" title="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig">mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L79"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Optimizers.OptimizerInterface.html#mlos.Optimizers.OptimizerInterface.OptimizerInterface" title="mlos.Optimizers.OptimizerInterface.OptimizerInterface"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Optimizers.OptimizerInterface.OptimizerInterface</span></code></a></p>
 <p>A toy bayesian optimizer based on Gaussian processes.</p>
 <dl class="py method">
@@ -353,7 +353,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.estimate_local_parameter_importance">
-<code class="sig-name descname">estimate_local_parameter_importance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L229"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.estimate_local_parameter_importance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">estimate_local_parameter_importance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L229"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.estimate_local_parameter_importance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimates local parameter importance by querying the model for predictions in the neighborhood of params.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -413,7 +413,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.focus">
-<code class="sig-name descname">focus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subspace</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L315"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.focus" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">focus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subspace</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L315"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.focus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force the optimizer to focus on a specific subspace.</p>
 <p>This could be a great way to pass priors to the optimizer, as well as play with the component for the developers.</p>
 <dl class="field-list simple">
@@ -428,12 +428,12 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.get_all_observations">
-<code class="sig-name descname">get_all_observations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L149"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.get_all_observations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_all_observations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L149"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.get_all_observations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.get_optimizer_convergence_state">
-<code class="sig-name descname">get_optimizer_convergence_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L152"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.get_optimizer_convergence_state" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimizer_convergence_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L152"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.get_optimizer_convergence_state" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -443,7 +443,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.optimum">
-<code class="sig-name descname">optimum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stay_focused</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L303"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.optimum" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">optimum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stay_focused</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L303"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.optimum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the optimal value found so far along with the related parameter values.</p>
 <p>This could be either min or max, depending on the settings.</p>
 <dl class="field-list simple">
@@ -460,7 +460,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict target value based on the parameters supplied.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -474,7 +474,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.register">
-<code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">target_value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L193"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.register" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">target_value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L193"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a new result with the optimizer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -491,7 +491,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.reset_focus">
-<code class="sig-name descname">reset_focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L322"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.reset_focus" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reset_focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L322"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.reset_focus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes focus back to the full search space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -502,7 +502,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.suggest">
-<code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">random</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L155"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.suggest" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">random</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L155"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizer.suggest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Suggest the next set of parameters to try.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -515,26 +515,26 @@
 
 <dl class="py class">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.SimpleBayesianOptimizer.</code><code class="sig-name descname">SimpleBayesianOptimizerConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">utility_function</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kappa</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xi</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L17"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.SimpleBayesianOptimizer.</code><code class="sig-name descname">SimpleBayesianOptimizerConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">utility_function</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kappa</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xi</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L17"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py attribute">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.CONFIG_SPACE">
-<code class="sig-name descname">CONFIG_SPACE</code><em class="property"> = SimpleBayesianOptimizerConfig utility_function: [ucb, ei, poi] kappa: [-5.00, 5.00] xi: [-5.00, 5.00]</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.CONFIG_SPACE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CONFIG_SPACE</code><em class="property"> = SimpleBayesianOptimizerConfig utility_function: [ucb, ei, poi] kappa: [-5.00, 5.00] xi: [-5.00, 5.00]</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.CONFIG_SPACE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.contains">
-<em class="property">classmethod </em><code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L34"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.contains" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L34"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.contains" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.create_from_config_point">
-<em class="property">classmethod </em><code class="sig-name descname">create_from_config_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config_point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L45"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.create_from_config_point" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create_from_config_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config_point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L45"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.create_from_config_point" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.to_dict">
-<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L71"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.to_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Optimizers/SimpleBayesianOptimizer.py#L71"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.SimpleBayesianOptimizer.SimpleBayesianOptimizerConfig.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

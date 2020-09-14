@@ -347,7 +347,7 @@
 <span id="mlos-examples-smartcache-cacheimplementations-lrucache"></span><h1>mlos.Examples.SmartCache.CacheImplementations.LruCache<a class="headerlink" href="#module-mlos.Examples.SmartCache.CacheImplementations.LruCache" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCache">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.CacheImplementations.LruCache.</code><code class="sig-name descname">LruCache</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_size</span></em>, <em class="sig-param"><span class="n">logger</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Examples/SmartCache/CacheImplementations/LruCache.py#L20"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCache" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.CacheImplementations.LruCache.</code><code class="sig-name descname">LruCache</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_size</span></em>, <em class="sig-param"><span class="n">logger</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Examples/SmartCache/CacheImplementations/LruCache.py#L20"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Examples.SmartCache.CacheImplementations.XruCache.html#mlos.Examples.SmartCache.CacheImplementations.XruCache.XruCache" title="mlos.Examples.SmartCache.CacheImplementations.XruCache.XruCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Examples.SmartCache.CacheImplementations.XruCache.XruCache</span></code></a></p>
 <p>An implementation of a Least Recently Used cache.</p>
 <p>We maintain a dictionary and a linked list both pointing to the same cache entry.
@@ -357,18 +357,18 @@ a full cache, we expel the entry that’s at the tail of the list (since it is t
 least recently used one).</p>
 <dl class="py method">
 <dt id="mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCache.evict">
-<code class="sig-name descname">evict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Examples/SmartCache/CacheImplementations/LruCache.py#L34"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCache.evict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">evict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Examples/SmartCache/CacheImplementations/LruCache.py#L34"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCache.evict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCacheConfig">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.CacheImplementations.LruCache.</code><code class="sig-name descname">LruCacheConfig</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Examples/SmartCache/CacheImplementations/LruCache.py#L8"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCacheConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.CacheImplementations.LruCache.</code><code class="sig-name descname">LruCacheConfig</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Examples/SmartCache/CacheImplementations/LruCache.py#L8"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCacheConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py attribute">
 <dt id="mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCacheConfig.CONFIG_SPACE">
-<code class="sig-name descname">CONFIG_SPACE</code><em class="property"> = lru_cache_config cache_size: {1, 2, 3, ... , 4096}</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/fc25569/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCacheConfig.CONFIG_SPACE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CONFIG_SPACE</code><em class="property"> = lru_cache_config cache_size: {1, 2, 3, ... , 4096}</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/15e7774/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.CacheImplementations.LruCache.LruCacheConfig.CONFIG_SPACE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
