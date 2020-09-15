@@ -184,7 +184,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html">mlos.Optimizers.SimpleBayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.NumericOptimizers.html">mlos.Optimizers.ExperimentDesigner.NumericOptimizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctions.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctions</a></li>
 </ul>
 </li>
@@ -215,9 +215,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.DefaultConfigMeta.html">mlos.Spaces.DefaultConfigMeta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrids.html">mlos.Spaces.Hypergrids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Dimensions.html">mlos.Spaces.Dimensions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CategoricalDimension.html">mlos.Spaces.Dimensions.CategoricalDimension</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CompositeDimension.html">mlos.Spaces.Dimensions.CompositeDimension</a></li>
@@ -234,6 +235,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html">mlos.Spaces.HypergridAdapters</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter.html">mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter.html">mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html">mlos.Spaces.HypergridAdapters.HypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.unit_tests.html">mlos.Spaces.HypergridAdapters.unit_tests</a></li>
@@ -348,7 +350,7 @@
 <p>Types of all telemetry messages that this component can emit.</p>
 <dl class="py class">
 <dt id="mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheEvict">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.</code><code class="sig-name descname">SmartCacheEvict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Examples/SmartCache/MlosInterface/MlosTelemetryMessages.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheEvict" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.</code><code class="sig-name descname">SmartCacheEvict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Examples/SmartCache/MlosInterface/MlosTelemetryMessages.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheEvict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
 <dl class="py method">
 <dt id="mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheEvict.key">
@@ -360,7 +362,7 @@
 
 <dl class="py class">
 <dt id="mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheGet">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.</code><code class="sig-name descname">SmartCacheGet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">was_hit</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Examples/SmartCache/MlosInterface/MlosTelemetryMessages.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheGet" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.</code><code class="sig-name descname">SmartCacheGet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">was_hit</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Examples/SmartCache/MlosInterface/MlosTelemetryMessages.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheGet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
 <dl class="py method">
 <dt id="mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheGet.key">
@@ -378,7 +380,7 @@
 
 <dl class="py class">
 <dt id="mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCachePush">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.</code><code class="sig-name descname">SmartCachePush</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Examples/SmartCache/MlosInterface/MlosTelemetryMessages.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCachePush" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.</code><code class="sig-name descname">SmartCachePush</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Examples/SmartCache/MlosInterface/MlosTelemetryMessages.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCachePush" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
 <dl class="py method">
 <dt id="mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCachePush.key">

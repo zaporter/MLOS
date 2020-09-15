@@ -38,7 +38,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mlos.Spaces.Dimensions" href="mlos.Spaces.Dimensions.html" />
+    <link rel="next" title="mlos.Spaces.SimpleHypergrid" href="mlos.Spaces.SimpleHypergrid.html" />
     <link rel="prev" title="mlos.Spaces.HypergridsJsonEncoderDecoder" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html" /> 
 </head>
 
@@ -184,7 +184,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html">mlos.Optimizers.SimpleBayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.NumericOptimizers.html">mlos.Optimizers.ExperimentDesigner.NumericOptimizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctions.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctions</a></li>
 </ul>
 </li>
@@ -215,9 +215,10 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.DefaultConfigMeta.html">mlos.Spaces.DefaultConfigMeta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrids.html">mlos.Spaces.Hypergrids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">mlos.Spaces.Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Dimensions.html">mlos.Spaces.Dimensions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CategoricalDimension.html">mlos.Spaces.Dimensions.CategoricalDimension</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CompositeDimension.html">mlos.Spaces.Dimensions.CompositeDimension</a></li>
@@ -234,6 +235,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html">mlos.Spaces.HypergridAdapters</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter.html">mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter.html">mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html">mlos.Spaces.HypergridAdapters.HypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.unit_tests.html">mlos.Spaces.HypergridAdapters.unit_tests</a></li>
@@ -343,17 +345,17 @@
 <span id="mlos-spaces-point"></span><h1>mlos.Spaces.Point<a class="headerlink" href="#module-mlos.Spaces.Point" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Spaces.Point.Point">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.Point.</code><code class="sig-name descname">Point</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.Point.</code><code class="sig-name descname">Point</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Models a point in a Hypergrid.</p>
 <dl class="py method">
 <dt id="mlos.Spaces.Point.Point.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L19"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L19"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.copy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Point.Point.flat_copy">
-<code class="sig-name descname">flat_copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L22"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.flat_copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">flat_copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L22"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.flat_copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a copy of the point but all dimension names are flattened.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -364,32 +366,32 @@
 
 <dl class="py method">
 <dt id="mlos.Spaces.Point.Point.from_dataframe">
-<em class="property">classmethod </em><code class="sig-name descname">from_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L119"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.from_dataframe" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">from_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L124"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.from_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Point.Point.from_json">
-<em class="property">classmethod </em><code class="sig-name descname">from_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">json_str</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L108"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.from_json" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">from_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">json_str</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L113"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.from_json" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Point.Point.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dimension_name</span></em>, <em class="sig-param"><span class="n">default</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L99"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dimension_name</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L79"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Point.Point.to_dataframe">
-<code class="sig-name descname">to_dataframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L116"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.to_dataframe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_dataframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L121"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.to_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Point.Point.to_dict">
-<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L113"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.to_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L118"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.Point.Point.to_json">
-<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Point.py#L103"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.to_json" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/Point.py#L108"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.Point.Point.to_json" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -404,7 +406,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mlos.Spaces.Dimensions.html" class="btn btn-neutral float-right" title="mlos.Spaces.Dimensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mlos.Spaces.SimpleHypergrid.html" class="btn btn-neutral float-right" title="mlos.Spaces.SimpleHypergrid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="mlos.Spaces.HypergridsJsonEncoderDecoder.html" class="btn btn-neutral float-left" title="mlos.Spaces.HypergridsJsonEncoderDecoder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

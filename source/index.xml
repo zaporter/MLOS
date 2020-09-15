@@ -83,7 +83,7 @@ Links A loose list of sources consulted in this survey:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://microsoft.github.io/MLOS/source/Mlos.Python/mlos/Spaces/HypergridAdapters/AboutHypergridAdapters/</guid>
-      <description>Hypergrid Adapters Motivation Categorical to numeric translations The goal of adapters is to make a broader class of hypergrids compatible with any surrogate model. The chief problem in absence of adapters is that some models (RERF, DecisionTreeRegressionModel) can only operate on numeric datatypes, but the configuration for many components includes strings, and booleans as well. A suitable adapter will map such categorical dimensions into numeric ones and allow transparent translation of observations and suggestions between the components and the regression models.</description>
+      <description>Hypergrid Adapters Motivation Categorical to numeric projections The goal of adapters is to make a broader class of hypergrids compatible with any surrogate model. The chief problem in absence of adapters is that some models (RERF, DecisionTreeRegressionModel) can only operate on numeric datatypes, but the configuration for many components includes strings, and booleans as well. A suitable adapter will map such categorical dimensions into numeric ones and allow transparent projection of observations and suggestions between the components and the regression models.</description>
     </item>
     
     <item>

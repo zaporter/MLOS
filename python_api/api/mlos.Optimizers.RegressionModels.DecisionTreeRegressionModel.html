@@ -184,7 +184,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html">mlos.Optimizers.SimpleBayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.NumericOptimizers.html">mlos.Optimizers.ExperimentDesigner.NumericOptimizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctions.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctions</a></li>
 </ul>
 </li>
@@ -215,9 +215,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.DefaultConfigMeta.html">mlos.Spaces.DefaultConfigMeta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrids.html">mlos.Spaces.Hypergrids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Dimensions.html">mlos.Spaces.Dimensions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CategoricalDimension.html">mlos.Spaces.Dimensions.CategoricalDimension</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CompositeDimension.html">mlos.Spaces.Dimensions.CompositeDimension</a></li>
@@ -234,6 +235,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html">mlos.Spaces.HypergridAdapters</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter.html">mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter.html">mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html">mlos.Spaces.HypergridAdapters.HypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.unit_tests.html">mlos.Spaces.HypergridAdapters.unit_tests</a></li>
@@ -345,13 +347,13 @@
 <span id="mlos-optimizers-regressionmodels-decisiontreeregressionmodel"></span><h1>mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel<a class="headerlink" href="#module-mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.</code><code class="sig-name descname">DecisionTreeRegressionModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_config</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig" title="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig</a></span></em>, <em class="sig-param"><span class="n">input_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">output_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">logger</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L171"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.</code><code class="sig-name descname">DecisionTreeRegressionModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_config</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a></span></em>, <em class="sig-param"><span class="n">input_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid" title="mlos.Spaces.Hypergrid.Hypergrid">mlos.Spaces.Hypergrid.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">output_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid" title="mlos.Spaces.Hypergrid.Hypergrid">mlos.Spaces.Hypergrid.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">logger</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L111"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Optimizers.RegressionModels.RegressionModel.html#mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel" title="mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel</span></code></a></p>
 <p>Possible extensions:
 * have a tree fit a linear model at each leaf.</p>
 <dl class="py method">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">target_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">iteration_number</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Tracer.py#L254"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">target_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">iteration_number</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Tracer.py#L194"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.fit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -361,12 +363,12 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">include_only_valid_rows</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Tracer.py#L300"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">include_only_valid_rows</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Tracer.py#L240"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.predict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.should_fit">
-<code class="sig-name descname">should_fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_samples</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L239"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.should_fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">should_fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_samples</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L179"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.should_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns true if the model should be fitted.</p>
 <p>This model should be fitted under the following conditions:
 1) It has not been fitted yet and num_samples is larger than min_samples_to_fit
@@ -385,87 +387,120 @@
 
 <dl class="py class">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.</code><code class="sig-name descname">DecisionTreeRegressionModelConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">criterion</span><span class="o">=</span><span class="default_value">'mse'</span></em>, <em class="sig-param"><span class="n">splitter</span><span class="o">=</span><span class="default_value">'random'</span></em>, <em class="sig-param"><span class="n">max_depth</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">min_samples_split</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">min_samples_leaf</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">min_weight_fraction_leaf</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">max_features</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_leaf_nodes</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">min_impurity_decrease</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">ccp_alpha</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">min_samples_to_fit</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">n_new_samples_before_refit</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L17"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.</code><code class="sig-name descname">DecisionTreeRegressionModelConfig</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L17"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Optimizers.RegressionModels.RegressionModel.html#mlos.Optimizers.RegressionModels.RegressionModel.RegressionModelConfig" title="mlos.Optimizers.RegressionModels.RegressionModel.RegressionModelConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Optimizers.RegressionModels.RegressionModel.RegressionModelConfig</span></code></a></p>
 <p>A configuration object for a decision tree regression model.</p>
 <p>This class is responsible for validating that its objects are valid configurations.
 DecisionTreeRegressionModel will take an object of this class to actually create
 the model.</p>
+<p>Copied from scikit-learn docs:</p>
+<blockquote>
+<div><p>criterion: The function to measure the quality of a split.
+splitter: The strategy used to choose the split at each node.
+max_depth: The maximum depth of the tree. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than</p>
+<blockquote>
+<div><p>min_samples_split samples.</p>
+</div></blockquote>
+<p>min_samples_split: The minimum number of samples required to split an internal node.
+min_samples_leaf: The minimum number of samples required to be at a leaf node.
+min_weight_fraction_leaf: The minimum weighted fraction of the sum total of weights (of all the input samples) required to be at a leaf node.</p>
+<blockquote>
+<div><p>Samples have equal weight when sample_weight is not provided.</p>
+</div></blockquote>
+<p>max_features: The number of features to consider when looking for the best split.
+random_state: If int, random_state is the seed used by the random number generator; If RandomState instance, random_state is the random number</p>
+<blockquote>
+<div><p>generator; If None, the random number generator is the RandomState instance used by np.random.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>max_leaf_nodes: Grow a tree with max_leaf_nodes in best-first fashion. Best nodes are defined as relative reduction in impurity. If None then</dt><dd><p>unlimited number of leaf nodes.</p>
+</dd>
+</dl>
+<p>min_impurity_decrease: A node will be split if this split induces a decrease of the impurity greater than or equal to this value.
+ccp_alpha: complexity parameter used for Minimal Cost-Complexity Pruning. The subtree with the largest cost complexity that is smaller than</p>
+<blockquote>
+<div><p>ccp_alpha will be chosen. By default, no pruning is performed. See Minimal Cost-Complexity Pruning for details.</p>
+</div></blockquote>
+<p>min_samples_to_fit: minimum number of samples before it makes sense to try to fit this tree
+n_new_samples_before_refit: It makes little sense to refit every model for every sample. This parameter controls</p>
+<blockquote>
+<div><p>how frequently we refit the decision tree.</p>
+</div></blockquote>
+</div></blockquote>
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.CONFIG_SPACE">
-<code class="sig-name descname">CONFIG_SPACE</code><em class="property"> = decision_tree_regression_model_config criterion: [mse, friedman_mse, mae] splitter: [best, random] max_depth: {0, 1, 2, ... , 1024} min_samples_split: {2, 3, 4, ... , 1024} min_samples_leaf: {3, 4, 5, ... , 1024} min_weight_fraction_leaf: [0.00, 0.50] max_features: [auto, sqrt, log2] max_leaf_nodes: {0, 1, 2, ... , 1024} min_impurity_decrease: [0.00, 1024.00] ccp_alpha: [0.00, 1024.00] min_samples_to_fit: {1, 2, 3, ... , 4294967296} n_new_samples_before_refit: {1, 2, 3, ... , 4294967296}</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/Hypergrids.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.CONFIG_SPACE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CONFIG_SPACE</code><em class="property"> = Name: decision_tree_regression_model_config   Dimensions:     criterion: {mse, friedman_mse, mae}     splitter: {best, random}     max_depth: {0, 1, ... , 1024}     min_samples_split: {2, 3, ... , 1024}     min_samples_leaf: {3, 4, ... , 1024}     min_weight_fraction_leaf: [0.00, 0.50]     max_features: {auto, sqrt, log2}     max_leaf_nodes: {0, 1, ... , 1024}     min_impurity_decrease: [0.00, 1024.00]     ccp_alpha: [0.00, 1024.00]     min_samples_to_fit: {1, 2, ... , 4294967296}     n_new_samples_before_refit: {1, 2, ... , 4294967296}</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/SimpleHypergrid.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.CONFIG_SPACE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion">
-<em class="property">class </em><code class="sig-name descname">Criterion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L25"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Criterion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L48"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>The function to measure the quality of a split.</p>
 <p>Supported criteria are ‘mse’ for the mean squared error, which is equal to variance reduction as feature
 selection criterion and minimizes the L2 loss using the mean of each terminal node, ‘friedman_mse’,
 which uses mean squared error with Friedman’s improvement score for potential splits, and ‘mae’ for the
 mean absolute error, which minimizes the L1 loss using the median of each terminal node.</p>
-<p>Copied from scikit-learn docs.</p>
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.FRIEDMAN_MSE">
-<code class="sig-name descname">FRIEDMAN_MSE</code><em class="property"> = 'friedman_mse'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.FRIEDMAN_MSE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">FRIEDMAN_MSE</code><em class="property"> = 'friedman_mse'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.FRIEDMAN_MSE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.MAE">
-<code class="sig-name descname">MAE</code><em class="property"> = 'mae'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.MAE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MAE</code><em class="property"> = 'mae'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.MAE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.MSE">
-<code class="sig-name descname">MSE</code><em class="property"> = 'mse'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.MSE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MSE</code><em class="property"> = 'mse'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Criterion.MSE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc">
-<em class="property">class </em><code class="sig-name descname">MaxFeaturesFunc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L47"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">MaxFeaturesFunc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L68"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>An enumeration.</p>
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.AUTO">
-<code class="sig-name descname">AUTO</code><em class="property"> = 'auto'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.AUTO" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">AUTO</code><em class="property"> = 'auto'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.AUTO" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.LOG2">
-<code class="sig-name descname">LOG2</code><em class="property"> = 'log2'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.LOG2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">LOG2</code><em class="property"> = 'log2'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.LOG2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.SQRT">
-<code class="sig-name descname">SQRT</code><em class="property"> = 'sqrt'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.SQRT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SQRT</code><em class="property"> = 'sqrt'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.MaxFeaturesFunc.SQRT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter">
-<em class="property">class </em><code class="sig-name descname">Splitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L39"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Splitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L60"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>The strategy used to choose the split at each node.</p>
 <p>Supported strategies are “best” to choose the best split and “random” to choose the best random split.</p>
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter.BEST">
-<code class="sig-name descname">BEST</code><em class="property"> = 'best'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter.BEST" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">BEST</code><em class="property"> = 'best'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter.BEST" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter.RANDOM">
-<code class="sig-name descname">RANDOM</code><em class="property"> = 'random'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter.RANDOM" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RANDOM</code><em class="property"> = 'random'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.Splitter.RANDOM" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.contains">
-<em class="property">classmethod </em><code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L85"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.contains" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L106"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.contains" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>config</strong> – </p>
@@ -475,21 +510,6 @@ mean absolute error, which minimizes the L1 loss using the median of each termin
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.create_from_config_point">
-<em class="property">classmethod </em><code class="sig-name descname">create_from_config_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config_point</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Optimizers/RegressionModels/DecisionTreeRegressionModel.py#L102"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.create_from_config_point" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.max_depth_value">
-<em class="property">property </em><code class="sig-name descname">max_depth_value</code><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.max_depth_value" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.max_leaf_nodes_value">
-<em class="property">property </em><code class="sig-name descname">max_leaf_nodes_value</code><a class="headerlink" href="#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModelConfig.max_leaf_nodes_value" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 

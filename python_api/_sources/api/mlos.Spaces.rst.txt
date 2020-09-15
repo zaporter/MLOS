@@ -12,9 +12,10 @@ mlos.Spaces
    :maxdepth: 1
 
    mlos.Spaces.DefaultConfigMeta
-   mlos.Spaces.Hypergrids
+   mlos.Spaces.Hypergrid
    mlos.Spaces.HypergridsJsonEncoderDecoder
    mlos.Spaces.Point
+   mlos.Spaces.SimpleHypergrid
 
 .. toctree::
    :maxdepth: 1

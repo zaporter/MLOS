@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mlos.Spaces.HypergridAdapters.HypergridAdapter" href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html" />
-    <link rel="prev" title="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter" href="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html" /> 
+    <link rel="prev" title="mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter" href="mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -184,7 +184,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html">mlos.Optimizers.SimpleBayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.NumericOptimizers.html">mlos.Optimizers.ExperimentDesigner.NumericOptimizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctions.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctions</a></li>
 </ul>
 </li>
@@ -215,9 +215,10 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.DefaultConfigMeta.html">mlos.Spaces.DefaultConfigMeta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrids.html">mlos.Spaces.Hypergrids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Dimensions.html">mlos.Spaces.Dimensions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CategoricalDimension.html">mlos.Spaces.Dimensions.CategoricalDimension</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CompositeDimension.html">mlos.Spaces.Dimensions.CompositeDimension</a></li>
@@ -234,6 +235,7 @@
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html">mlos.Spaces.HypergridAdapters</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter.html">mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html">mlos.Spaces.HypergridAdapters.HypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.unit_tests.html">mlos.Spaces.HypergridAdapters.unit_tests</a></li>
@@ -345,7 +347,7 @@
 <span id="mlos-spaces-hypergridadapters-hierarchicaltoflathypergridadapter"></span><h1>mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter<a class="headerlink" href="#module-mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter.HierarchicalToFlatHypergridAdapter">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter.</code><code class="sig-name descname">HierarchicalToFlatHypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adaptee</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrids.html#mlos.Spaces.Hypergrids.Hypergrid" title="mlos.Spaces.Hypergrids.Hypergrid">mlos.Spaces.Hypergrids.Hypergrid</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/26bfe0f/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HierarchicalToFlatHypergridAdapter.py#L11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter.HierarchicalToFlatHypergridAdapter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter.</code><code class="sig-name descname">HierarchicalToFlatHypergridAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adaptee</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid" title="mlos.Spaces.Hypergrid.Hypergrid">mlos.Spaces.Hypergrid.Hypergrid</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/b47737a/source/Mlos.Python/mlos/Spaces/HypergridAdapters/HierarchicalToFlatHypergridAdapter.py#L11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter.HierarchicalToFlatHypergridAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html#mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter" title="mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Spaces.HypergridAdapters.HypergridAdapter.HypergridAdapter</span></code></a></p>
 <p>Flattens a hierarchical Hypergrid object to a flat Hypergrid.</p>
 <dl class="py method">
@@ -375,7 +377,7 @@
         <a href="mlos.Spaces.HypergridAdapters.HypergridAdapter.html" class="btn btn-neutral float-right" title="mlos.Spaces.HypergridAdapters.HypergridAdapter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html" class="btn btn-neutral float-left" title="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter.html" class="btn btn-neutral float-left" title="mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
