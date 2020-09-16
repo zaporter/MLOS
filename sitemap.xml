@@ -72,11 +72,18 @@
   </url>
   
   <url>
+    <loc>https://microsoft.github.io/MLOS/notebooks/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/BayesianOptimization/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -146,10 +153,6 @@
   
   <url>
     <loc>https://microsoft.github.io/MLOS/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://microsoft.github.io/MLOS/notebooks/</loc>
   </url>
   
   <url>
