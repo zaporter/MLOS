@@ -136,21 +136,21 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#mlos-an-infrastructure-for-automated-software-performance-engineering">MLOS: An Infrastructure for Automated Software Performance Engineering</a></li>
-    <li><a href="#overview">Overview</a>
+    <li><a href="/MLOS/#mlos-an-infrastructure-for-automated-software-performance-engineering">MLOS: An Infrastructure for Automated Software Performance Engineering</a></li>
+    <li><a href="/MLOS/#overview">Overview</a>
       <ul>
-        <li><a href="#problem">Problem</a></li>
-        <li><a href="#goals">Goals</a></li>
-        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="/MLOS/#problem">Problem</a></li>
+        <li><a href="/MLOS/#goals">Goals</a></li>
+        <li><a href="/MLOS/#architecture">Architecture</a></li>
       </ul>
     </li>
-    <li><a href="#python-only-installation">Python only installation</a></li>
-    <li><a href="#full-build-c-and-c-components">Full Build (C# and C++ components)</a></li>
-    <li><a href="#examples">Examples</a></li>
-    <li><a href="#documentation">Documentation</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="/MLOS/#python-only-installation">Python only installation</a></li>
+    <li><a href="/MLOS/#full-build-c-and-c-components">Full Build (C# and C++ components)</a></li>
+    <li><a href="/MLOS/#examples">Examples</a></li>
+    <li><a href="/MLOS/#documentation">Documentation</a></li>
+    <li><a href="/MLOS/#contributing">Contributing</a></li>
+    <li><a href="/MLOS/#contact">Contact</a></li>
+    <li><a href="/MLOS/#license">License</a></li>
   </ul>
 </nav>
 
@@ -178,7 +178,7 @@ Note that <em>performance</em> can be interpreted in different ways (e.g. reduci
 <p>Generally speaking, this process is referred to as <em>Software Performance Engineering</em>, and typically involves a lot of manual effort that is brittle and not well tracked.</p>
 <h3 id="goals">Goals</h3>
 <p>MLOS is about using machine-learning and data-science to optimize systems for a given context through these tunable choices.</p>
-<p><img src="/MLOS/././documentation/images/MLOS-Experience.png" alt="MLOS data science experience for software performance engineering" /></p>
+<p><img src="/MLOS/documentation/images/MLOS-Experience.png" alt="MLOS data science experience for software performance engineering" /></p>
 <p>Roughly, this can happen in two modes:</p>
 <ol>
 <li>
@@ -191,7 +191,7 @@ Note that <em>performance</em> can be interpreted in different ways (e.g. reduci
 </li>
 </ol>
 <h3 id="architecture">Architecture</h3>
-<p><img src="/MLOS/././documentation/images/MLOS-Architecture.png" alt="MLOS architecture overview" /></p>
+<p><img src="/MLOS/documentation/images/MLOS-Architecture.png" alt="MLOS architecture overview" /></p>
 <p>To achieve this MLOS provides:</p>
 <ol>
 <li>
@@ -244,35 +244,35 @@ e.g. <a href="https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Windows-
 <p>After this installation, you can run any of the Python-only example notebooks. To do so you can:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">python -m ipykernel install --user --name<span style="color:#f92672">=</span>mlos_environment
 jupyter-notebook --notebook-dir<span style="color:#f92672">=</span>MLOS/source/Mlos.Notebooks
-</code></pre></div><p>Jupyter will list a few notebooks. A good place to start is the <em>BayesianOptimization.ipynb</em>, which provides an <a href="https://github.com/microsoft/MLOS/tree/main/././source/Mlos.Notebooks/BayesianOptimization.ipynb">Introduction to Bayesian Optimization</a>.</p>
+</code></pre></div><p>Jupyter will list a few notebooks. A good place to start is the <em>BayesianOptimization.ipynb</em>, which provides an <a href="https://github.com/microsoft/MLOS/tree/main/source/Mlos.Notebooks/BayesianOptimization.ipynb">Introduction to Bayesian Optimization</a>.</p>
 <h2 id="full-build-c-and-c-components">Full Build (C# and C++ components)</h2>
 <p>MLOS supports Windows and Linux build environments.</p>
 <p>For detailed instructions, please refer to:</p>
 <ol>
-<li><a href="/MLOS/././documentation/01-Prerequisites/">Prerequisites</a></li>
-<li><a href="/MLOS/././documentation/02-Build/">Build</a></li>
+<li><a href="/MLOS/documentation/01-Prerequisites/">Prerequisites</a></li>
+<li><a href="/MLOS/documentation/02-Build/">Build</a></li>
 </ol>
 <h2 id="examples">Examples</h2>
 <p>Code and documentation for examples of using MLOS to optimize a system are described in the <a href="https://microsoft.github.io/MLOS/notebooks/">Notebooks</a> section.
-Additional code is in the  <a href="https://github.com/microsoft/MLOS/tree/main/././source/Examples/">source/Examples</a> source directory.
-You can find the source of the notebooks <a href="https://github.com/microsoft/MLOS/tree/main/././source/Mlos.Notebooks/">on github as well</a>.</p>
+Additional code is in the  <a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/">source/Examples</a> source directory.
+You can find the source of the notebooks <a href="https://github.com/microsoft/MLOS/tree/main/source/Mlos.Notebooks/">on github as well</a>.</p>
 <h2 id="documentation">Documentation</h2>
 <ul>
 <li>
-<p>Additional overview documentation is available in the <a href="/MLOS/././documentation/">documentation</a> tree.</p>
+<p>Additional overview documentation is available in the <a href="/MLOS/documentation/">documentation</a> tree.</p>
 </li>
 <li>
 <p>Individual components may also include more detailed documentation in their respective subdirectories.</p>
 </li>
 </ul>
 <h2 id="contributing">Contributing</h2>
-<p>We welcome contributions!  Please see <a href="/MLOS/././CONTRIBUTING/">Contributing</a> and <a href="/MLOS/././CODE_OF_CONDUCT/">Code of Conduct</a> for details.</p>
-<p>Also, please see the <a href="/MLOS/./#">Roadmap</a> of planned features.</p>
+<p>We welcome contributions!  Please see <a href="/MLOS/CONTRIBUTING/">Contributing</a> and <a href="/MLOS/CODE_OF_CONDUCT/">Code of Conduct</a> for details.</p>
+<p>Also, please see the <a href="/MLOS/#">Roadmap</a> of planned features.</p>
 <h2 id="contact">Contact</h2>
 <p>For more formal enquiries, you can <a href="mailto:mlos-maintainers@service.microsoft.com">contact us</a>.</p>
 <h2 id="license">License</h2>
 <ul>
-<li><a href="/MLOS/././LICENSE.txt">MIT License</a></li>
+<li><a href="/MLOS/LICENSE.txt">MIT License</a></li>
 </ul>
 </article>
  
@@ -308,21 +308,21 @@ You can find the source of the notebooks <a href="https://github.com/microsoft/M
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#mlos-an-infrastructure-for-automated-software-performance-engineering">MLOS: An Infrastructure for Automated Software Performance Engineering</a></li>
-    <li><a href="#overview">Overview</a>
+    <li><a href="/MLOS/#mlos-an-infrastructure-for-automated-software-performance-engineering">MLOS: An Infrastructure for Automated Software Performance Engineering</a></li>
+    <li><a href="/MLOS/#overview">Overview</a>
       <ul>
-        <li><a href="#problem">Problem</a></li>
-        <li><a href="#goals">Goals</a></li>
-        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="/MLOS/#problem">Problem</a></li>
+        <li><a href="/MLOS/#goals">Goals</a></li>
+        <li><a href="/MLOS/#architecture">Architecture</a></li>
       </ul>
     </li>
-    <li><a href="#python-only-installation">Python only installation</a></li>
-    <li><a href="#full-build-c-and-c-components">Full Build (C# and C++ components)</a></li>
-    <li><a href="#examples">Examples</a></li>
-    <li><a href="#documentation">Documentation</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="/MLOS/#python-only-installation">Python only installation</a></li>
+    <li><a href="/MLOS/#full-build-c-and-c-components">Full Build (C# and C++ components)</a></li>
+    <li><a href="/MLOS/#examples">Examples</a></li>
+    <li><a href="/MLOS/#documentation">Documentation</a></li>
+    <li><a href="/MLOS/#contributing">Contributing</a></li>
+    <li><a href="/MLOS/#contact">Contact</a></li>
+    <li><a href="/MLOS/#license">License</a></li>
   </ul>
 </nav>
 

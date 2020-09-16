@@ -163,38 +163,38 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="prerequisites-for-building-and-using-mlos">Prerequisites for building and using MLOS</h1>
-<p>These are one-time setup instructions that should be executed prior to following the build instructions in <a href="/MLOS/documentation/./02-Build/">02-Build.md</a></p>
+<p>These are one-time setup instructions that should be executed prior to following the build instructions in <a href="/MLOS/documentation/02-Build/">02-Build.md</a></p>
 <h2 id="contents">Contents</h2>
 <ul>
-<li><a href="/MLOS/documentation/#prerequisites-for-building-and-using-mlos">Prerequisites for building and using MLOS</a>
+<li><a href="#prerequisites-for-building-and-using-mlos">Prerequisites for building and using MLOS</a>
 <ul>
-<li><a href="/MLOS/documentation/#contents">Contents</a></li>
-<li><a href="/MLOS/documentation/#linux">Linux</a>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#linux">Linux</a>
 <ul>
-<li><a href="/MLOS/documentation/#linux-distribution-requirements">Linux Distribution Requirements</a></li>
-<li><a href="/MLOS/documentation/#clone-the-repository">Clone the repository</a></li>
-<li><a href="/MLOS/documentation/#option-1-linux-docker-build-env">Option 1: Linux Docker Build Env</a>
+<li><a href="#linux-distribution-requirements">Linux Distribution Requirements</a></li>
+<li><a href="#clone-the-repository">Clone the repository</a></li>
+<li><a href="#option-1-linux-docker-build-env">Option 1: Linux Docker Build Env</a>
 <ul>
-<li><a href="/MLOS/documentation/#install-docker">Install Docker</a></li>
-<li><a href="/MLOS/documentation/#build-the-docker-image">Build the Docker Image</a></li>
+<li><a href="#install-docker">Install Docker</a></li>
+<li><a href="#build-the-docker-image">Build the Docker Image</a></li>
 </ul>
 </li>
-<li><a href="/MLOS/documentation/#option-2-manual-build-tools-install">Option 2: Manual Build Tools Install</a></li>
-<li><a href="/MLOS/documentation/#install-python-on-linux">Install Python on Linux</a>
+<li><a href="#option-2-manual-build-tools-install">Option 2: Manual Build Tools Install</a></li>
+<li><a href="#install-python-on-linux">Install Python on Linux</a>
 <ul>
-<li><a href="/MLOS/documentation/#option-1-docker-python-install">Option 1: Docker Python Install</a></li>
-<li><a href="/MLOS/documentation/#option-2-using-conda">Option 2: Using Conda</a></li>
-<li><a href="/MLOS/documentation/#option-3-manual-python-install">Option 3: Manual Python Install</a></li>
+<li><a href="#option-1-docker-python-install">Option 1: Docker Python Install</a></li>
+<li><a href="#option-2-using-conda">Option 2: Using Conda</a></li>
+<li><a href="#option-3-manual-python-install">Option 3: Manual Python Install</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="/MLOS/documentation/#windows">Windows</a>
+<li><a href="#windows">Windows</a>
 <ul>
-<li><a href="/MLOS/documentation/#step-1-clone-the-repository">Step 1: Clone the repository</a></li>
-<li><a href="/MLOS/documentation/#step-2-install-python">Step 2: Install Python</a></li>
-<li><a href="/MLOS/documentation/#step-3-install-docker-on-windows">Step 3: Install Docker on Windows</a></li>
-<li><a href="/MLOS/documentation/#step-4-install-windows-build-tools">Step 4: Install Windows Build Tools</a></li>
+<li><a href="#step-1-clone-the-repository">Step 1: Clone the repository</a></li>
+<li><a href="#step-2-install-python">Step 2: Install Python</a></li>
+<li><a href="#step-3-install-docker-on-windows">Step 3: Install Docker on Windows</a></li>
+<li><a href="#step-4-install-windows-build-tools">Step 4: Install Windows Build Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -204,7 +204,7 @@ https://github.com/alex-shpak/hugo-book
 It supports Windows and Linux environments. Below we provide instructions for each OS.</p>
 <h2 id="linux">Linux</h2>
 <p>On Linux, there are a couple of options to install the build tools and the needed Python environment.
-The preferred way is via the <a href="/MLOS/documentation/#option-1-linux-docker-build">Docker images</a>.
+The preferred way is via the <a href="#option-1-linux-docker-build">Docker images</a>.
 All of them require <code>git</code> and, of course, a Linux installation:</p>
 <h3 id="linux-distribution-requirements">Linux Distribution Requirements</h3>
 <ul>
@@ -223,7 +223,7 @@ cd MLOS
 <h4 id="install-docker">Install Docker</h4>
 <p>Docker is used for certain portions of the end-to-end examples and as a convient way to setup the build/dev/test environments.</p>
 <blockquote>
-<p>If you are starting with the <a href="/MLOS/documentation/#install-python-on-linux">Python only setup</a>, you can skip this step for now if you wish.</p>
+<p>If you are starting with the <a href="#install-python-on-linux">Python only setup</a>, you can skip this step for now if you wish.</p>
 </blockquote>
 <p>Please see the official Docker install documenation for distribution specific documentation. The Ubuntu docs are <a href="https://docs.docker.com/engine/install/ubuntu/">here</a>.</p>
 <h4 id="build-the-docker-image">Build the Docker Image</h4>
@@ -231,9 +231,9 @@ cd MLOS
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Build the docker image:</span>
 docker build --build-arg<span style="color:#f92672">=</span>UbuntuVersion<span style="color:#f92672">=</span>20.04 -t mlos/build:ubuntu-20.04 .
 </code></pre></div><blockquote>
-<p>Where <code>20.04</code> can also be replaced with another <a href="/MLOS/documentation/#linux-distribution-requirements">supported <code>UbuntuVersion</code></a>.</p>
+<p>Where <code>20.04</code> can also be replaced with another <a href="#linux-distribution-requirements">supported <code>UbuntuVersion</code></a>.</p>
 </blockquote>
-<p>See <a href="/MLOS/documentation/./02-Build/#docker">02-Build.md</a> for instructions on how to run this image.</p>
+<p>See <a href="/MLOS/documentation/02-Build/#docker">02-Build.md</a> for instructions on how to run this image.</p>
 <h3 id="option-2-manual-build-tools-install">Option 2: Manual Build Tools Install</h3>
 <p>To manually setup your own Linux build environment:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Make sure some basic build tools are available:</span>
@@ -258,7 +258,7 @@ sudo apt-get install liblttng-ctl0 liblttng-ust0 zlib1g libxml2
 </blockquote>
 <h3 id="install-python-on-linux">Install Python on Linux</h3>
 <h4 id="option-1-docker-python-install">Option 1: Docker Python Install</h4>
-<p>If you used the <a href="/MLOS/documentation/#docker-build-image">Docker build image</a> instructions you&rsquo;re done!  All of the required packages should already be installed in the image.</p>
+<p>If you used the <a href="#docker-build-image">Docker build image</a> instructions you&rsquo;re done!  All of the required packages should already be installed in the image.</p>
 <h4 id="option-2-using-conda">Option 2: Using Conda</h4>
 <p>TODO</p>
 <h4 id="option-3-manual-python-install">Option 3: Manual Python Install</h4>

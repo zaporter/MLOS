@@ -170,47 +170,47 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><h1 id="build-instructions-for-mlos">Build Instructions for MLOS</h1>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>See <a href="/MLOS/documentation/./01-Prerequisites/">01-Prerequisites.md</a> for initial build tools setup instructions.</p>
+<p>See <a href="/MLOS/documentation/01-Prerequisites/">01-Prerequisites.md</a> for initial build tools setup instructions.</p>
 <p>There are different instructions according to the environment setup you chose.</p>
 <h2 id="contents">Contents</h2>
 <ul>
-<li><a href="/MLOS/documentation/#build-instructions-for-mlos">Build Instructions for MLOS</a>
+<li><a href="#build-instructions-for-mlos">Build Instructions for MLOS</a>
 <ul>
-<li><a href="/MLOS/documentation/#prerequisites">Prerequisites</a></li>
-<li><a href="/MLOS/documentation/#contents">Contents</a></li>
-<li><a href="/MLOS/documentation/#docker">Docker</a>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#docker">Docker</a>
 <ul>
-<li><a href="/MLOS/documentation/#create-a-new-container-instance">Create a new container instance</a></li>
-<li><a href="/MLOS/documentation/#other-useful-docker-commands">Other useful docker commands</a></li>
-<li><a href="/MLOS/documentation/#start-an-existing-container-instance">Start an existing container instance</a></li>
-<li><a href="/MLOS/documentation/#get-a-new-shell-in-a-running-container-instance">Get a new shell in a running container instance</a></li>
+<li><a href="#create-a-new-container-instance">Create a new container instance</a></li>
+<li><a href="#other-useful-docker-commands">Other useful docker commands</a></li>
+<li><a href="#start-an-existing-container-instance">Start an existing container instance</a></li>
+<li><a href="#get-a-new-shell-in-a-running-container-instance">Get a new shell in a running container instance</a></li>
 </ul>
 </li>
-<li><a href="/MLOS/documentation/#linux">Linux</a>
+<li><a href="#linux">Linux</a>
 <ul>
-<li><a href="/MLOS/documentation/#cli-make">CLI: <code>make</code></a></li>
-<li><a href="/MLOS/documentation/#vscode">VSCode</a></li>
+<li><a href="#cli-make">CLI: <code>make</code></a></li>
+<li><a href="#vscode">VSCode</a></li>
 </ul>
 </li>
-<li><a href="/MLOS/documentation/#windows">Windows</a>
+<li><a href="#windows">Windows</a>
 <ul>
-<li><a href="/MLOS/documentation/#cli-msbuild">CLI: <code>msbuild</code></a></li>
-<li><a href="/MLOS/documentation/#building-with-visual-studio">Building with Visual Studio</a></li>
+<li><a href="#cli-msbuild">CLI: <code>msbuild</code></a></li>
+<li><a href="#building-with-visual-studio">Building with Visual Studio</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="docker">Docker</h2>
-<p>If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in <a href="/MLOS/documentation/./01-Prerequisites/#docker">01-Prerequisites.md</a>, then you can start an interactive session using the container image as follows:</p>
+<p>If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in <a href="/MLOS/documentation/01-Prerequisites/#docker">01-Prerequisites.md</a>, then you can start an interactive session using the container image as follows:</p>
 <h3 id="create-a-new-container-instance">Create a new container instance</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Run the image:</span>
 docker run -it -v $PWD:/src/MLOS <span style="color:#ae81ff">\</span>
   --name mlos-build <span style="color:#ae81ff">\</span>
   mlos/build:ubuntu-20.04
 </code></pre></div><blockquote>
-<p>Where <code>20.04</code> can also be replaced with another <a href="/MLOS/documentation/./01-Prerequisites/#linux-distribution-requirements">supported <code>UbuntuVersion</code></a>.</p>
-<p>Note: If you receive an error that the container name already exists, then you can use either the <code>docker rm</code> or <code>docker start</code> commands <a href="/MLOS/documentation/#other-useful-docker-commands">below</a> to retry.</p>
+<p>Where <code>20.04</code> can also be replaced with another <a href="/MLOS/documentation/01-Prerequisites/#linux-distribution-requirements">supported <code>UbuntuVersion</code></a>.</p>
+<p>Note: If you receive an error that the container name already exists, then you can use either the <code>docker rm</code> or <code>docker start</code> commands <a href="#other-useful-docker-commands">below</a> to retry.</p>
 <p>The <code>-v $PWD:/src/MLOS</code> option makes the current directory (assumed to be the root of the MLOS repository) available inside the container so that you can edit the code from your host machine, but build it inside the container.</p>
 <p>Note that the build artifacts located at <code>out/</code> in the container are kept separate by default, so you can test with multiple containers at a time (e.g. each using different Ubuntu versions).
 You can use additional <code>-v /path/to/out-20.04:/src/MLOS/out</code> style arguments to direct that output to a host accessible locations if desired.</p>
@@ -230,7 +230,7 @@ docker rm mlos-build
 docker start -i mlos-build
 </code></pre></div><h3 id="get-a-new-shell-in-a-running-container-instance">Get a new shell in a running container instance</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker exec -it mlos-build /bin/bash
-</code></pre></div><p>Once you have an interactive session in the container, the MLOS source code is available at <code>/src/MLOS</code> and can be built using the same instructions in the <a href="/MLOS/documentation/#cli-make">Linux: CLI <code>make</code></a> section below.</p>
+</code></pre></div><p>Once you have an interactive session in the container, the MLOS source code is available at <code>/src/MLOS</code> and can be built using the same instructions in the <a href="#cli-make">Linux: CLI <code>make</code></a> section below.</p>
 <h2 id="linux">Linux</h2>
 <h3 id="cli-make">CLI: <code>make</code></h3>
 <p>We provide <code>Makefile</code> wrappers to invoke the language specific build systems.</p>
@@ -269,7 +269,7 @@ make cmake-clean
 <p>For the C++ and C# project components, Visual Studio <code>msbuild</code> can be used on Windows systems.</p>
 <blockquote>
 <p>Note: Visual Studio build tools are available free.<br>
-Please see the initial setup instructions linked <a href="/MLOS/documentation/#prerequisites">above</a> for details.</p>
+Please see the initial setup instructions linked <a href="#prerequisites">above</a> for details.</p>
 </blockquote>
 <h3 id="cli-msbuild">CLI: <code>msbuild</code></h3>
 <p>To build from the command line on Windows, the Visual Studio build tools need to be added to the shell environment.</p>
@@ -308,7 +308,7 @@ Please see the initial setup instructions linked <a href="/MLOS/documentation/#p
 <h3 id="building-with-visual-studio">Building with Visual Studio</h3>
 <blockquote>
 <p>Note: Visual Studio 2019 Community Edition is available free.<br>
-Please see the initial setup instructions linked <a href="/MLOS/documentation/#prerequisites">above</a> for details.</p>
+Please see the initial setup instructions linked <a href="#prerequisites">above</a> for details.</p>
 </blockquote>
 <p>Opening a <code>*.sln</code> file in the <code>source/</code> directory with Visual Studio 2019 should allow you to build inside the IDE.</p>
 <ol>
