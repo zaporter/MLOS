@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
-Contents  Prerequisites for building and using MLOS  Contents Linux  Linux Distribution Requirements Clone the repository Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda Option 3: Manual Python Install     Windows  Step 1: Clone the repository Step 2: Install Python Step 3: Install Docker on Windows Step 4: Install Windows Build Tools      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.">
+Contents  Prerequisites for building and using MLOS  Contents Cloning the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
-Contents  Prerequisites for building and using MLOS  Contents Linux  Linux Distribution Requirements Clone the repository Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda Option 3: Manual Python Install     Windows  Step 1: Clone the repository Step 2: Install Python Step 3: Install Docker on Windows Step 4: Install Windows Build Tools      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development." />
+Contents  Prerequisites for building and using MLOS  Contents Cloning the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/documentation/01-Prerequisites/" />
 
@@ -16,7 +16,7 @@ Contents  Prerequisites for building and using MLOS  Contents Linux  Linux Distr
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.48fa549247e229e2b86ce98600a0fb6a5552d3a58ee260a5d90c68c49a4d8c47.js" integrity="sha256-SPpUkkfiKeK4bOmGAKD7alVS06WO4mCl2QxoxJpNjEc="></script>
+<script defer src="/MLOS/en.search.min.923e2a65da6ccbf81dade79b5914c4935747f029660b45f9a55beba2bc489bb5.js" integrity="sha256-kj4qZdpsy/gdreebWRTEk1dH8ClmC0X5pVvrorxIm7U="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -134,10 +134,11 @@ https://github.com/alex-shpak/hugo-book
   <nav id="TableOfContents">
   <ul>
     <li><a href="#contents">Contents</a></li>
+    <li><a href="#clone-the-repository">Clone the repository</a></li>
+    <li><a href="#python-quickstart">Python quickstart</a></li>
     <li><a href="#linux">Linux</a>
       <ul>
         <li><a href="#linux-distribution-requirements">Linux Distribution Requirements</a></li>
-        <li><a href="#clone-the-repository">Clone the repository</a></li>
         <li><a href="#option-1-linux-docker-build-env">Option 1: Linux Docker Build Env</a></li>
         <li><a href="#option-2-manual-build-tools-install">Option 2: Manual Build Tools Install</a></li>
         <li><a href="#install-python-on-linux">Install Python on Linux</a></li>
@@ -145,10 +146,9 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#windows">Windows</a>
       <ul>
-        <li><a href="#step-1-clone-the-repository">Step 1: Clone the repository</a></li>
-        <li><a href="#step-2-install-python">Step 2: Install Python</a></li>
-        <li><a href="#step-3-install-docker-on-windows">Step 3: Install Docker on Windows</a></li>
-        <li><a href="#step-4-install-windows-build-tools">Step 4: Install Windows Build Tools</a></li>
+        <li><a href="#step-1-install-python">Step 1: Install Python</a></li>
+        <li><a href="#step-2-install-docker-on-windows">Step 2: Install Docker on Windows</a></li>
+        <li><a href="#step-3-install-windows-build-tools">Step 3: Install Windows Build Tools</a></li>
       </ul>
     </li>
   </ul>
@@ -169,10 +169,11 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#prerequisites-for-building-and-using-mlos">Prerequisites for building and using MLOS</a>
 <ul>
 <li><a href="#contents">Contents</a></li>
+<li><a href="#clone-the-repository">Cloning the repository</a></li>
+<li><a href="#python-quickstart">Python quickstart</a></li>
 <li><a href="#linux">Linux</a>
 <ul>
 <li><a href="#linux-distribution-requirements">Linux Distribution Requirements</a></li>
-<li><a href="#clone-the-repository">Clone the repository</a></li>
 <li><a href="#option-1-linux-docker-build-env">Option 1: Linux Docker Build Env</a>
 <ul>
 <li><a href="#install-docker">Install Docker</a></li>
@@ -184,17 +185,15 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="#option-1-docker-python-install">Option 1: Docker Python Install</a></li>
 <li><a href="#option-2-using-conda">Option 2: Using Conda</a></li>
-<li><a href="#option-3-manual-python-install">Option 3: Manual Python Install</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#windows">Windows</a>
 <ul>
-<li><a href="#step-1-clone-the-repository">Step 1: Clone the repository</a></li>
-<li><a href="#step-2-install-python">Step 2: Install Python</a></li>
-<li><a href="#step-3-install-docker-on-windows">Step 3: Install Docker on Windows</a></li>
-<li><a href="#step-4-install-windows-build-tools">Step 4: Install Windows Build Tools</a></li>
+<li><a href="#step-1-install-python">Step 1: Install Python</a></li>
+<li><a href="#step-2-install-docker-on-windows">Step 2: Install Docker on Windows</a></li>
+<li><a href="#step-3-install-windows-build-tools">Step 3: Install Windows Build Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -202,6 +201,23 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p>MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.
 It supports Windows and Linux environments. Below we provide instructions for each OS.</p>
+<h2 id="clone-the-repository">Clone the repository</h2>
+<p>Make sure you have <a href="https://git-scm.com/">git</a> installed and clone the repo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/microsoft/MLOS.git
+cd MLOS
+</code></pre></div><h2 id="python-quickstart">Python quickstart</h2>
+<p>Some of the examples require only the installation of the <code>mlos</code> Python library, which is easy to install on any operating system.</p>
+<p>It&rsquo;s recommended to use the <a href="https://www.anaconda.com/products/individual">Anaconda python distribution</a>.
+or the smaller <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda installer</a>.
+After installing either anaconda or miniconda, you can create a new environment with all requirements for the examples using</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">conda env create -f MLOS/source/Mlos.Notebooks/environment.yml
+</code></pre></div><p>The environment will be called <code>mlos_python_environment</code> and you can activate it as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">conda activate mlos_python_environment
+</code></pre></div><p>Use <code>pip</code> to install the Python library:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip install MLOS/source/Mlos.Python/
+</code></pre></div><p>After this installation, you can run any of the Python-only example notebooks. To do so you can:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jupyter-notebook --notebook-dir<span style="color:#f92672">=</span>MLOS/source/Mlos.Notebooks
+</code></pre></div><p>Jupyter will list a few notebooks. A good place to start is the <em>BayesianOptimization.ipynb</em>, which provides an <a href="https://github.com/microsoft/MLOS/tree/main/documentation/../source/Mlos.Notebooks/BayesianOptimization.ipynb">Introduction to Bayesian Optimization</a>.</p>
 <h2 id="linux">Linux</h2>
 <p>On Linux, there are a couple of options to install the build tools and the needed Python environment.
 The preferred way is via the <a href="#option-1-linux-docker-build">Docker images</a>.
@@ -213,13 +229,7 @@ All of them require <code>git</code> and, of course, a Linux installation:</p>
 <blockquote>
 <p>Other distros/versions may work, but are untested.</p>
 </blockquote>
-<h3 id="clone-the-repository">Clone the repository</h3>
-<p>Make sure you have <code>git</code> available:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt-get -y install git
-</code></pre></div><p>Clone the repository:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/microsoft/MLOS.git
-cd MLOS
-</code></pre></div><h3 id="option-1-linux-docker-build-env">Option 1: Linux Docker Build Env</h3>
+<h3 id="option-1-linux-docker-build-env">Option 1: Linux Docker Build Env</h3>
 <h4 id="install-docker">Install Docker</h4>
 <p>Docker is used for certain portions of the end-to-end examples and as a convient way to setup the build/dev/test environments.</p>
 <blockquote>
@@ -260,42 +270,15 @@ sudo apt-get install liblttng-ctl0 liblttng-ust0 zlib1g libxml2
 <h4 id="option-1-docker-python-install">Option 1: Docker Python Install</h4>
 <p>If you used the <a href="#docker-build-image">Docker build image</a> instructions you&rsquo;re done!  All of the required packages should already be installed in the image.</p>
 <h4 id="option-2-using-conda">Option 2: Using Conda</h4>
-<p>TODO</p>
-<h4 id="option-3-manual-python-install">Option 3: Manual Python Install</h4>
-<ol>
-<li>
-<p>Install Python 3.7</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># We need to add a special apt repository for Python 3.7 support:</span>
-sudo apt-get -y install <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    software-properties-common apt-transport-https
-sudo add-apt-repository -y ppa:deadsnakes/ppa
-sudo apt-get update
-sudo apt-get -y install python3.7
-</code></pre></div></li>
-<li>
-<p>Install MLOS Python dependencies:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Also add some dependencies needed by some of the pip modules</span>
-sudo apt-get -y install python3-pip python3.7-dev <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    build-essential libfreetype-dev unixodbc-dev
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python3.7 -m pip install --upgrade pip
-python3.7 -m pip install setuptools
-
-python3.7 -m pip install <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -r source/Mlos.Python/requirements.txt
-</code></pre></div></li>
-</ol>
+<p>Follow the <a href="#python-quickstart">Python Quickstart</a> above.</p>
 <h2 id="windows">Windows</h2>
 <p>MLOS is easiest to use on Windows 10, Version 1903 (March 2019) or newer.</p>
-<h3 id="step-1-clone-the-repository">Step 1: Clone the repository</h3>
-<p><a href="https://git-scm.com/">Install git</a> and clone the repo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/microsoft/MLOS.git
-cd MLOS
-</code></pre></div><h3 id="step-2-install-python">Step 2: Install Python</h3>
-<p>TODO</p>
-<h3 id="step-3-install-docker-on-windows">Step 3: Install Docker on Windows</h3>
+<h3 id="step-1-install-python">Step 1: Install Python</h3>
+<p>Follow the <a href="#python-quickstart">Python Quickstart</a> above.</p>
+<h3 id="step-2-install-docker-on-windows">Step 2: Install Docker on Windows</h3>
 <p>Portions of MLOS use Docker. Please follow the instructions on the <a href="https://www.docker.com/products/docker-desktop">Docker Website</a> to install it. Note that on Windows <em>Home</em>, you need a fairly recent Windows version to install Docker (Windows 10 1903 or newer).</p>
 <p>On Windows 10 v1903 or newer, we recommend you use the <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2">Windows Subsytem for Linux v2</a> to run the containers. On older Windows 10, you can resort to the <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/">Hyper-V support</a> of Docker.</p>
-<h3 id="step-4-install-windows-build-tools">Step 4: Install Windows Build Tools</h3>
+<h3 id="step-3-install-windows-build-tools">Step 3: Install Windows Build Tools</h3>
 <p>Download and install Visual Studio 2019 (free) Community Edition:</p>
 <p><a href="https://visualstudio.microsoft.com/vs/community/">https://visualstudio.microsoft.com/vs/community/</a></p>
 <p>Be sure to include support for .Net Core and C++.</p>
@@ -334,10 +317,11 @@ cd MLOS
   <nav id="TableOfContents">
   <ul>
     <li><a href="#contents">Contents</a></li>
+    <li><a href="#clone-the-repository">Clone the repository</a></li>
+    <li><a href="#python-quickstart">Python quickstart</a></li>
     <li><a href="#linux">Linux</a>
       <ul>
         <li><a href="#linux-distribution-requirements">Linux Distribution Requirements</a></li>
-        <li><a href="#clone-the-repository">Clone the repository</a></li>
         <li><a href="#option-1-linux-docker-build-env">Option 1: Linux Docker Build Env</a></li>
         <li><a href="#option-2-manual-build-tools-install">Option 2: Manual Build Tools Install</a></li>
         <li><a href="#install-python-on-linux">Install Python on Linux</a></li>
@@ -345,10 +329,9 @@ cd MLOS
     </li>
     <li><a href="#windows">Windows</a>
       <ul>
-        <li><a href="#step-1-clone-the-repository">Step 1: Clone the repository</a></li>
-        <li><a href="#step-2-install-python">Step 2: Install Python</a></li>
-        <li><a href="#step-3-install-docker-on-windows">Step 3: Install Docker on Windows</a></li>
-        <li><a href="#step-4-install-windows-build-tools">Step 4: Install Windows Build Tools</a></li>
+        <li><a href="#step-1-install-python">Step 1: Install Python</a></li>
+        <li><a href="#step-2-install-docker-on-windows">Step 2: Install Docker on Windows</a></li>
+        <li><a href="#step-3-install-windows-build-tools">Step 3: Install Windows Build Tools</a></li>
       </ul>
     </li>
   </ul>
