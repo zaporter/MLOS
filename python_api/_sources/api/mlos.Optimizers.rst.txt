@@ -15,7 +15,7 @@ mlos.Optimizers
    mlos.Optimizers.BayesianOptimizerConvergenceState
    mlos.Optimizers.DistributableSimpleBayesianOptimizer
    mlos.Optimizers.OptimizationProblem
-   mlos.Optimizers.OptimizerInterface
+   mlos.Optimizers.OptimizerBase
    mlos.Optimizers.SimpleBayesianOptimizer
 
 .. toctree::
