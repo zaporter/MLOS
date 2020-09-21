@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
-Contents  Prerequisites for building and using MLOS  Contents Cloning the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.">
+Contents  Prerequisites for building and using MLOS  Contents Clone the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools Step 4: Build the Docker image      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
-Contents  Prerequisites for building and using MLOS  Contents Cloning the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development." />
+Contents  Prerequisites for building and using MLOS  Contents Clone the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools Step 4: Build the Docker image      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/documentation/01-Prerequisites/" />
 
@@ -16,7 +16,7 @@ Contents  Prerequisites for building and using MLOS  Contents Cloning the reposi
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.e7ff3bee0928b22b0826d860ce54ee0b3e0a22913df16b2db3b12572a7464d79.js" integrity="sha256-5/877gkosisIJthgzlTuCz4KIpE98Wsts7ElcqdGTXk="></script>
+<script defer src="/MLOS/en.search.min.08414d3a283baccc2db9cc167d0cba5bb64472b3ea9d7ce3d90c8b9c418a7a91.js" integrity="sha256-CEFNOig7rMwtucwWfQy6W7ZEcrPqnXzj2QyLnEGKepE="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -149,6 +149,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#step-1-install-python">Step 1: Install Python</a></li>
         <li><a href="#step-2-install-docker-on-windows">Step 2: Install Docker on Windows</a></li>
         <li><a href="#step-3-install-windows-build-tools">Step 3: Install Windows Build Tools</a></li>
+        <li><a href="#step-4-build-the-docker-image">Step 4: Build the Docker image</a></li>
       </ul>
     </li>
   </ul>
@@ -169,7 +170,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#prerequisites-for-building-and-using-mlos">Prerequisites for building and using MLOS</a>
 <ul>
 <li><a href="#contents">Contents</a></li>
-<li><a href="#clone-the-repository">Cloning the repository</a></li>
+<li><a href="#clone-the-repository">Clone the repository</a></li>
 <li><a href="#python-quickstart">Python quickstart</a></li>
 <li><a href="#linux">Linux</a>
 <ul>
@@ -194,6 +195,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#step-1-install-python">Step 1: Install Python</a></li>
 <li><a href="#step-2-install-docker-on-windows">Step 2: Install Docker on Windows</a></li>
 <li><a href="#step-3-install-windows-build-tools">Step 3: Install Windows Build Tools</a></li>
+<li><a href="#step-4-build-the-docker-image">Step 4: Build the Docker image</a></li>
 </ul>
 </li>
 </ul>
@@ -282,6 +284,8 @@ sudo apt-get install liblttng-ctl0 liblttng-ust0 zlib1g libxml2
 <p>Download and install Visual Studio 2019 (free) Community Edition:</p>
 <p><a href="https://visualstudio.microsoft.com/vs/community/">https://visualstudio.microsoft.com/vs/community/</a></p>
 <p>Be sure to include support for .Net Core and C++.</p>
+<h3 id="step-4-build-the-docker-image">Step 4: Build the Docker image</h3>
+<p>The instructions for <a href="#build-the-docker-image">building the docker image</a> are the same as for Linux.</p>
 </article>
  
       
@@ -332,6 +336,7 @@ sudo apt-get install liblttng-ctl0 liblttng-ust0 zlib1g libxml2
         <li><a href="#step-1-install-python">Step 1: Install Python</a></li>
         <li><a href="#step-2-install-docker-on-windows">Step 2: Install Docker on Windows</a></li>
         <li><a href="#step-3-install-windows-build-tools">Step 3: Install Windows Build Tools</a></li>
+        <li><a href="#step-4-build-the-docker-image">Step 4: Build the Docker image</a></li>
       </ul>
     </li>
   </ul>

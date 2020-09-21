@@ -16,7 +16,7 @@
       
       <guid>https://microsoft.github.io/MLOS/documentation/01-Prerequisites/</guid>
       <description>Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
-Contents  Prerequisites for building and using MLOS  Contents Cloning the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.</description>
+Contents  Prerequisites for building and using MLOS  Contents Clone the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools Step 4: Build the Docker image      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.</description>
     </item>
     
     <item>

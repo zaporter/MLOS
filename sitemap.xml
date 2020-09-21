@@ -92,6 +92,18 @@
   </url>
   
   <url>
+    <loc>https://microsoft.github.io/MLOS/source/Examples/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Examples/SmartCache/</loc>
+  </url>
+  
+  <url>
+    <loc>https://microsoft.github.io/MLOS/source/Examples/SmartSharedChannel/</loc>
+  </url>
+  
+  <url>
     <loc>https://microsoft.github.io/MLOS/source/Mlos.Core/doc/</loc>
   </url>
   
