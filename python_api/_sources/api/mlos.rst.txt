@@ -15,7 +15,6 @@ mlos
    mlos.Logger
    mlos.Tracer
    mlos.global_values
-   mlos.start_mlos_optimization_runtime
    mlos.start_optimizer_microservice
 
 .. toctree::
@@ -25,7 +24,7 @@ mlos
    mlos.Grpc
    mlos.Mlos
    mlos.MlosOptimizationServices
+   mlos.OptimizerEvaluationTools
    mlos.OptimizerMonitoring
    mlos.Optimizers
    mlos.Spaces
-   mlos.SynthethicFunctions

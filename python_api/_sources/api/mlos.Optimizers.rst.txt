@@ -13,10 +13,8 @@ mlos.Optimizers
 
    mlos.Optimizers.BayesianOptimizer
    mlos.Optimizers.BayesianOptimizerConvergenceState
-   mlos.Optimizers.DistributableSimpleBayesianOptimizer
    mlos.Optimizers.OptimizationProblem
    mlos.Optimizers.OptimizerBase
-   mlos.Optimizers.SimpleBayesianOptimizer
 
 .. toctree::
    :maxdepth: 1

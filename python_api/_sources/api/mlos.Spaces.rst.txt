@@ -11,7 +11,6 @@ mlos.Spaces
 .. toctree::
    :maxdepth: 1
 
-   mlos.Spaces.DefaultConfigMeta
    mlos.Spaces.Hypergrid
    mlos.Spaces.HypergridsJsonEncoderDecoder
    mlos.Spaces.Point
@@ -20,6 +19,7 @@ mlos.Spaces
 .. toctree::
    :maxdepth: 1
 
+   mlos.Spaces.Configs
    mlos.Spaces.Dimensions
    mlos.Spaces.HypergridAdapters
    mlos.Spaces.stress_tests

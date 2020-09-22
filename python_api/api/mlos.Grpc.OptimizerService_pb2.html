@@ -95,7 +95,6 @@
 <li class="toctree-l2"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.global_values.html">mlos.global_values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlos.start_mlos_optimization_runtime.html">mlos.start_mlos_optimization_runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.start_optimizer_microservice.html">mlos.start_optimizer_microservice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Examples.html">mlos.Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Examples.SmartCache.html">mlos.Examples.SmartCache</a><ul>
@@ -166,6 +165,20 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.OptimizerEvaluationTools.html">mlos.OptimizerEvaluationTools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjective.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjectiveWrapper.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjectiveWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.OptimizerMonitoring.html">mlos.OptimizerMonitoring</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter.html">mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.html">mlos.OptimizerMonitoring.Tomograph</a><ul>
@@ -178,10 +191,8 @@
 <li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.DistributableSimpleBayesianOptimizer.html">mlos.Optimizers.DistributableSimpleBayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizerBase.html">mlos.Optimizers.OptimizerBase</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.SimpleBayesianOptimizer.html">mlos.Optimizers.SimpleBayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
@@ -189,6 +200,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.RegressionModels.html">mlos.Optimizers.RegressionModels</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.DecisionTreeConfigStore.html">mlos.Optimizers.RegressionModels.DecisionTreeConfigStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.html">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState</a></li>
@@ -214,11 +226,16 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.DefaultConfigMeta.html">mlos.Spaces.DefaultConfigMeta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Configs.html">mlos.Spaces.Configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Configs.ComponentConfigStore.html">mlos.Spaces.Configs.ComponentConfigStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Configs.DefaultConfigMeta.html">mlos.Spaces.Configs.DefaultConfigMeta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Configs.NamedConfig.html">mlos.Spaces.Configs.NamedConfig</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Dimensions.html">mlos.Spaces.Dimensions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CategoricalDimension.html">mlos.Spaces.Dimensions.CategoricalDimension</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Dimensions.CompositeDimension.html">mlos.Spaces.Dimensions.CompositeDimension</a></li>
@@ -256,16 +273,6 @@
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.unit_tests.TestIntervalTree.html">mlos.Spaces.unit_tests.TestIntervalTree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.unit_tests.TestSimpleHypergrid.html">mlos.Spaces.unit_tests.TestSimpleHypergrid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.unit_tests.TestSortedBinaryTree.html">mlos.Spaces.unit_tests.TestSortedBinaryTree</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="mlos.SynthethicFunctions.html">mlos.SynthethicFunctions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mlos.SynthethicFunctions.HierarchicalFunctions.html">mlos.SynthethicFunctions.HierarchicalFunctions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.SynthethicFunctions.PolynomialObjective.html">mlos.SynthethicFunctions.PolynomialObjective</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.SynthethicFunctions.sample_functions.html">mlos.SynthethicFunctions.sample_functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.SynthethicFunctions.unit_tests.html">mlos.SynthethicFunctions.unit_tests</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mlos.SynthethicFunctions.unit_tests.TestPolynomialObjective.html">mlos.SynthethicFunctions.unit_tests.TestPolynomialObjective</a></li>
 </ul>
 </li>
 </ul>
@@ -345,7 +352,7 @@
 <span id="mlos-grpc-optimizerservice-pb2"></span><h1>mlos.Grpc.OptimizerService_pb2<a class="headerlink" href="#module-mlos.Grpc.OptimizerService_pb2" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.ConfigurationParameters">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">ConfigurationParameters</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ConfigurationParameters" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">ConfigurationParameters</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ConfigurationParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.ConfigurationParameters.DESCRIPTOR">
@@ -362,7 +369,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.Context">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Context</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Context" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Context</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Context" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.Context.ContextJsonString">
@@ -379,7 +386,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">CreateOptimizerRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">CreateOptimizerRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.DESCRIPTOR">
@@ -408,7 +415,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.Empty">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Empty</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Empty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Empty</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Empty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.Empty.DESCRIPTOR">
@@ -419,7 +426,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.Features">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Features</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Features" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Features</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Features" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.Features.DESCRIPTOR">
@@ -436,7 +443,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.Hypergrid">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Hypergrid</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Hypergrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Hypergrid</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Hypergrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.Hypergrid.DESCRIPTOR">
@@ -453,7 +460,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.Objective">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Objective</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Objective" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Objective</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Objective" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.Objective.DESCRIPTOR">
@@ -476,7 +483,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValues">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">ObjectiveValues</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValues" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">ObjectiveValues</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.ObjectiveValues" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.ObjectiveValues.DESCRIPTOR">
@@ -493,7 +500,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.Observation">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Observation</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Observation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Observation</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Observation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.Observation.DESCRIPTOR">
@@ -516,7 +523,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.Observations">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Observations</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Observations" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">Observations</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.Observations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.Observations.DESCRIPTOR">
@@ -539,7 +546,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizationProblem">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizationProblem</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizationProblem</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizationProblem.ContextSpace">
@@ -574,7 +581,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizerConvergenceState">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerConvergenceState</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerConvergenceState" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerConvergenceState</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerConvergenceState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizerConvergenceState.DESCRIPTOR">
@@ -597,7 +604,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizerHandle">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerHandle</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerHandle</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizerHandle.DESCRIPTOR">
@@ -614,7 +621,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizerInfo">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerInfo</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerInfo" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerInfo</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizerInfo.DESCRIPTOR">
@@ -643,7 +650,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizerList">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerList</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerList" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">OptimizerList</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.OptimizerList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.OptimizerList.DESCRIPTOR">
@@ -660,7 +667,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.PredictRequest">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">PredictRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">PredictRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.PredictRequest.DESCRIPTOR">
@@ -683,7 +690,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.PredictResponse">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">PredictResponse</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">PredictResponse</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.PredictResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.PredictResponse.DESCRIPTOR">
@@ -700,7 +707,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">RegisterObservationRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">RegisterObservationRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.RegisterObservationRequest.DESCRIPTOR">
@@ -723,7 +730,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.SingleObjectivePrediction">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">SingleObjectivePrediction</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SingleObjectivePrediction" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">SingleObjectivePrediction</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SingleObjectivePrediction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.SingleObjectivePrediction.DESCRIPTOR">
@@ -746,7 +753,7 @@
 
 <dl class="py class">
 <dt id="mlos.Grpc.OptimizerService_pb2.SuggestRequest">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">SuggestRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/74cba5c/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SuggestRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Grpc.OptimizerService_pb2.</code><code class="sig-name descname">SuggestRequest</code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/dd382f9/source/Mlos.Python/mlos/Grpc/OptimizerService_pb2.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Grpc.OptimizerService_pb2.SuggestRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
 <dl class="py attribute">
 <dt id="mlos.Grpc.OptimizerService_pb2.SuggestRequest.Context">
