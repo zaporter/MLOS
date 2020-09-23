@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mlos.Spaces.unit_tests.TestHierarchicalHypergrid2" href="mlos.Spaces.unit_tests.TestHierarchicalHypergrid2.html" />
-    <link rel="prev" title="mlos.Spaces.unit_tests.TestDimensions" href="mlos.Spaces.unit_tests.TestDimensions.html" /> 
+    <link rel="prev" title="mlos.Spaces.unit_tests.TestFilteringOutInvalidRows" href="mlos.Spaces.unit_tests.TestFilteringOutInvalidRows.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -265,6 +265,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="mlos.Spaces.unit_tests.html">mlos.Spaces.unit_tests</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.unit_tests.TestCategoricalDimension.html">mlos.Spaces.unit_tests.TestCategoricalDimension</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.unit_tests.TestDimensions.html">mlos.Spaces.unit_tests.TestDimensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.unit_tests.TestFilteringOutInvalidRows.html">mlos.Spaces.unit_tests.TestFilteringOutInvalidRows</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">mlos.Spaces.unit_tests.TestHierarchicalHypergrid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.unit_tests.TestHierarchicalHypergrid2.html">mlos.Spaces.unit_tests.TestHierarchicalHypergrid2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.unit_tests.TestHierarchicalHypergrid3.html">mlos.Spaces.unit_tests.TestHierarchicalHypergrid3</a></li>
@@ -354,27 +355,27 @@
 <span id="mlos-spaces-unit-tests-testhierarchicalhypergrid"></span><h1>mlos.Spaces.unit_tests.TestHierarchicalHypergrid<a class="headerlink" href="#module-mlos.Spaces.unit_tests.TestHierarchicalHypergrid" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.unit_tests.TestHierarchicalHypergrid.</code><code class="sig-name descname">TestHierarchicalSpaces</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/9bdea45/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.unit_tests.TestHierarchicalHypergrid.</code><code class="sig-name descname">TestHierarchicalSpaces</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4f9480f/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.setUp">
-<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/9bdea45/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L12"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.setUp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4f9480f/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L12"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.setUp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hook method for setting up the test fixture before exercising it.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_composite_spaces">
-<code class="sig-name descname">test_composite_spaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/9bdea45/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L46"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_composite_spaces" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test_composite_spaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4f9480f/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L46"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_composite_spaces" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_generating_random_configs">
-<code class="sig-name descname">test_generating_random_configs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/9bdea45/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L122"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_generating_random_configs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test_generating_random_configs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4f9480f/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L122"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_generating_random_configs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_reseeding_random_state">
-<code class="sig-name descname">test_reseeding_random_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/9bdea45/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L144"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_reseeding_random_state" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test_reseeding_random_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4f9480f/source/Mlos.Python/mlos/Spaces/unit_tests/TestHierarchicalHypergrid.py#L144"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_reseeding_random_state" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -392,7 +393,7 @@
         <a href="mlos.Spaces.unit_tests.TestHierarchicalHypergrid2.html" class="btn btn-neutral float-right" title="mlos.Spaces.unit_tests.TestHierarchicalHypergrid2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mlos.Spaces.unit_tests.TestDimensions.html" class="btn btn-neutral float-left" title="mlos.Spaces.unit_tests.TestDimensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mlos.Spaces.unit_tests.TestFilteringOutInvalidRows.html" class="btn btn-neutral float-left" title="mlos.Spaces.unit_tests.TestFilteringOutInvalidRows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
