@@ -88,19 +88,6 @@ Links A loose list of sources consulted in this survey:
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/source/Mlos.SettingsSystem.CodeGen/Doc/CodeGen/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/source/Mlos.SettingsSystem.CodeGen/Doc/CodeGen/</guid>
-      <description>#CodeGen
-Intro Document describes internal CodeGen implementation.
-MLOS goals Provide an ability to expose internal application settings, telemetry, and events to an external agent. Codegen responsibility is to generate a set of classes and helper methods to exchange the messages and share (read and update) config structures residing in the shared memory.
-Why custom CodeGen? Not Protocol Buffers, FlatBuffers, XEvents etc&amp;hellip;
-The answer is performance and full control. Emitting the telemetry will occur on the hot path (not always).</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://microsoft.github.io/MLOS/source/Mlos.Streaming/Doc/AggregateStreaming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

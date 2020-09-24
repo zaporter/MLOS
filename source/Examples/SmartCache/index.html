@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SmartCache Example TODO: Some description of the example contained in this directory.
-This SmartCache can be used to demonstrate a full end-to-end MLOS integrated microbenchmark for a &ldquo;smart&rdquo; component (in this case a cache).
-Overview To do that, we run the (C&#43;&#43;) SmartCache executable to communicate with the (C#) Mlos.Agent.Server over a shared memory channel provided by the Mlos.Core library.
-The Mlos.Agent.Server is essentially a small wrapper around several other communication channels to allow different components to connect for component experimentation convenience.">
+<meta name="description" content="SmartCache Example This SmartCache example is a C&#43;&#43; implementation of the Python SmartCache.
+It implements a simple cache with different replacement policies and cache size as built-in tunables and some simple workloads.
+It can be used to demonstrate a full end-to-end MLOS integrated microbenchmark for a &ldquo;smart&rdquo; component (in this case a cache).
+Overview To do that, we run the (C&#43;&#43;) SmartCache executable to communicate with the (C#) Mlos.Agent.Server over a shared memory channel provided by the Mlos.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -17,7 +17,7 @@ The Mlos.Agent.Server is essentially a small wrapper around several other commun
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.f965e076563f5e76d867b97836af8fe8b793f62bf69e284d1f0dce5816544072.js" integrity="sha256-&#43;WXgdlY/XnbYZ7l4Nq&#43;P6LeT9iv2nihNHw3OWBZUQHI="></script>
+<script defer src="/MLOS/en.search.min.9b945caafbfdcb8c671946aa4632025b179d38e9359cfd73a5103f38780d4270.js" integrity="sha256-m5Rcqvv9y4xnGUaqRjICWxedOOk1nP1zpRA/OHgNQnA="></script>
 <link rel="alternate" type="application/rss+xml" href="https://microsoft.github.io/MLOS/source/Examples/SmartCache/index.xml" title="MLOS" />
 <!--
 Made with Book Theme
@@ -161,8 +161,9 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="smartcache-examplehttpsgithubcommicrosoftmlostreemainsourceexamplessmartcache"><a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/">SmartCache Example</a></h1>
-<p>TODO: Some description of the example contained in this directory.</p>
-<p>This <a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/"><code>SmartCache</code></a> can be used to demonstrate a full end-to-end MLOS integrated microbenchmark for a &ldquo;smart&rdquo; component (in this case a cache).</p>
+<p>This <a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/"><code>SmartCache</code></a> example is a C++ implementation of the <a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/../../Mlos.Python/mlos/Examples/SmartCache/">Python SmartCache</a>.</p>
+<p>It implements a simple cache with different replacement policies and cache size as built-in tunables and some simple workloads.</p>
+<p>It can be used to demonstrate a full end-to-end MLOS integrated microbenchmark for a &ldquo;smart&rdquo; component (in this case a cache).</p>
 <h2 id="overview">Overview</h2>
 <p>To do that, we run the (C++) <code>SmartCache</code> executable to communicate with the (C#) <a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/../../Mlos.Agent.Server/"><code>Mlos.Agent.Server</code></a> over a shared memory channel provided by the <a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/../../Mlos.Core/"><code>Mlos.Core</code></a> library.</p>
 <p>The <code>Mlos.Agent.Server</code> is essentially a small wrapper around several other communication channels to allow different components to connect for component experimentation convenience.</p>
@@ -197,42 +198,43 @@ https://github.com/alex-shpak/hugo-book
 </code></pre></div></li>
 <li>
 <p>Inside the container, <a href="/MLOS/source/Examples/SmartCache/../../../documentation/02-Build/#cli-make">build the compiled software</a> with <code>make</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make dotnet-build cmake-build
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make all install
 </code></pre></div><blockquote>
 <p>This will build everything using a default <code>CONFIGURATION=Release</code>.</p>
-<p>To just build <code>SmartCache</code> and <code>Mlos.Agent.Server</code>, execute the following:<br>
-<code>make -C source/Examples/SmartCache &amp;&amp; make -C source/Mlos.Agent.Server</code></p>
+<p>To just build <code>SmartCache</code> and <code>Mlos.Agent.Server</code>, execute the following:</p>
 </blockquote>
-</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Alternatively:</span>
+make -C source/Examples/SmartCache all install <span style="color:#f92672">&amp;&amp;</span> make -C source/Mlos.Agent.Server
+</code></pre></div></li>
 <li>
-<p>For a <code>Release</code> build (the default), the relevant output will be at:</p>
+<p>For a <code>Release</code> build (the default), the relevant output will be installed at:</p>
 <ul>
 <li>
 <p>Mlos.Agent.Server:</p>
-<p><code>out/dotnet/source/Mlos.Agent.Server/obj/AnyCPU/Mlos.Agent.Server.dll</code></p>
+<p><code>target/bin/Release/Mlos.Agent.Server.dll</code></p>
 </li>
 <li>
 <p>SmartCache:</p>
-<p><code>out/cmake/Release/source/Examples/SmartCache/SmartCache</code></p>
+<p><code>target/bin/Release/SmartCache</code></p>
 </li>
 <li>
 <p>SmartCache.SettingsRegistry:</p>
-<p><code>out/dotnet/source/Examples/SmartCache/SmartCache.SettingsRegistry/obj/AnyCPU/SmartCache.SettingsRegistry.dll</code></p>
+<p><code>target/bin/Release/SmartCache.SettingsRegistry.dll</code></p>
 </li>
 </ul>
 </li>
 </ol>
 <h2 id="executing">Executing</h2>
 <p>The following commands will start the <code>Mlos.Server.Agent</code> and cause it to start the <code>SmartCache</code> component microbenchmark:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export MLOS_SETTINGS_REGISTRY_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;out/dotnet/source/Examples/SmartCache/SmartCache.SettingsRegistry/obj/AnyCPU&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export MLOS_SETTINGS_REGISTRY_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">/target/bin/Release&#34;</span>
 
-tools/bin/dotnet out/dotnet/source/Mlos.Agent.Server/obj/AnyCPU/Mlos.Agent.Server.dll <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    out/cmake/Release/source/Examples/SmartCache/SmartCache
+tools/bin/dotnet target/bin/Release/Mlos.Agent.Server.dll <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    target/bin/Release/SmartCache
 </code></pre></div><blockquote>
 <p>Note: This is currently missing the <code>.json</code> file argument to connect to the optimizer service.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Mlos.Agent.Server
-Starting out/cmake/Release/source/Examples/SmartCache/SmartCache
+Starting target/bin/Release/SmartCache
 observations: 0
 warn: Microsoft.AspNetCore.Server.Kestrel[0]
       Unable to bind to http://localhost:5000 on the IPv6 loopback interface: &#39;Cannot assign requested address&#39;.
@@ -245,7 +247,7 @@ info: Microsoft.Hosting.Lifetime[0]
 info: Microsoft.Hosting.Lifetime[0]
       Content root path: /src/MLOS
 Starting Mlos.Agent
-Found settings registry assembly at out/dotnet/source/Examples/SmartCache/SmartCache.SettingsRegistry/obj/AnyCPU/SmartCache.SettingsRegistry.dll
+Found settings registry assembly at target/bin/Release/SmartCache.SettingsRegistry.dll
 observations: 1
 observations: 2
 observations: 3
@@ -258,6 +260,13 @@ This is important in case the component is started independently.</p>
 That includes the name of the <code>SettingsRegistry</code> assembly (<code>.dll</code>) corresponding to that component&rsquo;s settings/messages.</p>
 <p>The <code>Mlos.Agent.Server</code> needs to be told where it can find those assemblies in order to load them so that it can process the messages sent by the component.
 To do that, before we started the <code>Mlos.Agent.Server</code>, we first populated the <code>MLOS_SETTINGS_REGISTRY_PATH</code> environment variable with the directory path to the <code>SmartCache.SettingsRegistry.dll</code>.</p>
+<p>For additional details please see the comments in the following code files:</p>
+<ul>
+<li><a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/../../Mlos.Agent.Server/MlosAgentServer.cs">Mlos.Agent.Server/MlosAgentServer.cs</a></li>
+<li><a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/Main.cpp">SmartCache/Main.cpp</a></li>
+<li><a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/SmartCache.SettingsRegistry/AssemblyInitializer.cs">SmartCache.SettingsRegistry/AssemblyInitializer.cs</a></li>
+<li><a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/SmartCache.SettingsRegistry/Codegen/SmartCache.cs">SmartCache.SettingsRegistry/Codegen/SmartCache.cs</a></li>
+</ul>
 <h2 id="caveats">Caveats</h2>
 <ul>
 <li>

@@ -72,6 +72,11 @@
   </url>
   
   <url>
+    <loc>https://microsoft.github.io/MLOS/documentation/Troubleshooting/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/</loc>
     <priority>0</priority>
   </url>
@@ -152,7 +157,7 @@
   </url>
   
   <url>
-    <loc>https://microsoft.github.io/MLOS/source/Mlos.SettingsSystem.CodeGen/Doc/CodeGen/</loc>
+    <loc>https://microsoft.github.io/MLOS/source/Mlos.SettingsSystem.CodeGen/</loc>
   </url>
   
   <url>

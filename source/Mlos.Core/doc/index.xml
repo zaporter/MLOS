@@ -17,7 +17,8 @@
       <guid>https://microsoft.github.io/MLOS/source/Mlos.Core/doc/SharedChannel/</guid>
       <description>MLOS Shared Channel This document describes the implementation details of the mechanism (a shared memory communication channel) used for a target system to communicate with an external agent for tuning it.
 For additional context, please see the MlosArchitecture.md documentation.
-Contents  MLOS Shared Channel  Shared Channel  Principles: Circular buffer algorithm  Writer Reader Writer continued Reader continued Cyclic buffer handling   Scaling out readers   Shared channel implementation  Diagram Policies Notes Links      Shared Channel A shared channel is a one-directional communication channel based on a single shared memory block (i.</description>
+See source/Mlos.Core to browse the code.
+Contents  MLOS Shared Channel  Contents Shared Channel  Principles Circular buffer algorithm  Writer Reader Writer continued Reader continue Cyclic buffer handling   Scaling out readers   Shared channel implementation  Diagram Policies Notes      Shared Channel A shared channel is a one-directional communication channel based on a single shared memory block (i.</description>
     </item>
     
     <item>
@@ -26,7 +27,8 @@ Contents  MLOS Shared Channel  Shared Channel  Principles: Circular buffer algor
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://microsoft.github.io/MLOS/source/Mlos.Core/doc/SharedMemoryManagement/</guid>
-      <description>MemoryRegion SharedMemoryView @import &amp;ldquo;./images/SharedMemoryManagement.svg&amp;rdquo; {width=&amp;quot;1400px&amp;rdquo; height=&amp;quot;1000px&amp;rdquo; title=&amp;quot;Shared memory regions&amp;rdquo;}</description>
+      <description>Shared Memory Management MemoryRegion TODO
+SharedMemoryView TODO</description>
     </item>
     
   </channel>

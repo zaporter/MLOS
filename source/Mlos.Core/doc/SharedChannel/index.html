@@ -6,11 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="MLOS Shared Channel This document describes the implementation details of the mechanism (a shared memory communication channel) used for a target system to communicate with an external agent for tuning it.
 For additional context, please see the MlosArchitecture.md documentation.
-Contents  MLOS Shared Channel  Shared Channel  Principles: Circular buffer algorithm  Writer Reader Writer continued Reader continued Cyclic buffer handling   Scaling out readers   Shared channel implementation  Diagram Policies Notes Links      Shared Channel A shared channel is a one-directional communication channel based on a single shared memory block (i.">
+See source/Mlos.Core to browse the code.
+Contents  MLOS Shared Channel  Contents Shared Channel  Principles Circular buffer algorithm  Writer Reader Writer continued Reader continue Cyclic buffer handling   Scaling out readers   Shared channel implementation  Diagram Policies Notes      Shared Channel A shared channel is a one-directional communication channel based on a single shared memory block (i.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="MLOS Shared Channel This document describes the implementation details of the mechanism (a shared memory communication channel) used for a target system to communicate with an external agent for tuning it.
 For additional context, please see the MlosArchitecture.md documentation.
-Contents  MLOS Shared Channel  Shared Channel  Principles: Circular buffer algorithm  Writer Reader Writer continued Reader continued Cyclic buffer handling   Scaling out readers   Shared channel implementation  Diagram Policies Notes Links      Shared Channel A shared channel is a one-directional communication channel based on a single shared memory block (i." />
+See source/Mlos.Core to browse the code.
+Contents  MLOS Shared Channel  Contents Shared Channel  Principles Circular buffer algorithm  Writer Reader Writer continued Reader continue Cyclic buffer handling   Scaling out readers   Shared channel implementation  Diagram Policies Notes      Shared Channel A shared channel is a one-directional communication channel based on a single shared memory block (i." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/source/Mlos.Core/doc/SharedChannel/" />
 
@@ -18,7 +20,7 @@ Contents  MLOS Shared Channel  Shared Channel  Principles: Circular buffer algor
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.f965e076563f5e76d867b97836af8fe8b793f62bf69e284d1f0dce5816544072.js" integrity="sha256-&#43;WXgdlY/XnbYZ7l4Nq&#43;P6LeT9iv2nihNHw3OWBZUQHI="></script>
+<script defer src="/MLOS/en.search.min.9b945caafbfdcb8c671946aa4632025b179d38e9359cfd73a5103f38780d4270.js" integrity="sha256-m5Rcqvv9y4xnGUaqRjICWxedOOk1nP1zpRA/OHgNQnA="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -170,21 +172,21 @@ https://github.com/alex-shpak/hugo-book
   <article class="markdown"><h1 id="mlos-shared-channel">MLOS Shared Channel</h1>
 <p>This document describes the implementation details of the mechanism (a shared memory communication channel) used for a target system to communicate with an external agent for tuning it.</p>
 <p>For additional context, please see the <a href="/MLOS/source/Mlos.Core/doc/../../../documentation/MlosArchitecture/">MlosArchitecture.md</a> documentation.</p>
+<p>See <a href="https://github.com/microsoft/MLOS/tree/main/source/Mlos.Core/doc/../">source/Mlos.Core</a> to browse the code.</p>
 <h2 id="contents">Contents</h2>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <ul>
 <li><a href="#mlos-shared-channel">MLOS Shared Channel</a>
 <ul>
+<li><a href="#contents">Contents</a></li>
 <li><a href="#shared-channel">Shared Channel</a>
 <ul>
-<li><a href="#principles">Principles:</a></li>
+<li><a href="#principles">Principles</a></li>
 <li><a href="#circular-buffer-algorithm">Circular buffer algorithm</a>
 <ul>
 <li><a href="#writer">Writer</a></li>
 <li><a href="#reader">Reader</a></li>
 <li><a href="#writer-continued">Writer continued</a></li>
-<li><a href="#reader-continued">Reader continued</a></li>
+<li><a href="#reader-continue">Reader continue</a></li>
 <li><a href="#cyclic-buffer-handling">Cyclic buffer handling</a></li>
 </ul>
 </li>
@@ -196,13 +198,11 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#diagram">Diagram</a></li>
 <li><a href="#policies">Policies</a></li>
 <li><a href="#notes">Notes</a></li>
-<li><a href="#links">Links</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <h2 id="shared-channel">Shared Channel</h2>
 <p>A <em>shared channel</em> is a one-directional communication channel based on a single shared memory block (i.e. between processes).
 It supports multiple concurrent writers and readers.</p>
@@ -214,9 +214,10 @@ It supports multiple concurrent writers and readers.</p>
 </ul>
 <p>Messages are exchanged on a shared channel as <em>Frames</em>.
 Frames can be variable length (e.g. if they include variable length data like strings) or fixed length (e.g. just numerical data).
-The format of each frame is code generated by <code>Mlos.SettingsSystem.CodeGen</code> from annotated C# data structures specified in a <code>SettingsRegistry</code> provided by the developer.  See <a href="#FIXME">TODO</a> more details on the code generation and settings system.</p>
+The format of each frame is code generated by <code>Mlos.SettingsSystem.CodeGen</code> from annotated C# data structures specified in a <code>SettingsRegistry</code> provided by the developer.
+See <a href="/MLOS/source/Mlos.Core/doc/../../Mlos.SettingsSystem.CodeGen/">Mlos Settings System Code Generation</a> more details on the code generation and settings system.</p>
 <h3 id="principles">Principles</h3>
-<p><!-- raw HTML omitted --></p>
+<p><img src="/MLOS/source/Mlos.Core/doc/images/CircularBuffer.svg" alt="Circular buffer diagram" /></p>
 <p>The shared channel is comprised of four contiguous memory regions (though at times some of them could have zero size):</p>
 <ol>
 <li>
@@ -283,8 +284,6 @@ When it succeeds, the reader should call the proper dispatcher routine to proces
 After processing the frame, the reader clears the frame payload and atomically updates the <em>Frame.Length</em> to be negative [2], indicating that it is available to be written again.</p>
 <blockquote>
 <p>[1] Alternative <a href="#policies">policies</a> can be specified to control sleeping vs spinning behavior.</p>
-</blockquote>
-<blockquote>
 <p>[2] It is possible that the reader crashes between these steps.  We use reference counting to support detecting these situations.</p>
 </blockquote>
 <h4 id="writer-continued">Writer continued</h4>
@@ -299,14 +298,14 @@ So, the reader will spin until it reads positive frame length.</p>
 <p>If a writer is unable to write a full frame (i.e. the end of the frame is greater than buffer margin), it will write an empty frame (no payload) just to advance <em>Position</em> to the beginning of the buffer.</p>
 <p>Readers can identify these empty frames using their <code>CodeGenTypeIndex</code> header, and pass over them.</p>
 <h3 id="scaling-out-readers">Scaling out readers</h3>
-<!-- raw HTML omitted -->
+<p><img src="/MLOS/source/Mlos.Core/doc/images/SharedChannelFrame.svg" alt="Shared channel frame diagram" /></p>
 <p>To scale out the number of reader threads, we introduced a control bit which defines if the frame has been fully written.
 The control bit (<code>Done</code> in the diagram above) is the lowest bit in the frame length field.</p>
 <p>With the modified algorithm, the writer stores the length of the frame with the <code>Done</code> bit set to 0.
 This allows one reader to acquire the current frame region while other readers threads can advance and wait for the next frame.</p>
 <h2 id="shared-channel-implementation">Shared channel implementation</h2>
 <h3 id="diagram">Diagram</h3>
-<!-- raw HTML omitted -->
+<p><img src="/MLOS/source/Mlos.Core/doc/images/SharedChannelClasses.svg" alt="Shared channel classes diagram" /></p>
 <h3 id="policies">Policies</h3>
 <p>The implementation allows the use of different policies using the same shared memory buffer instance.</p>
 <p>Policies are responsible for:</p>
