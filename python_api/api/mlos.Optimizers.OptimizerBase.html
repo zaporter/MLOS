@@ -38,7 +38,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mlos.Optimizers.ExperimentDesigner" href="mlos.Optimizers.ExperimentDesigner.html" />
+    <link rel="next" title="mlos.Optimizers.OptimumDefinition" href="mlos.Optimizers.OptimumDefinition.html" />
     <link rel="prev" title="mlos.Optimizers.OptimizationProblem" href="mlos.Optimizers.OptimizationProblem.html" /> 
 </head>
 
@@ -193,6 +193,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">mlos.Optimizers.OptimizerBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimumDefinition.html">mlos.Optimizers.OptimumDefinition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
@@ -353,12 +354,12 @@
 <span id="mlos-optimizers-optimizerbase"></span><h1>mlos.Optimizers.OptimizerBase<a class="headerlink" href="#module-mlos.Optimizers.OptimizerBase" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.OptimizerBase.</code><code class="sig-name descname">OptimizerBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.OptimizationProblem" title="mlos.Optimizers.OptimizationProblem.OptimizationProblem">mlos.Optimizers.OptimizationProblem.OptimizationProblem</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L14"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.OptimizerBase.</code><code class="sig-name descname">OptimizerBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.OptimizationProblem" title="mlos.Optimizers.OptimizationProblem.OptimizationProblem">mlos.Optimizers.OptimizationProblem.OptimizationProblem</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L18"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></a></p>
 <p>Defines the base class to all our optimizers.</p>
 <dl class="py method">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.focus">
-<em class="property">abstract </em><code class="sig-name descname">focus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subspace</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L87"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.focus" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">focus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subspace</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L166"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.focus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force the optimizer to focus on a specific subspace.</p>
 <p>This could be a great way to pass priors to the optimizer, as well as play with the component for the developers.</p>
 <dl class="field-list simple">
@@ -373,17 +374,22 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.get_all_observations">
-<em class="property">abstract </em><code class="sig-name descname">get_all_observations</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>pandas.core.frame.DataFrame<span class="p">, </span>pandas.core.frame.DataFrame<span class="p">]</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L46"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.get_all_observations" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">get_all_observations</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>pandas.core.frame.DataFrame<span class="p">, </span>pandas.core.frame.DataFrame<span class="p">]</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L53"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.get_all_observations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.get_optimizer_convergence_state">
-<em class="property">abstract </em><code class="sig-name descname">get_optimizer_convergence_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.get_optimizer_convergence_state" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">get_optimizer_convergence_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L28"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.get_optimizer_convergence_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.get_surrogate_model_fit_state">
+<code class="sig-name descname">get_surrogate_model_fit_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L32"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.get_surrogate_model_fit_state" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.optimum">
-<code class="sig-name descname">optimum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stay_focused</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><span class="p">, </span><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><span class="p">]</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L59"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.optimum" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">optimum</code><span class="sig-paren">(</span><em class="sig-param">optimum_definition: mlos.Optimizers.OptimumDefinition.OptimumDefinition = &lt;OptimumDefinition.BEST_OBSERVATION: 'best_observation'&gt;</em>, <em class="sig-param">alpha: float = 0.05</em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><span class="p">, </span><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><span class="p">]</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L66"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.optimum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the optimal value found so far along with the related parameter values.</p>
 <p>This could be either min or max, depending on the settings.</p>
 <dl class="field-list simple">
@@ -391,7 +397,7 @@
 <dd class="field-odd"><dl class="simple">
 <dt><strong>best_config_point</strong><span class="classifier">Point</span></dt><dd><p>Configuration that corresponds to the optimum objective value.</p>
 </dd>
-<dt><strong>best_objective_point</strong><span class="classifier">Point</span></dt><dd><p>Best objective value observed so far (corresponding to the best_config_point).</p>
+<dt><strong>best_objective_point</strong><span class="classifier">Point</span></dt><dd><p>Best optimum value as specified by the OptimumDefinition argument (corresponding to the best_config_point).</p>
 </dd>
 </dl>
 </dd>
@@ -400,7 +406,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.predict">
-<em class="property">abstract </em><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Optimizers.RegressionModels.Prediction.html#mlos.Optimizers.RegressionModels.Prediction.Prediction" title="mlos.Optimizers.RegressionModels.Prediction.Prediction">mlos.Optimizers.RegressionModels.Prediction.Prediction</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L50"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.predict" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">t</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Optimizers.RegressionModels.Prediction.html#mlos.Optimizers.RegressionModels.Prediction.Prediction" title="mlos.Optimizers.RegressionModels.Prediction.Prediction">mlos.Optimizers.RegressionModels.Prediction.Prediction</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L57"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict target value based on the parameters supplied.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -414,7 +420,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.register">
-<em class="property">abstract </em><code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">target_values_pandas_frame</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L36"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.register" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_values_pandas_frame</span></em>, <em class="sig-param"><span class="n">target_values_pandas_frame</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L43"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a new result with the optimizer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -431,7 +437,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.reset_focus">
-<em class="property">abstract </em><code class="sig-name descname">reset_focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L98"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.reset_focus" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">reset_focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L177"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.reset_focus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes focus back to the full search space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -442,7 +448,7 @@
 
 <dl class="py method">
 <dt id="mlos.Optimizers.OptimizerBase.OptimizerBase.suggest">
-<em class="property">abstract </em><code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">random</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/4c2f79f/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L28"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.suggest" title="Permalink to this definition">¶</a></dt>
+<em class="property">abstract </em><code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">random</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point">mlos.Spaces.Point.Point</a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimizerBase.py#L35"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimizerBase.OptimizerBase.suggest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Suggest the next set of parameters to try.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -463,7 +469,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mlos.Optimizers.ExperimentDesigner.html" class="btn btn-neutral float-right" title="mlos.Optimizers.ExperimentDesigner" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mlos.Optimizers.OptimumDefinition.html" class="btn btn-neutral float-right" title="mlos.Optimizers.OptimumDefinition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="mlos.Optimizers.OptimizationProblem.html" class="btn btn-neutral float-left" title="mlos.Optimizers.OptimizationProblem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

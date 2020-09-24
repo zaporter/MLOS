@@ -15,6 +15,7 @@ mlos.Optimizers
    mlos.Optimizers.BayesianOptimizerConvergenceState
    mlos.Optimizers.OptimizationProblem
    mlos.Optimizers.OptimizerBase
+   mlos.Optimizers.OptimumDefinition
 
 .. toctree::
    :maxdepth: 1

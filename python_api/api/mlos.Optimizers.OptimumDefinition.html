@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mlos.OptimizerMonitoring.Tomograph.ModelTomograph &mdash; mlos  documentation</title>
+  <title>mlos.Optimizers.OptimumDefinition &mdash; mlos  documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mlos.Optimizers" href="mlos.Optimizers.html" />
-    <link rel="prev" title="mlos.OptimizerMonitoring.Tomograph.Heatmap" href="mlos.OptimizerMonitoring.Tomograph.Heatmap.html" /> 
+    <link rel="next" title="mlos.Optimizers.ExperimentDesigner" href="mlos.Optimizers.ExperimentDesigner.html" />
+    <link rel="prev" title="mlos.Optimizers.OptimizerBase" href="mlos.Optimizers.OptimizerBase.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,21 +179,21 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="reference internal" href="mlos.OptimizerMonitoring.html">mlos.OptimizerMonitoring</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlos.OptimizerMonitoring.html">mlos.OptimizerMonitoring</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter.html">mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.html">mlos.OptimizerMonitoring.Tomograph</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.html">mlos.OptimizerMonitoring.Tomograph</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.Heatmap.html">mlos.OptimizerMonitoring.Tomograph.Heatmap</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">mlos.OptimizerMonitoring.Tomograph.ModelTomograph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.ModelTomograph.html">mlos.OptimizerMonitoring.Tomograph.ModelTomograph</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizerBase.html">mlos.Optimizers.OptimizerBase</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimumDefinition.html">mlos.Optimizers.OptimumDefinition</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mlos.Optimizers.OptimumDefinition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
@@ -329,17 +329,15 @@
         
           <li><a href="mlos.html">mlos</a> &raquo;</li>
         
-          <li><a href="mlos.OptimizerMonitoring.html">mlos.OptimizerMonitoring</a> &raquo;</li>
+          <li><a href="mlos.Optimizers.html">mlos.Optimizers</a> &raquo;</li>
         
-          <li><a href="mlos.OptimizerMonitoring.Tomograph.html">mlos.OptimizerMonitoring.Tomograph</a> &raquo;</li>
-        
-      <li>mlos.OptimizerMonitoring.Tomograph.ModelTomograph</li>
+      <li>mlos.Optimizers.OptimumDefinition</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/api/mlos.OptimizerMonitoring.Tomograph.ModelTomograph.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/mlos.Optimizers.OptimumDefinition.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -352,34 +350,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mlos.OptimizerMonitoring.Tomograph.ModelTomograph">
-<span id="mlos-optimizermonitoring-tomograph-modeltomograph"></span><h1>mlos.OptimizerMonitoring.Tomograph.ModelTomograph<a class="headerlink" href="#module-mlos.OptimizerMonitoring.Tomograph.ModelTomograph" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-mlos.Optimizers.OptimumDefinition">
+<span id="mlos-optimizers-optimumdefinition"></span><h1>mlos.Optimizers.OptimumDefinition<a class="headerlink" href="#module-mlos.Optimizers.OptimumDefinition" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="mlos.OptimizerMonitoring.Tomograph.ModelTomograph.ModelTomograph">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.OptimizerMonitoring.Tomograph.ModelTomograph.</code><code class="sig-name descname">ModelTomograph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimizer</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.OptimizerBase.html#mlos.Optimizers.OptimizerBase.OptimizerBase" title="mlos.Optimizers.OptimizerBase.OptimizerBase">mlos.Optimizers.OptimizerBase.OptimizerBase</a></span></em>, <em class="sig-param"><span class="n">resolution</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></span> <span class="o">=</span> <span class="default_value">100</span></em>, <em class="sig-param"><span class="n">dimension_names_to_skip</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">figure_size</span><span class="o">=</span><span class="default_value">10, 10</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/OptimizerMonitoring/Tomograph/ModelTomograph.py#L14"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.OptimizerMonitoring.Tomograph.ModelTomograph.ModelTomograph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>The role of this class is to present to the user the grid-of-heatmaps view of the internal state of
-a model over time.</p>
-<p>Grid-of-heatmaps is a way of visualizing many dimensional spaces by producing a series of 2-Dimensional
-heatmaps depicting the state of the model along any two dimensions.</p>
-<dl class="py attribute">
-<dt id="mlos.OptimizerMonitoring.Tomograph.ModelTomograph.ModelTomograph.DEFAULT_RESOLUTION">
-<code class="sig-name descname">DEFAULT_RESOLUTION</code><em class="property"> = 100</em><a class="headerlink" href="#mlos.OptimizerMonitoring.Tomograph.ModelTomograph.ModelTomograph.DEFAULT_RESOLUTION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.OptimizerMonitoring.Tomograph.ModelTomograph.ModelTomograph.plot">
-<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/OptimizerMonitoring/Tomograph/ModelTomograph.py#L89"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.OptimizerMonitoring.Tomograph.ModelTomograph.ModelTomograph.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots a grid of 2D cross sections of the models’ view of the search space.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>point</strong> – The point contained by all 2D cross sections.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.OptimumDefinition.</code><code class="sig-name descname">OptimumDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L7"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Enumerates all supported definitions of optimum.</p>
+<dl class="simple">
+<dt>The optimum can be defined in a number of ways. For single objective optimization these include:</dt><dd><ol class="arabic simple">
+<li><p>Best observation.</p></li>
+<li><dl class="simple">
+<dt>Tested configuration with the highest:</dt><dd><ol class="arabic simple">
+<li><p>predicted value (different from observed values in the presence of noise and when the model doesn’t fit traininig data perfectly)</p></li>
+<li><p>upper confidence bound on predicted value</p></li>
+<li><p>lower confidence bound on predicted value</p></li>
+</ol>
 </dd>
 </dl>
-</dd></dl>
+</li>
+<li><dl class="simple">
+<dt>Speculative optima - kick off the utility function optimizer to find configurations with:</dt><dd><ol class="arabic simple">
+<li><p>maximum predicted value</p></li>
+<li><p>maximum upper confidence bound on predicted value</p></li>
+<li><p>maximum lower confidence bound on predicted value.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+<p>For multi-objective optimization this will be a Pareto Frontier build out of any of the above.</p>
+<blockquote>
+<div><p>We want the user to be able to specify which of the above definitions is of interest to them. The hypothesis is that this definition should match</p>
+</div></blockquote>
+<p>the utility function, but we will have to see the data to be sure.</p>
+<dl class="py attribute">
+<dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.BEST_OBSERVATION">
+<code class="sig-name descname">BEST_OBSERVATION</code><em class="property"> = 'best_observation'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.BEST_OBSERVATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.LOWER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG">
+<code class="sig-name descname">LOWER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG</code><em class="property"> = 'prediction_lower_confidence_bound_for_observed_config'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.LOWER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.PREDICTED_VALUE_FOR_OBSERVED_CONFIG">
+<code class="sig-name descname">PREDICTED_VALUE_FOR_OBSERVED_CONFIG</code><em class="property"> = 'predicted_value_for_observed_config'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.PREDICTED_VALUE_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.UPPER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG">
+<code class="sig-name descname">UPPER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG</code><em class="property"> = 'prediction_upper_confidence_bound_for_observed_config'</em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/24138c3/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.UPPER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -393,10 +418,10 @@ heatmaps depicting the state of the model along any two dimensions.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mlos.Optimizers.html" class="btn btn-neutral float-right" title="mlos.Optimizers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mlos.Optimizers.ExperimentDesigner.html" class="btn btn-neutral float-right" title="mlos.Optimizers.ExperimentDesigner" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mlos.OptimizerMonitoring.Tomograph.Heatmap.html" class="btn btn-neutral float-left" title="mlos.OptimizerMonitoring.Tomograph.Heatmap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mlos.Optimizers.OptimizerBase.html" class="btn btn-neutral float-left" title="mlos.Optimizers.OptimizerBase" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
