@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel.html" />
-    <link rel="prev" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html" /> 
+    <link rel="prev" title="mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -190,6 +190,7 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConfigStore.html">mlos.Optimizers.BayesianOptimizerConfigStore</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizerBase.html">mlos.Optimizers.OptimizerBase</a></li>
@@ -204,6 +205,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.DecisionTreeConfigStore.html">mlos.Optimizers.RegressionModels.DecisionTreeConfigStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.html">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.Prediction.html">mlos.Optimizers.RegressionModels.Prediction</a></li>
@@ -356,14 +358,14 @@
 <span id="mlos-optimizers-regressionmodels-homogeneousrandomforestfitstate"></span><h1>mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState<a class="headerlink" href="#module-mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.HomogeneousRandomForestFitState">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.</code><code class="sig-name descname">HomogeneousRandomForestFitState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid" title="mlos.Spaces.Hypergrid.Hypergrid">mlos.Spaces.Hypergrid.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">output_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid" title="mlos.Spaces.Hypergrid.Hypergrid">mlos.Spaces.Hypergrid.Hypergrid</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8e838b0/source/Mlos.Python/mlos/Optimizers/RegressionModels/HomogeneousRandomForestFitState.py#L13"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.HomogeneousRandomForestFitState" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.</code><code class="sig-name descname">HomogeneousRandomForestFitState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid" title="mlos.Spaces.Hypergrid.Hypergrid">mlos.Spaces.Hypergrid.Hypergrid</a></span></em>, <em class="sig-param"><span class="n">output_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid" title="mlos.Spaces.Hypergrid.Hypergrid">mlos.Spaces.Hypergrid.Hypergrid</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/HomogeneousRandomForestFitState.py#L13"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.HomogeneousRandomForestFitState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.Optimizers.RegressionModels.RegressionModelFitState.html#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState" title="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState</span></code></a></p>
 <p>Maintains HomogeneousRandomForest specific fit state in addition to the standard.</p>
 <p>The only difference is, that it also contains a list of RegressionModelFitState objects - one for each
 constituent decision tree.</p>
 <dl class="py method">
 <dt id="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.HomogeneousRandomForestFitState.get_goodness_of_fit_dataframe">
-<code class="sig-name descname">get_goodness_of_fit_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_set_type</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType</a></span></em>, <em class="sig-param"><span class="n">deep</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8e838b0/source/Mlos.Python/mlos/Optimizers/RegressionModels/HomogeneousRandomForestFitState.py#L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.HomogeneousRandomForestFitState.get_goodness_of_fit_dataframe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_goodness_of_fit_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_set_type</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType</a></span></em>, <em class="sig-param"><span class="n">deep</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/HomogeneousRandomForestFitState.py#L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.HomogeneousRandomForestFitState.get_goodness_of_fit_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the historical goodness of fit metrics into a data frame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -390,7 +392,7 @@ constituent decision tree.</p>
         <a href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel.html" class="btn btn-neutral float-right" title="mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html" class="btn btn-neutral float-left" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore.html" class="btn btn-neutral float-left" title="mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

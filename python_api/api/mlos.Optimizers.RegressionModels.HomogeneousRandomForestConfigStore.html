@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel &mdash; mlos  documentation</title>
+  <title>mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore &mdash; mlos  documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mlos.Optimizers.long_haul_tests" href="mlos.Optimizers.long_haul_tests.html" />
-    <link rel="prev" title="mlos.Optimizers.RegressionModels.unit_tests.TestPrediction" href="mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.html" /> 
+    <link rel="next" title="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.html" />
+    <link rel="prev" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -205,7 +205,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.DecisionTreeConfigStore.html">mlos.Optimizers.RegressionModels.DecisionTreeConfigStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.html">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.Prediction.html">mlos.Optimizers.RegressionModels.Prediction</a></li>
@@ -215,7 +215,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.SklearnLassoRegressionModelConfig.html">mlos.Optimizers.RegressionModels.SklearnLassoRegressionModelConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig.html">mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.SklearnRidgeRegressionModelConfig.html">mlos.Optimizers.RegressionModels.SklearnRidgeRegressionModelConfig</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="mlos.Optimizers.RegressionModels.unit_tests.html">mlos.Optimizers.RegressionModels.unit_tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.unit_tests.html">mlos.Optimizers.RegressionModels.unit_tests</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.long_haul_tests.html">mlos.Optimizers.long_haul_tests</a><ul>
@@ -335,15 +335,13 @@
         
           <li><a href="mlos.Optimizers.RegressionModels.html">mlos.Optimizers.RegressionModels</a> &raquo;</li>
         
-          <li><a href="mlos.Optimizers.RegressionModels.unit_tests.html">mlos.Optimizers.RegressionModels.unit_tests</a> &raquo;</li>
-        
-      <li>mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel</li>
+      <li>mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/api/mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -356,81 +354,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel">
-<span id="mlos-optimizers-regressionmodels-unit-tests-testregressionenhancedrandomforestmodel"></span><h1>mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel<a class="headerlink" href="#module-mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.</code><code class="sig-name descname">TestRegressionEnhancedRandomForestRegressionModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L21"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.generate_points_nonhierarchical_categorical_quadratic">
-<em class="property">static </em><code class="sig-name descname">generate_points_nonhierarchical_categorical_quadratic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_points</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L85"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.generate_points_nonhierarchical_categorical_quadratic" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.generate_points_simple_quadratic">
-<em class="property">static </em><code class="sig-name descname">generate_points_simple_quadratic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_points</span></em>, <em class="sig-param"><span class="n">num_features</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L72"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.generate_points_simple_quadratic" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.get_simple_quadratic_coefficients">
-<em class="property">static </em><code class="sig-name descname">get_simple_quadratic_coefficients</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L68"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.get_simple_quadratic_coefficients" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.n_choose_k">
-<em class="property">static </em><code class="sig-name descname">n_choose_k</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L64"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.n_choose_k" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.setUp">
-<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L27"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.setUp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hook method for setting up the test fixture before exercising it.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.setUpClass">
-<em class="property">classmethod </em><code class="sig-name descname">setUpClass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L23"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.setUpClass" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hook method for setting up class fixture before running tests in the class.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_categorical_gradient">
-<code class="sig-name descname">test_lasso_categorical_gradient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L282"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_categorical_gradient" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_categorical_predictions">
-<code class="sig-name descname">test_lasso_categorical_predictions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L243"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_categorical_predictions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_feature_discovery">
-<code class="sig-name descname">test_lasso_feature_discovery</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L114"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_feature_discovery" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_hierarchical_categorical_predictions">
-<code class="sig-name descname">test_lasso_hierarchical_categorical_predictions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L328"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_hierarchical_categorical_predictions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_polynomial_coefficients">
-<code class="sig-name descname">test_lasso_polynomial_coefficients</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L143"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_polynomial_coefficients" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_polynomial_gradient">
-<code class="sig-name descname">test_lasso_polynomial_gradient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L176"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_polynomial_gradient" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_predictions">
-<code class="sig-name descname">test_lasso_predictions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/RegressionModels/unit_tests/TestRegressionEnhancedRandomForestModel.py#L206"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.TestRegressionEnhancedRandomForestRegressionModel.test_lasso_predictions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="module-mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore">
+<span id="mlos-optimizers-regressionmodels-homogeneousrandomforestconfigstore"></span><h1>mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore<a class="headerlink" href="#module-mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -441,10 +366,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mlos.Optimizers.long_haul_tests.html" class="btn btn-neutral float-right" title="mlos.Optimizers.long_haul_tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.html" class="btn btn-neutral float-right" title="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.html" class="btn btn-neutral float-left" title="mlos.Optimizers.RegressionModels.unit_tests.TestPrediction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html" class="btn btn-neutral float-left" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

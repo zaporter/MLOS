@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mlos.Optimizers.OptimizationProblem" href="mlos.Optimizers.OptimizationProblem.html" />
-    <link rel="prev" title="mlos.Optimizers.BayesianOptimizer" href="mlos.Optimizers.BayesianOptimizer.html" /> 
+    <link rel="prev" title="mlos.Optimizers.BayesianOptimizerConfigStore" href="mlos.Optimizers.BayesianOptimizerConfigStore.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -190,6 +190,7 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConfigStore.html">mlos.Optimizers.BayesianOptimizerConfigStore</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">mlos.Optimizers.BayesianOptimizerConvergenceState</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizerBase.html">mlos.Optimizers.OptimizerBase</a></li>
@@ -204,6 +205,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.DecisionTreeConfigStore.html">mlos.Optimizers.RegressionModels.DecisionTreeConfigStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.html">mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestConfigStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestFitState</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel.html">mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.Prediction.html">mlos.Optimizers.RegressionModels.Prediction</a></li>
@@ -354,7 +356,7 @@
 <span id="mlos-optimizers-bayesianoptimizerconvergencestate"></span><h1>mlos.Optimizers.BayesianOptimizerConvergenceState<a class="headerlink" href="#module-mlos.Optimizers.BayesianOptimizerConvergenceState" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Optimizers.BayesianOptimizerConvergenceState.BayesianOptimizerConvergenceState">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.BayesianOptimizerConvergenceState.</code><code class="sig-name descname">BayesianOptimizerConvergenceState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">surrogate_model_fit_state</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.RegressionModels.RegressionModelFitState.html#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState" title="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState">mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8e838b0/source/Mlos.Python/mlos/Optimizers/BayesianOptimizerConvergenceState.py#L7"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.BayesianOptimizerConvergenceState.BayesianOptimizerConvergenceState" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Optimizers.BayesianOptimizerConvergenceState.</code><code class="sig-name descname">BayesianOptimizerConvergenceState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">surrogate_model_fit_state</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mlos.Optimizers.RegressionModels.RegressionModelFitState.html#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState" title="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState">mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState</a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/a3d8348/source/Mlos.Python/mlos/Optimizers/BayesianOptimizerConvergenceState.py#L7"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Optimizers.BayesianOptimizerConvergenceState.BayesianOptimizerConvergenceState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Maintains state of the optimizer pertaining to its speed of convergence and quality of surrogate model fit.</p>
 <p>TODO: This is just the first step in writing this class. So at first we will only include the RegressionModelFitState, and then
@@ -374,7 +376,7 @@ TODO: gradually add convergence speed stats, etc.</p>
         <a href="mlos.Optimizers.OptimizationProblem.html" class="btn btn-neutral float-right" title="mlos.Optimizers.OptimizationProblem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mlos.Optimizers.BayesianOptimizer.html" class="btn btn-neutral float-left" title="mlos.Optimizers.BayesianOptimizer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mlos.Optimizers.BayesianOptimizerConfigStore.html" class="btn btn-neutral float-left" title="mlos.Optimizers.BayesianOptimizerConfigStore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

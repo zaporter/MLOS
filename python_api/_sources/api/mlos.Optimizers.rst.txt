@@ -12,6 +12,7 @@ mlos.Optimizers
    :maxdepth: 1
 
    mlos.Optimizers.BayesianOptimizer
+   mlos.Optimizers.BayesianOptimizerConfigStore
    mlos.Optimizers.BayesianOptimizerConvergenceState
    mlos.Optimizers.OptimizationProblem
    mlos.Optimizers.OptimizerBase
