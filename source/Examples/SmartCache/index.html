@@ -17,7 +17,7 @@ Overview To do that, we run the (C&#43;&#43;) SmartCache executable to communica
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.9b945caafbfdcb8c671946aa4632025b179d38e9359cfd73a5103f38780d4270.js" integrity="sha256-m5Rcqvv9y4xnGUaqRjICWxedOOk1nP1zpRA/OHgNQnA="></script>
+<script defer src="/MLOS/en.search.min.a8cd8022d25f73c2c571db945233757bf60fa07f88142ff3e37143fd6c282fd0.js" integrity="sha256-qM2AItJfc8LFcduUUjN1e/YPoH&#43;IFC/z43FD/WwoL9A="></script>
 <link rel="alternate" type="application/rss+xml" href="https://microsoft.github.io/MLOS/source/Examples/SmartCache/index.xml" title="MLOS" />
 <!--
 Made with Book Theme
@@ -229,11 +229,9 @@ make -C source/Examples/SmartCache all install <span style="color:#f92672">&amp;
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export MLOS_SETTINGS_REGISTRY_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">/target/bin/Release&#34;</span>
 
 tools/bin/dotnet target/bin/Release/Mlos.Agent.Server.dll <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    target/bin/Release/SmartCache
-</code></pre></div><blockquote>
-<p>Note: This is currently missing the <code>.json</code> file argument to connect to the optimizer service.</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Mlos.Agent.Server
+</span><span style="color:#ae81ff"></span>    --executable target/bin/Release/SmartCache <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --optimizer-uri http://localhost:50051
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Mlos.Agent.Server
 Starting target/bin/Release/SmartCache
 observations: 0
 warn: Microsoft.AspNetCore.Server.Kestrel[0]
@@ -260,6 +258,7 @@ This is important in case the component is started independently.</p>
 That includes the name of the <code>SettingsRegistry</code> assembly (<code>.dll</code>) corresponding to that component&rsquo;s settings/messages.</p>
 <p>The <code>Mlos.Agent.Server</code> needs to be told where it can find those assemblies in order to load them so that it can process the messages sent by the component.
 To do that, before we started the <code>Mlos.Agent.Server</code>, we first populated the <code>MLOS_SETTINGS_REGISTRY_PATH</code> environment variable with the directory path to the <code>SmartCache.SettingsRegistry.dll</code>.</p>
+<p>We also tell the <code>Mlos.Agent.Server</code> how to connect to the (Python) MLOS Optimizer Service over GRPC so that the application message handlers setup by the <code>SmartCache.SettingsRegistry</code> for the agent can request new configuration recommendations on behave of the application.</p>
 <p>For additional details please see the comments in the following code files:</p>
 <ul>
 <li><a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartCache/../../Mlos.Agent.Server/MlosAgentServer.cs">Mlos.Agent.Server/MlosAgentServer.cs</a></li>
