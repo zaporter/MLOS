@@ -138,8 +138,8 @@ Contents  Troubleshooting Tips  Contents Editor Integrations  VSCode in WSL  &am
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://microsoft.github.io/MLOS/notebooks/BayesianOptimization/</guid>
-      <description>Download BayesianOptimization.ipynb notebook import matplotlib.pyplot as plt import numpy as np import pandas as pd Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.
-Motivation In software performance engineering, the impact different (input) parameters (e.g. buffer size, worker thread count, etc.) can have on the (output) performance of a system for a given workload (input) can be modeled as a multidimensional function - one which we don&amp;rsquo;t know the equation for apriori, but are instead trying to learn through careful sampling of the input space and experimentation (test/benchmark runs) to gather output points.</description>
+      <description>Download BayesianOptimization.ipynb notebook from IPython.core.display import display, HTML import warnings display(HTML(&amp;#34;&amp;lt;style&amp;gt;.container { width:100% !important; }&amp;lt;/style&amp;gt;&amp;#34;)) warnings.simplefilter(&amp;#34;ignore&amp;#34;) &amp;lt;IPython.core.display.HTML object&amp;gt;  import matplotlib.pyplot as plt import numpy as np import pandas as pd from scipy.stats import t Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.
+Motivation In software performance engineering, the impact different (input) parameters (e.g. buffer size, worker thread count, etc.</description>
     </item>
     
     <item>

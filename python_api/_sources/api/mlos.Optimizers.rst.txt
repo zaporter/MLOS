@@ -14,6 +14,7 @@ mlos.Optimizers
    mlos.Optimizers.BayesianOptimizer
    mlos.Optimizers.BayesianOptimizerConfigStore
    mlos.Optimizers.BayesianOptimizerConvergenceState
+   mlos.Optimizers.BayesianOptimizerFactory
    mlos.Optimizers.OptimizationProblem
    mlos.Optimizers.OptimizerBase
    mlos.Optimizers.OptimumDefinition
