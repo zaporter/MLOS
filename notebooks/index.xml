@@ -21,6 +21,15 @@ Motivation In software performance engineering, the impact different (input) par
     
     <item>
       <title></title>
+      <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheCPP/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheCPP/</guid>
+      <description>Download SmartCacheCPP.ipynb notebook Connecting MLOS to a C++ application This notebook walks through connecting MLOS to a C++ application within a docker container. We will start a docker container, and run an MLOS Agent within it. The MLOS Agent will start the actual application, and communicate with it via a shared memory channel. In this example, the MLOS Agent controls the execution of the workloads on the application, and we will later connect to the agent to optimize the configuration of our application.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

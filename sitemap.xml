@@ -87,6 +87,11 @@
   </url>
   
   <url>
+    <loc>https://microsoft.github.io/MLOS/notebooks/SmartCacheCPP/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</loc>
     <priority>0</priority>
   </url>

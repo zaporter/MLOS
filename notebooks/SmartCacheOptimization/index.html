@@ -18,7 +18,7 @@ We&rsquo;re using a sequential model-based optimization approach, that consists 
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.0f92261397673edbf259d14496337c0a6ace44d6d9e9da2169a29706b54f2c97.js" integrity="sha256-D5ImE5dnPtvyWdFEljN8CmrORNbZ6dohaaKXBrVPLJc="></script>
+<script defer src="/MLOS/en.search.min.065cb5fda185efb60edb3e26f2c77b7cf9b0389fcda03f7fd1e255a0891e524a.js" integrity="sha256-Bly1/aGF77YO2z4m8sd7fPmwOJ/NoD9/0eJVoIkeUko="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -73,6 +73,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/MLOS/notebooks/BayesianOptimization/">Bayesian Optimization</a></li>
 <li><a href="/MLOS/notebooks/SmartCacheOptimization/"class=active>Smart Cache Optimization</a></li>
+<li><a href="/MLOS/notebooks/SmartCacheCPP/">Smart Cache Optimization in C++</a></li>
 </ul>
 </li>
 <li>
@@ -214,6 +215,7 @@ optimization_problem <span style="color:#f92672">=</span> OptimizationProblem(
     objectives<span style="color:#f92672">=</span>[Objective(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hit_rate&#34;</span>, minimize<span style="color:#f92672">=</span>False)]
 )
 <span style="color:#75715e"># create an optimizer proxy that connects to the remote optimizer via grpc:</span>
+<span style="color:#75715e"># here we could also configure the optimizer</span>
 optimizer <span style="color:#f92672">=</span> bayesian_optimizer_factory<span style="color:#f92672">.</span>create_remote_optimizer(optimization_problem<span style="color:#f92672">=</span>optimization_problem)
 </code></pre></div><h1 id="defining-workloads">Defining workloads</h1>
 <p>Now we can instantiate our workloads and stand up the MLOS infrastructure, both of which are orchestrated by<code>SmartCacheWorkloadLauncher</code>. The MLOS infrastructure consists of the MlosAgent and a communication channel, which are available to both the <code>SmartCacheWorkloadGenerator</code> and the <code>SmartCache</code>.
@@ -263,143 +265,140 @@ data <span style="color:#f92672">=</span> []
     <span style="color:#75715e"># pass configuration and observed hit-rate to the optimizer to update the surrogate model</span>
     features_df <span style="color:#f92672">=</span> new_config_values<span style="color:#f92672">.</span>to_dataframe()
     optimizer<span style="color:#f92672">.</span>register(features_df, objectives_df)
-    data<span style="color:#f92672">.</span>append((features_df, objectives_df))
     <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;[{i+1}/{num_iterations}] current_config: {new_config_values.to_json()}, hit_rate: {hit_rate:.3f}&#34;</span>)
-</code></pre></div><pre><code>[1/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2646}, hit_rate: 0.953
-[2/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1980}, hit_rate: 0.000
-[3/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2662}, hit_rate: 0.936
-[4/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 312}, hit_rate: 0.000
-[5/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 847}, hit_rate: 0.000
-[6/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1361}, hit_rate: 0.000
-[7/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 507}, hit_rate: 0.230
-[8/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1962}, hit_rate: 0.903
-[9/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2689}, hit_rate: 0.939
-[10/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1307}, hit_rate: 0.585
-[11/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3481}, hit_rate: 0.952
-[12/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3246}, hit_rate: 0.944
-[13/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2729}, hit_rate: 0.952
-[14/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3755}, hit_rate: 0.946
-[15/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1255}, hit_rate: 0.000
-[16/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 748}, hit_rate: 0.000
-[17/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 790}, hit_rate: 0.000
-[18/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3184}, hit_rate: 0.932
-[19/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 606}, hit_rate: 0.258
-[20/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1683}, hit_rate: 0.000
-[21/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1364}, hit_rate: 0.000
-[22/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1311}, hit_rate: 0.000
-[23/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1092}, hit_rate: 0.000
-[24/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 200}, hit_rate: 0.088
-[25/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1238}, hit_rate: 0.569
-[26/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2473}, hit_rate: 0.942
-[27/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1243}, hit_rate: 0.555
-[28/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1068}, hit_rate: 0.492
-[29/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1071}, hit_rate: 0.477
-[30/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 73}, hit_rate: 0.034
-[31/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2291}, hit_rate: 0.951
-[32/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1073}, hit_rate: 0.486
-[33/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1121}, hit_rate: 0.499
-[34/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1412}, hit_rate: 0.000
-[35/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1085}, hit_rate: 0.491
-[36/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2556}, hit_rate: 0.950
-[37/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2077}, hit_rate: 0.938
-[38/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1097}, hit_rate: 0.498
-[39/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3239}, hit_rate: 0.953
-[40/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1981}, hit_rate: 0.904
-[41/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1950}, hit_rate: 0.898
-[42/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1482}, hit_rate: 0.658
-[43/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2004}, hit_rate: 0.922
-[44/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3539}, hit_rate: 0.945
-[45/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 492}, hit_rate: 0.000
-[46/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1271}, hit_rate: 0.000
-[47/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2204}, hit_rate: 0.942
-[48/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 305}, hit_rate: 0.143
-[49/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3722}, hit_rate: 0.951
-[50/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3173}, hit_rate: 0.945
-[51/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1416}, hit_rate: 0.000
-[52/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1072}, hit_rate: 0.475
-[53/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3925}, hit_rate: 0.947
-[54/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2140}, hit_rate: 0.926
-[55/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3829}, hit_rate: 0.952
-[56/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2179}, hit_rate: 0.945
-[57/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3109}, hit_rate: 0.953
-[58/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 102}, hit_rate: 0.045
-[59/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2422}, hit_rate: 0.938
-[60/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1983}, hit_rate: 0.914
-[61/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2181}, hit_rate: 0.951
-[62/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3622}, hit_rate: 0.944
-[63/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2197}, hit_rate: 0.949
-[64/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2077}, hit_rate: 0.935
-[65/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2077}, hit_rate: 0.951
-[66/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1472}, hit_rate: 0.646
-[67/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2071}, hit_rate: 0.944
-[68/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 536}, hit_rate: 0.000
-[69/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2322}, hit_rate: 0.950
-[70/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2064}, hit_rate: 0.933
-[71/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2063}, hit_rate: 0.944
-[72/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 769}, hit_rate: 0.000
-[73/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2067}, hit_rate: 0.944
-[74/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2065}, hit_rate: 0.943
-[75/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2002}, hit_rate: 0.000
-[76/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1903}, hit_rate: 0.000
-[77/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3502}, hit_rate: 0.931
-[78/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2032}, hit_rate: 0.000
-[79/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2031}, hit_rate: 0.000
-[80/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3755}, hit_rate: 0.951
-[81/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2212}, hit_rate: 0.943
-[82/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3357}, hit_rate: 0.950
-[83/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1947}, hit_rate: 0.898
-[84/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1752}, hit_rate: 0.000
-[85/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1985}, hit_rate: 0.904
-[86/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2029}, hit_rate: 0.000
-[87/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2028}, hit_rate: 0.000
-[88/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3520}, hit_rate: 0.949
-[89/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2029}, hit_rate: 0.000
-[90/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2030}, hit_rate: 0.000
-[91/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1848}, hit_rate: 0.000
-[92/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3272}, hit_rate: 0.947
-[93/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1625}, hit_rate: 0.736
-[94/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1615}, hit_rate: 0.730
-[95/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2049}, hit_rate: 0.950
-[96/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2429}, hit_rate: 0.943
-[97/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2891}, hit_rate: 0.951
-[98/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3690}, hit_rate: 0.941
-[99/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1794}, hit_rate: 0.820
-[100/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2049}, hit_rate: 0.934
+</code></pre></div><pre><code>[1/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 265}, hit_rate: 0.000
+[2/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2013}, hit_rate: 0.000
+[3/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 630}, hit_rate: 0.000
+[4/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1884}, hit_rate: 0.862
+[5/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2041}, hit_rate: 0.000
+[6/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3969}, hit_rate: 0.951
+[7/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 286}, hit_rate: 0.127
+[8/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3323}, hit_rate: 0.953
+[9/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1656}, hit_rate: 0.760
+[10/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 198}, hit_rate: 0.000
+[11/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3591}, hit_rate: 0.939
+[12/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1854}, hit_rate: 0.855
+[13/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1381}, hit_rate: 0.000
+[14/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 528}, hit_rate: 0.000
+[15/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 4023}, hit_rate: 0.952
+[16/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2829}, hit_rate: 0.958
+[17/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3562}, hit_rate: 0.950
+[18/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2021}, hit_rate: 0.946
+[19/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3892}, hit_rate: 0.938
+[20/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1352}, hit_rate: 0.611
+[21/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1596}, hit_rate: 0.729
+[22/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1635}, hit_rate: 0.713
+[23/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1671}, hit_rate: 0.766
+[24/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3762}, hit_rate: 0.954
+[25/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 10}, hit_rate: 0.004
+[26/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2022}, hit_rate: 0.943
+[27/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 382}, hit_rate: 0.000
+[28/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2908}, hit_rate: 0.949
+[29/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2932}, hit_rate: 0.933
+[30/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2949}, hit_rate: 0.950
+[31/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2938}, hit_rate: 0.934
+[32/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2873}, hit_rate: 0.949
+[33/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2896}, hit_rate: 0.958
+[34/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2996}, hit_rate: 0.953
+[35/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1945}, hit_rate: 0.000
+[36/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2260}, hit_rate: 0.949
+[37/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2872}, hit_rate: 0.956
+[38/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2917}, hit_rate: 0.950
+[39/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1032}, hit_rate: 0.000
+[40/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2351}, hit_rate: 0.957
+[41/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3178}, hit_rate: 0.953
+[42/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2407}, hit_rate: 0.959
+[43/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3321}, hit_rate: 0.951
+[44/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2686}, hit_rate: 0.953
+[45/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 319}, hit_rate: 0.139
+[46/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2323}, hit_rate: 0.957
+[47/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2263}, hit_rate: 0.951
+[48/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1596}, hit_rate: 0.729
+[49/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3892}, hit_rate: 0.951
+[50/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2168}, hit_rate: 0.955
+[51/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2351}, hit_rate: 0.951
+[52/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2248}, hit_rate: 0.958
+[53/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2099}, hit_rate: 0.954
+[54/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 393}, hit_rate: 0.169
+[55/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2391}, hit_rate: 0.952
+[56/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2102}, hit_rate: 0.959
+[57/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3240}, hit_rate: 0.951
+[58/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3361}, hit_rate: 0.956
+[59/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1135}, hit_rate: 0.518
+[60/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2096}, hit_rate: 0.952
+[61/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2102}, hit_rate: 0.950
+[62/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2100}, hit_rate: 0.958
+[63/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2099}, hit_rate: 0.919
+[64/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1404}, hit_rate: 0.608
+[65/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2100}, hit_rate: 0.954
+[66/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2091}, hit_rate: 0.949
+[67/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3551}, hit_rate: 0.958
+[68/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2060}, hit_rate: 0.950
+[69/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1553}, hit_rate: 0.000
+[70/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2267}, hit_rate: 0.954
+[71/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2068}, hit_rate: 0.954
+[72/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1752}, hit_rate: 0.000
+[73/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 194}, hit_rate: 0.087
+[74/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 949}, hit_rate: 0.439
+[75/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2010}, hit_rate: 0.930
+[76/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2073}, hit_rate: 0.958
+[77/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2058}, hit_rate: 0.948
+[78/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2068}, hit_rate: 0.951
+[79/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2058}, hit_rate: 0.958
+[80/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2062}, hit_rate: 0.952
+[81/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 234}, hit_rate: 0.103
+[82/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2044}, hit_rate: 0.000
+[83/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 428}, hit_rate: 0.000
+[84/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 546}, hit_rate: 0.250
+[85/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1954}, hit_rate: 0.000
+[86/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2741}, hit_rate: 0.949
+[87/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2026}, hit_rate: 0.000
+[88/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3208}, hit_rate: 0.958
+[89/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 698}, hit_rate: 0.312
+[90/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2049}, hit_rate: 0.957
+[91/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2026}, hit_rate: 0.000
+[92/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2049}, hit_rate: 0.952
+[93/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2041}, hit_rate: 0.000
+[94/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2773}, hit_rate: 0.956
+[95/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2043}, hit_rate: 0.000
+[96/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1976}, hit_rate: 0.000
+[97/100] current_config: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1425}, hit_rate: 0.000
+[98/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1024}, hit_rate: 0.465
+[99/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2903}, hit_rate: 0.957
+[100/100] current_config: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 205}, hit_rate: 0.089
 </code></pre>
 <h1 id="analyzing-results">Analyzing results</h1>
 <p>For a cyclical workload with 2048 keys, we assume that a MRU cache with a size of at least 2048 will perform best, and get 100% hits once the cache is filled.
 Now lets see the suggestions and results from the current experiment.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># some pandas wrangling</span>
-
-features, targets <span style="color:#f92672">=</span> zip(<span style="color:#f92672">*</span>data)
-data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat(features, ignore_index<span style="color:#f92672">=</span>True)
-data[<span style="color:#e6db74">&#39;hit_rate&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat(targets, ignore_index<span style="color:#f92672">=</span>True)
+features, targets <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>get_all_observations()
+data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([features, targets], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
 data
 </code></pre></div><pre><code>   implementation  lru_cache_config.cache_size  mru_cache_config.cache_size  \
-0             LRU                       2646.0                          NaN   
-1             LRU                       1980.0                          NaN   
-2             MRU                          NaN                       2662.0   
-3             LRU                        312.0                          NaN   
-4             LRU                        847.0                          NaN   
+0             LRU                        265.0                          NaN   
+1             LRU                       2013.0                          NaN   
+2             LRU                        630.0                          NaN   
+3             MRU                          NaN                       1884.0   
+4             LRU                       2041.0                          NaN   
 ..            ...                          ...                          ...   
-95            LRU                       2429.0                          NaN   
-96            MRU                          NaN                       2891.0   
-97            LRU                       3690.0                          NaN   
-98            MRU                          NaN                       1794.0   
-99            LRU                       2049.0                          NaN   
+95            LRU                       1976.0                          NaN   
+96            LRU                       1425.0                          NaN   
+97            MRU                          NaN                       1024.0   
+98            MRU                          NaN                       2903.0   
+99            MRU                          NaN                        205.0   
 
         hit_rate  
-0   9.534323e-01  
-1   4.019297e-04  
-2   9.357813e-01  
-3   3.321156e-10  
-4   5.120328e-10  
+0   2.911210e-10  
+1   4.093330e-10  
+2   4.675080e-10  
+3   8.619243e-01  
+4   3.941660e-10  
 ..           ...  
-95  9.430359e-01  
-96  9.513100e-01  
-97  9.409253e-01  
-98  8.196099e-01  
-99  9.342937e-01  
+95  4.048580e-10  
+96  4.732610e-10  
+97  4.645777e-01  
+98  9.574132e-01  
+99  8.882438e-02  
 
 [100 rows x 4 columns]
 </code></pre>
@@ -412,7 +411,7 @@ mru_data[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</spa
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Cache hitrate&#34;</span>)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Cache Size&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x13f570169e8&gt;
+</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7f24bb8a23d0&gt;
 </code></pre>
 <p><img src="/MLOS/notebooks/SmartCacheOptimization_files/SmartCacheOptimization_21_1.png" alt="png" /></p>
 <p>We can see that if the cache size is over 2048 keys, it means everything can fit into the cache and the strategy does not matter.
