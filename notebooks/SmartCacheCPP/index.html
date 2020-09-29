@@ -14,7 +14,7 @@
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.065cb5fda185efb60edb3e26f2c77b7cf9b0389fcda03f7fd1e255a0891e524a.js" integrity="sha256-Bly1/aGF77YO2z4m8sd7fPmwOJ/NoD9/0eJVoIkeUko="></script>
+<script defer src="/MLOS/en.search.min.ddef238d1dde1397e39f4b826d5c2c4ce353dcd6361da5576792311939bf3d90.js" integrity="sha256-3e8jjR3eE5fjn0uCbVwsTONT3NY2HaVXZ5IxGTm/PZA="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -171,8 +171,9 @@ To that end, open a separate terminal and go to the MLOS main folder. Within tha
 </code></pre></div></li>
 <li>
 <p><a href="https://microsoft.github.io/MLOS/documentation/02-Build/#create-a-new-container-instance">Run the Docker image</a> you just built.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -it -v $PWD:/src/MLOS --name mlos-build mlos/build:ubuntu-20.04 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -p 127.0.0.1:50051:50051/tcp 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -it -v $PWD:/src/MLOS -p 127.0.0.1:50051:50051/tcp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --name mlos-build mlos/build:ubuntu-20.04
+        
 </code></pre></div><p>This will open a shell inside the docker container.
 We&rsquo;re also exposing port 50051 on the docker container to port 50051 of our host machine.
 This will allow us later to connect to the optimizer that runs inside the docker container.</p>
@@ -278,9 +279,7 @@ optimizer_monitor
 <span style="color:#75715e"># An OptimizerMicroservice can run multiple optimizers, which would all be listed here</span>
 optimizers <span style="color:#f92672">=</span> optimizer_monitor<span style="color:#f92672">.</span>get_existing_optimizers()
 optimizers
-</code></pre></div><pre><code>[&lt;mlos.Grpc.BayesianOptimizerProxy.BayesianOptimizerProxy at 0x7f2107c5ce10&gt;,
- &lt;mlos.Grpc.BayesianOptimizerProxy.BayesianOptimizerProxy at 0x7f21063e7290&gt;,
- &lt;mlos.Grpc.BayesianOptimizerProxy.BayesianOptimizerProxy at 0x7f21063eb2d0&gt;]
+</code></pre></div><pre><code>[&lt;mlos.Grpc.BayesianOptimizerProxy.BayesianOptimizerProxy at 0x7fdff5578d90&gt;]
 </code></pre>
 <p>We can now get the observations exactly the same way as for the Python example in <code>SmartCacheOptimization.ipynb</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">optimizer <span style="color:#f92672">=</span> optimizers[<span style="color:#ae81ff">0</span>]
@@ -291,29 +290,29 @@ data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>
 data
 </code></pre></div><pre><code>   cache_implementation  lru_cache_config.cache_size  \
 0     LeastRecentlyUsed                        100.0   
-1     LeastRecentlyUsed                       2209.0   
-2     LeastRecentlyUsed                       2354.0   
-3      MostRecentlyUsed                          NaN   
-4     LeastRecentlyUsed                        740.0   
+1      MostRecentlyUsed                          NaN   
+2      MostRecentlyUsed                          NaN   
+3     LeastRecentlyUsed                       3145.0   
+4     LeastRecentlyUsed                       2927.0   
 ..                  ...                          ...   
-95     MostRecentlyUsed                          NaN   
-96     MostRecentlyUsed                          NaN   
+95    LeastRecentlyUsed                       3726.0   
+96    LeastRecentlyUsed                       3358.0   
 97     MostRecentlyUsed                          NaN   
-98     MostRecentlyUsed                          NaN   
+98    LeastRecentlyUsed                       2081.0   
 99     MostRecentlyUsed                          NaN   
 
     mru_cache_config.cache_size   HitRate  
 0                           NaN  0.000000  
-1                           NaN  0.950000  
-2                           NaN  0.950000  
-3                        2326.0  0.950000  
-4                           NaN  0.000000  
+1                        2352.0  0.950000  
+2                        1931.0  0.896165  
+3                           NaN  0.950000  
+4                           NaN  0.950000  
 ..                          ...       ...  
-95                       1960.0  0.909624  
-96                       1960.0  0.909624  
-97                       1955.0  0.907303  
-98                       1943.0  0.901734  
-99                       2035.0  0.944431  
+95                          NaN  0.950000  
+96                          NaN  0.950000  
+97                       3321.0  0.950000  
+98                          NaN  0.950000  
+99                        372.0  0.172643  
 
 [100 rows x 4 columns]
 </code></pre>
@@ -325,15 +324,15 @@ mru_data[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</spa
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Cache hitrate&#34;</span>)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Cache Size&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
-</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7f2104a26690&gt;
+</code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x7fdff453aad0&gt;
 </code></pre>
 <p><img src="/MLOS/notebooks/SmartCacheCPP_files/SmartCacheCPP_15_1.png" alt="png" /></p>
 <h1 id="going-further">Going Further</h1>
 <ol>
-<li>Implement another workload in the SmartCache executable (<code>Workloads.cpp</code>) and compile again. How does a different workload impact the cache hit rate for the different configurations?</li>
+<li>Instead of cache hit rate, use a metric based on runtime (e.g. latency, throughput, etc) as performance metric. Environment (context) sensitive metrics can also be measured (e.g. <a href="https://bduvenhage.me/performance/2019/06/22/high-performance-timer.html">time</a>. How does the signal from the runtime based metric compare to the application specific one (hit rate)? How consistent are the runtime results across multiple runs?</li>
+<li>Pick another widely used <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies">cache replacement policy</a> such as LFU and construct a synthetic workload on which you expect this strategy to work well. Implement the policy and workload as part of the SmartCache example, and add a new option to the <code>SmartCache.SettingsRegistry\AssemblyInitializer.cs</code>. Run the optimization again with your new workload. Does the optimizer find that your new policy performs best?</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-</code></pre></div><h1 id="download-smartcachecppipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcachecppipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheCPP.ipynb">Download SmartCacheCPP.ipynb notebook</a></h1>
+<h1 id="download-smartcachecppipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcachecppipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheCPP.ipynb">Download SmartCacheCPP.ipynb notebook</a></h1>
 </article>
  
       
