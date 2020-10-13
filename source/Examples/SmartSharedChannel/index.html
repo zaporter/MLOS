@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SmartSharedChannel Example This SmartSharedChannel example demonstrates a using a microbenchmark of the MLOS shared memory channel to tune the MLOS shared memory channel itself.
 Here are some brief instructions on how to try it out:
-Building   Build the docker image
-  Create a docker image instance
-  Build the code:
-make -C source/Mlos.Agent.Server make -C source/Examples/SmartSharedChannel   Executing export MLOS_SETTINGS_REGISTRY_PATH=out/dotnet/source/Mlos.UnitTest/Mlos.UnitTest.SettingsRegistry/obj/AnyCPU:out/dotnet/source/Examples/SmartSharedChannel/SmartSharedChannel.SettingsRegistry/obj/AnyCPU ./tools/bin/dotnet out/dotnet/source/Mlos.Agent.Server/obj/AnyCPU/Mlos.Agent.Server.dll --executable out/cmake/Release/source/Examples/SmartSharedChannel/SmartSharedChannel ">
+Building  Note: these command examples expect to be run from the top-level of the repository.
+To move there, execute the following:
+cd $(git rev-parse --show-toplevel)
+   Build or pull the docker image">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -19,7 +19,7 @@ make -C source/Mlos.Agent.Server make -C source/Examples/SmartSharedChannel   Ex
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.ddef238d1dde1397e39f4b826d5c2c4ce353dcd6361da5576792311939bf3d90.js" integrity="sha256-3e8jjR3eE5fjn0uCbVwsTONT3NY2HaVXZ5IxGTm/PZA="></script>
+<script defer src="/MLOS/en.search.min.83de990c31f2269f32c05e73e19ed1cf48467597a15d3d8813611e3b534a1353.js" integrity="sha256-g96ZDDHyJp8ywF5z4Z7Rz0hGdZehXT2IE2EeO1NKE1M="></script>
 <link rel="alternate" type="application/rss+xml" href="https://microsoft.github.io/MLOS/source/Examples/SmartSharedChannel/index.xml" title="MLOS" />
 <!--
 Made with Book Theme
@@ -161,15 +161,21 @@ https://github.com/alex-shpak/hugo-book
 <p>This <a href="https://github.com/microsoft/MLOS/tree/main/source/Examples/SmartSharedChannel/">SmartSharedChannel</a> example demonstrates a using a microbenchmark of the MLOS shared memory channel to tune the MLOS shared memory channel itself.</p>
 <p>Here are some brief instructions on how to try it out:</p>
 <h2 id="building">Building</h2>
+<blockquote>
+<p>Note: these command examples expect to be run from the top-level of the repository.</p>
+<p>To move there, execute the following:</p>
+<p><code>cd $(git rev-parse --show-toplevel)</code></p>
+</blockquote>
 <ol>
 <li>
-<p>Build the docker image</p>
+<p><a href="/MLOS/source/Examples/SmartSharedChannel/../../../documentation/01-Prerequisites/#build-the-docker-image">Build or pull the docker image</a></p>
 </li>
 <li>
-<p>Create a docker image instance</p>
+<p><a href="/MLOS/source/Examples/SmartSharedChannel/../../../documentation/02-Build/#create-a-new-container-instance">Create a docker image instance</a></p>
 </li>
 <li>
-<p>Build the code:</p>
+<p><a href="/MLOS/source/Examples/SmartSharedChannel/../../../documentation/02-Build/#cli-make">Build the code</a></p>
+<p>(inside the docker container)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make -C source/Mlos.Agent.Server
 make -C source/Examples/SmartSharedChannel
 </code></pre></div></li>

@@ -14,7 +14,7 @@
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.ddef238d1dde1397e39f4b826d5c2c4ce353dcd6361da5576792311939bf3d90.js" integrity="sha256-3e8jjR3eE5fjn0uCbVwsTONT3NY2HaVXZ5IxGTm/PZA="></script>
+<script defer src="/MLOS/en.search.min.83de990c31f2269f32c05e73e19ed1cf48467597a15d3d8813611e3b534a1353.js" integrity="sha256-g96ZDDHyJp8ywF5z4Z7Rz0hGdZehXT2IE2EeO1NKE1M="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -167,12 +167,12 @@ To that end, open a separate terminal and go to the MLOS main folder. Within tha
 <ol>
 <li>
 <p><a href="https://microsoft.github.io/MLOS/documentation/01-Prerequisites/#build-the-docker-image">Build the Docker image</a> using the <a href="https://github.com/microsoft/MLOS/tree/main/notebooks/../../Dockerfile"><code>Dockerfile</code></a> at the root of the repository.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build --build-arg<span style="color:#f92672">=</span>UbuntuVersion<span style="color:#f92672">=</span>20.04 -t mlos/build:ubuntu-20.04 .
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build --build-arg<span style="color:#f92672">=</span>UbuntuVersion<span style="color:#f92672">=</span>20.04 -t mlos-build-ubuntu-20.04 .
 </code></pre></div></li>
 <li>
 <p><a href="https://microsoft.github.io/MLOS/documentation/02-Build/#create-a-new-container-instance">Run the Docker image</a> you just built.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -it -v $PWD:/src/MLOS -p 127.0.0.1:50051:50051/tcp <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --name mlos-build mlos/build:ubuntu-20.04
+</span><span style="color:#ae81ff"></span>    --name mlos-build mlos-build-ubuntu-20.04
         
 </code></pre></div><p>This will open a shell inside the docker container.
 We&rsquo;re also exposing port 50051 on the docker container to port 50051 of our host machine.

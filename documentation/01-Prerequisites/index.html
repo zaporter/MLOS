@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
-Contents  Prerequisites for building and using MLOS  Contents Clone the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools Step 4: Build the Docker image      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.">
+Contents  Prerequisites for building and using MLOS  Contents Clone the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image  Pull the upstream docker image Local docker image build     Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools Step 4: Build the Docker image      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build.md
-Contents  Prerequisites for building and using MLOS  Contents Clone the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image   Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools Step 4: Build the Docker image      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development." />
+Contents  Prerequisites for building and using MLOS  Contents Clone the repository Python quickstart Linux  Linux Distribution Requirements Option 1: Linux Docker Build Env  Install Docker Build the Docker Image  Pull the upstream docker image Local docker image build     Option 2: Manual Build Tools Install Install Python on Linux  Option 1: Docker Python Install Option 2: Using Conda     Windows  Step 1: Install Python Step 2: Install Docker on Windows Step 3: Install Windows Build Tools Step 4: Build the Docker image      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/documentation/01-Prerequisites/" />
 
@@ -16,7 +16,7 @@ Contents  Prerequisites for building and using MLOS  Contents Clone the reposito
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.ddef238d1dde1397e39f4b826d5c2c4ce353dcd6361da5576792311939bf3d90.js" integrity="sha256-3e8jjR3eE5fjn0uCbVwsTONT3NY2HaVXZ5IxGTm/PZA="></script>
+<script defer src="/MLOS/en.search.min.83de990c31f2269f32c05e73e19ed1cf48467597a15d3d8813611e3b534a1353.js" integrity="sha256-g96ZDDHyJp8ywF5z4Z7Rz0hGdZehXT2IE2EeO1NKE1M="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -185,7 +185,12 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#option-1-linux-docker-build-env">Option 1: Linux Docker Build Env</a>
 <ul>
 <li><a href="#install-docker">Install Docker</a></li>
-<li><a href="#build-the-docker-image">Build the Docker Image</a></li>
+<li><a href="#build-the-docker-image">Build the Docker Image</a>
+<ul>
+<li><a href="#pull-the-upstream-docker-image">Pull the upstream docker image</a></li>
+<li><a href="#local-docker-image-build">Local docker image build</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#option-2-manual-build-tools-install">Option 2: Manual Build Tools Install</a></li>
@@ -246,11 +251,17 @@ All of them require <code>git</code> and, of course, a Linux installation:</p>
 </blockquote>
 <p>Please see the official Docker install documenation for distribution specific documentation. The Ubuntu docs are <a href="https://docs.docker.com/engine/install/ubuntu/">here</a>.</p>
 <h4 id="build-the-docker-image">Build the Docker Image</h4>
+<h5 id="pull-the-upstream-docker-image">Pull the upstream docker image</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker pull ghcr.io/microsoft-cisl/mlos/mlos-build-ubuntu-20.04
+</code></pre></div><h5 id="local-docker-image-build">Local docker image build</h5>
 <p>To automatically setup a Linux build environment using <code>docker</code>, run the following to build the image locally:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Build the docker image:</span>
-docker build --build-arg<span style="color:#f92672">=</span>UbuntuVersion<span style="color:#f92672">=</span>20.04 -t mlos/build:ubuntu-20.04 .
+docker build . --build-arg<span style="color:#f92672">=</span>UbuntuVersion<span style="color:#f92672">=</span>20.04 -t mlos-build-ubuntu-20.04 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --cache-from ghcr.io/microsoft-cisl/mlos/mlos-build-ubuntu-20.04
 </code></pre></div><blockquote>
 <p>Where <code>20.04</code> can also be replaced with another <a href="#linux-distribution-requirements">supported <code>UbuntuVersion</code></a>.</p>
+<p>Note: in Linux environments, you can also simply execute <code>make docker-image</code></p>
+<p>See the <a href="https://github.com/microsoft/MLOS/tree/main/documentation/../Makefile"><code>Makefile</code></a> for advanced usage details.</p>
 </blockquote>
 <p>See <a href="/MLOS/documentation/02-Build/#docker">02-Build.md</a> for instructions on how to run this image.</p>
 <h3 id="option-2-manual-build-tools-install">Option 2: Manual Build Tools Install</h3>
@@ -268,9 +279,12 @@ sudo apt-get install liblttng-ctl0 liblttng-ust0 zlib1g libxml2
 </code></pre></div><blockquote>
 <p>Note: older distros such as Ubuntu 16.04 may also need the <code>libcurl3</code> package installed for <code>dotnet restore</code> to work, but is unavailable on (or will break) more recent versions of Ubuntu.</p>
 <p>Note: <code>libxml2</code> pulls an appropriate version of <code>libicu</code>.</p>
-<p>Note: most other dependencies like <code>dotnet</code> and <code>cmake</code> are automatically fetched to the <code>tools/</code> directory using helpers in <code>scripts/</code> and invoked by the <code>Makefile</code> and <code>cmake</code> tools.</p>
 </blockquote>
-<p>Optional tools:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Install dotnet in the system:</span>
+./scripts/install.dotnet.sh
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Install cmake in the system:</span>
+./scripts/install.cmake.sh
+</code></pre></div><p>Optional tools:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get install exuberant-ctags
 </code></pre></div><blockquote>
 <p>When available <code>make ctags</code> can be invoked to help generate a <code>tags</code> database at the root of the source tree to allow easier code navigation in editors that support it.</p>

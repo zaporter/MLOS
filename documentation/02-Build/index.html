@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Build Instructions for MLOS Prerequisites See 01-Prerequisites.md for initial build tools setup instructions.
 There are different instructions according to the environment setup you chose.
-Contents  Build Instructions for MLOS  Prerequisites Contents Docker  Create a new container instance Other useful docker commands Start an existing container instance Get a new shell in a running container instance   Linux  CLI: make VSCode   Windows  CLI: msbuild Building with Visual Studio      Docker If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in 01-Prerequisites.">
+Contents  Build Instructions for MLOS  Prerequisites Contents Docker  Create a new container instance  Using the upstream container image Using the locally built image   Other useful docker commands Start an existing container instance Get a new shell in a running container instance   Linux  CLI: make VSCode   Windows  CLI: msbuild Building with Visual Studio      Docker If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in 01-Prerequisites.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Build Instructions for MLOS Prerequisites See 01-Prerequisites.md for initial build tools setup instructions.
 There are different instructions according to the environment setup you chose.
-Contents  Build Instructions for MLOS  Prerequisites Contents Docker  Create a new container instance Other useful docker commands Start an existing container instance Get a new shell in a running container instance   Linux  CLI: make VSCode   Windows  CLI: msbuild Building with Visual Studio      Docker If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in 01-Prerequisites." />
+Contents  Build Instructions for MLOS  Prerequisites Contents Docker  Create a new container instance  Using the upstream container image Using the locally built image   Other useful docker commands Start an existing container instance Get a new shell in a running container instance   Linux  CLI: make VSCode   Windows  CLI: msbuild Building with Visual Studio      Docker If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in 01-Prerequisites." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/documentation/02-Build/" />
 
@@ -18,7 +18,7 @@ Contents  Build Instructions for MLOS  Prerequisites Contents Docker  Create a n
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.ddef238d1dde1397e39f4b826d5c2c4ce353dcd6361da5576792311939bf3d90.js" integrity="sha256-3e8jjR3eE5fjn0uCbVwsTONT3NY2HaVXZ5IxGTm/PZA="></script>
+<script defer src="/MLOS/en.search.min.83de990c31f2269f32c05e73e19ed1cf48467597a15d3d8813611e3b534a1353.js" integrity="sha256-g96ZDDHyJp8ywF5z4Z7Rz0hGdZehXT2IE2EeO1NKE1M="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -187,7 +187,12 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#contents">Contents</a></li>
 <li><a href="#docker">Docker</a>
 <ul>
-<li><a href="#create-a-new-container-instance">Create a new container instance</a></li>
+<li><a href="#create-a-new-container-instance">Create a new container instance</a>
+<ul>
+<li><a href="#using-the-upstream-container-image">Using the upstream container image</a></li>
+<li><a href="#using-the-locally-built-image">Using the locally built image</a></li>
+</ul>
+</li>
 <li><a href="#other-useful-docker-commands">Other useful docker commands</a></li>
 <li><a href="#start-an-existing-container-instance">Start an existing container instance</a></li>
 <li><a href="#get-a-new-shell-in-a-running-container-instance">Get a new shell in a running container instance</a></li>
@@ -211,10 +216,15 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="docker">Docker</h2>
 <p>If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in <a href="/MLOS/documentation/01-Prerequisites/#docker">01-Prerequisites.md</a>, then you can start an interactive session using the container image as follows:</p>
 <h3 id="create-a-new-container-instance">Create a new container instance</h3>
+<h4 id="using-the-upstream-container-image">Using the upstream container image</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -it -v $PWD:/src/MLOS <span style="color:#ae81ff">\</span>
+  --name mlos-build <span style="color:#ae81ff">\</span>
+  ghcr.io/microsoft-cisl/mlos/mlos-build-ubuntu-20.04
+</code></pre></div><h4 id="using-the-locally-built-image">Using the locally built image</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Run the image:</span>
 docker run -it -v $PWD:/src/MLOS <span style="color:#ae81ff">\</span>
   --name mlos-build <span style="color:#ae81ff">\</span>
-  mlos/build:ubuntu-20.04
+  mlos-build-ubuntu-20.04
 </code></pre></div><blockquote>
 <p>Where <code>20.04</code> can also be replaced with another <a href="/MLOS/documentation/01-Prerequisites/#linux-distribution-requirements">supported <code>UbuntuVersion</code></a>.</p>
 <p>Note: If you receive an error that the container name already exists, then you can use either the <code>docker rm</code> or <code>docker start</code> commands <a href="#other-useful-docker-commands">below</a> to retry.</p>
