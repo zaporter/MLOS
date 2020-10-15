@@ -19,7 +19,7 @@ cd $(git rev-parse --show-toplevel)
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.83de990c31f2269f32c05e73e19ed1cf48467597a15d3d8813611e3b534a1353.js" integrity="sha256-g96ZDDHyJp8ywF5z4Z7Rz0hGdZehXT2IE2EeO1NKE1M="></script>
+<script defer src="/MLOS/en.search.min.be0bbfd4d2e4180b90b778c2a74023ccfacac16bae71725f6ddf4d1f4ae686f5.js" integrity="sha256-vgu/1NLkGAuQt3jCp0AjzPrKwWuucXJfbd9NH0rmhvU="></script>
 <link rel="alternate" type="application/rss+xml" href="https://microsoft.github.io/MLOS/source/Examples/SmartSharedChannel/index.xml" title="MLOS" />
 <!--
 Made with Book Theme
@@ -177,13 +177,13 @@ https://github.com/alex-shpak/hugo-book
 <p><a href="/MLOS/source/Examples/SmartSharedChannel/../../../documentation/02-Build/#cli-make">Build the code</a></p>
 <p>(inside the docker container)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make -C source/Mlos.Agent.Server
-make -C source/Examples/SmartSharedChannel
+make -C source/Examples/SmartSharedChannel all install
 </code></pre></div></li>
 </ol>
 <h2 id="executing">Executing</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export MLOS_SETTINGS_REGISTRY_PATH<span style="color:#f92672">=</span>out/dotnet/source/Mlos.UnitTest/Mlos.UnitTest.SettingsRegistry/obj/AnyCPU:out/dotnet/source/Examples/SmartSharedChannel/SmartSharedChannel.SettingsRegistry/obj/AnyCPU
-
-./tools/bin/dotnet out/dotnet/source/Mlos.Agent.Server/obj/AnyCPU/Mlos.Agent.Server.dll --executable out/cmake/Release/source/Examples/SmartSharedChannel/SmartSharedChannel
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./tools/bin/dotnet target/bin/Release/AnyCPU/Mlos.Agent.Server/Mlos.Agent.Server.dll <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --executable target/bin/Release/x86_64/SmartSharedChannel <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --settings-registry-path target/bin/Release/AnyCPU
 </code></pre></div></article>
  
       
