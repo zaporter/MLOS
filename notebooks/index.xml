@@ -15,8 +15,18 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://microsoft.github.io/MLOS/notebooks/BayesianOptimization/</guid>
-      <description>Download BayesianOptimization.ipynb notebook from IPython.core.display import display, HTML import warnings display(HTML(&amp;#34;&amp;lt;style&amp;gt;.container { width:100% !important; }&amp;lt;/style&amp;gt;&amp;#34;)) warnings.simplefilter(&amp;#34;ignore&amp;#34;) &amp;lt;IPython.core.display.HTML object&amp;gt;  import matplotlib.pyplot as plt import numpy as np import pandas as pd from scipy.stats import t Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.
+      <description>Download FILENAME.ipynb notebook from IPython.core.display import display, HTML import warnings display(HTML(&amp;#34;&amp;lt;style&amp;gt;.container { width:100% !important; }&amp;lt;/style&amp;gt;&amp;#34;)) warnings.simplefilter(&amp;#34;ignore&amp;#34;) &amp;lt;IPython.core.display.HTML object&amp;gt;  import matplotlib.pyplot as plt import numpy as np import pandas as pd from scipy.stats import t Bayesian Optimization This notebook demonstrates the basic principles of Bayesian Optimization (BO) and how to use MLOS to perform BO.
 Motivation In software performance engineering, the impact different (input) parameters (e.g. buffer size, worker thread count, etc.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://microsoft.github.io/MLOS/notebooks/LevelDbTuning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://microsoft.github.io/MLOS/notebooks/LevelDbTuning/</guid>
+      <description>Download FILENAME.ipynb notebook LevelDB parameter tuning using MLOS What is Level DB LevelDB is a key value store built using Log Structured Merge Trees (LSMs) Wiki. LevelDB supports read, write, delete and range query (sorted iteration) operations.
+Typical to any database system, LevelDB also comes with a bunch of parameters which can be tuned according to the workload to get the best performance. Before going to the parameters, we&amp;rsquo;ll briefly describe the working of LevelDB.</description>
     </item>
     
     <item>
@@ -25,7 +35,7 @@ Motivation In software performance engineering, the impact different (input) par
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheCPP/</guid>
-      <description>Download SmartCacheCPP.ipynb notebook Connecting MLOS to a C++ application This notebook walks through connecting MLOS to a C++ application within a docker container. We will start a docker container, and run an MLOS Agent within it. The MLOS Agent will start the actual application, and communicate with it via a shared memory channel. In this example, the MLOS Agent controls the execution of the workloads on the application, and we will later connect to the agent to optimize the configuration of our application.</description>
+      <description>Download FILENAME.ipynb notebook Connecting MLOS to a C++ application This notebook walks through connecting MLOS to a C++ application within a docker container. We will start a docker container, and run an MLOS Agent within it. The MLOS Agent will start the actual application, and communicate with it via a shared memory channel. In this example, the MLOS Agent controls the execution of the workloads on the application, and we will later connect to the agent to optimize the configuration of our application.</description>
     </item>
     
     <item>
@@ -34,7 +44,7 @@ Motivation In software performance engineering, the impact different (input) par
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</guid>
-      <description>Download SmartCacheOptimization.ipynb notebook Optimizing Smart Cache with Bayesian Optimization The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.
+      <description>Download FILENAME.ipynb notebook Optimizing Smart Cache with Bayesian Optimization The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.
 We&amp;rsquo;re using a sequential model-based optimization approach, that consists of the following loop:
  Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from SmartCache, Register an observation with the optimizer.  # import the required classes and tools import grpc import pandas as pd import logging from mlos.</description>
     </item>

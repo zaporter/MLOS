@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Download SmartCacheCPP.ipynb notebook Connecting MLOS to a C&#43;&#43; application This notebook walks through connecting MLOS to a C&#43;&#43; application within a docker container. We will start a docker container, and run an MLOS Agent within it. The MLOS Agent will start the actual application, and communicate with it via a shared memory channel. In this example, the MLOS Agent controls the execution of the workloads on the application, and we will later connect to the agent to optimize the configuration of our application.">
+<meta name="description" content="Download FILENAME.ipynb notebook Connecting MLOS to a C&#43;&#43; application This notebook walks through connecting MLOS to a C&#43;&#43; application within a docker container. We will start a docker container, and run an MLOS Agent within it. The MLOS Agent will start the actual application, and communicate with it via a shared memory channel. In this example, the MLOS Agent controls the execution of the workloads on the application, and we will later connect to the agent to optimize the configuration of our application.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Download SmartCacheCPP.ipynb notebook Connecting MLOS to a C&#43;&#43; application This notebook walks through connecting MLOS to a C&#43;&#43; application within a docker container. We will start a docker container, and run an MLOS Agent within it. The MLOS Agent will start the actual application, and communicate with it via a shared memory channel. In this example, the MLOS Agent controls the execution of the workloads on the application, and we will later connect to the agent to optimize the configuration of our application." />
+<meta property="og:description" content="Download FILENAME.ipynb notebook Connecting MLOS to a C&#43;&#43; application This notebook walks through connecting MLOS to a C&#43;&#43; application within a docker container. We will start a docker container, and run an MLOS Agent within it. The MLOS Agent will start the actual application, and communicate with it via a shared memory channel. In this example, the MLOS Agent controls the execution of the workloads on the application, and we will later connect to the agent to optimize the configuration of our application." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/notebooks/SmartCacheCPP/" />
 
@@ -14,7 +14,7 @@
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.be0bbfd4d2e4180b90b778c2a74023ccfacac16bae71725f6ddf4d1f4ae686f5.js" integrity="sha256-vgu/1NLkGAuQt3jCp0AjzPrKwWuucXJfbd9NH0rmhvU="></script>
+<script defer src="/MLOS/en.search.min.a358000ca6b684654d0631622f0004e31ca8e484da0fe6cd977d77432a0eb193.js" integrity="sha256-o1gADKa2hGVNBjFiLwAE4xyo5ITaD&#43;bNl313QyoOsZM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -70,6 +70,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/MLOS/notebooks/BayesianOptimization/">Bayesian Optimization</a></li>
 <li><a href="/MLOS/notebooks/SmartCacheOptimization/">Smart Cache Optimization</a></li>
 <li><a href="/MLOS/notebooks/SmartCacheCPP/"class=active>Smart Cache Optimization in C++</a></li>
+<li><a href="/MLOS/notebooks/LevelDbTuning/">LevelDB External Tuning Example</a></li>
 </ul>
 </li>
 <li>
@@ -154,7 +155,7 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="download-smartcachecppipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcachecppipynb"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheCPP.ipynb">Download SmartCacheCPP.ipynb notebook</a></h1>
+  <article class="markdown"><h1 id="download-filenameipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcachecppipynb"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheCPP.ipynb">Download FILENAME.ipynb notebook</a></h1>
 <h1 id="connecting-mlos-to-a-c-application">Connecting MLOS to a C++ application</h1>
 <p>This notebook walks through connecting MLOS to a C++ application within a docker container.
 We will start a docker container, and run an MLOS Agent within it. The MLOS Agent will start the actual application, and communicate with it via a shared memory channel.
@@ -331,7 +332,7 @@ plt<span style="color:#f92672">.</span>legend()
 <li>Instead of cache hit rate, use a metric based on runtime (e.g. latency, throughput, etc) as performance metric. Environment (context) sensitive metrics can also be measured (e.g. <a href="https://bduvenhage.me/performance/2019/06/22/high-performance-timer.html">time</a>. How does the signal from the runtime based metric compare to the application specific one (hit rate)? How consistent are the runtime results across multiple runs?</li>
 <li>Pick another widely used <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies">cache replacement policy</a> such as LFU and construct a synthetic workload on which you expect this strategy to work well. Implement the policy and workload as part of the SmartCache example, and add a new option to the <code>SmartCache.SettingsRegistry\AssemblyInitializer.cs</code>. Run the optimization again with your new workload. Does the optimizer find that your new policy performs best?</li>
 </ol>
-<h1 id="download-smartcachecppipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcachecppipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheCPP.ipynb">Download SmartCacheCPP.ipynb notebook</a></h1>
+<h1 id="download-filenameipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcachecppipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheCPP.ipynb">Download FILENAME.ipynb notebook</a></h1>
 </article>
  
       
