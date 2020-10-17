@@ -16,7 +16,7 @@ Typical to any database system, LevelDB also comes with a bunch of parameters wh
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.a358000ca6b684654d0631622f0004e31ca8e484da0fe6cd977d77432a0eb193.js" integrity="sha256-o1gADKa2hGVNBjFiLwAE4xyo5ITaD&#43;bNl313QyoOsZM="></script>
+<script defer src="/MLOS/en.search.min.10beb49365b072afa799436a0b9709220f11aaa8c112a9f55e61879f60b1d45f.js" integrity="sha256-EL60k2Wwcq&#43;nmUNqC5cJIg8RqqjBEqn1XmGHn2Cx1F8="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -195,7 +195,7 @@ cmake -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release .. <span sty
 <p>Please take a look at the <code>db_bench.cc</code> file in the <code>~/leveldb/benchmarks</code> directory and get an idea about the input parameters and workloads that are possible.</p>
 <p>An example command to run a workload that does random writes of 1M values with value size 100 B is:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./db_bench --benchmarks<span style="color:#f92672">=</span>fillrandom --val_size<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span> --num<span style="color:#f92672">=</span><span style="color:#ae81ff">1000000</span>
-</code></pre></div><p>The output of the command will look like (numbers migth be different):</p>
+</code></pre></div><p>The output of the command will look like (numbers might be different):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">LevelDB:    version 1.22
 Date:       Thu Oct  8 13:56:00 2020
 CPU:        40 * Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
@@ -211,7 +211,8 @@ Opening the DB now
 In the collect stats thread
 Total data written = 421.9 MB   
 fillrandom :      31.731 micros/op;    3.5 MB/s
-</code></pre></div><p>In the subsequent cells, we will using Bayesian optimization in MLOS to tune the startup time parameters to obtain the parameters that result in best throughput and latency.</p>
+</code></pre></div><p>In the subsequent cells, we will be using the Bayesian Optimization Python libraries from the MLOS to tune some startup time parameters to obtain the values that result in best throughput and latency.</p>
+<p>You will have to install the python MLOS library and switch to the corresponding conda environment before moving further. Follow the steps at <a href="https://microsoft.github.io/MLOS/documentation/01-Prerequisites/#python-quickstart">https://microsoft.github.io/MLOS/documentation/01-Prerequisites/#python-quickstart</a> for installing python MLOS library.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> subprocess
 <span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 <span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
@@ -224,6 +225,8 @@ fillrandom :      31.731 micros/op;    3.5 MB/s
 <span style="color:#f92672">from</span> mlos.Optimizers.BayesianOptimizerConfigStore <span style="color:#f92672">import</span> bayesian_optimizer_config_store
 <span style="color:#f92672">from</span> mlos.Optimizers.BayesianOptimizerFactory <span style="color:#f92672">import</span> BayesianOptimizerFactory
 <span style="color:#f92672">from</span> mlos.Spaces <span style="color:#f92672">import</span> Point
+<span style="color:#f92672">from</span> mlos.Logger <span style="color:#f92672">import</span> create_logger
+<span style="color:#f92672">import</span> logging
 
 <span style="color:#75715e"># configure the optimizer, start from the default configuration</span>
 optimizer_config <span style="color:#f92672">=</span> bayesian_optimizer_config_store<span style="color:#f92672">.</span>default
@@ -246,455 +249,40 @@ optimizer_config<span style="color:#f92672">.</span>experiment_designer_config<s
 <span style="color:#75715e">#     optimization_problem=optimization_problem,</span>
 <span style="color:#75715e">#     optimizer_config=optimizer_config</span>
 <span style="color:#75715e"># )</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># You might have to change the min and max value based on the start up time parameter that you want explore</span>
-parameter_search_space <span style="color:#f92672">=</span> SimpleHypergrid(
-        name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;parameter_config&#39;</span>,
-        dimensions<span style="color:#f92672">=</span>[
-            DiscreteDimension(<span style="color:#e6db74">&#39;parameter&#39;</span>, min<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>, max<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>)
-        ]
-    )
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># You will have to change the min and max value based on the start up time parameter that you want explore,</span>
+<span style="color:#75715e"># you can change the function or create a similar function for the going further questions. </span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_parameter_search_space</span>(parameter_name, min_val, max_val):
+    parameter_search_space <span style="color:#f92672">=</span> SimpleHypergrid(
+            name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;parameter_config&#39;</span>,
+            dimensions<span style="color:#f92672">=</span>[
+                DiscreteDimension(name<span style="color:#f92672">=</span>parameter_name, min<span style="color:#f92672">=</span>min_val, max<span style="color:#f92672">=</span>max_val)
+            ]
+        )
+    <span style="color:#66d9ef">return</span> parameter_search_space
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Optimization Problem</span>
-<span style="color:#75715e"># You might have to change the min and max value based on the objective that you are using </span>
-optimization_problem <span style="color:#f92672">=</span> OptimizationProblem(
-    parameter_space<span style="color:#f92672">=</span>parameter_search_space,
-    objective_space<span style="color:#f92672">=</span>SimpleHypergrid(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;objectives&#34;</span>, dimensions<span style="color:#f92672">=</span>[ContinuousDimension(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;objective&#34;</span>, min<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, max<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)]),
-    objectives<span style="color:#f92672">=</span>[Objective(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;objective&#34;</span>, minimize<span style="color:#f92672">=</span>False)]
-)
-
-optimizer_factory <span style="color:#f92672">=</span> BayesianOptimizerFactory()
-optimizer <span style="color:#f92672">=</span> optimizer_factory<span style="color:#f92672">.</span>create_local_optimizer(
-    optimization_problem<span style="color:#f92672">=</span>optimization_problem,
-    optimizer_config<span style="color:#f92672">=</span>optimizer_config
-)
-
+<span style="color:#75715e"># You will have to set the min and max value based on the objective that you are using </span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_optimization_problem</span>(parameter_search_space, objective_name, min_val, max_val, minimize<span style="color:#f92672">=</span>False):
+    optimization_problem <span style="color:#f92672">=</span> OptimizationProblem(
+        parameter_space<span style="color:#f92672">=</span>parameter_search_space,
+        objective_space<span style="color:#f92672">=</span>SimpleHypergrid(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;objectives&#34;</span>,
+            dimensions<span style="color:#f92672">=</span>[ContinuousDimension(name<span style="color:#f92672">=</span>objective_name, min<span style="color:#f92672">=</span>min_val, max<span style="color:#f92672">=</span>max_val)]),
+        objectives<span style="color:#f92672">=</span>[Objective(name<span style="color:#f92672">=</span>objective_name, minimize<span style="color:#f92672">=</span>minimize)]
+    )
+    <span style="color:#66d9ef">return</span> optimization_problem
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># The max value here (1000) is used as an example</span>
+<span style="color:#75715e"># Set the max and the min value appropriately based on the objective metric and the hardware type.</span>
+logger <span style="color:#f92672">=</span> create_logger(<span style="color:#e6db74">&#39;Optimizing LevelDB&#39;</span>, logging_level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>WARN)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize_optimizer</span>():
-    optimizer_factory <span style="color:#f92672">=</span> BayesianOptimizerFactory()
+    parameter_search_space <span style="color:#f92672">=</span> create_parameter_search_space(parameter_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;write_buffer_size&#34;</span>, 
+        min_val<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>, max_val<span style="color:#f92672">=</span><span style="color:#ae81ff">128</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>)
+    optimization_problem <span style="color:#f92672">=</span> create_optimization_problem(parameter_search_space, objective_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;throughput&#34;</span>,
+        min_val<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, max_val<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, minimize<span style="color:#f92672">=</span>False)
+    optimizer_factory <span style="color:#f92672">=</span> BayesianOptimizerFactory(logger<span style="color:#f92672">=</span>logger)
     optimizer <span style="color:#f92672">=</span> optimizer_factory<span style="color:#f92672">.</span>create_local_optimizer(
     optimization_problem<span style="color:#f92672">=</span>optimization_problem,
     optimizer_config<span style="color:#f92672">=</span>optimizer_config)
-</code></pre></div><pre><code>ity_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:26 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:26 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:26 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:26 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:26 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:26 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:26 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-</code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Remember to initialize the optimizer before each time you run optimization or call run_optimizer() function</span>
-initialize_optimizer()
-</code></pre></div><pre><code>ity_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:27 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:27 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:27 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:27 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:27 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:27 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-10/08/2020 21:58:27 -   BayesianOptimizerFactory -    INFO - [BayesianOptimizerFactory.py:  40 -    create_local_optimizer() ] Creating a bayesian optimizer with config: {
-  &quot;surrogate_model_implementation&quot;: &quot;HomogeneousRandomForestRegressionModel&quot;,
-  &quot;experiment_designer_implementation&quot;: &quot;ExperimentDesigner&quot;,
-  &quot;min_samples_required_for_guided_design_of_experiments&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.n_estimators&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.features_fraction_per_estimator&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.samples_fraction_per_estimator&quot;: 0.9,
-  &quot;homogeneous_random_forest_regression_model_config.regressor_implementation&quot;: &quot;DecisionTreeRegressionModel&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.criterion&quot;: &quot;mse&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.splitter&quot;: &quot;best&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_depth&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_split&quot;: 2,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_leaf&quot;: 3,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_weight_fraction_leaf&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_features&quot;: &quot;auto&quot;,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.max_leaf_nodes&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_impurity_decrease&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.ccp_alpha&quot;: 0,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.min_samples_to_fit&quot;: 10,
-  &quot;homogeneous_random_forest_regression_model_config.decision_tree_regression_model_config.n_new_samples_before_refit&quot;: 1,
-  &quot;homogeneous_random_forest_regression_model_config.bootstrap&quot;: 1,
-  &quot;experiment_designer_config.utility_function_implementation&quot;: &quot;ConfidenceBoundUtilityFunction&quot;,
-  &quot;experiment_designer_config.numeric_optimizer_implementation&quot;: &quot;RandomSearchOptimizer&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.utility_function_name&quot;: &quot;upper_confidence_bound_on_improvement&quot;,
-  &quot;experiment_designer_config.confidence_bound_utility_function_config.alpha&quot;: 0.1,
-  &quot;experiment_designer_config.random_search_optimizer_config.num_samples_per_iteration&quot;: 1000,
-  &quot;experiment_designer_config.fraction_random_suggestions&quot;: 0.5,
-  &quot;experiment_designer_config_fraction_random_suggestions&quot;: 0.1
-}.
-</code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Please change the leveldb_path to the build directory of your leveldb installation</span>
+    <span style="color:#66d9ef">return</span> optimizer
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Please change the leveldb_path to the build directory of your leveldb installation</span>
 leveldb_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$HOME/leveldb/build/&#34;</span>
 <span style="color:#75715e"># You can change the command to run a different kind of workload (take a look at db_bench.cc to see the possible workloads)</span>
 command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;db_bench&#34;</span>
@@ -703,66 +291,81 @@ command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;db
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_workload</span>(workload, input_parameter, parameter_value):
     <span style="color:#75715e"># The line below executes the db_bench command with approprite parameters, you can change this </span>
     <span style="color:#75715e"># if you want to specify other input parameters</span>
-    result <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>check_output(leveldb_path <span style="color:#f92672">+</span> command <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; --benchmarks=&#34;</span> <span style="color:#f92672">+</span> workload <span style="color:#f92672">+</span>  <span style="color:#e6db74">&#34; --&#34;</span> <span style="color:#f92672">+</span> str(input_parameter) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=&#34;</span> <span style="color:#f92672">+</span> str(parameter_value), shell<span style="color:#f92672">=</span>True)
+    result <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>check_output(leveldb_path <span style="color:#f92672">+</span> command <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; --benchmarks=&#34;</span> <span style="color:#f92672">+</span> workload <span style="color:#f92672">+</span> 
+        <span style="color:#e6db74">&#34; --&#34;</span> <span style="color:#f92672">+</span> str(input_parameter) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=&#34;</span> <span style="color:#f92672">+</span> str(parameter_value), shell<span style="color:#f92672">=</span>True)
     stats <span style="color:#f92672">=</span> (str(result)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;:&#34;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;;&#34;</span>)
     <span style="color:#75715e"># The line below is used to parse the output that is returned by db_bench</span>
     latency, throughput <span style="color:#f92672">=</span> float(stats[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>)[<span style="color:#ae81ff">0</span>]), float(stats[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>)[<span style="color:#ae81ff">0</span>])
     <span style="color:#66d9ef">return</span> latency, throughput
 
-<span style="color:#75715e">#optimizer = bayesian_optimizer_factory.create_remote_optimizer(optimization_problem=optimization_problem)</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_optimizer</span>():
-    <span style="color:#75715e"># Parameter 1: write_buffer_size: min_value = 1 MB, max_value = 128 MB</span>
-    <span style="color:#75715e"># Parameter 2: max_file_size: min_value = 1 MB, max_value = 128 MB</span>
-    <span style="color:#75715e"># Optimization parameters: latency and throughput, both returned by run_workload</span>
+    optimizer <span style="color:#f92672">=</span> initialize_optimizer()
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
         new_config_values <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>suggest()
-        new_parameter_value <span style="color:#f92672">=</span> new_config_values[<span style="color:#e6db74">&#34;parameter&#34;</span>]
-        latency, throughput <span style="color:#f92672">=</span> run_workload(<span style="color:#e6db74">&#34;fillrandom&#34;</span>, <span style="color:#e6db74">&#34;max_file_size&#34;</span>, new_parameter_value)
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Parameter value: {}, Objective value: {}&#34;</span><span style="color:#f92672">.</span>format(str(new_parameter_value),  str(throughput) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; MB/s&#34;</span>))
+        new_parameter_value <span style="color:#f92672">=</span> new_config_values[<span style="color:#e6db74">&#34;write_buffer_size&#34;</span>]
+        latency, throughput <span style="color:#f92672">=</span> run_workload(<span style="color:#e6db74">&#34;fillrandom&#34;</span>, <span style="color:#e6db74">&#34;write_buffer_size&#34;</span>, new_parameter_value)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Parameter value: {0:.2f} MB, Objective value: {1:.2f} MB/s&#34;</span><span style="color:#f92672">.</span>format(
+            float(new_parameter_value)<span style="color:#f92672">/</span>(<span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>), float(throughput)))
         <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
             optimum_parameter, optimum_value <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>optimum() 
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Optimal parameter: {}, Optimal value: {}&#34;</span><span style="color:#f92672">.</span>format(optimum_parameter[<span style="color:#e6db74">&#34;parameter&#34;</span>], optimum_value[<span style="color:#e6db74">&#34;objective&#34;</span>]))
-        objectives_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;objective&#39;</span>: [throughput]})
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Optimal parameter: {0:.2f} MB, Optimal value: {1:.2f} MB/s&#34;</span><span style="color:#f92672">.</span>format(
+                float(optimum_parameter[<span style="color:#e6db74">&#34;write_buffer_size&#34;</span>])<span style="color:#f92672">/</span>(<span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>), optimum_value[<span style="color:#e6db74">&#34;throughput&#34;</span>]))
+        objectives_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;throughput&#39;</span>: [throughput]})
         features_df <span style="color:#f92672">=</span> new_config_values<span style="color:#f92672">.</span>to_dataframe()
         optimizer<span style="color:#f92672">.</span>register(features_df, objectives_df)
 
 <span style="color:#75715e"># Remember to call initialize_optimizer function before the run_optimizer</span>
 <span style="color:#75715e"># To avoid the optimizer remembering the optimal values from previous run</span>
 run_optimizer()
-</code></pre></div><pre><code>Parameter value: 14231436, Objective value: 21.8 MB/s
-Parameter value: 7465366, Objective value: 21.1 MB/s
-Optimal parameter: 14231436, Optimal value: 21.8
-Parameter value: 61708892, Objective value: 21.9 MB/s
-Optimal parameter: 14231436, Optimal value: 21.8
-Parameter value: 13801008, Objective value: 21.5 MB/s
-Optimal parameter: 61708892, Optimal value: 21.9
-Parameter value: 37672330, Objective value: 21.3 MB/s
-Optimal parameter: 61708892, Optimal value: 21.9
-Parameter value: 56044662, Objective value: 21.7 MB/s
-Optimal parameter: 61708892, Optimal value: 21.9
-Parameter value: 4266076, Objective value: 20.8 MB/s
-Optimal parameter: 61708892, Optimal value: 21.9
-Parameter value: 25616874, Objective value: 22.4 MB/s
-Optimal parameter: 61708892, Optimal value: 21.9
-Parameter value: 55095476, Objective value: 20.5 MB/s
-Optimal parameter: 25616874, Optimal value: 22.4
-Parameter value: 2542654, Objective value: 22.0 MB/s
-Optimal parameter: 25616874, Optimal value: 22.4
+</code></pre></div><pre><code>Parameter value: 4.34 MB, Objective value: 13.20 MB/s
+Parameter value: 63.73 MB, Objective value: 33.00 MB/s
+Optimal parameter: 4.34 MB, Optimal value: 13.20 MB/s
+Parameter value: 110.00 MB, Objective value: 31.60 MB/s
+Optimal parameter: 63.73 MB, Optimal value: 33.00 MB/s
+Parameter value: 40.79 MB, Objective value: 33.80 MB/s
+Optimal parameter: 63.73 MB, Optimal value: 33.00 MB/s
+Parameter value: 91.23 MB, Objective value: 32.50 MB/s
+Optimal parameter: 40.79 MB, Optimal value: 33.80 MB/s
+Parameter value: 45.60 MB, Objective value: 29.00 MB/s
+Optimal parameter: 40.79 MB, Optimal value: 33.80 MB/s
+Parameter value: 75.85 MB, Objective value: 29.60 MB/s
+Optimal parameter: 40.79 MB, Optimal value: 33.80 MB/s
+Parameter value: 105.25 MB, Objective value: 31.80 MB/s
+Optimal parameter: 40.79 MB, Optimal value: 33.80 MB/s
+Parameter value: 100.94 MB, Objective value: 32.30 MB/s
+Optimal parameter: 40.79 MB, Optimal value: 33.80 MB/s
+Parameter value: 95.30 MB, Objective value: 32.50 MB/s
+Optimal parameter: 40.79 MB, Optimal value: 33.80 MB/s
 </code></pre>
 <h3 id="verification">Verification</h3>
 <p>Manually run the benchmark for various values of the parameter that you are testing, plot the graphs and verify if the optimal returned by the optimizer matches with the one manually obtained.
 For example, if the <code>input_parameter</code> is <code>write_buffer_size</code>, you can start from 2 MB (2097152) and go up to 64 MB (67108864), by trying values like, 2MB, 4MB, 8MB, 16MB, 32MB, 64MB and verify the point of deflection i.e the point where throughput starts to decrease after increasing or latency starts to increase after decreasing and verify if it matches with what is returned by the optimizer.</p>
 <h2 id="going-further">Going further</h2>
+<p>In the questions below, you can choose to optimize either for throughput or latency (choose one). Plot graphs indicating how many iterations does the optimizer take to converge. Report values of the optimal values of parameters obtained and the optimal value of the objective metric at these parameter values.</p>
 <ol>
-<li>Choose 2 parameters from <code>leveldb/include/leveldb/options.h</code> file (this can include <code>write_buffer_size</code> and <code>max_file_size</code>), and try to tune them manually and using the optimizer and compare the results.</li>
+<li>
+<p>Choose 2 parameters from <code>leveldb/include/leveldb/options.h</code> file (this can include <code>write_buffer_size</code> and <code>max_file_size</code>) and try to tune them manually and using the optimizer and compare the results. Plot a graph of the optimal value vs the iteration.</p>
+<p>Hint: These parameters can be passed in as startup time parameters, look at <code>leveldb/benchmarks/db_bench.cc</code> for the possible startup time parameters.</p>
+</li>
+<li>
+<p>Try tuning the performance metric by using a combination of startup time parameters. For example, you can try to optimize a combination of <code>write_buffer_size</code> and <code>max_file_size</code> together to obtain the best throughput.</p>
+<p>Hint: You will have to make changes to the parameter search space. You will have to add a second parameter, look at the SmartCache example to do this.</p>
+</li>
+<li>
+<p>Apart from the startup time parameters, LevelDB has compile time parameters (in <code>leveldb/db/dbformat.h</code>), choose parameters from this file that you think would affect the throughput or latency, make them start up time parameters and tune them using MLOS (some candidates: <code>kl0_compaction_trigger</code>, <code>kl0_slowdownwritetrigger</code>, <code>kl0_stopwritetrigger</code>, etc.). Look at the places where these parameters are used and what effect they can have on the performance.</p>
+<p>Hint: To make these parameters startup time, look at the <code>Open()</code> function in <code>leveldb/benchmarks/db_bench.cc</code> and note how startup time parameters can be passed using <code>Options</code> structure.</p>
+</li>
 </ol>
 <h3 id="reference">Reference</h3>
 <ul>
-<li><a href="https://wiesen.github.io/post/leveldb-storage-memtable/">https://wiesen.github.io/post/leveldb-storage-memtable/</a></li>
-<li><a href="https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/">https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/</a></li>
+<li>
+<p><a href="https://wiesen.github.io/post/leveldb-storage-memtable/">https://wiesen.github.io/post/leveldb-storage-memtable/</a></p>
+</li>
+<li>
+<p><a href="https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/">https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/</a></p>
+<h1 id="download-filenameipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainexternalleveldbleveldbtuningipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/external/leveldb/LevelDbTuning.ipynb">Download FILENAME.ipynb notebook</a></h1>
+</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-</code></pre></div><h1 id="download-filenameipynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainexternalleveldbleveldbtuningipynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/external/leveldb/LevelDbTuning.ipynb">Download FILENAME.ipynb notebook</a></h1>
 </article>
  
       
