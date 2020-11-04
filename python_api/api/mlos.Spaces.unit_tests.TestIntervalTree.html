@@ -168,6 +168,10 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionBase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html">mlos.OptimizerEvaluationTools.OptimizerEvaluationReport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluator.html">mlos.OptimizerEvaluationTools.OptimizerEvaluator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore.html">mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimumOverTime.html">mlos.OptimizerEvaluationTools.OptimumOverTime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective</a></li>
@@ -175,6 +179,12 @@
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjectiveWrapper.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjectiveWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.html">mlos.OptimizerEvaluationTools.unit_tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html">mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html">mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective</a></li>
 </ul>
 </li>
 </ul>
@@ -360,34 +370,34 @@
 <span id="mlos-spaces-unit-tests-testintervaltree"></span><h1>mlos.Spaces.unit_tests.TestIntervalTree<a class="headerlink" href="#module-mlos.Spaces.unit_tests.TestIntervalTree" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.unit_tests.TestIntervalTree.</code><code class="sig-name descname">TestIntervalTreeWithContinuousDimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/417ff56/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.unit_tests.TestIntervalTree.</code><code class="sig-name descname">TestIntervalTreeWithContinuousDimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/76100b0/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
 <p>Comprehensively tests all</p>
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.enumerate_possibly_overlapping_continuous_intervals">
-<code class="sig-name descname">enumerate_possibly_overlapping_continuous_intervals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">gap_width</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/417ff56/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L100"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.enumerate_possibly_overlapping_continuous_intervals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">enumerate_possibly_overlapping_continuous_intervals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">gap_width</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/76100b0/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L100"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.enumerate_possibly_overlapping_continuous_intervals" title="Permalink to this definition">¶</a></dt>
 <dd><p>For a given interval, enumerates a list of intervals and a boolean indicating overlap.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.make_tree">
-<code class="sig-name descname">make_tree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">intervals</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/417ff56/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L90"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.make_tree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">make_tree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">intervals</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/76100b0/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L90"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.make_tree" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_inserting_overlapping_chunks">
-<code class="sig-name descname">test_inserting_overlapping_chunks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/417ff56/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L36"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_inserting_overlapping_chunks" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test_inserting_overlapping_chunks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/76100b0/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L36"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_inserting_overlapping_chunks" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_pop_overlapping_chunks">
-<code class="sig-name descname">test_pop_overlapping_chunks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/417ff56/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L16"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_pop_overlapping_chunks" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test_pop_overlapping_chunks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/76100b0/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L16"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_pop_overlapping_chunks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exercises IntervalTree.pop_overlapping_chunks() method.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_pop_overlapping_chunks_2">
-<code class="sig-name descname">test_pop_overlapping_chunks_2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/417ff56/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L52"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_pop_overlapping_chunks_2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test_pop_overlapping_chunks_2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/76100b0/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L52"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.test_pop_overlapping_chunks_2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exercises IntervalTree.pop_overlapping_chunks() method more throughly.</p>
 <p>Let’s make a bunch of intervals, place them in the tree and then let’s pop_overlappnig_chunks from the tree.</p>
 <p>To test the widest array of code paths, let’s make a tree with a lot of evenly spaced intervals. Then, let’s
@@ -398,7 +408,7 @@ select one at random and produce intervals that should overlap.</p>
 
 <dl class="py class">
 <dt id="mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithDiscreteDimension">
-<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.unit_tests.TestIntervalTree.</code><code class="sig-name descname">TestIntervalTreeWithDiscreteDimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/417ff56/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L150"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithDiscreteDimension" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mlos.Spaces.unit_tests.TestIntervalTree.</code><code class="sig-name descname">TestIntervalTreeWithDiscreteDimension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/76100b0/source/Mlos.Python/mlos/Spaces/unit_tests/TestIntervalTree.py#L150"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithDiscreteDimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
 </dd></dl>
 

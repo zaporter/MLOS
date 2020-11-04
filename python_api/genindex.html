@@ -166,6 +166,10 @@
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionBase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html">mlos.OptimizerEvaluationTools.OptimizerEvaluationReport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluator.html">mlos.OptimizerEvaluationTools.OptimizerEvaluator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore.html">mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html">mlos.OptimizerEvaluationTools.OptimumOverTime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective</a></li>
@@ -173,6 +177,12 @@
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjectiveWrapper.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjectiveWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.unit_tests.html">mlos.OptimizerEvaluationTools.unit_tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html">mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html">mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective</a></li>
 </ul>
 </li>
 </ul>
@@ -452,15 +462,19 @@
         <li><a href="api/mlos.Spaces.SimpleHypergrid.html#mlos.Spaces.SimpleHypergrid.SimpleHypergrid.add_dimension">(mlos.Spaces.SimpleHypergrid.SimpleHypergrid method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.MlosOptimizationServices.MlosOptimizationRuntime.html#mlos.MlosOptimizationServices.MlosOptimizationRuntime.MlosOptimizationRuntime.add_distributable_class">add_distributable_class() (mlos.MlosOptimizationServices.MlosOptimizationRuntime.MlosOptimizationRuntime method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Optimizers.RegressionModels.Prediction.html#mlos.Optimizers.RegressionModels.Prediction.Prediction.add_invalid_prediction_rows">add_invalid_prediction_rows() (mlos.Optimizers.RegressionModels.Prediction.Prediction method)</a>
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.Prediction.html#mlos.Optimizers.RegressionModels.Prediction.Prediction.add_invalid_rows_at_missing_indices">add_invalid_rows_at_missing_indices() (mlos.Optimizers.RegressionModels.Prediction.Prediction method)</a>
 </li>
       <li><a href="api/mlos.Grpc.OptimizerService_pb2_grpc.html#mlos.Grpc.OptimizerService_pb2_grpc.add_OptimizerServiceServicer_to_server">add_OptimizerServiceServicer_to_server() (in module mlos.Grpc.OptimizerService_pb2_grpc)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html#mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime.add_optimum_at_iteration">add_optimum_at_iteration() (mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime method)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html#mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.OptimizerEvaluationReport.add_pickled_optimizer">add_pickled_optimizer() (mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.OptimizerEvaluationReport method)</a>
 </li>
       <li><a href="api/mlos.MlosOptimizationServices.MlosOptimizationRuntime.html#mlos.MlosOptimizationServices.MlosOptimizationRuntime.MlosOptimizationRuntime.add_rpc_handler">add_rpc_handler() (mlos.MlosOptimizationServices.MlosOptimizationRuntime.MlosOptimizationRuntime method)</a>
 </li>
@@ -612,8 +626,14 @@
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.SklearnRidgeRegressionModelConfig.html#mlos.Optimizers.RegressionModels.SklearnRidgeRegressionModelConfig.SklearnRidgeRegressionModelConfig.Solver.CHOLESKY">CHOLESKY (mlos.Optimizers.RegressionModels.SklearnRidgeRegressionModelConfig.SklearnRidgeRegressionModelConfig.Solver attribute)</a>
 </li>
-      <li><a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.html#mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.TestPrediction.classSetUp">classSetUp() (mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.TestPrediction class method)</a>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html#mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.TestObjectiveFunctionFactory.classSetUp">classSetUp() (mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.TestObjectiveFunctionFactory class method)</a>
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective.classSetUp">(mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective class method)</a>
 </li>
+        <li><a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.html#mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.TestPrediction.classSetUp">(mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.TestPrediction class method)</a>
+</li>
+      </ul></li>
       <li><a href="api/mlos.Logger.html#mlos.Logger.BufferingHandler.clear">clear() (mlos.Logger.BufferingHandler method)</a>
 </li>
       <li><a href="api/mlos.Tracer.html#mlos.Tracer.Tracer.clear_events">clear_events() (mlos.Tracer.Tracer method)</a>
@@ -704,8 +724,24 @@
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.RegressionModel.html#mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel.compute_goodness_of_fit">compute_goodness_of_fit() (mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel method)</a>
 </li>
+      <li><a href="api/mlos.Grpc.BayesianOptimizerProxy.html#mlos.Grpc.BayesianOptimizerProxy.BayesianOptimizerProxy.compute_surrogate_model_goodness_of_fit">compute_surrogate_model_goodness_of_fit() (mlos.Grpc.BayesianOptimizerProxy.BayesianOptimizerProxy method)</a>
+
+      <ul>
+        <li><a href="api/mlos.Optimizers.BayesianOptimizer.html#mlos.Optimizers.BayesianOptimizer.BayesianOptimizer.compute_surrogate_model_goodness_of_fit">(mlos.Optimizers.BayesianOptimizer.BayesianOptimizer method)</a>
+</li>
+        <li><a href="api/mlos.Optimizers.OptimizerBase.html#mlos.Optimizers.OptimizerBase.OptimizerBase.compute_surrogate_model_goodness_of_fit">(mlos.Optimizers.OptimizerBase.OptimizerBase method)</a>
+</li>
+      </ul></li>
       <li><a href="api/mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.GlowWormSwarmOptimizer.html#mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.GlowWormSwarmOptimizer.GlowWormSwarmOptimizer.compute_utility">compute_utility() (mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.GlowWormSwarmOptimizer.GlowWormSwarmOptimizer method)</a>
 </li>
+      <li><a href="api/mlos.Grpc.OptimizerMicroservice.html#mlos.Grpc.OptimizerMicroservice.OptimizerMicroservice.ComputeGoodnessOfFitMetrics">ComputeGoodnessOfFitMetrics() (mlos.Grpc.OptimizerMicroservice.OptimizerMicroservice method)</a>
+
+      <ul>
+        <li><a href="api/mlos.Grpc.OptimizerService_pb2_grpc.html#mlos.Grpc.OptimizerService_pb2_grpc.OptimizerService.ComputeGoodnessOfFitMetrics">(mlos.Grpc.OptimizerService_pb2_grpc.OptimizerService static method)</a>
+</li>
+        <li><a href="api/mlos.Grpc.OptimizerService_pb2_grpc.html#mlos.Grpc.OptimizerService_pb2_grpc.OptimizerServiceServicer.ComputeGoodnessOfFitMetrics">(mlos.Grpc.OptimizerService_pb2_grpc.OptimizerServiceServicer method)</a>
+</li>
+      </ul></li>
       <li><a href="api/mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimate.html#mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimate.WorkingSetSizeEstimate.confidence_interval">confidence_interval() (mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimate.WorkingSetSizeEstimate method)</a>
 </li>
       <li><a href="api/mlos.Optimizers.ExperimentDesigner.UtilityFunctions.ConfidenceBoundUtilityFunction.html#mlos.Optimizers.ExperimentDesigner.UtilityFunctions.ConfidenceBoundUtilityFunction.ConfidenceBoundUtilityFunction">ConfidenceBoundUtilityFunction (class in mlos.Optimizers.ExperimentDesigner.UtilityFunctions.ConfidenceBoundUtilityFunction)</a>
@@ -778,6 +814,8 @@
         <li><a href="api/mlos.Spaces.Dimensions.SortedBinaryTree.html#mlos.Spaces.Dimensions.SortedBinaryTree.SortedBinaryTree.contains">(mlos.Spaces.Dimensions.SortedBinaryTree.SortedBinaryTree method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.ContinuousDimension.contains_continuous_dimension">contains_continuous_dimension() (mlos.Mlos.SDK.ContinuousDimension method)</a>
 
       <ul>
@@ -786,8 +824,6 @@
         <li><a href="api/mlos.Spaces.Dimensions.ContinuousDimension.html#mlos.Spaces.Dimensions.ContinuousDimension.ContinuousDimension.contains_continuous_dimension">(mlos.Spaces.Dimensions.ContinuousDimension.ContinuousDimension method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.CategoricalDimension.contains_dimension">contains_dimension() (mlos.Mlos.SDK.CategoricalDimension method)</a>
 
       <ul>
@@ -1079,6 +1115,10 @@
 </li>
         <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.RegisterObservationsRequest.DESCRIPTOR">(mlos.Grpc.OptimizerService_pb2.RegisterObservationsRequest attribute)</a>
 </li>
+        <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SimpleBoolean.DESCRIPTOR">(mlos.Grpc.OptimizerService_pb2.SimpleBoolean attribute)</a>
+</li>
+        <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SimpleString.DESCRIPTOR">(mlos.Grpc.OptimizerService_pb2.SimpleString attribute)</a>
+</li>
         <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SingleObjectivePrediction.DESCRIPTOR">(mlos.Grpc.OptimizerService_pb2.SingleObjectivePrediction attribute)</a>
 </li>
         <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SuggestRequest.DESCRIPTOR">(mlos.Grpc.OptimizerService_pb2.SuggestRequest attribute)</a>
@@ -1364,8 +1404,6 @@
         <li><a href="api/mlos.Spaces.Dimensions.CompositeDimension.html#mlos.Spaces.Dimensions.CompositeDimension.CompositeDimension.enumerate_chunks">(mlos.Spaces.Dimensions.CompositeDimension.CompositeDimension method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.TelemetryManager.enumerate_enabled_telemetry_message_types">enumerate_enabled_telemetry_message_types() (mlos.Mlos.Infrastructure.TelemetryManager method)</a>
 
       <ul>
@@ -1378,6 +1416,8 @@
         <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.TelemetryManager.enumerate_enabled_telemetry_message_types">(mlos.Mlos.SDK.TelemetryManager method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Spaces.unit_tests.TestIntervalTree.html#mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension.enumerate_possibly_overlapping_continuous_intervals">enumerate_possibly_overlapping_continuous_intervals() (mlos.Spaces.unit_tests.TestIntervalTree.TestIntervalTreeWithContinuousDimension method)</a>
 </li>
       <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.CategoricalDimension.equals">equals() (mlos.Mlos.SDK.CategoricalDimension method)</a>
@@ -1430,6 +1470,8 @@
         <li><a href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic.html#mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic.ThreeLevelQuadratic.evaluate_dataframe">(mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic.ThreeLevelQuadratic method)</a>
 </li>
       </ul></li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluator.html#mlos.OptimizerEvaluationTools.OptimizerEvaluator.OptimizerEvaluator.evaluate_optimizer">evaluate_optimizer() (mlos.OptimizerEvaluationTools.OptimizerEvaluator.OptimizerEvaluator method)</a>
+</li>
       <li><a href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html#mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.ObjectiveFunctionBase.evaluate_point">evaluate_point() (mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.ObjectiveFunctionBase method)</a>
 
       <ul>
@@ -1510,10 +1552,6 @@
         <li><a href="api/mlos.Optimizers.RegressionModels.RegressionModel.html#mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel.fit">(mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel method)</a>
 </li>
       </ul></li>
-      <li><a href="api/mlos.Optimizers.RegressionModels.RegressionModel.html#mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel.fitted">fitted() (mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel property)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.Point.flat_copy">flat_copy() (mlos.Mlos.SDK.Point method)</a>
 
       <ul>
@@ -1522,6 +1560,8 @@
         <li><a href="api/mlos.Spaces.Point.html#mlos.Spaces.Point.Point.flat_copy">(mlos.Spaces.Point.Point method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Spaces.html#mlos.Spaces.Dimension.flatten_dimension_name">flatten_dimension_name() (mlos.Spaces.Dimension class method)</a>
 
       <ul>
@@ -1559,6 +1599,8 @@
       <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.Point.from_json">from_json() (mlos.Mlos.SDK.Point class method)</a>
 
       <ul>
+        <li><a href="api/mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics.from_json">(mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics class method)</a>
+</li>
         <li><a href="api/mlos.Spaces.html#mlos.Spaces.Point.from_json">(mlos.Spaces.Point class method)</a>
 </li>
         <li><a href="api/mlos.Spaces.Point.html#mlos.Spaces.Point.Point.from_json">(mlos.Spaces.Point.Point class method)</a>
@@ -1648,8 +1690,12 @@
         <li><a href="api/mlos.Mlos.SDK.MlosGlobalContext.html#mlos.Mlos.SDK.MlosGlobalContext.MlosGlobalContext.get_current_config">(mlos.Mlos.SDK.MlosGlobalContext.MlosGlobalContext method)</a>
 </li>
       </ul></li>
-      <li><a href="api/mlos.Optimizers.RegressionModels.Prediction.html#mlos.Optimizers.RegressionModels.Prediction.Prediction.get_dataframe">get_dataframe() (mlos.Optimizers.RegressionModels.Prediction.Prediction method)</a>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html#mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime.get_dataframe">get_dataframe() (mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime method)</a>
+
+      <ul>
+        <li><a href="api/mlos.Optimizers.RegressionModels.Prediction.html#mlos.Optimizers.RegressionModels.Prediction.Prediction.get_dataframe">(mlos.Optimizers.RegressionModels.Prediction.Prediction method)</a>
 </li>
+      </ul></li>
       <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.SimpleHypergrid.get_dimensions_for_point">get_dimensions_for_point() (mlos.Mlos.SDK.SimpleHypergrid method)</a>
 
       <ul>
@@ -1692,6 +1738,8 @@
         <li><a href="api/mlos.Examples.SmartCache.TelemetryAggregators.HitRateMonitor.html#mlos.Examples.SmartCache.TelemetryAggregators.HitRateMonitor.HitRateMonitor.get_hit_rate">(mlos.Examples.SmartCache.TelemetryAggregators.HitRateMonitor.HitRateMonitor method)</a>
 </li>
       </ul></li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html#mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime.get_last_optimum">get_last_optimum() (mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime method)</a>
+</li>
       <li><a href="api/mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.HitRateMonitor.get_miss_rate">get_miss_rate() (mlos.Examples.SmartCache.HitRateMonitor method)</a>
 
       <ul>
@@ -2090,6 +2138,14 @@
       </ul></li>
       <li><a href="api/mlos.Optimizers.RegressionModels.Prediction.html#mlos.Optimizers.RegressionModels.Prediction.Prediction.LegalColumnNames.IS_VALID_INPUT">IS_VALID_INPUT (mlos.Optimizers.RegressionModels.Prediction.Prediction.LegalColumnNames attribute)</a>
 </li>
+      <li><a href="api/mlos.Grpc.OptimizerMicroservice.html#mlos.Grpc.OptimizerMicroservice.OptimizerMicroservice.IsTrained">IsTrained() (mlos.Grpc.OptimizerMicroservice.OptimizerMicroservice method)</a>
+
+      <ul>
+        <li><a href="api/mlos.Grpc.OptimizerService_pb2_grpc.html#mlos.Grpc.OptimizerService_pb2_grpc.OptimizerService.IsTrained">(mlos.Grpc.OptimizerService_pb2_grpc.OptimizerService static method)</a>
+</li>
+        <li><a href="api/mlos.Grpc.OptimizerService_pb2_grpc.html#mlos.Grpc.OptimizerService_pb2_grpc.OptimizerServiceServicer.IsTrained">(mlos.Grpc.OptimizerService_pb2_grpc.OptimizerServiceServicer method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -2844,6 +2900,34 @@
 </li>
       </ul></li>
       <li>
+    mlos.OptimizerEvaluationTools.OptimizerEvaluationReport
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html#module-mlos.OptimizerEvaluationTools.OptimizerEvaluationReport">module</a>
+</li>
+      </ul></li>
+      <li>
+    mlos.OptimizerEvaluationTools.OptimizerEvaluator
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluator.html#module-mlos.OptimizerEvaluationTools.OptimizerEvaluator">module</a>
+</li>
+      </ul></li>
+      <li>
+    mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore.html#module-mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore">module</a>
+</li>
+      </ul></li>
+      <li>
+    mlos.OptimizerEvaluationTools.OptimumOverTime
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html#module-mlos.OptimizerEvaluationTools.OptimumOverTime">module</a>
+</li>
+      </ul></li>
+      <li>
     mlos.OptimizerEvaluationTools.SyntheticFunctions
 
       <ul>
@@ -2890,6 +2974,34 @@
 
       <ul>
         <li><a href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic.html#module-mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic">module</a>
+</li>
+      </ul></li>
+      <li>
+    mlos.OptimizerEvaluationTools.unit_tests
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.html#module-mlos.OptimizerEvaluationTools.unit_tests">module</a>
+</li>
+      </ul></li>
+      <li>
+    mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html#module-mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory">module</a>
+</li>
+      </ul></li>
+      <li>
+    mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html#module-mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator">module</a>
+</li>
+      </ul></li>
+      <li>
+    mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#module-mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective">module</a>
 </li>
       </ul></li>
       <li>
@@ -3221,6 +3333,8 @@
         <li><a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel.html#module-mlos.Optimizers.RegressionModels.unit_tests.TestRegressionEnhancedRandomForestModel">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     mlos.Optimizers.unit_tests
 
@@ -3235,8 +3349,6 @@
         <li><a href="api/mlos.Optimizers.unit_tests.TestBayesianOptimizer.html#module-mlos.Optimizers.unit_tests.TestBayesianOptimizer">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     mlos.Spaces
 
@@ -3787,6 +3899,14 @@
 </li>
         <li><a href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html#module-mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory">mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory</a>
 </li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html#module-mlos.OptimizerEvaluationTools.OptimizerEvaluationReport">mlos.OptimizerEvaluationTools.OptimizerEvaluationReport</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluator.html#module-mlos.OptimizerEvaluationTools.OptimizerEvaluator">mlos.OptimizerEvaluationTools.OptimizerEvaluator</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore.html#module-mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore">mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html#module-mlos.OptimizerEvaluationTools.OptimumOverTime">mlos.OptimizerEvaluationTools.OptimumOverTime</a>
+</li>
         <li><a href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.html#module-mlos.OptimizerEvaluationTools.SyntheticFunctions">mlos.OptimizerEvaluationTools.SyntheticFunctions</a>
 </li>
         <li><a href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower.html#module-mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower">mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower</a>
@@ -3800,6 +3920,14 @@
         <li><a href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions.html#module-mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions">mlos.OptimizerEvaluationTools.SyntheticFunctions.sample_functions</a>
 </li>
         <li><a href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic.html#module-mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic">mlos.OptimizerEvaluationTools.SyntheticFunctions.ThreeLevelQuadratic</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.html#module-mlos.OptimizerEvaluationTools.unit_tests">mlos.OptimizerEvaluationTools.unit_tests</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html#module-mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory">mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html#module-mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator">mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#module-mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective">mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective</a>
 </li>
         <li><a href="api/mlos.OptimizerMonitoring.html#module-mlos.OptimizerMonitoring">mlos.OptimizerMonitoring</a>
 </li>
@@ -4126,13 +4254,17 @@
 </li>
       <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.OptimizerConfig">OptimizerConfig (mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.OptimizerInfo.OptimizerConfigJsonString">OptimizerConfigJsonString (mlos.Grpc.OptimizerService_pb2.OptimizerInfo attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest.OptimizerConfigName">OptimizerConfigName (mlos.Grpc.OptimizerService_pb2.CreateOptimizerRequest attribute)</a>
 </li>
       <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.OptimizerConvergenceState">OptimizerConvergenceState (class in mlos.Grpc.OptimizerService_pb2)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html#mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.OptimizerEvaluationReport">OptimizerEvaluationReport (class in mlos.OptimizerEvaluationTools.OptimizerEvaluationReport)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluator.html#mlos.OptimizerEvaluationTools.OptimizerEvaluator.OptimizerEvaluator">OptimizerEvaluator (class in mlos.OptimizerEvaluationTools.OptimizerEvaluator)</a>
 </li>
       <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.OptimizerHandle">OptimizerHandle (class in mlos.Grpc.OptimizerService_pb2)</a>
 
@@ -4171,6 +4303,8 @@
       <li><a href="api/mlos.Optimizers.OptimizerBase.html#mlos.Optimizers.OptimizerBase.OptimizerBase.optimum">optimum() (mlos.Optimizers.OptimizerBase.OptimizerBase method)</a>
 </li>
       <li><a href="api/mlos.Optimizers.OptimumDefinition.html#mlos.Optimizers.OptimumDefinition.OptimumDefinition">OptimumDefinition (class in mlos.Optimizers.OptimumDefinition)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html#mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime">OptimumOverTime (class in mlos.OptimizerEvaluationTools.OptimumOverTime)</a>
 </li>
       <li><a href="api/mlos.Spaces.Dimensions.DimensionCalculator.html#mlos.Spaces.Dimensions.DimensionCalculator.ordinal_contains_ordinal">ordinal_contains_ordinal() (in module mlos.Spaces.Dimensions.DimensionCalculator)</a>
 </li>
@@ -4779,6 +4913,10 @@
       <li><a href="api/mlos.Examples.SmartCache.unit_tests.TestSmartCache.html#mlos.Examples.SmartCache.unit_tests.TestSmartCache.TestSmartCache.setUp">setUp() (mlos.Examples.SmartCache.unit_tests.TestSmartCache.TestSmartCache method)</a>
 
       <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html#mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.TestObjectiveFunctionFactory.setUp">(mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.TestObjectiveFunctionFactory method)</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective.setUp">(mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective method)</a>
+</li>
         <li><a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestDecisionTreeRegressionModel.html#mlos.Optimizers.RegressionModels.unit_tests.TestDecisionTreeRegressionModel.TestDecisionTreeRegressionModel.setUp">(mlos.Optimizers.RegressionModels.unit_tests.TestDecisionTreeRegressionModel.TestDecisionTreeRegressionModel method)</a>
 </li>
         <li><a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestHomogeneousRandomForestRegressionModel.html#mlos.Optimizers.RegressionModels.unit_tests.TestHomogeneousRandomForestRegressionModel.TestHomogeneousRandomForestRegressionModel.setUp">(mlos.Optimizers.RegressionModels.unit_tests.TestHomogeneousRandomForestRegressionModel.TestHomogeneousRandomForestRegressionModel method)</a>
@@ -4808,6 +4946,8 @@
 
       <ul>
         <li><a href="api/mlos.Mlos.unit_tests.TestE2EScenarios.html#mlos.Mlos.unit_tests.TestE2EScenarios.TestE2EScenarios.setUpClass">(mlos.Mlos.unit_tests.TestE2EScenarios.TestE2EScenarios class method)</a>
+</li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html#mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator.setUpClass">(mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator class method)</a>
 </li>
         <li><a href="api/mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.unit_tests.TestUtilityFunctionOptimizers.html#mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.unit_tests.TestUtilityFunctionOptimizers.TestUtilityFunctionOptimizers.setUpClass">(mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.unit_tests.TestUtilityFunctionOptimizers.TestUtilityFunctionOptimizers class method)</a>
 </li>
@@ -4844,9 +4984,9 @@
         <li><a href="api/mlos.Mlos.Infrastructure.SharedConfig.html#mlos.Mlos.Infrastructure.SharedConfig.SharedConfig">(class in mlos.Mlos.Infrastructure.SharedConfig)</a>
 </li>
       </ul></li>
-      <li><a href="api/mlos.Optimizers.RegressionModels.RegressionModel.html#mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel.should_compute_goodness_of_fit">should_compute_goodness_of_fit() (mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel method)</a>
-</li>
       <li><a href="api/mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.html#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.should_fit">should_fit() (mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel method)</a>
+</li>
+      <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SimpleBoolean">SimpleBoolean (class in mlos.Grpc.OptimizerService_pb2)</a>
 </li>
       <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.SimpleHypergrid">SimpleHypergrid (class in mlos.Mlos.SDK)</a>
 
@@ -4870,18 +5010,20 @@
         <li><a href="api/mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel.html#mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel.SimpleModel">(class in mlos.MlosOptimizationServices.ModelsDatabase.Relations.SimpleModel)</a>
 </li>
       </ul></li>
+      <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SimpleString">SimpleString (class in mlos.Grpc.OptimizerService_pb2)</a>
+</li>
       <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SingleObjectivePrediction">SingleObjectivePrediction (class in mlos.Grpc.OptimizerService_pb2)</a>
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.SklearnLassoRegressionModelConfig.html#mlos.Optimizers.RegressionModels.SklearnLassoRegressionModelConfig.SklearnLassoRegressionModelConfig">SklearnLassoRegressionModelConfig (class in mlos.Optimizers.RegressionModels.SklearnLassoRegressionModelConfig)</a>
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.SklearnLassoRegressionModelConfig.html#mlos.Optimizers.RegressionModels.SklearnLassoRegressionModelConfig.SklearnLassoRegressionModelConfig.Selection">SklearnLassoRegressionModelConfig.Selection (class in mlos.Optimizers.RegressionModels.SklearnLassoRegressionModelConfig)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig.html#mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig.SklearnRandomForestRegressionModelConfig">SklearnRandomForestRegressionModelConfig (class in mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig)</a>
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig.html#mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig.SklearnRandomForestRegressionModelConfig.Criterion">SklearnRandomForestRegressionModelConfig.Criterion (class in mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig.html#mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig.SklearnRandomForestRegressionModelConfig.MaxFeatures">SklearnRandomForestRegressionModelConfig.MaxFeatures (class in mlos.Optimizers.RegressionModels.SklearnRandomForestRegressionModelConfig)</a>
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.SklearnRidgeRegressionModelConfig.html#mlos.Optimizers.RegressionModels.SklearnRidgeRegressionModelConfig.SklearnRidgeRegressionModelConfig">SklearnRidgeRegressionModelConfig (class in mlos.Optimizers.RegressionModels.SklearnRidgeRegressionModelConfig)</a>
@@ -5093,6 +5235,8 @@
       <ul>
         <li><a href="api/mlos.Mlos.unit_tests.TestE2EScenarios.html#mlos.Mlos.unit_tests.TestE2EScenarios.TestE2EScenarios.tearDownClass">(mlos.Mlos.unit_tests.TestE2EScenarios.TestE2EScenarios class method)</a>
 </li>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html#mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator.tearDownClass">(mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator class method)</a>
+</li>
         <li><a href="api/mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.unit_tests.TestUtilityFunctionOptimizers.html#mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.unit_tests.TestUtilityFunctionOptimizers.TestUtilityFunctionOptimizers.tearDownClass">(mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.unit_tests.TestUtilityFunctionOptimizers.TestUtilityFunctionOptimizers class method)</a>
 </li>
         <li><a href="api/mlos.Optimizers.long_haul_tests.LongHaulTestBayesianOptimizer.html#mlos.Optimizers.long_haul_tests.LongHaulTestBayesianOptimizer.TestBayesianOptimizer.tearDownClass">(mlos.Optimizers.long_haul_tests.LongHaulTestBayesianOptimizer.TestBayesianOptimizer class method)</a>
@@ -5166,6 +5310,8 @@
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestHomogeneousRandomForestRegressionModel.html#mlos.Optimizers.RegressionModels.unit_tests.TestHomogeneousRandomForestRegressionModel.TestHomogeneousRandomForestRegressionModel.test_default_homogeneous_random_forest_model">test_default_homogeneous_random_forest_model() (mlos.Optimizers.RegressionModels.unit_tests.TestHomogeneousRandomForestRegressionModel.TestHomogeneousRandomForestRegressionModel method)</a>
 </li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html#mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator.test_defaults">test_defaults() (mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator method)</a>
+</li>
       <li><a href="api/mlos.Spaces.unit_tests.TestHierarchicalHypergridJSONEncoderDecoder.html#mlos.Spaces.unit_tests.TestHierarchicalHypergridJSONEncoderDecoder.TestHierarchicalSpaces.test_deserializing_configs">test_deserializing_configs() (mlos.Spaces.unit_tests.TestHierarchicalHypergridJSONEncoderDecoder.TestHierarchicalSpaces method)</a>
 </li>
       <li><a href="api/mlos.Spaces.unit_tests.TestDimensions.html#mlos.Spaces.unit_tests.TestDimensions.TestDiscreteDimension.test_discrete_dimension_containment">test_discrete_dimension_containment() (mlos.Spaces.unit_tests.TestDimensions.TestDiscreteDimension method)</a>
@@ -5181,6 +5327,8 @@
       <li><a href="api/mlos.Spaces.unit_tests.TestHierarchicalHypergrid3.html#mlos.Spaces.unit_tests.TestHierarchicalHypergrid3.TestHierarchicalHypergrid3.test_external_dimension_join">test_external_dimension_join() (mlos.Spaces.unit_tests.TestHierarchicalHypergrid3.TestHierarchicalHypergrid3 method)</a>
 </li>
       <li><a href="api/mlos.Spaces.unit_tests.TestFilteringOutInvalidRows.html#mlos.Spaces.unit_tests.TestFilteringOutInvalidRows.TestFilteringOutInvalidRows.test_filtering_out_invalid_rows">test_filtering_out_invalid_rows() (mlos.Spaces.unit_tests.TestFilteringOutInvalidRows.TestFilteringOutInvalidRows method)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective.test_general_polynomial_evaluation">test_general_polynomial_evaluation() (mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective method)</a>
 </li>
       <li><a href="api/mlos.Spaces.unit_tests.TestHierarchicalHypergrid.html#mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces.test_generating_random_configs">test_generating_random_configs() (mlos.Spaces.unit_tests.TestHierarchicalHypergrid.TestHierarchicalSpaces method)</a>
 
@@ -5237,6 +5385,16 @@
       <li><a href="api/mlos.Mlos.Infrastructure.unit_tests.TestCommunicationChannel.html#mlos.Mlos.Infrastructure.unit_tests.TestCommunicationChannel.TestCommunicationChannel.test_multithreaded_communication">test_multithreaded_communication() (mlos.Mlos.Infrastructure.unit_tests.TestCommunicationChannel.TestCommunicationChannel method)</a>
 </li>
       <li><a href="api/mlos.Spaces.unit_tests.TestHierarchicalHypergrid2.html#mlos.Spaces.unit_tests.TestHierarchicalHypergrid2.TestHierarchicalHypergrid2.test_name_flattening">test_name_flattening() (mlos.Spaces.unit_tests.TestHierarchicalHypergrid2.TestHierarchicalHypergrid2 method)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html#mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.TestObjectiveFunctionFactory.test_named_configs">test_named_configs() (mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.TestObjectiveFunctionFactory method)</a>
+
+      <ul>
+        <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html#mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator.test_named_configs">(mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective.test_no_mixed_term_polynomial_evaluation">test_no_mixed_term_polynomial_evaluation() (mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective method)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective.test_noisy_general_polynomial_evaluation">test_noisy_general_polynomial_evaluation() (mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective method)</a>
 </li>
       <li><a href="api/mlos.Optimizers.unit_tests.TestBayesianOptimizer.html#mlos.Optimizers.unit_tests.TestBayesianOptimizer.TestBayesianOptimizer.test_optimum_before_register_error">test_optimum_before_register_error() (mlos.Optimizers.unit_tests.TestBayesianOptimizer.TestBayesianOptimizer method)</a>
 </li>
@@ -5298,12 +5456,12 @@
 </li>
       <li><a href="api/mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToDiscreteHypergridAdapter.html#mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToDiscreteHypergridAdapter.TestCategoricalToDiscreteHypergridAdapter.test_projecting_point_from_hierarchical_categorical_to_discrete_hypergrid">test_projecting_point_from_hierarchical_categorical_to_discrete_hypergrid() (mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToDiscreteHypergridAdapter.TestCategoricalToDiscreteHypergridAdapter method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.html#mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.TestCategoricalToOneHotEncodedHypergridAdapter.test_projecting_point_from_hierarchical_categorical_to_one_hot_encoding_cross_product_drop_first_hypergrid">test_projecting_point_from_hierarchical_categorical_to_one_hot_encoding_cross_product_drop_first_hypergrid() (mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.TestCategoricalToOneHotEncodedHypergridAdapter method)</a>
 </li>
       <li><a href="api/mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.html#mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.TestCategoricalToOneHotEncodedHypergridAdapter.test_projecting_point_from_hierarchical_categorical_to_one_hot_encoding_cross_product_hypergrid">test_projecting_point_from_hierarchical_categorical_to_one_hot_encoding_cross_product_hypergrid() (mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.TestCategoricalToOneHotEncodedHypergridAdapter method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.html#mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.TestCategoricalToOneHotEncodedHypergridAdapter.test_projecting_point_from_hierarchical_categorical_to_one_hot_encoding_drop_first_hypergrid">test_projecting_point_from_hierarchical_categorical_to_one_hot_encoding_drop_first_hypergrid() (mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.TestCategoricalToOneHotEncodedHypergridAdapter method)</a>
 </li>
       <li><a href="api/mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.html#mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.TestCategoricalToOneHotEncodedHypergridAdapter.test_projecting_point_from_hierarchical_categorical_to_one_hot_encoding_hypergrid">test_projecting_point_from_hierarchical_categorical_to_one_hot_encoding_hypergrid() (mlos.Spaces.HypergridAdapters.unit_tests.TestCategoricalToOneHotEncodedHypergridAdapter.TestCategoricalToOneHotEncodedHypergridAdapter method)</a>
@@ -5430,6 +5588,12 @@
 </li>
       <li><a href="api/mlos.Mlos.SDK.unit_tests.TestMlosObject.html#mlos.Mlos.SDK.unit_tests.TestMlosObject.TestMlosObject">TestMlosObject (class in mlos.Mlos.SDK.unit_tests.TestMlosObject)</a>
 </li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html#mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.TestObjectiveFunctionFactory">TestObjectiveFunctionFactory (class in mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html#mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.TestOptimizerEvaluator">TestOptimizerEvaluator (class in mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.TestPolynomialObjective">TestPolynomialObjective (class in mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective)</a>
+</li>
       <li><a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.html#mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.TestPrediction">TestPrediction (class in mlos.Optimizers.RegressionModels.unit_tests.TestPrediction)</a>
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.html#mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.TestPrediction.MockValidRegressionModelPrediction">TestPrediction.MockValidRegressionModelPrediction (class in mlos.Optimizers.RegressionModels.unit_tests.TestPrediction)</a>
@@ -5469,6 +5633,8 @@
       <li><a href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.Point.to_json">to_json() (mlos.Mlos.SDK.Point method)</a>
 
       <ul>
+        <li><a href="api/mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics.to_json">(mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics method)</a>
+</li>
         <li><a href="api/mlos.Spaces.html#mlos.Spaces.Point.to_json">(mlos.Spaces.Point method)</a>
 </li>
         <li><a href="api/mlos.Spaces.Point.html#mlos.Spaces.Point.Point.to_json">(mlos.Spaces.Point.Point method)</a>
@@ -5532,6 +5698,22 @@
 </li>
       <li><a href="api/mlos.Optimizers.RegressionModels.RegressionModelFitState.html#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.train_set_size">train_set_size() (mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState property)</a>
 </li>
+      <li><a href="api/mlos.Grpc.BayesianOptimizerProxy.html#mlos.Grpc.BayesianOptimizerProxy.BayesianOptimizerProxy.trained">trained() (mlos.Grpc.BayesianOptimizerProxy.BayesianOptimizerProxy property)</a>
+
+      <ul>
+        <li><a href="api/mlos.Optimizers.BayesianOptimizer.html#mlos.Optimizers.BayesianOptimizer.BayesianOptimizer.trained">(mlos.Optimizers.BayesianOptimizer.BayesianOptimizer property)</a>
+</li>
+        <li><a href="api/mlos.Optimizers.OptimizerBase.html#mlos.Optimizers.OptimizerBase.OptimizerBase.trained">(mlos.Optimizers.OptimizerBase.OptimizerBase property)</a>
+</li>
+        <li><a href="api/mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.html#mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel.trained">(mlos.Optimizers.RegressionModels.DecisionTreeRegressionModel.DecisionTreeRegressionModel property)</a>
+</li>
+        <li><a href="api/mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel.html#mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel.HomogeneousRandomForestRegressionModel.trained">(mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel.HomogeneousRandomForestRegressionModel property)</a>
+</li>
+        <li><a href="api/mlos.Optimizers.RegressionModels.RegressionEnhancedRandomForestModel.html#mlos.Optimizers.RegressionModels.RegressionEnhancedRandomForestModel.RegressionEnhancedRandomForestRegressionModel.trained">(mlos.Optimizers.RegressionModels.RegressionEnhancedRandomForestModel.RegressionEnhancedRandomForestRegressionModel property)</a>
+</li>
+        <li><a href="api/mlos.Optimizers.RegressionModels.RegressionModel.html#mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel.trained">(mlos.Optimizers.RegressionModels.RegressionModel.RegressionModel property)</a>
+</li>
+      </ul></li>
       <li><a href="api/mlos.Optimizers.RegressionModels.RegressionEnhancedRandomForestModel.html#mlos.Optimizers.RegressionModels.RegressionEnhancedRandomForestModel.RegressionEnhancedRandomForestRegressionModel.transform_x">transform_x() (mlos.Optimizers.RegressionModels.RegressionEnhancedRandomForestModel.RegressionEnhancedRandomForestRegressionModel method)</a>
 </li>
   </ul></td>
@@ -5708,6 +5890,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType.VALIDATION">VALIDATION (mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType attribute)</a>
 </li>
+      <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SimpleBoolean.Value">Value (mlos.Grpc.OptimizerService_pb2.SimpleBoolean attribute)</a>
+
+      <ul>
+        <li><a href="api/mlos.Grpc.OptimizerService_pb2.html#mlos.Grpc.OptimizerService_pb2.SimpleString.Value">(mlos.Grpc.OptimizerService_pb2.SimpleString attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/mlos.Mlos.Infrastructure.ConfigurationManager.html#mlos.Mlos.Infrastructure.ConfigurationManager.Configuration.values">values() (mlos.Mlos.Infrastructure.ConfigurationManager.Configuration property)</a>
 </li>
   </ul></td>
@@ -5733,6 +5921,8 @@
       <li><a href="api/mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimate.html#mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimate.WorkingSetSizeEstimate">WorkingSetSizeEstimate (class in mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimate)</a>
 </li>
       <li><a href="api/mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimator.html#mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimator.WorkingSetSizeEstimator">WorkingSetSizeEstimator (class in mlos.Examples.SmartCache.TelemetryAggregators.WorkingSetSizeEstimator)</a>
+</li>
+      <li><a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html#mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.OptimizerEvaluationReport.write_to_disk">write_to_disk() (mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.OptimizerEvaluationReport method)</a>
 </li>
   </ul></td>
 </tr></table>
