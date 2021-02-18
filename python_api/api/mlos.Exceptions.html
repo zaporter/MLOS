@@ -175,9 +175,11 @@
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore.html">mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimumOverTime.html">mlos.OptimizerEvaluationTools.OptimumOverTime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.EnvelopedWaves.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.EnvelopedWaves</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.Hypersphere.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.Hypersphere</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.HypersphereConfigStore.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.HypersphereConfigStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.MultiObjectiveEnvelopedWaves.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.MultiObjectiveEnvelopedWaves</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.MultiObjectiveNestedPolynomialObjective.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.MultiObjectiveNestedPolynomialObjective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjective.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.PolynomialObjective</a></li>
@@ -187,6 +189,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.html">mlos.OptimizerEvaluationTools.unit_tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.TestEnvelopedWaves.html">mlos.OptimizerEvaluationTools.unit_tests.TestEnvelopedWaves</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.unit_tests.TestObjectiveFunctionFactory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html">mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html">mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective</a></li>
@@ -390,28 +393,28 @@
 <span id="mlos-exceptions"></span><h1>mlos.Exceptions<a class="headerlink" href="#module-mlos.Exceptions" title="Permalink to this headline">¶</a></h1>
 <dl class="py exception">
 <dt id="mlos.Exceptions.InvalidDimensionException">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Exceptions.</span></code><code class="sig-name descname"><span class="pre">InvalidDimensionException</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/e4ab63e/source/Mlos.Python/mlos/Exceptions.py#L11"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Exceptions.InvalidDimensionException" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Exceptions.</span></code><code class="sig-name descname"><span class="pre">InvalidDimensionException</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3b1e966/source/Mlos.Python/mlos/Exceptions.py#L11"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Exceptions.InvalidDimensionException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mlos.Exceptions.MlosException" title="mlos.Exceptions.MlosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Exceptions.MlosException</span></code></a></p>
 <p>Raised when a dimension inappropriate for the context is encountered.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt id="mlos.Exceptions.InvalidPointException">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Exceptions.</span></code><code class="sig-name descname"><span class="pre">InvalidPointException</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/e4ab63e/source/Mlos.Python/mlos/Exceptions.py#L15"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Exceptions.InvalidPointException" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Exceptions.</span></code><code class="sig-name descname"><span class="pre">InvalidPointException</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3b1e966/source/Mlos.Python/mlos/Exceptions.py#L15"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Exceptions.InvalidPointException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mlos.Exceptions.MlosException" title="mlos.Exceptions.MlosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Exceptions.MlosException</span></code></a></p>
 <p>The point is invalid for a given operation.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt id="mlos.Exceptions.MlosException">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Exceptions.</span></code><code class="sig-name descname"><span class="pre">MlosException</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/e4ab63e/source/Mlos.Python/mlos/Exceptions.py#L7"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Exceptions.MlosException" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Exceptions.</span></code><code class="sig-name descname"><span class="pre">MlosException</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3b1e966/source/Mlos.Python/mlos/Exceptions.py#L7"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Exceptions.MlosException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 <p>Base class for all exceptions specific to Mlos.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt id="mlos.Exceptions.PointOutOfDomainException">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Exceptions.</span></code><code class="sig-name descname"><span class="pre">PointOutOfDomainException</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/e4ab63e/source/Mlos.Python/mlos/Exceptions.py#L19"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Exceptions.PointOutOfDomainException" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Exceptions.</span></code><code class="sig-name descname"><span class="pre">PointOutOfDomainException</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3b1e966/source/Mlos.Python/mlos/Exceptions.py#L19"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Exceptions.PointOutOfDomainException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mlos.Exceptions.InvalidPointException" title="mlos.Exceptions.InvalidPointException"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Exceptions.InvalidPointException</span></code></a></p>
 <p>The point does not belong to the specified domain.</p>
 </dd></dl>
