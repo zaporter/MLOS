@@ -12,6 +12,7 @@ mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers
    :maxdepth: 1
 
    mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.GlowWormSwarmOptimizer
+   mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.RandomNearIncumbentOptimizer
    mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.RandomSearchOptimizer
    mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.UtilityFunctionOptimizer
    mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.UtilityFunctionOtimizerFactory
