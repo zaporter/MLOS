@@ -200,8 +200,11 @@
 <li class="toctree-l2"><a class="reference internal" href="mlos.OptimizerMonitoring.html">mlos.OptimizerMonitoring</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter.html">mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.html">mlos.OptimizerMonitoring.Tomograph</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.GridPlot.html">mlos.OptimizerMonitoring.Tomograph.GridPlot</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.Heatmap.html">mlos.OptimizerMonitoring.Tomograph.Heatmap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.ModelTomograph.html">mlos.OptimizerMonitoring.Tomograph.ModelTomograph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.ModelTomograph2.html">mlos.OptimizerMonitoring.Tomograph.ModelTomograph2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerMonitoring.Tomograph.ObservationsDataSource.html">mlos.OptimizerMonitoring.Tomograph.ObservationsDataSource</a></li>
 </ul>
 </li>
 </ul>
@@ -395,7 +398,7 @@
 <span id="mlos-optimizers-optimumdefinition"></span><h1>mlos.Optimizers.OptimumDefinition<a class="headerlink" href="#module-mlos.Optimizers.OptimumDefinition" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Optimizers.OptimumDefinition.</span></code><code class="sig-name descname"><span class="pre">OptimumDefinition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/f373d79/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L7"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Optimizers.OptimumDefinition.</span></code><code class="sig-name descname"><span class="pre">OptimumDefinition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/95b7519/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L7"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>Enumerates all supported definitions of optimum.</p>
 <dl class="simple">
@@ -429,27 +432,27 @@
 <p>the utility function, but we will have to see the data to be sure.</p>
 <dl class="py attribute">
 <dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.BEST_OBSERVATION">
-<code class="sig-name descname"><span class="pre">BEST_OBSERVATION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'best_observation'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/f373d79/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.BEST_OBSERVATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">BEST_OBSERVATION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'best_observation'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/95b7519/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.BEST_OBSERVATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.BEST_SPECULATIVE_WITHIN_CONTEXT">
-<code class="sig-name descname"><span class="pre">BEST_SPECULATIVE_WITHIN_CONTEXT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'best_speculative_within_context'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/f373d79/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.BEST_SPECULATIVE_WITHIN_CONTEXT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">BEST_SPECULATIVE_WITHIN_CONTEXT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'best_speculative_within_context'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/95b7519/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.BEST_SPECULATIVE_WITHIN_CONTEXT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.LOWER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG">
-<code class="sig-name descname"><span class="pre">LOWER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'prediction_lower_confidence_bound_for_observed_config'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/f373d79/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.LOWER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">LOWER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'prediction_lower_confidence_bound_for_observed_config'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/95b7519/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.LOWER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.PREDICTED_VALUE_FOR_OBSERVED_CONFIG">
-<code class="sig-name descname"><span class="pre">PREDICTED_VALUE_FOR_OBSERVED_CONFIG</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'predicted_value_for_observed_config'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/f373d79/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.PREDICTED_VALUE_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">PREDICTED_VALUE_FOR_OBSERVED_CONFIG</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'predicted_value_for_observed_config'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/95b7519/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.PREDICTED_VALUE_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="mlos.Optimizers.OptimumDefinition.OptimumDefinition.UPPER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG">
-<code class="sig-name descname"><span class="pre">UPPER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'prediction_upper_confidence_bound_for_observed_config'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/f373d79/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.UPPER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">UPPER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'prediction_upper_confidence_bound_for_observed_config'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/95b7519/source/Mlos.Python/mlos/Optimizers/OptimumDefinition.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.OptimumDefinition.OptimumDefinition.UPPER_CONFIDENCE_BOUND_FOR_OBSERVED_CONFIG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
