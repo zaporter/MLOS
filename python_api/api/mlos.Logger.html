@@ -114,11 +114,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Grpc.html">mlos.Grpc</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.BayesianOptimizerProxy.html">mlos.Grpc.BayesianOptimizerProxy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerMicroservice.html">mlos.Grpc.OptimizerMicroservice</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerMicroserviceServer.html">mlos.Grpc.OptimizerMicroserviceServer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerMonitor.html">mlos.Grpc.OptimizerMonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerMonitoringService.html">mlos.Grpc.OptimizerMonitoringService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerMonitoringServiceEncoderDecoder.html">mlos.Grpc.OptimizerMonitoringServiceEncoderDecoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerMonitoringService_pb2.html">mlos.Grpc.OptimizerMonitoringService_pb2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerMonitoringService_pb2_grpc.html">mlos.Grpc.OptimizerMonitoringService_pb2_grpc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerService.html">mlos.Grpc.OptimizerService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerServiceEncoderDecoder.html">mlos.Grpc.OptimizerServiceEncoderDecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerService_pb2.html">mlos.Grpc.OptimizerService_pb2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerService_pb2_grpc.html">mlos.Grpc.OptimizerService_pb2_grpc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Grpc.OptimizerServicesServer.html">mlos.Grpc.OptimizerServicesServer</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Mlos.html">mlos.Mlos</a><ul>
@@ -403,21 +408,21 @@
 <span id="mlos-logger"></span><h1>mlos.Logger<a class="headerlink" href="#module-mlos.Logger" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mlos.Logger.BufferingHandler">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Logger.</span></code><code class="sig-name descname"><span class="pre">BufferingHandler</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/41f669f/source/Mlos.Python/mlos/Logger.py#L9"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Logger.</span></code><code class="sig-name descname"><span class="pre">BufferingHandler</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3d5c631/source/Mlos.Python/mlos/Logger.py#L9"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.StreamHandler</span></code></a></p>
 <dl class="py method">
 <dt id="mlos.Logger.BufferingHandler.clear">
-<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/41f669f/source/Mlos.Python/mlos/Logger.py#L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.clear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3d5c631/source/Mlos.Python/mlos/Logger.py#L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.clear" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Logger.BufferingHandler.dump_to_file">
-<code class="sig-name descname"><span class="pre">dump_to_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file_path</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/41f669f/source/Mlos.Python/mlos/Logger.py#L37"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.dump_to_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">dump_to_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file_path</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3d5c631/source/Mlos.Python/mlos/Logger.py#L37"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.dump_to_file" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Logger.BufferingHandler.emit">
-<code class="sig-name descname"><span class="pre">emit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/41f669f/source/Mlos.Python/mlos/Logger.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.emit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">emit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3d5c631/source/Mlos.Python/mlos/Logger.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.emit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Emit a record.</p>
 <p>If a formatter is specified, it is used to format the record.
 The record is then written to the stream with a trailing newline.  If
@@ -429,25 +434,25 @@ output to the stream.</p>
 
 <dl class="py method">
 <dt id="mlos.Logger.BufferingHandler.get_records">
-<code class="sig-name descname"><span class="pre">get_records</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clear_buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/41f669f/source/Mlos.Python/mlos/Logger.py#L28"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.get_records" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_records</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clear_buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3d5c631/source/Mlos.Python/mlos/Logger.py#L28"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.get_records" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Logger.BufferingHandler.setLevel">
-<code class="sig-name descname"><span class="pre">setLevel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/41f669f/source/Mlos.Python/mlos/Logger.py#L15"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.setLevel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setLevel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3d5c631/source/Mlos.Python/mlos/Logger.py#L15"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.setLevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the logging level of this handler.  level must be an int or a str.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mlos.Logger.BufferingHandler.set_level_by_name">
-<code class="sig-name descname"><span class="pre">set_level_by_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_level_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/41f669f/source/Mlos.Python/mlos/Logger.py#L18"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.set_level_by_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_level_by_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_level_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3d5c631/source/Mlos.Python/mlos/Logger.py#L18"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.BufferingHandler.set_level_by_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt id="mlos.Logger.create_logger">
-<code class="sig-prename descclassname"><span class="pre">mlos.Logger.</span></code><code class="sig-name descname"><span class="pre">create_logger</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_console_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_file_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_buffering_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/41f669f/source/Mlos.Python/mlos/Logger.py#L43"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.create_logger" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mlos.Logger.</span></code><code class="sig-name descname"><span class="pre">create_logger</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_console_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_file_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_buffering_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/3d5c631/source/Mlos.Python/mlos/Logger.py#L43"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Logger.create_logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new logger.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
