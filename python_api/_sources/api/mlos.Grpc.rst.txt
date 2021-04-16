@@ -22,3 +22,8 @@ mlos.Grpc
    mlos.Grpc.OptimizerService_pb2
    mlos.Grpc.OptimizerService_pb2_grpc
    mlos.Grpc.OptimizerServicesServer
+
+.. toctree::
+   :maxdepth: 1
+
+   mlos.Grpc.unit_tests
