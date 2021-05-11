@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
 
@@ -31,6 +33,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -418,17 +421,17 @@
 <span id="mlos-mlosoptimizationservices-modelsdatabase-databaseconnector"></span><h1>mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector<a class="headerlink" href="#module-mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector" title="Permalink to this headline">¶</a></h1>
 <p>Implements functionality required for aspect oriented connection to the database.</p>
 <dl class="py class">
-<dt id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.</span></code><code class="sig-name descname"><span class="pre">DatabaseConnector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/DatabaseConnector.py#L42"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.</span></span><span class="sig-name descname"><span class="pre">DatabaseConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/DatabaseConnector.py#L42"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py attribute">
-<dt id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.MAX_BACKOFF_SECONDS">
-<code class="sig-name descname"><span class="pre">MAX_BACKOFF_SECONDS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">60</span></em><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.MAX_BACKOFF_SECONDS" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.MAX_BACKOFF_SECONDS">
+<span class="sig-name descname"><span class="pre">MAX_BACKOFF_SECONDS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">60</span></em><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.MAX_BACKOFF_SECONDS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.connect">
-<code class="sig-name descname"><span class="pre">connect</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout_s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autocommit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/DatabaseConnector.py#L69"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.connect" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout_s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autocommit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/DatabaseConnector.py#L69"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Establishes a connection to the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -440,21 +443,21 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.connected">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">connected</span></code><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.connected" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.connected">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">connected</span></span><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.disconnect">
-<code class="sig-name descname"><span class="pre">disconnect</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/DatabaseConnector.py#L109"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.disconnect" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/DatabaseConnector.py#L109"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.DatabaseConnector.disconnect" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.connection_required">
-<code class="sig-prename descclassname"><span class="pre">mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.</span></code><code class="sig-name descname"><span class="pre">connection_required</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_default_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autocommit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/DatabaseConnector.py#L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.connection_required" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.connection_required">
+<span class="sig-prename descclassname"><span class="pre">mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.</span></span><span class="sig-name descname"><span class="pre">connection_required</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_default_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autocommit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/MlosOptimizationServices/ModelsDatabase/DatabaseConnector.py#L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.MlosOptimizationServices.ModelsDatabase.DatabaseConnector.connection_required" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ensures that the connection is established before the wrapped function executes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>

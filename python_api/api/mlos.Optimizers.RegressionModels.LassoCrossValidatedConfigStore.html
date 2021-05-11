@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
 
@@ -31,6 +33,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -417,8 +420,8 @@
   <div class="section" id="module-mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore">
 <span id="mlos-optimizers-regressionmodels-lassocrossvalidatedconfigstore"></span><h1>mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore<a class="headerlink" href="#module-mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.</span></code><code class="sig-name descname"><span class="pre">Selection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/LassoCrossValidatedConfigStore.py#L11"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.</span></span><span class="sig-name descname"><span class="pre">Selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/LassoCrossValidatedConfigStore.py#L11"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>Parameter to sklearn LassoCV regressor controlling how model coefficients are selected for update.
 From  <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html</a>:
@@ -426,13 +429,13 @@ If set to ‘random’, a random coefficient is updated every iteration rather t
 over features sequentially by default. This (setting to ‘random’) often leads to significantly
 faster convergence especially when tol is higher than 1e-4.</p>
 <dl class="py attribute">
-<dt id="mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection.CYCLIC">
-<code class="sig-name descname"><span class="pre">CYCLIC</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'cyclic'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/LassoCrossValidatedConfigStore.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection.CYCLIC" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection.CYCLIC">
+<span class="sig-name descname"><span class="pre">CYCLIC</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'cyclic'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/LassoCrossValidatedConfigStore.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection.CYCLIC" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection.RANDOM">
-<code class="sig-name descname"><span class="pre">RANDOM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'random'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/LassoCrossValidatedConfigStore.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection.RANDOM" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection.RANDOM">
+<span class="sig-name descname"><span class="pre">RANDOM</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'random'</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/LassoCrossValidatedConfigStore.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.LassoCrossValidatedConfigStore.Selection.RANDOM" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

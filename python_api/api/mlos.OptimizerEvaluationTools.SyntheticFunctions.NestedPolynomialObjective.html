@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
 
@@ -31,6 +33,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -417,8 +420,8 @@
   <div class="section" id="module-mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective">
 <span id="mlos-optimizerevaluationtools-syntheticfunctions-nestedpolynomialobjective"></span><h1>mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective<a class="headerlink" href="#module-mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.</span></code><code class="sig-name descname"><span class="pre">NestedPolynomialObjective</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objective_function_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point"><span class="pre">mlos.Spaces.Point.Point</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/OptimizerEvaluationTools/SyntheticFunctions/NestedPolynomialObjective.py#L25"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.</span></span><span class="sig-name descname"><span class="pre">NestedPolynomialObjective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objective_function_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point"><span class="pre">mlos.Spaces.Point.Point</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/OptimizerEvaluationTools/SyntheticFunctions/NestedPolynomialObjective.py#L25"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html#mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.ObjectiveFunctionBase" title="mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.ObjectiveFunctionBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.ObjectiveFunctionBase</span></code></a></p>
 <p>A hierarchical function with multiple nested polynomials.</p>
 <p>The value of num_nested_polynomials controls how many polynomials are created. All polynomials are created according to (nearly identical)
@@ -428,26 +431,26 @@ degree two polynomials, and we select between them using the “vertex_height”
 <p>Here we have num_nested_polynomials functions, with configurable dimensions, degrees, and coefficient of variation. Optimizing this
 synthetic function is analogous to optimizing a component with multiple mutually-exclusive implementations.</p>
 <dl class="py method">
-<dt id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.evaluate_dataframe">
-<code class="sig-name descname"><span class="pre">evaluate_dataframe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.core.frame.DataFrame</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/OptimizerEvaluationTools/SyntheticFunctions/NestedPolynomialObjective.py#L84"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.evaluate_dataframe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.evaluate_dataframe">
+<span class="sig-name descname"><span class="pre">evaluate_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.core.frame.DataFrame</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/OptimizerEvaluationTools/SyntheticFunctions/NestedPolynomialObjective.py#L84"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.evaluate_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.evaluate_point">
-<code class="sig-name descname"><span class="pre">evaluate_point</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point"><span class="pre">mlos.Spaces.Point.Point</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point"><span class="pre">mlos.Spaces.Point.Point</span></a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/OptimizerEvaluationTools/SyntheticFunctions/NestedPolynomialObjective.py#L80"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.evaluate_point" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.evaluate_point">
+<span class="sig-name descname"><span class="pre">evaluate_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point"><span class="pre">mlos.Spaces.Point.Point</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point"><span class="pre">mlos.Spaces.Point.Point</span></a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/OptimizerEvaluationTools/SyntheticFunctions/NestedPolynomialObjective.py#L80"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.evaluate_point" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.get_context">
-<code class="sig-name descname"><span class="pre">get_context</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point"><span class="pre">mlos.Spaces.Point.Point</span></a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/OptimizerEvaluationTools/SyntheticFunctions/NestedPolynomialObjective.py#L95"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.get_context" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.get_context">
+<span class="sig-name descname"><span class="pre">get_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point" title="mlos.Spaces.Point.Point"><span class="pre">mlos.Spaces.Point.Point</span></a><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/OptimizerEvaluationTools/SyntheticFunctions/NestedPolynomialObjective.py#L95"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.get_context" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config used to create the polynomial.
 Down the road it could return some more info about the resulting polynomial.
 :return:</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.output_space">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">output_space</span></code><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.output_space" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.output_space">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">output_space</span></span><em class="property"><span class="pre">:</span> <span class="pre">mlos.Spaces.Hypergrid.Hypergrid</span></em><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.output_space" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the hypergrid describing the output space for this objective function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -456,9 +459,9 @@ Down the road it could return some more info about the resulting polynomial.
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.parameter_space">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parameter_space</span></code><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.parameter_space" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.parameter_space">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">parameter_space</span></span><em class="property"><span class="pre">:</span> <span class="pre">mlos.Spaces.Hypergrid.Hypergrid</span></em><a class="headerlink" href="#mlos.OptimizerEvaluationTools.SyntheticFunctions.NestedPolynomialObjective.NestedPolynomialObjective.parameter_space" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the hypergrid describing the parameter space for this objective function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>

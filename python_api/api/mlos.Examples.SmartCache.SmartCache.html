@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
 
@@ -31,6 +33,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -417,8 +420,8 @@
   <div class="section" id="module-mlos.Examples.SmartCache.SmartCache">
 <span id="mlos-examples-smartcache-smartcache"></span><h1>mlos.Examples.SmartCache.SmartCache<a class="headerlink" href="#module-mlos.Examples.SmartCache.SmartCache" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Examples.SmartCache.SmartCache.</span></code><code class="sig-name descname"><span class="pre">SmartCache</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Examples/SmartCache/SmartCache.py#L35"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Examples.SmartCache.SmartCache.</span></span><span class="sig-name descname"><span class="pre">SmartCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Examples/SmartCache/SmartCache.py#L35"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A tunable and observable cache that takes advantage of Mlos.</p>
 <p>The goal here is to provide a bunch of cache implementations that are parameterizable.</p>
@@ -441,34 +444,34 @@
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache.RuntimeAttributes">
-<code class="sig-name descname"><span class="pre">RuntimeAttributes</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Mlos/SDK/MlosSmartComponentRuntimeAttributes.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.RuntimeAttributes" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache.RuntimeAttributes">
+<span class="sig-name descname"><span class="pre">RuntimeAttributes</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Mlos/SDK/MlosSmartComponentRuntimeAttributes.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.RuntimeAttributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">mlos.Mlos.SDK.MlosSmartComponentRuntimeAttributes.SmartCacheRuntimeAttributes</span></code></p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache.default_config">
-<code class="sig-name descname"><span class="pre">default_config</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{</span>&#160;&#160; <span class="pre">&quot;implementation&quot;:</span> <span class="pre">&quot;LRU&quot;,</span>&#160;&#160; <span class="pre">&quot;lru_cache_config.cache_size&quot;:</span> <span class="pre">100</span> <span class="pre">}</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Spaces/Point.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.default_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache.default_config">
+<span class="sig-name descname"><span class="pre">default_config</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{</span>&#160;&#160; <span class="pre">&quot;implementation&quot;:</span> <span class="pre">&quot;LRU&quot;,</span>&#160;&#160; <span class="pre">&quot;lru_cache_config.cache_size&quot;:</span> <span class="pre">100</span> <span class="pre">}</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Spaces/Point.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.default_config" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache.get">
-<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Examples/SmartCache/SmartCache.py#L128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Examples/SmartCache/SmartCache.py#L128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache.parameter_search_space">
-<code class="sig-name descname"><span class="pre">parameter_search_space</span></code><em class="property"> <span class="pre">=</span> <span class="pre">Name:</span> <span class="pre">smart_cache_config</span>&#160;&#160; <span class="pre">Dimensions:</span>&#160;&#160;&#160;&#160; <span class="pre">implementation:</span> <span class="pre">{LRU,</span> <span class="pre">MRU}</span>&#160;&#160;&#160; <span class="pre">IF</span> <span class="pre">implementation</span> <span class="pre">IN</span> <span class="pre">{LRU}</span> <span class="pre">THEN</span> <span class="pre">(</span>&#160;&#160;&#160;&#160; <span class="pre">Name:</span> <span class="pre">lru_cache_config</span>&#160;&#160;&#160;&#160; <span class="pre">Dimensions:</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">cache_size:</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">...</span> <span class="pre">,</span> <span class="pre">4096}</span>&#160;&#160; <span class="pre">)</span>&#160;&#160;&#160; <span class="pre">IF</span> <span class="pre">implementation</span> <span class="pre">IN</span> <span class="pre">{MRU}</span> <span class="pre">THEN</span> <span class="pre">(</span>&#160;&#160;&#160;&#160; <span class="pre">Name:</span> <span class="pre">mru_cache_config</span>&#160;&#160;&#160;&#160; <span class="pre">Dimensions:</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">cache_size:</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">...</span> <span class="pre">,</span> <span class="pre">4096}</span>&#160;&#160; <span class="pre">)</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Spaces/SimpleHypergrid.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.parameter_search_space" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache.parameter_search_space">
+<span class="sig-name descname"><span class="pre">parameter_search_space</span></span><em class="property"> <span class="pre">=</span> <span class="pre">Name:</span> <span class="pre">smart_cache_config</span>&#160;&#160; <span class="pre">Dimensions:</span>&#160;&#160;&#160;&#160; <span class="pre">implementation:</span> <span class="pre">{LRU,</span> <span class="pre">MRU}</span>&#160;&#160;&#160; <span class="pre">IF</span> <span class="pre">implementation</span> <span class="pre">IN</span> <span class="pre">{LRU}</span> <span class="pre">THEN</span> <span class="pre">(</span>&#160;&#160;&#160;&#160; <span class="pre">Name:</span> <span class="pre">lru_cache_config</span>&#160;&#160;&#160;&#160; <span class="pre">Dimensions:</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">cache_size:</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">...</span> <span class="pre">,</span> <span class="pre">4096}</span>&#160;&#160; <span class="pre">)</span>&#160;&#160;&#160; <span class="pre">IF</span> <span class="pre">implementation</span> <span class="pre">IN</span> <span class="pre">{MRU}</span> <span class="pre">THEN</span> <span class="pre">(</span>&#160;&#160;&#160;&#160; <span class="pre">Name:</span> <span class="pre">mru_cache_config</span>&#160;&#160;&#160;&#160; <span class="pre">Dimensions:</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">cache_size:</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">...</span> <span class="pre">,</span> <span class="pre">4096}</span>&#160;&#160; <span class="pre">)</span></em><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Spaces/SimpleHypergrid.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.parameter_search_space" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache.push">
-<code class="sig-name descname"><span class="pre">push</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Examples/SmartCache/SmartCache.py#L100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.push" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache.push">
+<span class="sig-name descname"><span class="pre">push</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Examples/SmartCache/SmartCache.py#L100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.push" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache.reconfigure">
-<code class="sig-name descname"><span class="pre">reconfigure</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Examples/SmartCache/SmartCache.py#L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.reconfigure" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache.reconfigure">
+<span class="sig-name descname"><span class="pre">reconfigure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Examples/SmartCache/SmartCache.py#L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.reconfigure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconfigures the cache according to the configuration present in self.mlos_object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -478,13 +481,13 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache.runtime_decision_contexts">
-<code class="sig-name descname"><span class="pre">runtime_decision_contexts</span></code><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.RuntimeDecisionContexts.PushRuntimeDecisionContext'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.RuntimeDecisionContexts.ReconfigurationRuntimeDecisionContext'&gt;]</span></em><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.runtime_decision_contexts" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache.runtime_decision_contexts">
+<span class="sig-name descname"><span class="pre">runtime_decision_contexts</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.RuntimeDecisionContexts.PushRuntimeDecisionContext'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.RuntimeDecisionContexts.ReconfigurationRuntimeDecisionContext'&gt;]</span></em><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.runtime_decision_contexts" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="mlos.Examples.SmartCache.SmartCache.SmartCache.telemetry_message_types">
-<code class="sig-name descname"><span class="pre">telemetry_message_types</span></code><em class="property"> <span class="pre">=</span> <span class="pre">[(&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCachePush'&gt;,</span> <span class="pre">1),</span> <span class="pre">(&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheGet'&gt;,</span> <span class="pre">2),</span> <span class="pre">(&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheEvict'&gt;,</span> <span class="pre">4)]</span></em><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.telemetry_message_types" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Examples.SmartCache.SmartCache.SmartCache.telemetry_message_types">
+<span class="sig-name descname"><span class="pre">telemetry_message_types</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[(&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCachePush'&gt;,</span> <span class="pre">1),</span> <span class="pre">(&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheGet'&gt;,</span> <span class="pre">2),</span> <span class="pre">(&lt;class</span> <span class="pre">'mlos.Examples.SmartCache.MlosInterface.MlosTelemetryMessages.SmartCacheEvict'&gt;,</span> <span class="pre">4)]</span></em><a class="headerlink" href="#mlos.Examples.SmartCache.SmartCache.SmartCache.telemetry_message_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/mlos.css" type="text/css" />
   <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
 
@@ -31,6 +33,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -417,8 +420,8 @@
   <div class="section" id="module-mlos.Optimizers.RegressionModels.RegressionModelFitState">
 <span id="mlos-optimizers-regressionmodels-regressionmodelfitstate"></span><h1>mlos.Optimizers.RegressionModels.RegressionModelFitState<a class="headerlink" href="#module-mlos.Optimizers.RegressionModels.RegressionModelFitState" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">mlos.Optimizers.RegressionModels.RegressionModelFitState.</span></code><code class="sig-name descname"><span class="pre">RegressionModelFitState</span></code><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/RegressionModelFitState.py#L10"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Optimizers.RegressionModels.RegressionModelFitState.</span></span><span class="sig-name descname"><span class="pre">RegressionModelFitState</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/RegressionModelFitState.py#L10"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Maintains the state of the regression model for the benefit of debugging/monitoring.</p>
 <p>The key information we keep here are:</p>
@@ -431,14 +434,14 @@
 </ol>
 </div></blockquote>
 <p>The owning model is responsible for keeping this data up to date and present it on when required.</p>
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.current_train_gof_metrics">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">current_train_gof_metrics</span></code><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.current_train_gof_metrics" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.current_train_gof_metrics">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">current_train_gof_metrics</span></span><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.current_train_gof_metrics" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.get_goodness_of_fit_dataframe">
-<code class="sig-name descname"><span class="pre">get_goodness_of_fit_dataframe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_set_type:</span> <span class="pre">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType</span> <span class="pre">=</span> <span class="pre">&lt;DataSetType.TRAIN:</span> <span class="pre">0&gt;</span></em>, <em class="sig-param"><span class="pre">deep=False</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/RegressionModelFitState.py#L49"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.get_goodness_of_fit_dataframe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.get_goodness_of_fit_dataframe">
+<span class="sig-name descname"><span class="pre">get_goodness_of_fit_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_set_type:</span> <span class="pre">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType</span> <span class="pre">=</span> <span class="pre">&lt;DataSetType.TRAIN:</span> <span class="pre">0&gt;</span></em>, <em class="sig-param"><span class="pre">deep=False</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/RegressionModelFitState.py#L49"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.get_goodness_of_fit_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the historical goodness of fit metrics into a data frame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -450,19 +453,19 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.has_any_train_gof_metrics">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">has_any_train_gof_metrics</span></code><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.has_any_train_gof_metrics" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.has_any_train_gof_metrics">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_any_train_gof_metrics</span></span><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.has_any_train_gof_metrics" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.set_gof_metrics">
-<code class="sig-name descname"><span class="pre">set_gof_metrics</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType"><span class="pre">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gof_metrics</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics"><span class="pre">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/RegressionModelFitState.py#L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.set_gof_metrics" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.set_gof_metrics">
+<span class="sig-name descname"><span class="pre">set_gof_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType"><span class="pre">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.DataSetType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gof_metrics</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.html#mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics" title="mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics"><span class="pre">mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics.GoodnessOfFitMetrics</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/8b5d2b2/source/Mlos.Python/mlos/Optimizers/RegressionModels/RegressionModelFitState.py#L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.set_gof_metrics" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.train_set_size">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">train_set_size</span></code><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.train_set_size" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.train_set_size">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">train_set_size</span></span><a class="headerlink" href="#mlos.Optimizers.RegressionModels.RegressionModelFitState.RegressionModelFitState.train_set_size" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
