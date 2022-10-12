@@ -15,7 +15,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/js/copybutton.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -46,13 +48,57 @@
               <ul>
 <li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/mlos.html">mlos</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/mlos.Exceptions.html">mlos.Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/mlos.Logger.html">mlos.Logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/mlos.Tracer.html">mlos.Tracer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/mlos.global_values.html">mlos.global_values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mlos.Exceptions.html">mlos.Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Exceptions.html#mlos.Exceptions.InvalidDimensionException"><code class="docutils literal notranslate"><span class="pre">InvalidDimensionException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Exceptions.html#mlos.Exceptions.InvalidPointException"><code class="docutils literal notranslate"><span class="pre">InvalidPointException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Exceptions.html#mlos.Exceptions.MlosException"><code class="docutils literal notranslate"><span class="pre">MlosException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Exceptions.html#mlos.Exceptions.PointOutOfDomainException"><code class="docutils literal notranslate"><span class="pre">PointOutOfDomainException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Exceptions.html#mlos.Exceptions.UnableToProduceGuidedSuggestionException"><code class="docutils literal notranslate"><span class="pre">UnableToProduceGuidedSuggestionException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Exceptions.html#mlos.Exceptions.UtilityValueUnavailableException"><code class="docutils literal notranslate"><span class="pre">UtilityValueUnavailableException</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/mlos.Logger.html">mlos.Logger</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Logger.html#mlos.Logger.BufferingHandler"><code class="docutils literal notranslate"><span class="pre">BufferingHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Logger.html#mlos.Logger.BufferingHandler.clear"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Logger.html#mlos.Logger.BufferingHandler.dump_to_file"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.dump_to_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Logger.html#mlos.Logger.BufferingHandler.emit"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.emit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Logger.html#mlos.Logger.BufferingHandler.get_records"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.get_records()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Logger.html#mlos.Logger.BufferingHandler.setLevel"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.setLevel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Logger.html#mlos.Logger.BufferingHandler.set_level_by_name"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.set_level_by_name()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Logger.html#mlos.Logger.create_logger"><code class="docutils literal notranslate"><span class="pre">create_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/mlos.Tracer.html">mlos.Tracer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.Tracer"><code class="docutils literal notranslate"><span class="pre">Tracer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.Tracer.add_subscriber"><code class="docutils literal notranslate"><span class="pre">Tracer.add_subscriber()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.Tracer.add_trace_event"><code class="docutils literal notranslate"><span class="pre">Tracer.add_trace_event()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.Tracer.clear_events"><code class="docutils literal notranslate"><span class="pre">Tracer.clear_events()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.Tracer.dump_trace_to_file"><code class="docutils literal notranslate"><span class="pre">Tracer.dump_trace_to_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.Tracer.dump_trace_to_string"><code class="docutils literal notranslate"><span class="pre">Tracer.dump_trace_to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.Tracer.reformat_events"><code class="docutils literal notranslate"><span class="pre">Tracer.reformat_events()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.Tracer.trace_events"><code class="docutils literal notranslate"><span class="pre">Tracer.trace_events</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.add_trace_event"><code class="docutils literal notranslate"><span class="pre">add_trace_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.trace"><code class="docutils literal notranslate"><span class="pre">trace()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Tracer.html#mlos.Tracer.traced"><code class="docutils literal notranslate"><span class="pre">traced()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/mlos.global_values.html">mlos.global_values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.global_values.html#mlos.global_values.declare_singletons"><code class="docutils literal notranslate"><span class="pre">declare_singletons()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.global_values.html#mlos.global_values.deserialize_from_bytes_string"><code class="docutils literal notranslate"><span class="pre">deserialize_from_bytes_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.global_values.html#mlos.global_values.serialize_to_bytes_string"><code class="docutils literal notranslate"><span class="pre">serialize_to_bytes_string()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="api/mlos.start_optimizer_microservice.html">mlos.start_optimizer_microservice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/mlos.Examples.html">mlos.Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Examples.SmartCache.html">mlos.Examples.SmartCache</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.HitRateMonitor"><code class="docutils literal notranslate"><span class="pre">HitRateMonitor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.SmartCache"><code class="docutils literal notranslate"><span class="pre">SmartCache</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.SmartCacheWorkloadGenerator"><code class="docutils literal notranslate"><span class="pre">SmartCacheWorkloadGenerator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.SmartCacheWorkloadLauncher"><code class="docutils literal notranslate"><span class="pre">SmartCacheWorkloadLauncher</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Examples.SmartCache.SmartCache.html">mlos.Examples.SmartCache.SmartCache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Examples.SmartCache.SmartCacheWorkloadGenerator.html">mlos.Examples.SmartCache.SmartCacheWorkloadGenerator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Examples.SmartCache.SmartCacheWorkloadLauncher.html">mlos.Examples.SmartCache.SmartCacheWorkloadLauncher</a></li>
@@ -84,7 +130,27 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/mlos.Mlos.html">mlos.Mlos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.communication_channel"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.communication_channel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.get_current_config"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.get_current_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.is_message_type_enabled"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.is_message_type_enabled()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.register_mlos_object"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.register_mlos_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.send_telemetry_message"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.send_telemetry_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.shared_config"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.shared_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.start_clock"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.start_clock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.stop_clock"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.stop_clock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.unregister_mlos_object"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.unregister_mlos_object()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html">mlos.Mlos.Infrastructure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.CommunicationChannel"><code class="docutils literal notranslate"><span class="pre">CommunicationChannel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.ConfigurationManager"><code class="docutils literal notranslate"><span class="pre">ConfigurationManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.RegisterSmartComponentMessage"><code class="docutils literal notranslate"><span class="pre">RegisterSmartComponentMessage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.RuntimeDecisionsManager"><code class="docutils literal notranslate"><span class="pre">RuntimeDecisionsManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.SharedConfig"><code class="docutils literal notranslate"><span class="pre">SharedConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.SmartComponentManager"><code class="docutils literal notranslate"><span class="pre">SmartComponentManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.TelemetryManager"><code class="docutils literal notranslate"><span class="pre">TelemetryManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.UnregisterSmartComponentMessage"><code class="docutils literal notranslate"><span class="pre">UnregisterSmartComponentMessage</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.CommunicationChannel.html">mlos.Mlos.Infrastructure.CommunicationChannel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.ConfigurationManager.html">mlos.Mlos.Infrastructure.ConfigurationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.Infrastructure.ExperimentManager.html">mlos.Mlos.Infrastructure.ExperimentManager</a></li>
@@ -96,6 +162,23 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Mlos.SDK.html">mlos.Mlos.SDK</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.CategoricalDimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.ContinuousDimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.DiscreteDimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosAgent"><code class="docutils literal notranslate"><span class="pre">MlosAgent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosExperiment"><code class="docutils literal notranslate"><span class="pre">MlosExperiment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosGlobalContext"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosObject"><code class="docutils literal notranslate"><span class="pre">MlosObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosRuntimeDecisionContext"><code class="docutils literal notranslate"><span class="pre">MlosRuntimeDecisionContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosSmartComponentRuntimeAttributes"><code class="docutils literal notranslate"><span class="pre">MlosSmartComponentRuntimeAttributes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosSmartComponentSelector"><code class="docutils literal notranslate"><span class="pre">MlosSmartComponentSelector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosTelemetryAggregator"><code class="docutils literal notranslate"><span class="pre">MlosTelemetryAggregator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.OrdinalDimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.RuntimeDecisionsManager"><code class="docutils literal notranslate"><span class="pre">RuntimeDecisionsManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.SimpleHypergrid"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.SmartComponentManager"><code class="docutils literal notranslate"><span class="pre">SmartComponentManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.html#mlos.Mlos.SDK.TelemetryManager"><code class="docutils literal notranslate"><span class="pre">TelemetryManager</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.MlosAgent.html">mlos.Mlos.SDK.MlosAgent</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.MlosExperiment.html">mlos.Mlos.SDK.MlosExperiment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Mlos.SDK.MlosGlobalContext.html">mlos.Mlos.SDK.MlosGlobalContext</a></li>
@@ -117,9 +200,19 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/mlos.MlosOptimizationServices.html">mlos.MlosOptimizationServices</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.MlosOptimizationServices.Distributable.html">mlos.MlosOptimizationServices.Distributable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.MlosOptimizationServices.MlosOptimizationRuntime.html">mlos.MlosOptimizationServices.MlosOptimizationRuntime</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.MlosOptimizationServices.MlosOptimizationServicesProxy.html">mlos.MlosOptimizationServices.MlosOptimizationServicesProxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.MlosOptimizationServices.Distributable.html">mlos.MlosOptimizationServices.Distributable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.MlosOptimizationServices.Distributable.html#mlos.MlosOptimizationServices.Distributable.Distributable"><code class="docutils literal notranslate"><span class="pre">Distributable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.MlosOptimizationServices.Distributable.html#mlos.MlosOptimizationServices.Distributable.remotely_executable"><code class="docutils literal notranslate"><span class="pre">remotely_executable()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.MlosOptimizationServices.MlosOptimizationRuntime.html">mlos.MlosOptimizationServices.MlosOptimizationRuntime</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.MlosOptimizationServices.MlosOptimizationRuntime.html#mlos.MlosOptimizationServices.MlosOptimizationRuntime.MlosOptimizationRuntime"><code class="docutils literal notranslate"><span class="pre">MlosOptimizationRuntime</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.MlosOptimizationServices.MlosOptimizationServicesProxy.html">mlos.MlosOptimizationServices.MlosOptimizationServicesProxy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.MlosOptimizationServices.MlosOptimizationServicesProxy.html#mlos.MlosOptimizationServices.MlosOptimizationServicesProxy.MlosOptimizationServicesProxy"><code class="docutils literal notranslate"><span class="pre">MlosOptimizationServicesProxy</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.MlosOptimizationServices.BayesianOptimizerStore.html">mlos.MlosOptimizationServices.BayesianOptimizerStore</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.MlosOptimizationServices.BayesianOptimizerStore.BayesianOptimizerInMemoryStore.html">mlos.MlosOptimizationServices.BayesianOptimizerStore.BayesianOptimizerInMemoryStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.MlosOptimizationServices.BayesianOptimizerStore.BayesianOptimizerStoreBase.html">mlos.MlosOptimizationServices.BayesianOptimizerStore.BayesianOptimizerStoreBase</a></li>
@@ -135,13 +228,25 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.html">mlos.OptimizerEvaluationTools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionBase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html#mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.ObjectiveFunctionBase"><code class="docutils literal notranslate"><span class="pre">ObjectiveFunctionBase</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html">mlos.OptimizerEvaluationTools.OptimizerEvaluationReport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html#mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.ObjectiveFunctionFactory"><code class="docutils literal notranslate"><span class="pre">ObjectiveFunctionFactory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html">mlos.OptimizerEvaluationTools.OptimizerEvaluationReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html#mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.OptimizerEvaluationReport"><code class="docutils literal notranslate"><span class="pre">OptimizerEvaluationReport</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluator.html">mlos.OptimizerEvaluationTools.OptimizerEvaluator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore.html">mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html">mlos.OptimizerEvaluationTools.OptimumOverTime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html">mlos.OptimizerEvaluationTools.OptimumOverTime</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.OptimumOverTime.html#mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime"><code class="docutils literal notranslate"><span class="pre">OptimumOverTime</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.EnvelopedWaves.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.EnvelopedWaves</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower</a></li>
@@ -179,14 +284,36 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/mlos.Optimizers.html">mlos.Optimizers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.BayesianOptimizer.html#mlos.Optimizers.BayesianOptimizer.BayesianOptimizer"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.BayesianOptimizerConfigStore.html">mlos.Optimizers.BayesianOptimizerConfigStore</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.BayesianOptimizerConvergenceState.html#mlos.Optimizers.BayesianOptimizerConvergenceState.BayesianOptimizerConvergenceState"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConvergenceState</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.BayesianOptimizerFactory.html">mlos.Optimizers.BayesianOptimizerFactory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.OptimizerBase.html">mlos.Optimizers.OptimizerBase</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.OptimumDefinition.html">mlos.Optimizers.OptimumDefinition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.ParetoFrontier.html">mlos.Optimizers.ParetoFrontier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.Objective"><code class="docutils literal notranslate"><span class="pre">Objective</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.OptimizationProblem"><code class="docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.objective_from_dict"><code class="docutils literal notranslate"><span class="pre">objective_from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.objective_to_dict"><code class="docutils literal notranslate"><span class="pre">objective_to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.OptimizerBase.html">mlos.Optimizers.OptimizerBase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.OptimizerBase.html#mlos.Optimizers.OptimizerBase.OptimizerBase"><code class="docutils literal notranslate"><span class="pre">OptimizerBase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.OptimumDefinition.html">mlos.Optimizers.OptimumDefinition</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.OptimumDefinition.html#mlos.Optimizers.OptimumDefinition.OptimumDefinition"><code class="docutils literal notranslate"><span class="pre">OptimumDefinition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.ParetoFrontier.html">mlos.Optimizers.ParetoFrontier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.ParetoFrontier.html#mlos.Optimizers.ParetoFrontier.ParetoFrontier"><code class="docutils literal notranslate"><span class="pre">ParetoFrontier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.ParetoFrontier.html#mlos.Optimizers.ParetoFrontier.ParetoVolumeEsimator"><code class="docutils literal notranslate"><span class="pre">ParetoVolumeEsimator</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
@@ -204,7 +331,9 @@
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.LassoCrossValidatedRegressionModel.html">mlos.Optimizers.RegressionModels.LassoCrossValidatedRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.MultiObjectiveGoodnessOfFitMetrics.html">mlos.Optimizers.RegressionModels.MultiObjectiveGoodnessOfFitMetrics</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.MultiObjectiveHomogeneousRandomForest.html">mlos.Optimizers.RegressionModels.MultiObjectiveHomogeneousRandomForest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.MultiObjectiveLassoCrossValidated.html">mlos.Optimizers.RegressionModels.MultiObjectiveLassoCrossValidated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.MultiObjectivePrediction.html">mlos.Optimizers.RegressionModels.MultiObjectivePrediction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.MultiObjectiveRegressionEnhancedRandomForest.html">mlos.Optimizers.RegressionModels.MultiObjectiveRegressionEnhancedRandomForest</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.MultiObjectiveRegressionModel.html">mlos.Optimizers.RegressionModels.MultiObjectiveRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.MultiObjectiveRegressionModelFitState.html">mlos.Optimizers.RegressionModels.MultiObjectiveRegressionModelFitState</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Optimizers.RegressionModels.NaiveMultiObjectiveRegressionModel.html">mlos.Optimizers.RegressionModels.NaiveMultiObjectiveRegressionModel</a></li>
@@ -231,11 +360,188 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/mlos.Spaces.html">mlos.Spaces</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.copy"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.difference"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.difference_categorical_dimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.difference_categorical_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.equals"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.intersection"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.intersection_categorical_dimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.intersection_categorical_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.intersects"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.linspace"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.random"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.to_string"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.union"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.union()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CategoricalDimension.union_categorical_dimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.union_categorical_dimension()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension"><code class="docutils literal notranslate"><span class="pre">CompositeDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.contains_number"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.contains_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.copy"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.difference"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.enumerate_chunks"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.enumerate_chunks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.equals"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.intersection"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.intersects"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.linspace"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.pop_adjacent_chunks"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.pop_adjacent_chunks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.pop_overlapping_chunks"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.pop_overlapping_chunks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.push"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.push()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.random"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.to_string"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.CompositeDimension.union"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.union()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.contains_continuous_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.contains_continuous_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.copy"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.difference"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.equals"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.intersection"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.intersection_continuous_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.intersection_continuous_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.intersects"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.intersects_continuous_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.intersects_continuous_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.is_contiguous_with"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.is_contiguous_with()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.linspace"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.make_empty"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.make_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.random"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.split_on"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.split_on()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.to_string"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.union"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.union()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.union_overlapping_continuous_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.union_overlapping_continuous_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.ContinuousDimension.width"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.width</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension"><code class="docutils literal notranslate"><span class="pre">Dimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.INNUMERABLY_LARGE"><code class="docutils literal notranslate"><span class="pre">Dimension.INNUMERABLY_LARGE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.copy"><code class="docutils literal notranslate"><span class="pre">Dimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.difference"><code class="docutils literal notranslate"><span class="pre">Dimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.flatten_dimension_name"><code class="docutils literal notranslate"><span class="pre">Dimension.flatten_dimension_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.flatten_name"><code class="docutils literal notranslate"><span class="pre">Dimension.flatten_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.intersection"><code class="docutils literal notranslate"><span class="pre">Dimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.intersects"><code class="docutils literal notranslate"><span class="pre">Dimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.is_innumerably_large"><code class="docutils literal notranslate"><span class="pre">Dimension.is_innumerably_large</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.linspace"><code class="docutils literal notranslate"><span class="pre">Dimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.random"><code class="docutils literal notranslate"><span class="pre">Dimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.random_state"><code class="docutils literal notranslate"><span class="pre">Dimension.random_state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.split_dimension_name"><code class="docutils literal notranslate"><span class="pre">Dimension.split_dimension_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.to_string"><code class="docutils literal notranslate"><span class="pre">Dimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Dimension.union"><code class="docutils literal notranslate"><span class="pre">Dimension.union()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.copy"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.difference"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.equals"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.greatest_common_divisor"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.greatest_common_divisor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.intersection"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.intersection_discrete_dimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.intersection_discrete_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.intersects"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.is_contiguous_with"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.is_contiguous_with()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.least_common_multiple"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.least_common_multiple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.linspace"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.make_empty"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.make_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.random"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.split_on"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.split_on()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.to_string"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.union"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.union()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.DiscreteDimension.union_contiguous_discrete_dimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.union_contiguous_discrete_dimension()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension"><code class="docutils literal notranslate"><span class="pre">EmptyDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.copy"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.difference"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.equals"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.intersection"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.intersects"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.is_innumerably_large"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.is_innumerably_large</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.linspace"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.random"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.to_string"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.EmptyDimension.union"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.union()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid"><code class="docutils literal notranslate"><span class="pre">Hypergrid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.dimension_names"><code class="docutils literal notranslate"><span class="pre">Hypergrid.dimension_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.dimensions"><code class="docutils literal notranslate"><span class="pre">Hypergrid.dimensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.filter_out_invalid_rows"><code class="docutils literal notranslate"><span class="pre">Hypergrid.filter_out_invalid_rows()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.get_dimensions_for_point"><code class="docutils literal notranslate"><span class="pre">Hypergrid.get_dimensions_for_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.get_valid_rows_index"><code class="docutils literal notranslate"><span class="pre">Hypergrid.get_valid_rows_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.is_hierarchical"><code class="docutils literal notranslate"><span class="pre">Hypergrid.is_hierarchical()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.join"><code class="docutils literal notranslate"><span class="pre">Hypergrid.join()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.random"><code class="docutils literal notranslate"><span class="pre">Hypergrid.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.random_dataframe"><code class="docutils literal notranslate"><span class="pre">Hypergrid.random_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Hypergrid.random_state"><code class="docutils literal notranslate"><span class="pre">Hypergrid.random_state</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.copy"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.difference"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.difference_ordinal_dimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.difference_ordinal_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.equals"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.intersection"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.intersection_ordinal_dimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.intersection_ordinal_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.intersects"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.max"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.max</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.min"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.union"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.union()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.OrdinalDimension.union_ordinal_dimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.union_ordinal_dimension()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point.copy"><code class="docutils literal notranslate"><span class="pre">Point.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point.flat_copy"><code class="docutils literal notranslate"><span class="pre">Point.flat_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point.from_dataframe"><code class="docutils literal notranslate"><span class="pre">Point.from_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point.from_json"><code class="docutils literal notranslate"><span class="pre">Point.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point.get"><code class="docutils literal notranslate"><span class="pre">Point.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point.to_dataframe"><code class="docutils literal notranslate"><span class="pre">Point.to_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point.to_dict"><code class="docutils literal notranslate"><span class="pre">Point.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.Point.to_json"><code class="docutils literal notranslate"><span class="pre">Point.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.JoinedSubgrid"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.JoinedSubgrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.add_dimension"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.add_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.add_subgrid_on_external_dimension"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.add_subgrid_on_external_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.contains_point"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.contains_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.contains_space"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.contains_space()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.dimensions"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.dimensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.get"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.get_dimensions_for_point"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.get_dimensions_for_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.is_hierarchical"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.is_hierarchical()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.join"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.join()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.random"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.random_state"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.random_state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.root_dimensions"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.root_dimensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.to_string"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.to_string()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid"><code class="docutils literal notranslate"><span class="pre">Hypergrid</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridsJsonEncoderDecoder.html#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonDecoder"><code class="docutils literal notranslate"><span class="pre">HypergridJsonDecoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridsJsonEncoderDecoder.html#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonEncoder"><code class="docutils literal notranslate"><span class="pre">HypergridJsonEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.Point.html">mlos.Spaces.Point</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.Point.html#mlos.Spaces.Point.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.SimpleHypergrid.html#mlos.Spaces.SimpleHypergrid.SimpleHypergrid"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.Configs.html">mlos.Spaces.Configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.Configs.html#mlos.Spaces.Configs.ComponentConfigStore"><code class="docutils literal notranslate"><span class="pre">ComponentConfigStore</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.Configs.html#mlos.Spaces.Configs.NamedConfig"><code class="docutils literal notranslate"><span class="pre">NamedConfig</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.Configs.ComponentConfigStore.html">mlos.Spaces.Configs.ComponentConfigStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.Configs.DefaultConfigMeta.html">mlos.Spaces.Configs.DefaultConfigMeta</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.Configs.NamedConfig.html">mlos.Spaces.Configs.NamedConfig</a></li>
@@ -256,6 +562,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.html">mlos.Spaces.HypergridAdapters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">CategoricalToDiscreteHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.CategoricalToOneHotEncodedHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">CategoricalToOneHotEncodedHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.ContinuousToPolynomialBasisHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">ContinuousToPolynomialBasisHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">DiscreteToUnitContinuousHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">HierarchicalToFlatHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.HypergridAdapter"><code class="docutils literal notranslate"><span class="pre">HypergridAdapter</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.CategoricalToOneHotEncodedHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToOneHotEncodedHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Spaces.HypergridAdapters.ContinuousToPolynomialBasisHypergridAdapter.html">mlos.Spaces.HypergridAdapters.ContinuousToPolynomialBasisHypergridAdapter</a></li>
@@ -282,7 +594,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/mlos.Utils.html">mlos.Utils</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/mlos.Utils.KeyOrderedDict.html">mlos.Utils.KeyOrderedDict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mlos.Utils.KeyOrderedDict.html">mlos.Utils.KeyOrderedDict</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/mlos.Utils.KeyOrderedDict.html#mlos.Utils.KeyOrderedDict.KeyOrderedDict"><code class="docutils literal notranslate"><span class="pre">KeyOrderedDict</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/mlos.Utils.unit_tests.html">mlos.Utils.unit_tests</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/mlos.Utils.unit_tests.TestKeyOrderedDict.html">mlos.Utils.unit_tests.TestKeyOrderedDict</a></li>
 </ul>
@@ -457,81 +772,6 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="api/mlos.global_values.html#module-mlos.global_values"><code class="xref">mlos.global_values</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.html#module-mlos.Grpc"><code class="xref">mlos.Grpc</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.BayesianOptimizerProxy.html#module-mlos.Grpc.BayesianOptimizerProxy"><code class="xref">mlos.Grpc.BayesianOptimizerProxy</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerMonitor.html#module-mlos.Grpc.OptimizerMonitor"><code class="xref">mlos.Grpc.OptimizerMonitor</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerMonitoringService.html#module-mlos.Grpc.OptimizerMonitoringService"><code class="xref">mlos.Grpc.OptimizerMonitoringService</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerMonitoringService_pb2.html#module-mlos.Grpc.OptimizerMonitoringService_pb2"><code class="xref">mlos.Grpc.OptimizerMonitoringService_pb2</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerMonitoringService_pb2_grpc.html#module-mlos.Grpc.OptimizerMonitoringService_pb2_grpc"><code class="xref">mlos.Grpc.OptimizerMonitoringService_pb2_grpc</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerMonitoringServiceEncoderDecoder.html#module-mlos.Grpc.OptimizerMonitoringServiceEncoderDecoder"><code class="xref">mlos.Grpc.OptimizerMonitoringServiceEncoderDecoder</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerService.html#module-mlos.Grpc.OptimizerService"><code class="xref">mlos.Grpc.OptimizerService</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerService_pb2.html#module-mlos.Grpc.OptimizerService_pb2"><code class="xref">mlos.Grpc.OptimizerService_pb2</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerService_pb2_grpc.html#module-mlos.Grpc.OptimizerService_pb2_grpc"><code class="xref">mlos.Grpc.OptimizerService_pb2_grpc</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerServiceEncoderDecoder.html#module-mlos.Grpc.OptimizerServiceEncoderDecoder"><code class="xref">mlos.Grpc.OptimizerServiceEncoderDecoder</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.OptimizerServicesServer.html#module-mlos.Grpc.OptimizerServicesServer"><code class="xref">mlos.Grpc.OptimizerServicesServer</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.unit_tests.html#module-mlos.Grpc.unit_tests"><code class="xref">mlos.Grpc.unit_tests</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.unit_tests.TestOptimizerMonitoringServiceEncoderDecoder.html#module-mlos.Grpc.unit_tests.TestOptimizerMonitoringServiceEncoderDecoder"><code class="xref">mlos.Grpc.unit_tests.TestOptimizerMonitoringServiceEncoderDecoder</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Grpc.unit_tests.TestOptimizerServiceEncoderDecoder.html#module-mlos.Grpc.unit_tests.TestOptimizerServiceEncoderDecoder"><code class="xref">mlos.Grpc.unit_tests.TestOptimizerServiceEncoderDecoder</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -786,11 +1026,6 @@
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluator.html#module-mlos.OptimizerEvaluationTools.OptimizerEvaluator"><code class="xref">mlos.OptimizerEvaluationTools.OptimizerEvaluator</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
        <a href="api/mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore.html#module-mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore"><code class="xref">mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
@@ -876,11 +1111,6 @@
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator.html#module-mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator"><code class="xref">mlos.OptimizerEvaluationTools.unit_tests.TestOptimizerEvaluator</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
        <a href="api/mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective.html#module-mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective"><code class="xref">mlos.OptimizerEvaluationTools.unit_tests.TestPolynomialObjective</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
@@ -891,17 +1121,7 @@
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="api/mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter.html#module-mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter"><code class="xref">mlos.OptimizerMonitoring.GoodnessOfFitTensorboardWriter</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
        <a href="api/mlos.OptimizerMonitoring.Tomograph.html#module-mlos.OptimizerMonitoring.Tomograph"><code class="xref">mlos.OptimizerMonitoring.Tomograph</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.OptimizerMonitoring.Tomograph.GridPlot.html#module-mlos.OptimizerMonitoring.Tomograph.GridPlot"><code class="xref">mlos.OptimizerMonitoring.Tomograph.GridPlot</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -912,16 +1132,6 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="api/mlos.OptimizerMonitoring.Tomograph.ModelTomograph.html#module-mlos.OptimizerMonitoring.Tomograph.ModelTomograph"><code class="xref">mlos.OptimizerMonitoring.Tomograph.ModelTomograph</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.OptimizerMonitoring.Tomograph.ModelTomograph2.html#module-mlos.OptimizerMonitoring.Tomograph.ModelTomograph2"><code class="xref">mlos.OptimizerMonitoring.Tomograph.ModelTomograph2</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.OptimizerMonitoring.Tomograph.ObjectivesGridPlot.html#module-mlos.OptimizerMonitoring.Tomograph.ObjectivesGridPlot"><code class="xref">mlos.OptimizerMonitoring.Tomograph.ObjectivesGridPlot</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -947,11 +1157,6 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="api/mlos.Optimizers.BayesianOptimizerConvergenceState.html#module-mlos.Optimizers.BayesianOptimizerConvergenceState"><code class="xref">mlos.Optimizers.BayesianOptimizerConvergenceState</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Optimizers.BayesianOptimizerFactory.html#module-mlos.Optimizers.BayesianOptimizerFactory"><code class="xref">mlos.Optimizers.BayesianOptimizerFactory</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -1131,7 +1336,17 @@
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="api/mlos.Optimizers.RegressionModels.MultiObjectiveLassoCrossValidated.html#module-mlos.Optimizers.RegressionModels.MultiObjectiveLassoCrossValidated"><code class="xref">mlos.Optimizers.RegressionModels.MultiObjectiveLassoCrossValidated</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="api/mlos.Optimizers.RegressionModels.MultiObjectivePrediction.html#module-mlos.Optimizers.RegressionModels.MultiObjectivePrediction"><code class="xref">mlos.Optimizers.RegressionModels.MultiObjectivePrediction</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api/mlos.Optimizers.RegressionModels.MultiObjectiveRegressionEnhancedRandomForest.html#module-mlos.Optimizers.RegressionModels.MultiObjectiveRegressionEnhancedRandomForest"><code class="xref">mlos.Optimizers.RegressionModels.MultiObjectiveRegressionEnhancedRandomForest</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -1211,6 +1426,16 @@
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestMultiObjectiveLassoCrossValidated.html#module-mlos.Optimizers.RegressionModels.unit_tests.TestMultiObjectiveLassoCrossValidated"><code class="xref">mlos.Optimizers.RegressionModels.unit_tests.TestMultiObjectiveLassoCrossValidated</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestMultiObjectiveRegressionEnhancedRandomForest.html#module-mlos.Optimizers.RegressionModels.unit_tests.TestMultiObjectiveRegressionEnhancedRandomForest"><code class="xref">mlos.Optimizers.RegressionModels.unit_tests.TestMultiObjectiveRegressionEnhancedRandomForest</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="api/mlos.Optimizers.RegressionModels.unit_tests.TestPrediction.html#module-mlos.Optimizers.RegressionModels.unit_tests.TestPrediction"><code class="xref">mlos.Optimizers.RegressionModels.unit_tests.TestPrediction</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
@@ -1222,11 +1447,6 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="api/mlos.Optimizers.unit_tests.html#module-mlos.Optimizers.unit_tests"><code class="xref">mlos.Optimizers.unit_tests</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.Optimizers.unit_tests.TestBayesianOptimizer.html#module-mlos.Optimizers.unit_tests.TestBayesianOptimizer"><code class="xref">mlos.Optimizers.unit_tests.TestBayesianOptimizer</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -1457,11 +1677,6 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="api/mlos.Spaces.unit_tests.TestSortedBinaryTree.html#module-mlos.Spaces.unit_tests.TestSortedBinaryTree"><code class="xref">mlos.Spaces.unit_tests.TestSortedBinaryTree</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api/mlos.start_optimizer_microservice.html#module-mlos.start_optimizer_microservice"><code class="xref">mlos.start_optimizer_microservice</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>

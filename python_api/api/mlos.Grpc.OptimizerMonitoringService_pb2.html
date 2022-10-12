@@ -16,7 +16,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/js/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -46,13 +48,57 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference external" href="https://microsoft.github.io/MLOS/">Main website</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="mlos.html">mlos</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlos.global_values.html">mlos.global_values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Exceptions.html">mlos.Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Exceptions.html#mlos.Exceptions.InvalidDimensionException"><code class="docutils literal notranslate"><span class="pre">InvalidDimensionException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Exceptions.html#mlos.Exceptions.InvalidPointException"><code class="docutils literal notranslate"><span class="pre">InvalidPointException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Exceptions.html#mlos.Exceptions.MlosException"><code class="docutils literal notranslate"><span class="pre">MlosException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Exceptions.html#mlos.Exceptions.PointOutOfDomainException"><code class="docutils literal notranslate"><span class="pre">PointOutOfDomainException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Exceptions.html#mlos.Exceptions.UnableToProduceGuidedSuggestionException"><code class="docutils literal notranslate"><span class="pre">UnableToProduceGuidedSuggestionException</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Exceptions.html#mlos.Exceptions.UtilityValueUnavailableException"><code class="docutils literal notranslate"><span class="pre">UtilityValueUnavailableException</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Logger.html">mlos.Logger</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Logger.html#mlos.Logger.BufferingHandler"><code class="docutils literal notranslate"><span class="pre">BufferingHandler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Logger.html#mlos.Logger.BufferingHandler.clear"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Logger.html#mlos.Logger.BufferingHandler.dump_to_file"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.dump_to_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Logger.html#mlos.Logger.BufferingHandler.emit"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.emit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Logger.html#mlos.Logger.BufferingHandler.get_records"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.get_records()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Logger.html#mlos.Logger.BufferingHandler.setLevel"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.setLevel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Logger.html#mlos.Logger.BufferingHandler.set_level_by_name"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.set_level_by_name()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Logger.html#mlos.Logger.create_logger"><code class="docutils literal notranslate"><span class="pre">create_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.Tracer.html">mlos.Tracer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.Tracer"><code class="docutils literal notranslate"><span class="pre">Tracer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.Tracer.add_subscriber"><code class="docutils literal notranslate"><span class="pre">Tracer.add_subscriber()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.Tracer.add_trace_event"><code class="docutils literal notranslate"><span class="pre">Tracer.add_trace_event()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.Tracer.clear_events"><code class="docutils literal notranslate"><span class="pre">Tracer.clear_events()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.Tracer.dump_trace_to_file"><code class="docutils literal notranslate"><span class="pre">Tracer.dump_trace_to_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.Tracer.dump_trace_to_string"><code class="docutils literal notranslate"><span class="pre">Tracer.dump_trace_to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.Tracer.reformat_events"><code class="docutils literal notranslate"><span class="pre">Tracer.reformat_events()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.Tracer.trace_events"><code class="docutils literal notranslate"><span class="pre">Tracer.trace_events</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.add_trace_event"><code class="docutils literal notranslate"><span class="pre">add_trace_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.trace"><code class="docutils literal notranslate"><span class="pre">trace()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Tracer.html#mlos.Tracer.traced"><code class="docutils literal notranslate"><span class="pre">traced()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mlos.global_values.html">mlos.global_values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlos.global_values.html#mlos.global_values.declare_singletons"><code class="docutils literal notranslate"><span class="pre">declare_singletons()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.global_values.html#mlos.global_values.deserialize_from_bytes_string"><code class="docutils literal notranslate"><span class="pre">deserialize_from_bytes_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.global_values.html#mlos.global_values.serialize_to_bytes_string"><code class="docutils literal notranslate"><span class="pre">serialize_to_bytes_string()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.start_optimizer_microservice.html">mlos.start_optimizer_microservice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Examples.html">mlos.Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Examples.SmartCache.html">mlos.Examples.SmartCache</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.HitRateMonitor"><code class="docutils literal notranslate"><span class="pre">HitRateMonitor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.SmartCache"><code class="docutils literal notranslate"><span class="pre">SmartCache</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.SmartCacheWorkloadGenerator"><code class="docutils literal notranslate"><span class="pre">SmartCacheWorkloadGenerator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.html#mlos.Examples.SmartCache.SmartCacheWorkloadLauncher"><code class="docutils literal notranslate"><span class="pre">SmartCacheWorkloadLauncher</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCache.html">mlos.Examples.SmartCache.SmartCache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCacheWorkloadGenerator.html">mlos.Examples.SmartCache.SmartCacheWorkloadGenerator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Examples.SmartCache.SmartCacheWorkloadLauncher.html">mlos.Examples.SmartCache.SmartCacheWorkloadLauncher</a></li>
@@ -84,7 +130,27 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Mlos.html">mlos.Mlos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.communication_channel"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.communication_channel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.get_current_config"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.get_current_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.is_message_type_enabled"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.is_message_type_enabled()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.register_mlos_object"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.register_mlos_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.send_telemetry_message"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.send_telemetry_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.shared_config"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.shared_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.start_clock"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.start_clock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.stop_clock"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.stop_clock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.html#mlos.Mlos.MlosGlobalContext.unregister_mlos_object"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext.unregister_mlos_object()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Mlos.Infrastructure.html">mlos.Mlos.Infrastructure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.CommunicationChannel"><code class="docutils literal notranslate"><span class="pre">CommunicationChannel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.ConfigurationManager"><code class="docutils literal notranslate"><span class="pre">ConfigurationManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.RegisterSmartComponentMessage"><code class="docutils literal notranslate"><span class="pre">RegisterSmartComponentMessage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.RuntimeDecisionsManager"><code class="docutils literal notranslate"><span class="pre">RuntimeDecisionsManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.SharedConfig"><code class="docutils literal notranslate"><span class="pre">SharedConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.SmartComponentManager"><code class="docutils literal notranslate"><span class="pre">SmartComponentManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.TelemetryManager"><code class="docutils literal notranslate"><span class="pre">TelemetryManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.html#mlos.Mlos.Infrastructure.UnregisterSmartComponentMessage"><code class="docutils literal notranslate"><span class="pre">UnregisterSmartComponentMessage</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.CommunicationChannel.html">mlos.Mlos.Infrastructure.CommunicationChannel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.ConfigurationManager.html">mlos.Mlos.Infrastructure.ConfigurationManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.Infrastructure.ExperimentManager.html">mlos.Mlos.Infrastructure.ExperimentManager</a></li>
@@ -96,6 +162,23 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Mlos.SDK.html">mlos.Mlos.SDK</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.CategoricalDimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.ContinuousDimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.DiscreteDimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosAgent"><code class="docutils literal notranslate"><span class="pre">MlosAgent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosExperiment"><code class="docutils literal notranslate"><span class="pre">MlosExperiment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosGlobalContext"><code class="docutils literal notranslate"><span class="pre">MlosGlobalContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosObject"><code class="docutils literal notranslate"><span class="pre">MlosObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosRuntimeDecisionContext"><code class="docutils literal notranslate"><span class="pre">MlosRuntimeDecisionContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosSmartComponentRuntimeAttributes"><code class="docutils literal notranslate"><span class="pre">MlosSmartComponentRuntimeAttributes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosSmartComponentSelector"><code class="docutils literal notranslate"><span class="pre">MlosSmartComponentSelector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.MlosTelemetryAggregator"><code class="docutils literal notranslate"><span class="pre">MlosTelemetryAggregator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.OrdinalDimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.RuntimeDecisionsManager"><code class="docutils literal notranslate"><span class="pre">RuntimeDecisionsManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.SimpleHypergrid"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.SmartComponentManager"><code class="docutils literal notranslate"><span class="pre">SmartComponentManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.html#mlos.Mlos.SDK.TelemetryManager"><code class="docutils literal notranslate"><span class="pre">TelemetryManager</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.MlosAgent.html">mlos.Mlos.SDK.MlosAgent</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.MlosExperiment.html">mlos.Mlos.SDK.MlosExperiment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Mlos.SDK.MlosGlobalContext.html">mlos.Mlos.SDK.MlosGlobalContext</a></li>
@@ -117,9 +200,19 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.MlosOptimizationServices.html">mlos.MlosOptimizationServices</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mlos.MlosOptimizationServices.Distributable.html">mlos.MlosOptimizationServices.Distributable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.MlosOptimizationServices.MlosOptimizationRuntime.html">mlos.MlosOptimizationServices.MlosOptimizationRuntime</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.MlosOptimizationServices.MlosOptimizationServicesProxy.html">mlos.MlosOptimizationServices.MlosOptimizationServicesProxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.MlosOptimizationServices.Distributable.html">mlos.MlosOptimizationServices.Distributable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.MlosOptimizationServices.Distributable.html#mlos.MlosOptimizationServices.Distributable.Distributable"><code class="docutils literal notranslate"><span class="pre">Distributable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.MlosOptimizationServices.Distributable.html#mlos.MlosOptimizationServices.Distributable.remotely_executable"><code class="docutils literal notranslate"><span class="pre">remotely_executable()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.MlosOptimizationServices.MlosOptimizationRuntime.html">mlos.MlosOptimizationServices.MlosOptimizationRuntime</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.MlosOptimizationServices.MlosOptimizationRuntime.html#mlos.MlosOptimizationServices.MlosOptimizationRuntime.MlosOptimizationRuntime"><code class="docutils literal notranslate"><span class="pre">MlosOptimizationRuntime</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.MlosOptimizationServices.MlosOptimizationServicesProxy.html">mlos.MlosOptimizationServices.MlosOptimizationServicesProxy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.MlosOptimizationServices.MlosOptimizationServicesProxy.html#mlos.MlosOptimizationServices.MlosOptimizationServicesProxy.MlosOptimizationServicesProxy"><code class="docutils literal notranslate"><span class="pre">MlosOptimizationServicesProxy</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.MlosOptimizationServices.BayesianOptimizerStore.html">mlos.MlosOptimizationServices.BayesianOptimizerStore</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.MlosOptimizationServices.BayesianOptimizerStore.BayesianOptimizerInMemoryStore.html">mlos.MlosOptimizationServices.BayesianOptimizerStore.BayesianOptimizerInMemoryStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.MlosOptimizationServices.BayesianOptimizerStore.BayesianOptimizerStoreBase.html">mlos.MlosOptimizationServices.BayesianOptimizerStore.BayesianOptimizerStoreBase</a></li>
@@ -135,13 +228,25 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.OptimizerEvaluationTools.html">mlos.OptimizerEvaluationTools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionBase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.html#mlos.OptimizerEvaluationTools.ObjectiveFunctionBase.ObjectiveFunctionBase"><code class="docutils literal notranslate"><span class="pre">ObjectiveFunctionBase</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionConfigStore</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html">mlos.OptimizerEvaluationTools.OptimizerEvaluationReport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html">mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.html#mlos.OptimizerEvaluationTools.ObjectiveFunctionFactory.ObjectiveFunctionFactory"><code class="docutils literal notranslate"><span class="pre">ObjectiveFunctionFactory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html">mlos.OptimizerEvaluationTools.OptimizerEvaluationReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.html#mlos.OptimizerEvaluationTools.OptimizerEvaluationReport.OptimizerEvaluationReport"><code class="docutils literal notranslate"><span class="pre">OptimizerEvaluationReport</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluator.html">mlos.OptimizerEvaluationTools.OptimizerEvaluator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore.html">mlos.OptimizerEvaluationTools.OptimizerEvaluatorConfigStore</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimumOverTime.html">mlos.OptimizerEvaluationTools.OptimumOverTime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimumOverTime.html">mlos.OptimizerEvaluationTools.OptimumOverTime</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.OptimumOverTime.html#mlos.OptimizerEvaluationTools.OptimumOverTime.OptimumOverTime"><code class="docutils literal notranslate"><span class="pre">OptimumOverTime</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.html">mlos.OptimizerEvaluationTools.SyntheticFunctions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.EnvelopedWaves.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.EnvelopedWaves</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower.html">mlos.OptimizerEvaluationTools.SyntheticFunctions.Flower</a></li>
@@ -179,14 +284,36 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Optimizers.html">mlos.Optimizers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html">mlos.Optimizers.BayesianOptimizer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizer.html#mlos.Optimizers.BayesianOptimizer.BayesianOptimizer"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConfigStore.html">mlos.Optimizers.BayesianOptimizerConfigStore</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConvergenceState.html">mlos.Optimizers.BayesianOptimizerConvergenceState</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerConvergenceState.html#mlos.Optimizers.BayesianOptimizerConvergenceState.BayesianOptimizerConvergenceState"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConvergenceState</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.BayesianOptimizerFactory.html">mlos.Optimizers.BayesianOptimizerFactory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizerBase.html">mlos.Optimizers.OptimizerBase</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimumDefinition.html">mlos.Optimizers.OptimumDefinition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ParetoFrontier.html">mlos.Optimizers.ParetoFrontier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html">mlos.Optimizers.OptimizationProblem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.Objective"><code class="docutils literal notranslate"><span class="pre">Objective</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.OptimizationProblem"><code class="docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.objective_from_dict"><code class="docutils literal notranslate"><span class="pre">objective_from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.OptimizationProblem.html#mlos.Optimizers.OptimizationProblem.objective_to_dict"><code class="docutils literal notranslate"><span class="pre">objective_to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimizerBase.html">mlos.Optimizers.OptimizerBase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.OptimizerBase.html#mlos.Optimizers.OptimizerBase.OptimizerBase"><code class="docutils literal notranslate"><span class="pre">OptimizerBase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.OptimumDefinition.html">mlos.Optimizers.OptimumDefinition</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.OptimumDefinition.html#mlos.Optimizers.OptimumDefinition.OptimumDefinition"><code class="docutils literal notranslate"><span class="pre">OptimumDefinition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ParetoFrontier.html">mlos.Optimizers.ParetoFrontier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ParetoFrontier.html#mlos.Optimizers.ParetoFrontier.ParetoFrontier"><code class="docutils literal notranslate"><span class="pre">ParetoFrontier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ParetoFrontier.html#mlos.Optimizers.ParetoFrontier.ParetoVolumeEsimator"><code class="docutils literal notranslate"><span class="pre">ParetoVolumeEsimator</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.ExperimentDesigner.html">mlos.Optimizers.ExperimentDesigner.ExperimentDesigner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers.html">mlos.Optimizers.ExperimentDesigner.UtilityFunctionOptimizers</a></li>
@@ -204,7 +331,9 @@
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.LassoCrossValidatedRegressionModel.html">mlos.Optimizers.RegressionModels.LassoCrossValidatedRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.MultiObjectiveGoodnessOfFitMetrics.html">mlos.Optimizers.RegressionModels.MultiObjectiveGoodnessOfFitMetrics</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.MultiObjectiveHomogeneousRandomForest.html">mlos.Optimizers.RegressionModels.MultiObjectiveHomogeneousRandomForest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.MultiObjectiveLassoCrossValidated.html">mlos.Optimizers.RegressionModels.MultiObjectiveLassoCrossValidated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.MultiObjectivePrediction.html">mlos.Optimizers.RegressionModels.MultiObjectivePrediction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.MultiObjectiveRegressionEnhancedRandomForest.html">mlos.Optimizers.RegressionModels.MultiObjectiveRegressionEnhancedRandomForest</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.MultiObjectiveRegressionModel.html">mlos.Optimizers.RegressionModels.MultiObjectiveRegressionModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.MultiObjectiveRegressionModelFitState.html">mlos.Optimizers.RegressionModels.MultiObjectiveRegressionModelFitState</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Optimizers.RegressionModels.NaiveMultiObjectiveRegressionModel.html">mlos.Optimizers.RegressionModels.NaiveMultiObjectiveRegressionModel</a></li>
@@ -231,11 +360,188 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Spaces.html">mlos.Spaces</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.copy"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.difference"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.difference_categorical_dimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.difference_categorical_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.equals"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.intersection"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.intersection_categorical_dimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.intersection_categorical_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.intersects"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.linspace"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.random"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.to_string"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.union"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.union()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CategoricalDimension.union_categorical_dimension"><code class="docutils literal notranslate"><span class="pre">CategoricalDimension.union_categorical_dimension()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension"><code class="docutils literal notranslate"><span class="pre">CompositeDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.contains_number"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.contains_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.copy"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.difference"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.enumerate_chunks"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.enumerate_chunks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.equals"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.intersection"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.intersects"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.linspace"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.pop_adjacent_chunks"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.pop_adjacent_chunks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.pop_overlapping_chunks"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.pop_overlapping_chunks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.push"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.push()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.random"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.to_string"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.CompositeDimension.union"><code class="docutils literal notranslate"><span class="pre">CompositeDimension.union()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.contains_continuous_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.contains_continuous_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.copy"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.difference"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.equals"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.intersection"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.intersection_continuous_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.intersection_continuous_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.intersects"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.intersects_continuous_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.intersects_continuous_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.is_contiguous_with"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.is_contiguous_with()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.linspace"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.make_empty"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.make_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.random"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.split_on"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.split_on()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.to_string"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.union"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.union()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.union_overlapping_continuous_dimension"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.union_overlapping_continuous_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.ContinuousDimension.width"><code class="docutils literal notranslate"><span class="pre">ContinuousDimension.width</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension"><code class="docutils literal notranslate"><span class="pre">Dimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.INNUMERABLY_LARGE"><code class="docutils literal notranslate"><span class="pre">Dimension.INNUMERABLY_LARGE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.copy"><code class="docutils literal notranslate"><span class="pre">Dimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.difference"><code class="docutils literal notranslate"><span class="pre">Dimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.flatten_dimension_name"><code class="docutils literal notranslate"><span class="pre">Dimension.flatten_dimension_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.flatten_name"><code class="docutils literal notranslate"><span class="pre">Dimension.flatten_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.intersection"><code class="docutils literal notranslate"><span class="pre">Dimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.intersects"><code class="docutils literal notranslate"><span class="pre">Dimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.is_innumerably_large"><code class="docutils literal notranslate"><span class="pre">Dimension.is_innumerably_large</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.linspace"><code class="docutils literal notranslate"><span class="pre">Dimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.random"><code class="docutils literal notranslate"><span class="pre">Dimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.random_state"><code class="docutils literal notranslate"><span class="pre">Dimension.random_state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.split_dimension_name"><code class="docutils literal notranslate"><span class="pre">Dimension.split_dimension_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.to_string"><code class="docutils literal notranslate"><span class="pre">Dimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Dimension.union"><code class="docutils literal notranslate"><span class="pre">Dimension.union()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.copy"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.difference"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.equals"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.greatest_common_divisor"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.greatest_common_divisor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.intersection"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.intersection_discrete_dimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.intersection_discrete_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.intersects"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.is_contiguous_with"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.is_contiguous_with()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.least_common_multiple"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.least_common_multiple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.linspace"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.make_empty"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.make_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.random"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.split_on"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.split_on()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.to_string"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.union"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.union()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.DiscreteDimension.union_contiguous_discrete_dimension"><code class="docutils literal notranslate"><span class="pre">DiscreteDimension.union_contiguous_discrete_dimension()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension"><code class="docutils literal notranslate"><span class="pre">EmptyDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.copy"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.difference"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.equals"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.intersection"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.intersects"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.is_innumerably_large"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.is_innumerably_large</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.linspace"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.linspace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.random"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.to_string"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.EmptyDimension.union"><code class="docutils literal notranslate"><span class="pre">EmptyDimension.union()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid"><code class="docutils literal notranslate"><span class="pre">Hypergrid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.dimension_names"><code class="docutils literal notranslate"><span class="pre">Hypergrid.dimension_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.dimensions"><code class="docutils literal notranslate"><span class="pre">Hypergrid.dimensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.filter_out_invalid_rows"><code class="docutils literal notranslate"><span class="pre">Hypergrid.filter_out_invalid_rows()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.get_dimensions_for_point"><code class="docutils literal notranslate"><span class="pre">Hypergrid.get_dimensions_for_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.get_valid_rows_index"><code class="docutils literal notranslate"><span class="pre">Hypergrid.get_valid_rows_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.is_hierarchical"><code class="docutils literal notranslate"><span class="pre">Hypergrid.is_hierarchical()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.join"><code class="docutils literal notranslate"><span class="pre">Hypergrid.join()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.random"><code class="docutils literal notranslate"><span class="pre">Hypergrid.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.random_dataframe"><code class="docutils literal notranslate"><span class="pre">Hypergrid.random_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Hypergrid.random_state"><code class="docutils literal notranslate"><span class="pre">Hypergrid.random_state</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.contains_dimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.contains_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.copy"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.difference"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.difference_ordinal_dimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.difference_ordinal_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.equals"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.equals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.intersection"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.intersection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.intersection_ordinal_dimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.intersection_ordinal_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.intersects"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.intersects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.max"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.max</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.min"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.union"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.union()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.OrdinalDimension.union_ordinal_dimension"><code class="docutils literal notranslate"><span class="pre">OrdinalDimension.union_ordinal_dimension()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point.copy"><code class="docutils literal notranslate"><span class="pre">Point.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point.flat_copy"><code class="docutils literal notranslate"><span class="pre">Point.flat_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point.from_dataframe"><code class="docutils literal notranslate"><span class="pre">Point.from_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point.from_json"><code class="docutils literal notranslate"><span class="pre">Point.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point.get"><code class="docutils literal notranslate"><span class="pre">Point.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point.to_dataframe"><code class="docutils literal notranslate"><span class="pre">Point.to_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point.to_dict"><code class="docutils literal notranslate"><span class="pre">Point.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.Point.to_json"><code class="docutils literal notranslate"><span class="pre">Point.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.JoinedSubgrid"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.JoinedSubgrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.add_dimension"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.add_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.add_subgrid_on_external_dimension"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.add_subgrid_on_external_dimension()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.contains_point"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.contains_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.contains_space"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.contains_space()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.dimensions"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.dimensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.get"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.get_dimensions_for_point"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.get_dimensions_for_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.is_hierarchical"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.is_hierarchical()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.join"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.join()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.random"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.random()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.random_state"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.random_state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.root_dimensions"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.root_dimensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.html#mlos.Spaces.SimpleHypergrid.to_string"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid.to_string()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Hypergrid.html">mlos.Spaces.Hypergrid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Hypergrid.html#mlos.Spaces.Hypergrid.Hypergrid"><code class="docutils literal notranslate"><span class="pre">Hypergrid</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html">mlos.Spaces.HypergridsJsonEncoderDecoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonDecoder"><code class="docutils literal notranslate"><span class="pre">HypergridJsonDecoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridsJsonEncoderDecoder.html#mlos.Spaces.HypergridsJsonEncoderDecoder.HypergridJsonEncoder"><code class="docutils literal notranslate"><span class="pre">HypergridJsonEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Point.html">mlos.Spaces.Point</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Point.html#mlos.Spaces.Point.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.SimpleHypergrid.html">mlos.Spaces.SimpleHypergrid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.SimpleHypergrid.html#mlos.Spaces.SimpleHypergrid.SimpleHypergrid"><code class="docutils literal notranslate"><span class="pre">SimpleHypergrid</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.Configs.html">mlos.Spaces.Configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Configs.html#mlos.Spaces.Configs.ComponentConfigStore"><code class="docutils literal notranslate"><span class="pre">ComponentConfigStore</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Configs.html#mlos.Spaces.Configs.NamedConfig"><code class="docutils literal notranslate"><span class="pre">NamedConfig</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Configs.ComponentConfigStore.html">mlos.Spaces.Configs.ComponentConfigStore</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Configs.DefaultConfigMeta.html">mlos.Spaces.Configs.DefaultConfigMeta</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.Configs.NamedConfig.html">mlos.Spaces.Configs.NamedConfig</a></li>
@@ -256,6 +562,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html">mlos.Spaces.HypergridAdapters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">CategoricalToDiscreteHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.CategoricalToOneHotEncodedHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">CategoricalToOneHotEncodedHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.ContinuousToPolynomialBasisHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">ContinuousToPolynomialBasisHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.DiscreteToUnitContinuousHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">DiscreteToUnitContinuousHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.HierarchicalToFlatHypergridAdapter"><code class="docutils literal notranslate"><span class="pre">HierarchicalToFlatHypergridAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.html#mlos.Spaces.HypergridAdapters.HypergridAdapter"><code class="docutils literal notranslate"><span class="pre">HypergridAdapter</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToDiscreteHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.CategoricalToOneHotEncodedHypergridAdapter.html">mlos.Spaces.HypergridAdapters.CategoricalToOneHotEncodedHypergridAdapter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Spaces.HypergridAdapters.ContinuousToPolynomialBasisHypergridAdapter.html">mlos.Spaces.HypergridAdapters.ContinuousToPolynomialBasisHypergridAdapter</a></li>
@@ -282,7 +594,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mlos.Utils.html">mlos.Utils</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mlos.Utils.KeyOrderedDict.html">mlos.Utils.KeyOrderedDict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos.Utils.KeyOrderedDict.html">mlos.Utils.KeyOrderedDict</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlos.Utils.KeyOrderedDict.html#mlos.Utils.KeyOrderedDict.KeyOrderedDict"><code class="docutils literal notranslate"><span class="pre">KeyOrderedDict</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="mlos.Utils.unit_tests.html">mlos.Utils.unit_tests</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mlos.Utils.unit_tests.TestKeyOrderedDict.html">mlos.Utils.unit_tests.TestKeyOrderedDict</a></li>
 </ul>
@@ -319,825 +634,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-mlos.Grpc.OptimizerMonitoringService_pb2">
-<span id="mlos-grpc-optimizermonitoringservice-pb2"></span><h1>mlos.Grpc.OptimizerMonitoringService_pb2<a class="headerlink" href="#module-mlos.Grpc.OptimizerMonitoringService_pb2" title="Permalink to this headline">¶</a></h1>
-<p>Generated protocol buffer code.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CategoricalDimension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">CategoricalDimension</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CategoricalDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CategoricalDimension.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CategoricalDimension.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CategoricalDimension.Name">
-<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CategoricalDimension.Name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.CategoricalDimension.Name</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CategoricalDimension.Values">
-<span class="sig-name descname"><span class="pre">Values</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CategoricalDimension.Values" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.CategoricalDimension.Values</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">CompositeDimension</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension.ChunkType">
-<span class="sig-name descname"><span class="pre">ChunkType</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension.ChunkType" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.CompositeDimension.ChunkType</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension.Chunks">
-<span class="sig-name descname"><span class="pre">Chunks</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension.Chunks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.CompositeDimension.Chunks</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension.Name">
-<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.CompositeDimension.Name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.CompositeDimension.Name</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ConfigurationParameters">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">ConfigurationParameters</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ConfigurationParameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ConfigurationParameters.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ConfigurationParameters.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ConfigurationParameters.ParametersJsonString">
-<span class="sig-name descname"><span class="pre">ParametersJsonString</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ConfigurationParameters.ParametersJsonString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.ConfigurationParameters.ParametersJsonString</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Context">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">Context</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Context" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Context.ContextJsonString">
-<span class="sig-name descname"><span class="pre">ContextJsonString</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Context.ContextJsonString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Context.ContextJsonString</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Context.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Context.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">ContinuousDimension</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.IncludeMax">
-<span class="sig-name descname"><span class="pre">IncludeMax</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.IncludeMax" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.ContinuousDimension.IncludeMax</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.IncludeMin">
-<span class="sig-name descname"><span class="pre">IncludeMin</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.IncludeMin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.ContinuousDimension.IncludeMin</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.Max">
-<span class="sig-name descname"><span class="pre">Max</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.Max" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.ContinuousDimension.Max</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.Min">
-<span class="sig-name descname"><span class="pre">Min</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.Min" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.ContinuousDimension.Min</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.Name">
-<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ContinuousDimension.Name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.ContinuousDimension.Name</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Dimension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">Dimension</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Dimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.CategoricalDimension">
-<span class="sig-name descname"><span class="pre">CategoricalDimension</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.CategoricalDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Dimension.CategoricalDimension</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.CompositeDimension">
-<span class="sig-name descname"><span class="pre">CompositeDimension</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.CompositeDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Dimension.CompositeDimension</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.ContinuousDimension">
-<span class="sig-name descname"><span class="pre">ContinuousDimension</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.ContinuousDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Dimension.ContinuousDimension</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.DiscreteDimension">
-<span class="sig-name descname"><span class="pre">DiscreteDimension</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.DiscreteDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Dimension.DiscreteDimension</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.EmptyDimension">
-<span class="sig-name descname"><span class="pre">EmptyDimension</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.EmptyDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Dimension.EmptyDimension</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.OrdinalDimension">
-<span class="sig-name descname"><span class="pre">OrdinalDimension</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Dimension.OrdinalDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Dimension.OrdinalDimension</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DimensionValue">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">DimensionValue</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DimensionValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DimensionValue.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DimensionValue.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DimensionValue.Point">
-<span class="sig-name descname"><span class="pre">Point</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DimensionValue.Point" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.DimensionValue.Point</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DimensionValue.Value">
-<span class="sig-name descname"><span class="pre">Value</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DimensionValue.Value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.DimensionValue.Value</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">DiscreteDimension</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension.Max">
-<span class="sig-name descname"><span class="pre">Max</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension.Max" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.DiscreteDimension.Max</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension.Min">
-<span class="sig-name descname"><span class="pre">Min</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension.Min" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.DiscreteDimension.Min</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension.Name">
-<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.DiscreteDimension.Name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.DiscreteDimension.Name</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Empty">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">Empty</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Empty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Empty.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Empty.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.EmptyDimension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">EmptyDimension</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.EmptyDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.EmptyDimension.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.EmptyDimension.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.EmptyDimension.DimensionType">
-<span class="sig-name descname"><span class="pre">DimensionType</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.EmptyDimension.DimensionType" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.EmptyDimension.DimensionType</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.EmptyDimension.Name">
-<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.EmptyDimension.Name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.EmptyDimension.Name</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Features">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">Features</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Features" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Features.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Features.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Features.FeaturesJsonString">
-<span class="sig-name descname"><span class="pre">FeaturesJsonString</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Features.FeaturesJsonString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Features.FeaturesJsonString</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.GuestSubgrid">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">GuestSubgrid</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.GuestSubgrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.GuestSubgrid.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.GuestSubgrid.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.GuestSubgrid.ExternalPivotDimension">
-<span class="sig-name descname"><span class="pre">ExternalPivotDimension</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.GuestSubgrid.ExternalPivotDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.GuestSubgrid.ExternalPivotDimension</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.GuestSubgrid.Subgrid">
-<span class="sig-name descname"><span class="pre">Subgrid</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.GuestSubgrid.Subgrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.GuestSubgrid.Subgrid</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.KeyValuePair">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">KeyValuePair</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.KeyValuePair" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.KeyValuePair.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.KeyValuePair.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.KeyValuePair.Key">
-<span class="sig-name descname"><span class="pre">Key</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.KeyValuePair.Key" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.KeyValuePair.Key</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.KeyValuePair.Value">
-<span class="sig-name descname"><span class="pre">Value</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.KeyValuePair.Value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.KeyValuePair.Value</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Objective">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">Objective</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Objective" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Objective.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Objective.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Objective.Minimize">
-<span class="sig-name descname"><span class="pre">Minimize</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Objective.Minimize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Objective.Minimize</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Objective.Name">
-<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Objective.Name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Objective.Name</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ObjectiveValues">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">ObjectiveValues</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ObjectiveValues" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ObjectiveValues.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ObjectiveValues.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.ObjectiveValues.ObjectiveValuesJsonString">
-<span class="sig-name descname"><span class="pre">ObjectiveValuesJsonString</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.ObjectiveValues.ObjectiveValuesJsonString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.ObjectiveValues.ObjectiveValuesJsonString</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Observation">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">Observation</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Observation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Observation.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Observation.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Observation.Features">
-<span class="sig-name descname"><span class="pre">Features</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Observation.Features" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Observation.Features</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Observation.ObjectiveValues">
-<span class="sig-name descname"><span class="pre">ObjectiveValues</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Observation.ObjectiveValues" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Observation.ObjectiveValues</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Observations">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">Observations</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Observations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Observations.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Observations.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Observations.Features">
-<span class="sig-name descname"><span class="pre">Features</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Observations.Features" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Observations.Features</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Observations.ObjectiveValues">
-<span class="sig-name descname"><span class="pre">ObjectiveValues</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Observations.ObjectiveValues" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Observations.ObjectiveValues</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">OptimizationProblem</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.ContextSpace">
-<span class="sig-name descname"><span class="pre">ContextSpace</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.ContextSpace" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizationProblem.ContextSpace</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.ObjectiveSpace">
-<span class="sig-name descname"><span class="pre">ObjectiveSpace</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.ObjectiveSpace" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizationProblem.ObjectiveSpace</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.Objectives">
-<span class="sig-name descname"><span class="pre">Objectives</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.Objectives" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizationProblem.Objectives</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.ParameterSpace">
-<span class="sig-name descname"><span class="pre">ParameterSpace</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizationProblem.ParameterSpace" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizationProblem.ParameterSpace</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerConvergenceState">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">OptimizerConvergenceState</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerConvergenceState" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerConvergenceState.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerConvergenceState.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerConvergenceState.OptimizerHandle">
-<span class="sig-name descname"><span class="pre">OptimizerHandle</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerConvergenceState.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizerConvergenceState.OptimizerHandle</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerConvergenceState.SerializedOptimizerConvergenceState">
-<span class="sig-name descname"><span class="pre">SerializedOptimizerConvergenceState</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerConvergenceState.SerializedOptimizerConvergenceState" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizerConvergenceState.SerializedOptimizerConvergenceState</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerHandle">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">OptimizerHandle</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerHandle.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerHandle.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerHandle.Id">
-<span class="sig-name descname"><span class="pre">Id</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerHandle.Id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizerHandle.Id</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">OptimizerInfo</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo.OptimizationProblem">
-<span class="sig-name descname"><span class="pre">OptimizationProblem</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizerInfo.OptimizationProblem</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo.OptimizerConfigJsonString">
-<span class="sig-name descname"><span class="pre">OptimizerConfigJsonString</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo.OptimizerConfigJsonString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizerInfo.OptimizerConfigJsonString</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo.OptimizerHandle">
-<span class="sig-name descname"><span class="pre">OptimizerHandle</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerInfo.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizerInfo.OptimizerHandle</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerList">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">OptimizerList</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerList" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerList.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerList.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerList.Optimizers">
-<span class="sig-name descname"><span class="pre">Optimizers</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OptimizerList.Optimizers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OptimizerList.Optimizers</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">OrdinalDimension</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension.Ascending">
-<span class="sig-name descname"><span class="pre">Ascending</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension.Ascending" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OrdinalDimension.Ascending</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension.Name">
-<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension.Name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OrdinalDimension.Name</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension.OrderedValues">
-<span class="sig-name descname"><span class="pre">OrderedValues</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.OrdinalDimension.OrderedValues" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.OrdinalDimension.OrderedValues</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Point">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">Point</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Point" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Point.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Point.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.Point.KeyValuePair">
-<span class="sig-name descname"><span class="pre">KeyValuePair</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.Point.KeyValuePair" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.Point.KeyValuePair</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PredictRequest">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">PredictRequest</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PredictRequest" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PredictRequest.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PredictRequest.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PredictRequest.Features">
-<span class="sig-name descname"><span class="pre">Features</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PredictRequest.Features" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.PredictRequest.Features</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PredictRequest.OptimizerHandle">
-<span class="sig-name descname"><span class="pre">OptimizerHandle</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PredictRequest.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.PredictRequest.OptimizerHandle</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PredictResponse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">PredictResponse</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PredictResponse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PredictResponse.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PredictResponse.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PredictResponse.ObjectivePredictions">
-<span class="sig-name descname"><span class="pre">ObjectivePredictions</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PredictResponse.ObjectivePredictions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.PredictResponse.ObjectivePredictions</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">PrimitiveValue</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.BoolValue">
-<span class="sig-name descname"><span class="pre">BoolValue</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.BoolValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.PrimitiveValue.BoolValue</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.DoubleValue">
-<span class="sig-name descname"><span class="pre">DoubleValue</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.DoubleValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.PrimitiveValue.DoubleValue</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.IntValue">
-<span class="sig-name descname"><span class="pre">IntValue</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.IntValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.PrimitiveValue.IntValue</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.StringValue">
-<span class="sig-name descname"><span class="pre">StringValue</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.PrimitiveValue.StringValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.PrimitiveValue.StringValue</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationRequest">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">RegisterObservationRequest</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationRequest" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationRequest.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationRequest.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationRequest.Observation">
-<span class="sig-name descname"><span class="pre">Observation</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationRequest.Observation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.RegisterObservationRequest.Observation</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationRequest.OptimizerHandle">
-<span class="sig-name descname"><span class="pre">OptimizerHandle</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationRequest.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.RegisterObservationRequest.OptimizerHandle</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationsRequest">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">RegisterObservationsRequest</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationsRequest" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationsRequest.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationsRequest.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationsRequest.Observations">
-<span class="sig-name descname"><span class="pre">Observations</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationsRequest.Observations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.RegisterObservationsRequest.Observations</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationsRequest.OptimizerHandle">
-<span class="sig-name descname"><span class="pre">OptimizerHandle</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.RegisterObservationsRequest.OptimizerHandle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.RegisterObservationsRequest.OptimizerHandle</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleBoolean">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">SimpleBoolean</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleBoolean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleBoolean.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleBoolean.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleBoolean.Value">
-<span class="sig-name descname"><span class="pre">Value</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleBoolean.Value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.SimpleBoolean.Value</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">SimpleHypergrid</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid.Dimensions">
-<span class="sig-name descname"><span class="pre">Dimensions</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid.Dimensions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.SimpleHypergrid.Dimensions</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid.GuestSubgrids">
-<span class="sig-name descname"><span class="pre">GuestSubgrids</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid.GuestSubgrids" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.SimpleHypergrid.GuestSubgrids</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid.Name">
-<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleHypergrid.Name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.SimpleHypergrid.Name</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleString">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">SimpleString</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleString.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleString.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SimpleString.Value">
-<span class="sig-name descname"><span class="pre">Value</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SimpleString.Value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.SimpleString.Value</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SingleObjectivePrediction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mlos.Grpc.OptimizerMonitoringService_pb2.</span></span><span class="sig-name descname"><span class="pre">SingleObjectivePrediction</span></span><a class="reference external" href="https://github.com/Microsoft/MLOS/blob/bb9d09d/source/Mlos.Python/mlos/Grpc/OptimizerMonitoringService_pb2.py#L"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SingleObjectivePrediction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SingleObjectivePrediction.DESCRIPTOR">
-<span class="sig-name descname"><span class="pre">DESCRIPTOR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;google.protobuf.pyext._message.MessageDescriptor</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SingleObjectivePrediction.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.descriptor.Descriptor</span></code> for this message type.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SingleObjectivePrediction.ObjectiveName">
-<span class="sig-name descname"><span class="pre">ObjectiveName</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SingleObjectivePrediction.ObjectiveName" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.SingleObjectivePrediction.ObjectiveName</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mlos.Grpc.OptimizerMonitoringService_pb2.SingleObjectivePrediction.PredictionDataFrameJsonString">
-<span class="sig-name descname"><span class="pre">PredictionDataFrameJsonString</span></span><a class="headerlink" href="#mlos.Grpc.OptimizerMonitoringService_pb2.SingleObjectivePrediction.PredictionDataFrameJsonString" title="Permalink to this definition">¶</a></dt>
-<dd><p>Field mlos.optimizer_monitoring_service.SingleObjectivePrediction.PredictionDataFrameJsonString</p>
-</dd></dl>
-
-</dd></dl>
-
+  <section id="mlos-grpc-optimizermonitoringservice-pb2">
+<h1>mlos.Grpc.OptimizerMonitoringService_pb2<a class="headerlink" href="#mlos-grpc-optimizermonitoringservice-pb2" title="Permalink to this heading">¶</a></h1>
 </section>
 
 
